@@ -1,0 +1,1 @@
+/corral-repl/utexas/ldrc/ldrc_025/model/SST/cope1_lev2.gfeat/cope1.feat/stats/cope1.nii.gz 

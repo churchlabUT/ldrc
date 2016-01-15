@@ -1,0 +1,18 @@
+
+basedir=SC
+
+SST_zstats=/corral-repl/utexas/ldrc/GROUP/zstats/thresh/$basedir/
+
+
+for zstat in ${SST_zstats[@]}
+
+  do
+
+  fslmaths ${zstat}.nii.gz -mul -1 /corral-repl/utexas/ldrc/GROUP/zstats/thresh/$basedir/${zstat}_neg.nii.gz
+
+done
+
+
+
+
+basedir=SST

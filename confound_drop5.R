@@ -1,0 +1,60 @@
+# Author: Mary Abbe Roe, April 15, 2015
+# This script reads in Houston SC and SST fd_confounds.txt and drops the first 5 rows
+# The output is saved with the file name fd_confounds_drop5.txt
+
+
+#### LIBRARIES, FUNCTIONS, READING IN DATA ####
+
+
+# LIBRARIES
+  library(gtools)
+
+  wd=getwd()
+
+# READING IN DATA
+  group=c("H_LD*_[0-9]_second", "H_LD*_[0-9]_third", "LDFHO*", "H_LD*_c_second", "H_LD*_c_third")
+
+  # GROUP
+  for (i in 1:length(group)){ 
+    subdirs=c(Sys.glob(sprintf("/corral-repl/utexas/ldrc/%s" ,group[i])))
+    print(group[i])
+
+    # SUB
+    for (sub in subdirs){
+      bold_dirs=c(Sys.glob(sprintf("%s/BOLD/run*_S*", sub)))
+      rm("conf_loop")
+      rm("conf_loop5")
+
+       # RUN
+       for (run in bold_dirs){
+         Tfile=Sys.glob(sprintf("%s/scrub_files/fd_confounds.txt", run))
+
+         if (length(Tfile)==0){
+           warning(sprintf("cannot find fd_confounds.txt file for %s", run))
+           next
+         }
+         
+         conf_loop=as.matrix(read.table(Tfile, header=F))
+         dim(conf_loop)
+
+         for (i in ncol(conf_loop){
+           if (sum(conf_loop[i])==1){
+            
+           }
+         }
+
+         #sum(conf_loop, 1)
+         #conf_loop5 = conf_loop[-1:-5, ]
+         #conf_loop5 = as.matrix(conf_loop5)
+         #dim(conf_loop5)
+         #conf_loop5 = conf_loop5[,colSums(conf_loop5)==1]           
+         #dim(conf_loop5)         
+
+         new_scrub=sprintf("%s/scrub_files/fd_confounds_drop5.txt", run)
+         write.table(conf_loop5, new_scrub, sep="   ", row.names=FALSE, col.names=FALSE)
+       
+       } # END RUN LOOP
+    }  # END SUB LOOP
+
+  } # END GROUP LOOP
+

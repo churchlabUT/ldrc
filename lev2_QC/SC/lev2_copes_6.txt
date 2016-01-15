@@ -1,0 +1,17 @@
+/corral-repl/utexas/ldrc/ldrc3_0_202/model/SC/cope6_lev2.gfeat/cope1.feat/stats/cope1.nii.gz
+/corral-repl/utexas/ldrc/ldrc3_0_216/model/SC/cope6_lev2.gfeat/cope1.feat/stats/cope1.nii.gz
+/corral-repl/utexas/ldrc/ldrc3_0_217/model/SC/cope6_lev2.gfeat/cope1.feat/stats/cope1.nii.gz
+/corral-repl/utexas/ldrc/ldrc3_0_219/model/SC/cope6_lev2.gfeat/cope1.feat/stats/cope1.nii.gz
+/corral-repl/utexas/ldrc/ldrc3_0_222/model/SC/cope6_lev2.gfeat/cope1.feat/stats/cope1.nii.gz
+/corral-repl/utexas/ldrc/ldrc3_0_234/model/SC/cope6_lev2.gfeat/cope1.feat/stats/cope1.nii.gz
+/corral-repl/utexas/ldrc/ldrc3_0_235/model/SC/cope6_lev2.gfeat/cope1.feat/stats/cope1.nii.gz
+/corral-repl/utexas/ldrc/ldrc3_0_236/model/SC/cope6_lev2.gfeat/cope1.feat/stats/cope1.nii.gz
+/corral-repl/utexas/ldrc/ldrc3_0_248/model/SC/cope6_lev2.gfeat/cope1.feat/stats/cope1.nii.gz
+/corral-repl/utexas/ldrc/ldrc3_1_213/model/SC/cope6_lev2.gfeat/cope1.feat/stats/cope1.nii.gz
+/corral-repl/utexas/ldrc/ldrc3_1_214/model/SC/cope6_lev2.gfeat/cope1.feat/stats/cope1.nii.gz
+/corral-repl/utexas/ldrc/ldrc3_1_224/model/SC/cope6_lev2.gfeat/cope1.feat/stats/cope1.nii.gz
+/corral-repl/utexas/ldrc/ldrc3_1_227/model/SC/cope6_lev2.gfeat/cope1.feat/stats/cope1.nii.gz
+/corral-repl/utexas/ldrc/ldrc3_1_229/model/SC/cope6_lev2.gfeat/cope1.feat/stats/cope1.nii.gz
+/corral-repl/utexas/ldrc/ldrc3_1_241/model/SC/cope6_lev2.gfeat/cope1.feat/stats/cope1.nii.gz
+/corral-repl/utexas/ldrc/ldrc3_1_242/model/SC/cope6_lev2.gfeat/cope1.feat/stats/cope1.nii.gz
+/corral-repl/utexas/ldrc/ldrc3_1_246/model/SC/cope6_lev2.gfeat/cope1.feat/stats/cope1.nii.gz

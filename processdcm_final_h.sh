@@ -1,0 +1,67 @@
+#!/bin/sh
+
+#Before running this script, you must download the scanner images from Osirix and upload the zip file to TACC/STUDYNAME.
+# DO NOT JUST RUN THIS SCRIPT - YOU NEED TO CAREFULLY GO THROUGH EACH STEP ONE BY ONE BECAUSE THE DATA IS NOT CONSISTENTLY ORGANIZED.
+
+PARTICID='LDFHO24839_F2015_V1'
+STUDYNAME='ldrc'
+
+# Assuming we are in the SCRIPTS directory right now.
+
+# Set up folders.
+cd /corral-repl/utexas/${STUDYNAME}
+mkdir $PARTICID
+cd  $PARTICID
+mkdir anatomy
+mkdir behav
+mkdir BOLD
+mkdir fieldmap
+mkdir logs
+mkdir model
+mkdir raw
+cd raw
+mkdir $PARTICID
+cd  ../..
+
+# Move participant's zip file into folder particID/raw/particID, then unzip.
+mv $PARTICID*.tar  ${PARTICID}/raw/${PARTICID}
+cd ${PARTICID}/raw/${PARTICID}
+tar -xvf $PARTICID*
+cd ${PARTICID}*
+rm -f DICOMDIR*
+
+# Add .dcim to files and Move raw data out of subfolders into one folder
+DIRS=`ls -d DICOM_[0-9]_*_[0-9]/`
+for dir in $DIRS
+ do
+  cd $dir
+  SUBDIRS=`ls -d [0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]`
+  for subdir in $SUBDIRS
+  do
+    cd $subdir
+    SUBDIRS2=`ls -d [0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]`
+    for subdirs2 in $SUBDIRS2
+    do
+      cd $subdirs2
+      for f in *; do mv "$f" "$f.dcm"; done
+      mv *.dcm ../../../..
+      cd ../../..
+    done
+  done
+done
+cd ..
+mv $PARTICID.tar ../
+rm -r $PARTICID
+
+# Then rename the files as XNAT did.
+cd ../../../SCRIPTS
+matlab -nodisplay -nosplash -r "nameLikeXnat('/corral-repl/utexas/${STUDYNAME}/${PARTICID}/raw/${PARTICID}');exit"
+
+
+# Move the renamed files to folder raw/particID, then split them by scan. These steps also move the unnamed raw files into another folder.
+cd ../${PARTICID}/raw/
+mkdir Unnamed_raw
+cd ${PARTICID}
+mv [0-9]*.dcm ../Unnamed_raw
+cd ../../../SCRIPTS
+matlab -nodisplay -nosplash -r "splitSiemensScans_churchlab('/corral-repl/utexas/${STUDYNAME}/${PARTICID}/raw/${PARTICID}');exit"

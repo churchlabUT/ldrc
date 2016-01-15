@@ -1,0 +1,66 @@
+TACC: Setting memory limits for job 1887288 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: setup_ldrc_079.sh
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N setup_ldrc_079       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 12way 12
+#$ -q normal
+#$ -l h_rt=10:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE setup_ldrc_079.sh
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+/bin/.: Permission denied.
+setenv: Too many arguments.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 1887288
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+Warning: Permanently added 'c329-310.ls4.tacc.utexas.edu,206.76.197.205' (RSA) to the list of known hosts.
+--------------------------------------------------
+TACC Launcher -> 12 processors allocated.
+TACC Launcher -> 1 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c329-310.ls4.tacc.utexas.edu (/corral-repl/utexas/poldracklab/software_lonestar/local/bin/setup_subject.py -o --dcm2nii --motcorr --qa --betfunc --dtiqa --fsrecon --fs-subdir /corral-repl/utexas/ldrc/FREESURFER/ --keepdata -b /corral-repl/utexas/ --studyname ldrc -s ldrc_079)
+subdir /corral-repl/utexas/ldrc/ldrc_079 already exists
+overwriting...
+bolddirs:
+[]
+recon-all -i /corral-repl/utexas/ldrc/ldrc_079/anatomy/highres001.nii.gz -subjid ldrc_ldrc_079 -sd /corral-repl/utexas/ldrc/FREESURFER/
+subject dir /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_079 does not exist - skipping autorecon1
+brainmask /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_079/mri/brainmask.mgz does not exist - skipping copy
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 1887288
+TACC: Done.

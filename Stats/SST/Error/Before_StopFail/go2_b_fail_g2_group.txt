@@ -1,0 +1,39 @@
+[1] "S1 vs. Controls"
+
+	Welch Two Sample t-test
+
+data:  A_err_b_med$rt_med[A_err_b_med$go == "1" & A_err_b_med$group2 ==  and A_err_b_med$rt_med[A_err_b_med$go == "1" & A_err_b_med$group2 ==      "A_first"] and     "A_control"] 
+t = 2.1765, df = 48.829, p-value = 0.03439
+alternative hypothesis: true difference in means is not equal to 0 
+95 percent confidence interval:
+ 0.003766862 0.094578935 
+sample estimates:
+mean of x mean of y 
+0.6600920 0.6109191 
+
+[1] "S2 vs. Controls"
+
+	Welch Two Sample t-test
+
+data:  A_err_b_med$rt_med[A_err_b_med$go == "1" & A_err_b_med$group2 ==  and A_err_b_med$rt_med[A_err_b_med$go == "1" & A_err_b_med$group2 ==      "A_second"] and     "A_control"] 
+t = -0.6042, df = 21.241, p-value = 0.5521
+alternative hypothesis: true difference in means is not equal to 0 
+95 percent confidence interval:
+ -0.08704105  0.04782738 
+sample estimates:
+mean of x mean of y 
+0.5913123 0.6109191 
+
+[1] "S1 vs. S2"
+
+	Welch Two Sample t-test
+
+data:  A_err_b_med$rt_med[A_err_b_med$go == "1" & A_err_b_med$group2 ==  and A_err_b_med$rt_med[A_err_b_med$go == "1" & A_err_b_med$group2 ==      "A_first"] and     "A_second"] 
+t = 1.988, df = 26.533, p-value = 0.05722
+alternative hypothesis: true difference in means is not equal to 0 
+95 percent confidence interval:
+ -0.002265287  0.139824759 
+sample estimates:
+mean of x mean of y 
+0.6600920 0.5913123 
+

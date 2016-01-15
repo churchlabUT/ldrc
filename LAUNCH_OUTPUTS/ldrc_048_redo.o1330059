@@ -1,0 +1,35 @@
+TACC: Setting memory limits for job 1330059 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/bash
+#
+# SGE control file automatically created by launch
+# Launching single command: setup_ldrc_048.sh
+#
+#
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N ldrc_048_redo       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 1way 12
+#$ -q serial
+#$ -l h_rt=10:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+
+
+set -x                   # Echo commands, use "set echo" with csh
+setup_ldrc_048.sh
+--------------------------------------------------------------------------------
+TACC: Done.
++ setup_ldrc_048.sh
+/opt/sge6.2/execd_spool/c340-109/job_scripts/1330059: line 26: ./setup_ldrc_048.sh: Permission denied
+TACC: Cleaning up after job: 1330059
+TACC: Done.

@@ -1,0 +1,666 @@
+TACC: Setting memory limits for job 2013483 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: launch_SST_confound.txt
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N launch       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 2way 120
+#$ -q normal
+#$ -l h_rt=04:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE launch_SST_confound.txt
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+/bin/.: Permission denied.
+setenv: Too many arguments.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 2013483
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+Warning: Permanently added 'c328-307.ls4.tacc.utexas.edu,206.76.197.154' (RSA) to the list of known hosts.
+--------------------------------------------------
+TACC Launcher -> 20 processors allocated.
+TACC Launcher -> 38 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c328-307.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_032/BOLD/run03_10_SST_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+mcf = /corral-repl/utexas/ldrc/ldrc_c_032/BOLD/run03_10_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_032/BOLD/run03_10_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+TACC Launcher -> Iniating task 2 on c328-307.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_032/BOLD/run06_16_SST_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 13 on c314-212.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_054/BOLD/run07_21_SST_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 6 on c325-212.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_043/BOLD/run03_10_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 18 on c325-206.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_061/BOLD/run03_15_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 16 on c334-314.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_059/BOLD/run03_10_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 20 on c333-102.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_062/BOLD/run03_10_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 8 on c330-308.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_044/BOLD/run03_16_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 3 on c301-201.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_037/BOLD/run03_10_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 12 on c316-301.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_046/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 9 on c334-110.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_045/BOLD/run03_10_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 14 on c314-212.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_057/BOLD/run03_10_SST_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 5 on c325-212.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_039/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 17 on c325-206.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_059/BOLD/run06_18_SST_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 15 on c334-314.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_057/BOLD/run06_13_SST_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 19 on c333-102.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_061/BOLD/run06_21_SST_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 7 on c330-308.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_043/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 4 on c301-201.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_039/BOLD/run03_10_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 11 on c316-301.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_046/BOLD/run03_10_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 10 on c334-110.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_045/BOLD/run06_13_SST_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+mcf = /corral-repl/utexas/ldrc/ldrc_c_043/BOLD/run03_10_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_043/BOLD/run03_10_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+mcf = /corral-repl/utexas/ldrc/ldrc_c_044/BOLD/run03_16_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_044/BOLD/run03_16_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+Computing FD and scrubbing mask regressors 
+
+mcf = /corral-repl/utexas/ldrc/ldrc_c_039/BOLD/run06_19_SST_2/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_039/BOLD/run06_19_SST_2/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+mcf = /corral-repl/utexas/ldrc/ldrc_c_057/BOLD/run06_13_SST_2/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_057/BOLD/run06_13_SST_2/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+mcf = /corral-repl/utexas/ldrc/ldrc_c_062/BOLD/run03_10_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_062/BOLD/run03_10_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+mcf = /corral-repl/utexas/ldrc/ldrc_c_059/BOLD/run03_10_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_059/BOLD/run03_10_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+mcf = /corral-repl/utexas/ldrc/ldrc_c_057/BOLD/run03_10_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_057/BOLD/run03_10_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+mcf = /corral-repl/utexas/ldrc/ldrc_c_061/BOLD/run03_15_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_061/BOLD/run03_15_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+mcf = /corral-repl/utexas/ldrc/ldrc_c_043/BOLD/run06_19_SST_2/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_043/BOLD/run06_19_SST_2/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+mcf = /corral-repl/utexas/ldrc/ldrc_c_059/BOLD/run06_18_SST_2/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_059/BOLD/run06_18_SST_2/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+mcf = /corral-repl/utexas/ldrc/ldrc_c_054/BOLD/run07_21_SST_2/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_054/BOLD/run07_21_SST_2/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+mcf = /corral-repl/utexas/ldrc/ldrc_c_032/BOLD/run06_16_SST_2/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_032/BOLD/run06_16_SST_2/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+mcf = /corral-repl/utexas/ldrc/ldrc_c_061/BOLD/run06_21_SST_2/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_061/BOLD/run06_21_SST_2/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+mcf = /corral-repl/utexas/ldrc/ldrc_c_045/BOLD/run03_10_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_045/BOLD/run03_10_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+mcf = /corral-repl/utexas/ldrc/ldrc_c_045/BOLD/run06_13_SST_2/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_045/BOLD/run06_13_SST_2/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+mcf = /corral-repl/utexas/ldrc/ldrc_c_039/BOLD/run03_10_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_039/BOLD/run03_10_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+mcf = /corral-repl/utexas/ldrc/ldrc_c_037/BOLD/run03_10_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_037/BOLD/run03_10_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+mcf = /corral-repl/utexas/ldrc/ldrc_c_046/BOLD/run03_10_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_046/BOLD/run03_10_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+mcf = /corral-repl/utexas/ldrc/ldrc_c_046/BOLD/run06_19_SST_2/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_046/BOLD/run06_19_SST_2/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+brainmed = 12488.145508  ; maskmean = 0.225325 
+Calculating outliers
+Range of metric values: 0.034421 2.309300 
+Found 7 outliers over 0.9
+Generating EVs
+brainmed = 11635.376953  ; maskmean = 0.226055 
+brainmed = 12364.884766  ; maskmean = 0.221648 
+Calculating outliers
+Range of metric values: 0.029094 3.213580 
+Found 5 outliers over 0.9
+Generating EVs
+Calculating outliers
+Range of metric values: 0.039730 2.829810 
+Found 31 outliers over 0.9
+Generating EVs
+brainmed = 12764.124023  ; maskmean = 0.236680 
+Calculating outliers
+Range of metric values: 0.024789 8.602110 
+Found 7 outliers over 0.9
+Generating EVs
+brainmed = 12266.159180  ; maskmean = 0.231365 
+brainmed = 12124.438477  ; maskmean = 0.221935 
+brainmed = 16793.679688  ; maskmean = 0.240261 
+brainmed = 12617.457031  ; maskmean = 0.253857 
+Calculating outliers
+Calculating outliers
+Range of metric values: 0.031471 8.945000 
+Range of metric values: 0.028201 3.507970 
+Found 9 outliers over 0.9
+Generating EVs
+Found 59 outliers over 0.9
+Generating EVs
+Calculating outliers
+Range of metric values: 0.022358 0.992119 
+Calculating outliers
+Range of metric values: 0.027401 8.120460 
+Found 1 outliers over 0.9
+Generating EVs
+Found 27 outliers over 0.9
+Generating EVs
+brainmed = 13486.792969  ; maskmean = 0.213371 
+brainmed = 12166.296875  ; maskmean = 0.240982 
+Calculating outliers
+Range of metric values: 0.022169 3.247810 
+Found 22 outliers over 0.9
+Generating EVs
+Calculating outliers
+Range of metric values: 0.032043 2.392180 
+Found 6 outliers over 0.9
+Generating EVs
+brainmed = 12414.813477  ; maskmean = 0.226983 
+Calculating outliers
+Range of metric values: 0.028578 4.749190 
+Found 16 outliers over 0.9
+Generating EVs
+Found spikes at  85 149 150 151 154 174 175
+TACC Launcher -> Iniating task 29 on c334-110.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_082/BOLD/run03_13_SST_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+brainmed = 14134.166992  ; maskmean = 0.214188 
+mcf = /corral-repl/utexas/ldrc/ldrc_c_082/BOLD/run03_13_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_082/BOLD/run03_13_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+Found spikes at  35 88 89 94 95
+brainmed = 12869.625000  ; maskmean = 0.222856 
+TACC Launcher -> Iniating task 22 on c328-307.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_068/BOLD/run03_13_SST_1/bold.nii.gz 0.9)
+brainmed = 13492.875000  ; maskmean = 0.213051 
+Creating separate motion parameter files ...
+Calculating outliers
+Range of metric values: 0.011185 0.447029 
+Found 0 outliers over 0.9
+Generating EVs
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Calculating outliers
+Calculating outliers
+Range of metric values: 0.052917 8.903510 
+Range of metric values: 0.016648 0.370292 
+Found 0 outliers over 0.9
+Generating EVs
+Found 39 outliers over 0.9
+Generating EVs
+mcf = /corral-repl/utexas/ldrc/ldrc_c_068/BOLD/run03_13_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_068/BOLD/run03_13_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+brainmed = 17393.496094  ; maskmean = 0.245332 
+Calculating outliers
+Range of metric values: 0.016604 0.934144 
+Found 1 outliers over 0.9
+Generating EVs
+brainmed = 14008.708984  ; maskmean = 0.217986 
+Calculating outliers
+Range of metric values: 0.022689 3.689330 
+Found 15 outliers over 0.9
+Generating EVs
+Found spikes at  1
+TACC Launcher -> Iniating task 27 on c330-308.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_081/BOLD/run03_13_SST_1/bold.nii.gz 0.9)
+brainmed = 11783.928711  ; maskmean = 0.240986 
+Creating separate motion parameter files ...
+Found spikes at  26 27 34 36 48 49 64 65 66 67 72 73 83 91 92 93 98 99 100 101 102 124 125 158 167 168 169 170 177 178 179
+Found spikes at  87 95 96 97 108 138 139
+TACC Launcher -> Iniating task 30 on c334-110.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_082/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 36 on c334-314.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_085/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+Calculating outliers
+Range of metric values: 0.027002 5.721040 
+mcf = /corral-repl/utexas/ldrc/ldrc_c_081/BOLD/run03_13_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_081/BOLD/run03_13_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+Found 14 outliers over 0.9
+Generating EVs
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+mcf = /corral-repl/utexas/ldrc/ldrc_c_082/BOLD/run06_19_SST_2/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_082/BOLD/run06_19_SST_2/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+mcf = /corral-repl/utexas/ldrc/ldrc_c_085/BOLD/run06_19_SST_2/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_085/BOLD/run06_19_SST_2/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+brainmed = 12729.092773  ; maskmean = 0.230045 
+brainmed = 13011.697266  ; maskmean = 0.225192 
+Found spikes at  27 55 93 94 95 96 126 173 174
+Found spikes at 
+Found spikes at  7 16 22 23 24 25 32 34 50 86 103 104 148 149 154 155 169 171 172 173 174 175
+Found spikes at  1 8 9 10 18 19 24 27 28 29 43 48 71 72 73 102 103 104 105 142 149 150 151 158 159 160 167
+TACC Launcher -> Iniating task 38 on c325-206.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_086/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Calculating outliers
+TACC Launcher -> Iniating task 21 on c328-307.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_062/BOLD/run06_15_SST_2/bold.nii.gz 0.9)
+Range of metric values: 0.010518 2.213520 
+TACC Launcher -> Iniating task 25 on c325-212.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_079/BOLD/run03_13_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 33 on c314-212.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_084/BOLD/run03_13_SST_1/bold.nii.gz 0.9)
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Found 2 outliers over 0.9
+Generating EVs
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Calculating outliers
+Range of metric values: 0.010642 4.510360 
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+mcf = /corral-repl/utexas/ldrc/ldrc_c_086/BOLD/run06_19_SST_2/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_086/BOLD/run06_19_SST_2/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+Found 3 outliers over 0.9
+Generating EVs
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+mcf = /corral-repl/utexas/ldrc/ldrc_c_079/BOLD/run03_13_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_079/BOLD/run03_13_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+mcf = /corral-repl/utexas/ldrc/ldrc_c_084/BOLD/run03_13_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_084/BOLD/run03_13_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+mcf = /corral-repl/utexas/ldrc/ldrc_c_062/BOLD/run06_15_SST_2/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_062/BOLD/run06_15_SST_2/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+Found spikes at  64 102 104 177 178 179
+Found spikes at  11 12 13 14 49 50 51 66 68 90 91 101 102 128 129 132
+TACC Launcher -> Iniating task 31 on c316-301.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_083/BOLD/run03_25_SST_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+brainmed = 10464.789062  ; maskmean = 0.256756 
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+mcf = /corral-repl/utexas/ldrc/ldrc_c_083/BOLD/run03_25_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_083/BOLD/run03_25_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+Calculating outliers
+Range of metric values: 0.009544 2.080300 
+Found 3 outliers over 0.9
+Generating EVs
+Found spikes at 
+TACC Launcher -> Iniating task 28 on c330-308.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_081/BOLD/run06_26_SST_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Found spikes at  83
+TACC Launcher -> Iniating task 26 on c325-212.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_079/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+mcf = /corral-repl/utexas/ldrc/ldrc_c_081/BOLD/run06_26_SST_2/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_081/BOLD/run06_26_SST_2/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+mcf = /corral-repl/utexas/ldrc/ldrc_c_079/BOLD/run06_19_SST_2/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_079/BOLD/run06_19_SST_2/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+Found spikes at  49 50 54 87 88 89 119 120 121 144 145 146 178 179
+Found spikes at  25 83 84 86 114 115 116 118 162 164 165 170 171 172 173
+TACC Launcher -> Iniating task 24 on c301-201.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_078/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+mcf = /corral-repl/utexas/ldrc/ldrc_c_078/BOLD/run06_19_SST_2/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_078/BOLD/run06_19_SST_2/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+Found spikes at  15 16 25 28 43 46 50 51 52 53 54 55 56 57 59 66 67 68 69 72 80 81 103 104 105 111 112 113 114 118 139 140 141 146 171 172 173 174 175
+TACC Launcher -> Iniating task 32 on c316-301.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_083/BOLD/run05_29_SST_2/bold.nii.gz 0.9)
+Found spikes at  175 176 177
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 23 on c301-201.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_078/BOLD/run03_13_SST_1/bold.nii.gz 0.9)
+Found spikes at  5 6
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+mcf = /corral-repl/utexas/ldrc/ldrc_c_078/BOLD/run03_13_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_078/BOLD/run03_13_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+TACC Launcher -> Iniating task 37 on c325-206.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_086/BOLD/run03_13_SST_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+mcf = /corral-repl/utexas/ldrc/ldrc_c_083/BOLD/run05_29_SST_2/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_083/BOLD/run05_29_SST_2/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+mcf = /corral-repl/utexas/ldrc/ldrc_c_086/BOLD/run03_13_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_086/BOLD/run03_13_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+Found spikes at  4 13 14 17 36 37 38 39 42 50 51 52 53 54 55 71 72 73 77 79 81 82 83 91 96 97 98 111 117 118 119 122 124 134 135 136 138 142 143 144 145 146 147 148 149 152 157 158 159 160 161 162 163 164 165 171 176 177 178
+TACC Launcher -> Iniating task 35 on c334-314.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_085/BOLD/run03_13_SST_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+mcf = /corral-repl/utexas/ldrc/ldrc_c_085/BOLD/run03_13_SST_1/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_085/BOLD/run03_13_SST_1/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+Found spikes at  105 153 162
+TACC Launcher -> Iniating task 34 on c314-212.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_084/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+mcf = /corral-repl/utexas/ldrc/ldrc_c_084/BOLD/run06_19_SST_2/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_084/BOLD/run06_19_SST_2/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+refnum = 90
+Original_refvol = 90
+brainmed = 14428.545898  ; maskmean = 0.214180 
+Calculating outliers
+Range of metric values: 0.026527 1.234830 
+Found 1 outliers over 0.9
+Generating EVs
+brainmed = 14838.126953  ; maskmean = 0.245026 
+Calculating outliers
+Range of metric values: 0.018310 2.764270 
+brainmed = 14182.991211  ; maskmean = 0.212254 
+Found 2 outliers over 0.9
+Generating EVs
+Calculating outliers
+Range of metric values: 0.032028 0.696401 
+Found 0 outliers over 0.9
+Generating EVs
+Found spikes at  46
+brainmed = 12488.212891  ; maskmean = 0.223016 
+Calculating outliers
+Range of metric values: 0.040623 2.252060 
+Found 19 outliers over 0.9
+Generating EVs
+brainmed = 17045.269531  ; maskmean = 0.215570 
+Calculating outliers
+Range of metric values: 0.012489 0.368341 
+Found 0 outliers over 0.9
+Generating EVs
+brainmed = 11612.602539  ; maskmean = 0.236947 
+brainmed = 14824.441406  ; maskmean = 0.224706 
+Calculating outliers
+Range of metric values: 0.021892 6.739520 
+Found 25 outliers over 0.9
+Generating EVs
+Calculating outliers
+Range of metric values: 0.036710 7.030250 
+Found 14 outliers over 0.9
+Generating EVs
+brainmed = 18446.255859  ; maskmean = 0.210509 
+Calculating outliers
+Range of metric values: 0.011858 3.435540 
+Found spikes at  38 141
+Found 12 outliers over 0.9
+Generating EVs
+brainmed = 13729.682617  ; maskmean = 0.180359 
+Calculating outliers
+Range of metric values: 0.021262 0.232194 
+Found 0 outliers over 0.9
+Generating EVs
+brainmed = 14323.741211  ; maskmean = 0.226875 
+Calculating outliers
+Range of metric values: 0.036734 4.469740 
+Found 16 outliers over 0.9
+Generating EVs
+Found spikes at 
+brainmed = 13816.576172  ; maskmean = 0.178444 
+Calculating outliers
+Range of metric values: 0.020861 0.452072 
+Found 0 outliers over 0.9
+Generating EVs
+brainmed = 12736.727539  ; maskmean = 0.179782 
+Calculating outliers
+Range of metric values: 0.037803 1.825330 
+Found 8 outliers over 0.9
+Generating EVs
+Found spikes at 
+brainmed = 18243.667969  ; maskmean = 0.213418 
+Calculating outliers
+Range of metric values: 0.016639 6.004250 
+Found spikes at  6 43 44 49 51 54 61 83 84 88 106 108 147 148 149 163 164 171 172
+Found 8 outliers over 0.9
+Generating EVs
+Found spikes at 
+Found spikes at  88 131 132 133 135 136 137 139 140 144 145 147 148 165
+Found spikes at  12 60 65 66 71 72 73 86 87 109 110 120 124 129 130 132 133 134 135 150 156 157 158 159 179
+Found spikes at  2 7 8 15 17 19 129 153 165 175 176 177
+Found spikes at  25 35 43 60 62 68 80 81 82 83 113 116 117 138 139 179
+Found spikes at  109 110 111 112 165 166 167 178
+Found spikes at 
+brainmed = 17135.076172  ; maskmean = 0.215099 
+Calculating outliers
+Range of metric values: 0.006506 0.507935 
+Found 0 outliers over 0.9
+Generating EVs
+brainmed = 13365.261719  ; maskmean = 0.202752 
+Calculating outliers
+Range of metric values: 0.015112 0.773791 
+Found 0 outliers over 0.9
+Generating EVs
+Found spikes at  25 26 64 65 170 171 177 178
+brainmed = 12663.479492  ; maskmean = 0.177845 
+Calculating outliers
+Range of metric values: 0.024747 0.544057 
+Found 0 outliers over 0.9
+Generating EVs
+Found spikes at 
+brainmed = 14103.794922  ; maskmean = 0.242168 
+Calculating outliers
+Range of metric values: 0.013374 2.413690 
+Found 8 outliers over 0.9
+Generating EVs
+Found spikes at 
+Found spikes at 
+brainmed = 12514.383789  ; maskmean = 0.261506 
+Calculating outliers
+Range of metric values: 0.005980 1.311700 
+Found 1 outliers over 0.9
+Generating EVs
+Found spikes at  6 40 41 101 158 165 177 179
+Found spikes at  1
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 2013483
+TACC: Done.

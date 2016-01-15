@@ -1,0 +1,114 @@
+TACC: Setting memory limits for job 2585849 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: launch_SST_confound.txt
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N launch       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 2way 120
+#$ -q normal
+#$ -l h_rt=04:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE launch_SST_confound.txt
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 2585849
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+Warning: Permanently added 'c305-208.ls4.tacc.utexas.edu,206.76.193.59' (RSA) to the list of known hosts.
+Warning: Permanently added 'c331-211.ls4.tacc.utexas.edu,206.76.198.30' (RSA) to the list of known hosts.
+Warning: Permanently added 'c324-105.ls4.tacc.utexas.edu,206.76.196.184' (RSA) to the list of known hosts.
+Warning: Permanently added 'c308-204.ls4.tacc.utexas.edu,206.76.193.199' (RSA) to the list of known hosts.
+Warning: Permanently added 'c336-207.ls4.tacc.utexas.edu,206.76.199.10' (RSA) to the list of known hosts.
+Warning: Permanently added 'c336-205.ls4.tacc.utexas.edu,206.76.199.8' (RSA) to the list of known hosts.
+Warning: Permanently added 'c331-306.ls4.tacc.utexas.edu,206.76.198.41' (RSA) to the list of known hosts.
+Warning: Permanently added 'c326-113.ls4.tacc.utexas.edu,206.76.197.32' (RSA) to the list of known hosts.
+Warning: Permanently added 'c304-315.ls4.tacc.utexas.edu,206.76.193.34' (RSA) to the list of known hosts.
+Warning: Permanently added 'c321-109.ls4.tacc.utexas.edu,206.76.196.44' (RSA) to the list of known hosts.
+--------------------------------------------------
+TACC Launcher -> 20 processors allocated.
+TACC Launcher -> 7 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c305-208.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc2_0_122_second/BOLD/run03_13_SST_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 2 on c305-208.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc2_0_122_second/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 7 on c336-205.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc2_1_125_second/BOLD/run06_33_SST_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 6 on c321-109.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc2_1_125_second/BOLD/run03_17_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 3 on c324-105.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc2_0_151_second/BOLD/bad_run06_26_SST_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 5 on c321-109.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc2_0_151_second/BOLD/run06_28_SST_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 4 on c324-105.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc2_0_151_second/BOLD/run03_13_SST_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 2585849
+TACC: Done.

@@ -1,0 +1,2 @@
+/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/LDFHO24768_1/BOLD/run01_7_REST_1/bold.nii.gz 0.2
+/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/LDFHO24768_1/BOLD/run05_17_REST_2/bold.nii.gz 0.2

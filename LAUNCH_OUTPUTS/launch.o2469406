@@ -1,0 +1,106 @@
+TACC: Setting memory limits for job 2469406 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: launch_A_SST_events.txt
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N launch       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 2way 120
+#$ -q normal
+#$ -l h_rt=04:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE launch_A_SST_events.txt
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 2469406
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+Warning: Permanently added 'c306-208.ls4.tacc.utexas.edu,206.76.193.107' (RSA) to the list of known hosts.
+Warning: Permanently added 'c305-315.ls4.tacc.utexas.edu,206.76.193.82' (RSA) to the list of known hosts.
+Warning: Permanently added 'c310-308.ls4.tacc.utexas.edu,206.76.194.59' (RSA) to the list of known hosts.
+Warning: Permanently added 'c315-311.ls4.tacc.utexas.edu,206.76.195.46' (RSA) to the list of known hosts.
+Warning: Permanently added 'c308-216.ls4.tacc.utexas.edu,206.76.193.211' (RSA) to the list of known hosts.
+Warning: Permanently added 'c338-211.ls4.tacc.utexas.edu,206.76.199.110' (RSA) to the list of known hosts.
+Warning: Permanently added 'c321-211.ls4.tacc.utexas.edu,206.76.196.62' (RSA) to the list of known hosts.
+Warning: Permanently added 'c312-202.ls4.tacc.utexas.edu,206.76.194.133' (RSA) to the list of known hosts.
+Warning: Permanently added 'c336-301.ls4.tacc.utexas.edu,206.76.199.20' (RSA) to the list of known hosts.
+
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+
+
+
+
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+
+
+
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+--------------------------------------------------
+TACC Launcher -> 20 processors allocated.
+TACC Launcher -> 2 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c308-216.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/SST_event_maker.py /corral-repl/utexas/ldrc/ldrc_c_103/behav/SST/SST_Run1/ldrc2_103_SST_1_2014-09-27-11_02_40_subdata.pkl /corral-repl/utexas/ldrc/ldrc_c_103/behav/SST/SST_Run1)
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+TACC Launcher -> Iniating task 2 on c308-216.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/SST_event_maker.py /corral-repl/utexas/ldrc/ldrc_c_103/behav/SST/SST_Run2/ldrc2_103_SST_2_2014-09-27-11_27_17_subdata.pkl /corral-repl/utexas/ldrc/ldrc_c_103/behav/SST/SST_Run2)
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 2469406
+TACC: Done.

@@ -1,0 +1,252 @@
+TACC: Setting memory limits for job 1049244 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/bash
+#
+# SGE control file automatically created by launch
+# Launching single command: setup_LDIMG8972.sh
+#
+#
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N H_LD8972       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 1way 12
+#$ -q serial
+#$ -l h_rt=10:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+
+
+set -x                   # Echo commands, use "set echo" with csh
+setup_LDIMG8972.sh
+--------------------------------------------------------------------------------
+TACC: Done.
++ setup_LDIMG8972.sh
+subdir /corral-repl/utexas/ldrc/LDIMG8972_MR1 already exists
+overwriting...
+checking for /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS
+parsing  1301
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1301/DICOM
+detected BOLD: (1301) FMRI_REST_EYES OPEN_2 SENSE FMRI_REST_EYES OPEN_2
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1301/DICOM
+parsing  1401
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1401/DICOM
+detected BOLD: (1401) FMRI_SST_2 SENSE FMRI_SST_2
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1401/DICOM
+parsing  1501
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1501/DICOM
+detected BOLD: (1501) FMRI_SC_3 SENSE FMRI_SC_3
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1501/DICOM
+parsing  1601
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1601/DICOM
+detected DTI: (1601) WIP AX DTI 60DIR SENSE AX DTI 60DIR
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/DTI /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1601/DICOM
+parsing  1701
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1701/DICOM
+detected fieldmap: (1701) WIP Ax B0_Map_yes SENSE Ax B0_Map_yes
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/fieldmap /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1701/DICOM
+parsing  1801
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1801/DICOM
+detected fieldmap: (1801) WIP Ax B0_Map_yes SENSE Ax B0_Map_yes
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/fieldmap /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1801/DICOM
+parsing  401
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/401/DICOM
+detected anatomy: (401) 3DSAG VISTA_T2_FATSAT SENSE 3DSAG VISTA_T2_FATSAT
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/anatomy /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/401/DICOM
+parsing  501
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/501/DICOM
+detected BOLD: (501) FMRI_REST_EYES OPEN_1 SENSE FMRI_REST_EYES OPEN_1
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/501/DICOM
+parsing  701
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/701/DICOM
+detected BOLD: (701) FMRI_SC_1 SENSE FMRI_SC_1
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/701/DICOM
+parsing  801
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/801/DICOM
+detected BOLD: (801) FMRI_SST 1 SENSE FMRI_SST 1
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/801/DICOM
+parsing  1201
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1201/DICOM
+detected BOLD: (1201) FMRI_SC_2 SENSE FMRI_SC_2
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1201/DICOM
+parsing  301
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/301/DICOM
+detected anatomy: (301) 3DSAG_T1_1MM_PRE SENSE 3DSAG_T1_1MM_PRE
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/anatomy /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/301/DICOM
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRIRESTEYESOPEN2SENSEs1301a1013.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_REST_EYES_OPEN_2_SENSE_1301/bold.nii.gz
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRISST2SENSEs1401a1014.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SST_2_SENSE_1401/bold.nii.gz
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRISC3SENSEs1501a1015.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SC_3_SENSE_1501/bold.nii.gz
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRIRESTEYESOPEN1SENSEs501a1005.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_REST_EYES_OPEN_1_SENSE_501/bold.nii.gz
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRISC1SENSEs701a1007.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SC_1_SENSE_701/bold.nii.gz
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRISST1SENSEs801a1008.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SST_1_SENSE_801/bold.nii.gz
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRISC2SENSEs1201a1012.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SC_2_SENSE_1201/bold.nii.gz
+3DSAGVISTAT2FATSATSENSEs401a1004.nii.gz
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/anatomy/3DSAGVISTAT2FATSATSENSEs401a1004.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/anatomy/other
+o3DSAGVISTAT2FATSATSENSEs401a1004.nii.gz
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/anatomy/o3DSAGVISTAT2FATSATSENSEs401a1004.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/anatomy/other
+3DSAGT11MMPRESENSEs301a1003.nii.gz
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/anatomy/3DSAGT11MMPRESENSEs301a1003.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/anatomy/other
+o3DSAGT11MMPRESENSEs301a1003.nii.gz
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/anatomy/o3DSAGT11MMPRESENSEs301a1003.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/anatomy/highres001.nii.gz
+co3DSAGT11MMPRESENSEs301a1003.nii.gz
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/anatomy/co3DSAGT11MMPRESENSEs301a1003.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/anatomy/other
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/DTI/WIPAXDTI60DIRSENSEs1601a1016.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/DTI/DTI_1.nii.gz
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/DTI/WIPAXDTI60DIRSENSEs1601a1016.bvec /corral-repl/utexas/ldrc/LDIMG8972_MR1/DTI/DTI_1.bvec
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/DTI/WIPAXDTI60DIRSENSEs1601a1016.bval /corral-repl/utexas/ldrc/LDIMG8972_MR1/DTI/DTI_1.bval
+bolddirs:
+['FMRI_SST_2_SENSE_1401', 'FMRI_SC_3_SENSE_1501', 'FMRI_REST_EYES_OPEN_1_SENSE_501', 'FMRI_SC_1_SENSE_701', 'FMRI_SST_1_SENSE_801', 'FMRI_SC_2_SENSE_1201', 'FMRI_REST_EYES_OPEN_2_SENSE_1301']
+TR: {'FMRI_SC_1_SENSE_701': 2.0, 'FMRI_REST_EYES_OPEN_1_SENSE_501': 2.0, 'FMRI_SST_2_SENSE_1401': 2.0, 'FMRI_SC_2_SENSE_1201': 2.0, 'FMRI_SC_3_SENSE_1501': 2.0, 'FMRI_SST_1_SENSE_801': 2.0, 'FMRI_REST_EYES_OPEN_2_SENSE_1301': 2.0}
+k: motcorr
+'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+mcflirt -in /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SST_2_SENSE_1401/bold.nii.gz -plots -sinc_final
+logs: ERROR: refnum = 90
+Original_refvol = -1
+
+k: motcorr
+'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+mcflirt -in /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SC_3_SENSE_1501/bold.nii.gz -plots -sinc_final
+logs: ERROR: refnum = 106
+Original_refvol = -1
+
+k: motcorr
+'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+mcflirt -in /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_REST_EYES_OPEN_1_SENSE_501/bold.nii.gz -plots -sinc_final
+logs: ERROR: refnum = 90
+Original_refvol = -1
+
+k: motcorr
+'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+mcflirt -in /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SC_1_SENSE_701/bold.nii.gz -plots -sinc_final
+logs: ERROR: refnum = 106
+Original_refvol = -1
+
+k: motcorr
+'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+mcflirt -in /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SST_1_SENSE_801/bold.nii.gz -plots -sinc_final
+logs: ERROR: refnum = 0
+Original_refvol = -1
+
+k: motcorr
+'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+mcflirt -in /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SC_2_SENSE_1201/bold.nii.gz -plots -sinc_final
+logs: ERROR: refnum = 106
+Original_refvol = -1
+
+k: motcorr
+'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+mcflirt -in /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_REST_EYES_OPEN_2_SENSE_1301/bold.nii.gz -plots -sinc_final
+logs: ERROR: refnum = 90
+Original_refvol = -1
+
+k: betfunc
+'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+bet /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SST_2_SENSE_1401/bold_mcf.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SST_2_SENSE_1401/bold_mcf_brain.nii.gz -F
+k: betfunc
+'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+bet /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SC_3_SENSE_1501/bold_mcf.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SC_3_SENSE_1501/bold_mcf_brain.nii.gz -F
+k: betfunc
+'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+bet /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_REST_EYES_OPEN_1_SENSE_501/bold_mcf.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_REST_EYES_OPEN_1_SENSE_501/bold_mcf_brain.nii.gz -F
+k: betfunc
+'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+bet /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SC_1_SENSE_701/bold_mcf.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SC_1_SENSE_701/bold_mcf_brain.nii.gz -F
+k: betfunc
+'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+bet /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SST_1_SENSE_801/bold_mcf.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SST_1_SENSE_801/bold_mcf_brain.nii.gz -F
+k: betfunc
+'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+bet /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SC_2_SENSE_1201/bold_mcf.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SC_2_SENSE_1201/bold_mcf_brain.nii.gz -F
+k: betfunc
+'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+bet /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_REST_EYES_OPEN_2_SENSE_1301/bold_mcf.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_REST_EYES_OPEN_2_SENSE_1301/bold_mcf_brain.nii.gz -F
+k: qa
+'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),tr_series)
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+fmriqa.py /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SST_2_SENSE_1401/bold_mcf.nii.gz 2.000000
+k: qa
+'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),tr_series)
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+fmriqa.py /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SC_3_SENSE_1501/bold_mcf.nii.gz 2.000000
+k: qa
+'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),tr_series)
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+fmriqa.py /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_REST_EYES_OPEN_1_SENSE_501/bold_mcf.nii.gz 2.000000
+k: qa
+'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),tr_series)
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+fmriqa.py /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SC_1_SENSE_701/bold_mcf.nii.gz 2.000000
+k: qa
+'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),tr_series)
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+fmriqa.py /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SST_1_SENSE_801/bold_mcf.nii.gz 2.000000
+logs: ERROR: Traceback (most recent call last):
+  File "/corral-repl/utexas/poldracklab/software_lonestar/local/bin/fmriqa.py", line 296, in <module>
+    main()
+  File "/corral-repl/utexas/poldracklab/software_lonestar/local/bin/fmriqa.py", line 94, in main
+    ntp=imgdata.shape[3]
+IndexError: tuple index out of range
+
+k: qa
+'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),tr_series)
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+fmriqa.py /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SC_2_SENSE_1201/bold_mcf.nii.gz 2.000000
+k: qa
+'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),tr_series)
+/corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD
+2.0
+fmriqa.py /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_REST_EYES_OPEN_2_SENSE_1301/bold_mcf.nii.gz 2.000000
+subject dir %s already exists - overwriting
+brainmask /corral-repl/utexas/ldrc/ldrc_LDIMG8972_MR1/mri/brainmask.mgz already exists - skipping autorecon1
+mri_convert --out_orientation LAS /corral-repl/utexas/ldrc/ldrc_LDIMG8972_MR1/mri/brainmask.mgz --reslice_like /corral-repl/utexas/ldrc/LDIMG8972_MR1/anatomy/highres001.nii.gz  /corral-repl/utexas/ldrc/LDIMG8972_MR1/anatomy/highres001_brain.nii
+gzip  /corral-repl/utexas/ldrc/LDIMG8972_MR1/anatomy/highres001_brain.nii
+logs: ERROR: gzip: No such file or directory
+
+fslmaths /corral-repl/utexas/ldrc/LDIMG8972_MR1/anatomy/highres001_brain.nii.gz -thr 1 -bin /corral-repl/utexas/ldrc/LDIMG8972_MR1/anatomy/highres001_brain_mask.nii.gz
+found DTI file: DTI_1.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/LDIMG8972_MR1/DTI/DTI_1.nii.gz
+logs: ERROR: Unable to access the X Display, is $DISPLAY set properly?
+
+TACC: Cleaning up after job: 1049244
+TACC: Done.

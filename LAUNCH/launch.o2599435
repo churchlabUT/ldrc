@@ -1,0 +1,129 @@
+TACC: Setting memory limits for job 2599435 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: launch_SST_rest_trim_h.txt
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N launch       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 12way 84
+#$ -q normal
+#$ -l h_rt=02:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE launch_SST_rest_trim_h.txt
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+/bin/.: Permission denied.
+setenv: Too many arguments.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 2599435
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+--------------------------------------------------
+TACC Launcher -> 84 processors allocated.
+TACC Launcher -> 72 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c322-304.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10238_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_8/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10238_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_8/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 3 on c322-304.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10238_1_second/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_8/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10238_1_second/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_8/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 4 on c322-304.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10238_1_second/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_17/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10238_1_second/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_17/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 9 on c322-304.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10328_1/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_17/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10328_1/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_17/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 2 on c322-304.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10238_1/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_18/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10238_1/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_18/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 10 on c322-304.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10328_1_second/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10328_1_second/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 6 on c322-304.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10297_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_9/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10297_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_9/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 12 on c322-304.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10394_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_13/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10394_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_13/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 25 on c309-116.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO1794_1_second/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_5/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO1794_1_second/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_5/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 11 on c322-304.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10328_1_second/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_16/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10328_1_second/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_16/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 26 on c309-116.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO1794_1_second_2/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_10/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO1794_1_second_2/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_10/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 29 on c309-116.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO5782_1/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_17/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO5782_1/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_17/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 28 on c309-116.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO5782_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO5782_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 27 on c309-116.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO1794_1_second_2/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_14/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO1794_1_second_2/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_14/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 30 on c309-116.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO5827_1_second/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO5827_1_second/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 7 on c322-304.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10297_1/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_18/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10297_1/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_18/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 32 on c309-116.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO6598_0/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO6598_0/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 31 on c309-116.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO5827_1_second/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_16/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO5827_1_second/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_16/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 34 on c309-116.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO9087_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_7/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO9087_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_7/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 35 on c309-116.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO9087_1/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_16/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO9087_1/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_16/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 36 on c309-116.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO9087_1_second/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO9087_1_second/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 8 on c322-304.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10328_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10328_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 5 on c322-304.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10297_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10297_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 13 on c329-110.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10452_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_15/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10452_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_15/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 14 on c329-110.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10452_1/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_18/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10452_1/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_18/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 16 on c329-110.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10493_1/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_15/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10493_1/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_15/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 15 on c329-110.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10493_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10493_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 24 on c329-110.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO12307_1_second/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_15/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO12307_1_second/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_15/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 21 on c329-110.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO12307_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO12307_1/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 20 on c329-110.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10743_1_second/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_15/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10743_1_second/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_15/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 19 on c329-110.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10743_1_second/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10743_1_second/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 33 on c309-116.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO6598_0/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_15/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO6598_0/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_15/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 23 on c329-110.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO12307_1_second/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO12307_1_second/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 22 on c329-110.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO12307_1/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_16/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO12307_1/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_16/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 17 on c329-110.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10493_1_second/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10493_1_second/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_6/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 18 on c329-110.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10493_1_second/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_15/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10493_1_second/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_15/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 45 on c332-112.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10328_1/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_16/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10328_1/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_16/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 48 on c332-112.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10394_1/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_10/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10394_1/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_10/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 41 on c332-112.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10238_1_second/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_16/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10238_1_second/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_16/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 42 on c332-112.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10297_1/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10297_1/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 46 on c332-112.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10328_1_second/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10328_1_second/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 37 on c332-112.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO9087_1_second/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_16/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO9087_1_second/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_16/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 40 on c332-112.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10238_1_second/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10238_1_second/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 44 on c332-112.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10328_1/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10328_1/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 43 on c332-112.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10297_1/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_17/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10297_1/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_17/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 38 on c332-112.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10238_1/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_6/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10238_1/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_6/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 39 on c332-112.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10238_1/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_17/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10238_1/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_17/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 47 on c332-112.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10328_1_second/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_15/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10328_1_second/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_15/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 51 on c309-101.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10493_1/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10493_1/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 58 on c309-101.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO12307_1/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_15/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO12307_1/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_15/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 50 on c309-101.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10452_1/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_17/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10452_1/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_17/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 57 on c309-101.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO12307_1/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO12307_1/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 53 on c309-101.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10493_1_second/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10493_1_second/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 59 on c309-101.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO12307_1_second/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO12307_1_second/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 56 on c309-101.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10743_1_second/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_14/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10743_1_second/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_14/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 55 on c309-101.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10743_1_second/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10743_1_second/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 63 on c327-102.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO5782_1/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO5782_1/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 64 on c327-102.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO5782_1/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_16/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO5782_1/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_16/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 69 on c327-102.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO9087_1/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_5/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO9087_1/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_5/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 71 on c327-102.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO9087_1_second/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO9087_1_second/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 65 on c327-102.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO5827_1_second/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO5827_1_second/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 67 on c327-102.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO6598_0/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO6598_0/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 68 on c327-102.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO6598_0/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_14/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO6598_0/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_14/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 62 on c327-102.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO1794_1_second/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_16/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO1794_1_second/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_16/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 49 on c309-101.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10452_1/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10452_1/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 54 on c309-101.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10493_1_second/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_14/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10493_1_second/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_14/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 52 on c309-101.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO10493_1/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_14/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO10493_1/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_14/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 60 on c309-101.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO12307_1_second/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_14/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO12307_1_second/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_14/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 61 on c327-102.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO1794_1_second/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO1794_1_second/BOLD/Rest_RUN1_32_Sl_iPAT_3x3x3_4/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 72 on c327-102.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO9087_1_second/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_14/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO9087_1_second/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_14/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 70 on c327-102.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO9087_1/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_15/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO9087_1/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_15/bold.nii.gz 5 180)
+TACC Launcher -> Iniating task 66 on c327-102.ls4.tacc.utexas.edu (fslroi /corral-repl/utexas/ldrc/LDFHO5827_1_second/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_15/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO5827_1_second/BOLD/Rest_RUN2_32_Sl_iPAT_3x3x3_15/bold.nii.gz 5 180)
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 2599435
+TACC: Done.

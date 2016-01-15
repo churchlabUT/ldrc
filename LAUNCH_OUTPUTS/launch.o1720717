@@ -1,0 +1,266 @@
+TACC: Setting memory limits for job 1720717 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: launch_A_SC_onsets.txt
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N launch       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 12way 72
+#$ -q normal
+#$ -l h_rt=02:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE launch_A_SC_onsets.txt
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+/bin/.: Permission denied.
+setenv: Too many arguments.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 1720717
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+Warning: Permanently added 'c332-313.ls4.tacc.utexas.edu,206.76.198.96' (RSA) to the list of known hosts.
+Warning: Permanently added 'c317-305.ls4.tacc.utexas.edu,206.76.195.136' (RSA) to the list of known hosts.
+Warning: Permanently added 'c317-314.ls4.tacc.utexas.edu,206.76.195.145' (RSA) to the list of known hosts.
+Warning: Permanently added 'c331-114.ls4.tacc.utexas.edu,206.76.198.17' (RSA) to the list of known hosts.
+--------------------------------------------------
+TACC Launcher -> 72 processors allocated.
+TACC Launcher -> 41 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c331-306.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_0_013_second/behav/SC/SC_Run2/013_second_SC_2_2013-05-04-14_14_06_subdata.pkl /corral-repl/utexas/ldrc/ldrc_0_013_second/behav/SC/SC_Run2)
+TACC Launcher -> Iniating task 5 on c331-306.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_0_049_second/behav/SC/SC_Run2/049_SC_2_2013-07-23-13_37_10_subdata.pkl /corral-repl/utexas/ldrc/ldrc_0_049_second/behav/SC/SC_Run2)
+TACC Launcher -> Iniating task 11 on c331-306.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_1_001_second/behav/SC/SC_Run2/001_second_sc_2_2013-07-25-09_15_05_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_001_second/behav/SC/SC_Run2)
+TACC Launcher -> Iniating task 2 on c331-306.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_0_013_second/behav/SC/SC_Run3/013_second_SC_3_2013-05-04-14_38_10_subdata.pkl /corral-repl/utexas/ldrc/ldrc_0_013_second/behav/SC/SC_Run3)
+TACC Launcher -> Iniating task 7 on c331-306.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_0_055_second/behav/SC/SC_Run1/055_second_SC_1_2013-08-15-17_58_07_subdata.pkl /corral-repl/utexas/ldrc/ldrc_0_055_second/behav/SC/SC_Run1)
+TACC Launcher -> Iniating task 3 on c331-306.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_0_026_second/behav/SC/SC_Run1/ldrc_026_second_SCrun1_2013-06-02-10_58_11_subdata.pkl /corral-repl/utexas/ldrc/ldrc_0_026_second/behav/SC/SC_Run1)
+TACC Launcher -> Iniating task 6 on c331-306.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_0_049_second/behav/SC/SC_Run3/049_SC_3_2013-07-23-14_01_24_subdata.pkl /corral-repl/utexas/ldrc/ldrc_0_049_second/behav/SC/SC_Run3)
+TACC Launcher -> Iniating task 8 on c331-306.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_0_055_second/behav/SC/SC_Run2/055_second_SC_2_2013-08-15-18_28_46_subdata.pkl /corral-repl/utexas/ldrc/ldrc_0_055_second/behav/SC/SC_Run2)
+TACC Launcher -> Iniating task 9 on c331-306.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_0_055_second/behav/SC/SC_Run3/055_seond_SC_3_2013-08-15-18_52_03_subdata.pkl /corral-repl/utexas/ldrc/ldrc_0_055_second/behav/SC/SC_Run3)
+TACC Launcher -> Iniating task 10 on c331-306.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_1_001_second/behav/SC/SC_Run1/001_second_SC_1a_2013-07-25-08_59_11_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_001_second/behav/SC/SC_Run1)
+TACC Launcher -> Iniating task 12 on c331-306.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_1_001_second/behav/SC/SC_Run3/001_second_sc_3_2013-07-25-09_38_11_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_001_second/behav/SC/SC_Run3)
+TACC Launcher -> Iniating task 4 on c331-306.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_0_049_second/behav/SC/SC_Run1/049_SC_1_2013-07-23-13_03_15_subdata.pkl /corral-repl/utexas/ldrc/ldrc_0_049_second/behav/SC/SC_Run1)
+TACC Launcher -> Iniating task 15 on c331-114.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_1_015_second/behav/SC/SC_Run1/015_second_SC_1_2013-05-04-12_02_52_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_015_second/behav/SC/SC_Run1)
+TACC Launcher -> Iniating task 21 on c331-114.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_1_028_second/behav/SC/SC_Run1/028_second_sc_1_2013-06-16-12_26_12_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_028_second/behav/SC/SC_Run1)
+TACC Launcher -> Iniating task 24 on c331-114.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_1_036_second/behav/SC/SC_Run1/036_run02_SC1_2013-05-26-12_49_12_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_036_second/behav/SC/SC_Run1)
+TACC Launcher -> Iniating task 23 on c331-114.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_1_028_second/behav/SC/SC_Run3/028_second_sc_3_2013-06-16-13_27_18_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_028_second/behav/SC/SC_Run3)
+TACC Launcher -> Iniating task 13 on c331-114.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_1_004_second/behav/SC/SC_Run1/004_second_SC_1_2013-05-05-11_37_02_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_004_second/behav/SC/SC_Run1)
+TACC Launcher -> Iniating task 22 on c331-114.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_1_028_second/behav/SC/SC_Run2/028_second_sc_2_2013-06-16-12_43_10_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_028_second/behav/SC/SC_Run2)
+TACC Launcher -> Iniating task 19 on c331-114.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_1_020_second/behav/SC/SC_Run2/020_second_SC_2_2013-05-04-10_11_58_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_020_second/behav/SC/SC_Run2)
+TACC Launcher -> Iniating task 14 on c331-114.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_1_004_second/behav/SC/SC_Run2/004_second_SC_2A_2013-05-05-11_56_32_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_004_second/behav/SC/SC_Run2)
+TACC Launcher -> Iniating task 16 on c331-114.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_1_015_second/behav/SC/SC_Run2/015_second_SC_2_2013-05-04-12_20_10_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_015_second/behav/SC/SC_Run2)
+TACC Launcher -> Iniating task 18 on c331-114.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_1_020_second/behav/SC/SC_Run1/020_second_SC_1_2013-05-04-09_55_43_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_020_second/behav/SC/SC_Run1)
+TACC Launcher -> Iniating task 20 on c331-114.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_1_020_second/behav/SC/SC_Run3/020_second_SC_3_2013-05-04-11_01_38_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_020_second/behav/SC/SC_Run3)
+TACC Launcher -> Iniating task 41 on c317-314.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_2_048_second/behav/SC/SC_Run3/048_SC_3_2013-07-24-10_48_34_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_048_second/behav/SC/SC_Run3)
+TACC Launcher -> Iniating task 17 on c331-114.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_1_015_second/behav/SC/SC_Run3/015_second_SC_3_2013-05-04-12_45_26_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_015_second/behav/SC/SC_Run3)
+TACC Launcher -> Iniating task 39 on c317-314.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_2_048_second/behav/SC/SC_Run1/048_SC_1_2013-07-24-09_49_35_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_048_second/behav/SC/SC_Run1)
+TACC Launcher -> Iniating task 38 on c317-314.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_2_034_second/behav/SC/SC_Run2/034_seond_SC_2_2013-08-14-13_15_32_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_034_second/behav/SC/SC_Run2)
+TACC Launcher -> Iniating task 40 on c317-314.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_2_048_second/behav/SC/SC_Run2/048_SC_2_2013-07-24-10_05_36_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_048_second/behav/SC/SC_Run2)
+TACC Launcher -> Iniating task 37 on c317-314.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_2_034_second/behav/SC/SC_Run1/034_second_SC_1_2013-08-14-12_30_41_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_034_second/behav/SC/SC_Run1)
+TACC Launcher -> Iniating task 29 on c320-206.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_2_008_second/behav/SC/SC_Run1/008_second_SC_1_2013-05-05-13_23_40_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_008_second/behav/SC/SC_Run1)
+TACC Launcher -> Iniating task 30 on c320-206.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_2_008_second/behav/SC/SC_Run2/008_second_SC_2_2013-05-05-13_39_16_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_008_second/behav/SC/SC_Run2)
+TACC Launcher -> Iniating task 36 on c320-206.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_2_031_second/behav/SC/SC_Run2/031_second_SC_2_2013-08-23-09_43_06_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_031_second/behav/SC/SC_Run2)
+TACC Launcher -> Iniating task 33 on c320-206.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_2_010_second/behav/SC/SC_Run2/010_second_run4_SC__2013-06-02-15_01_07_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_010_second/behav/SC/SC_Run2)
+TACC Launcher -> Iniating task 26 on c320-206.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_2_005_second/behav/SC/SC_Run1/005_second_SC_1_2013-05-19-14_37_50_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_005_second/behav/SC/SC_Run1)
+TACC Launcher -> Iniating task 31 on c320-206.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_2_008_second/behav/SC/SC_Run3/008_second_SC_3_2013-05-05-14_02_14_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_008_second/behav/SC/SC_Run3)
+TACC Launcher -> Iniating task 35 on c320-206.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_2_031_second/behav/SC/SC_Run1/031_second_SC_1_2013-08-23-09_26_48_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_031_second/behav/SC/SC_Run1)
+TACC Launcher -> Iniating task 25 on c320-206.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_1_036_second/behav/SC/SC_Run2/036_run04_SC2_2013-05-26-13_06_22_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_036_second/behav/SC/SC_Run2)
+TACC Launcher -> Iniating task 27 on c320-206.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_2_005_second/behav/SC/SC_Run2/005_second_SC_2_2013-05-19-14_54_48_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_005_second/behav/SC/SC_Run2)
+TACC Launcher -> Iniating task 34 on c320-206.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_2_010_second/behav/SC/SC_Run3/010_second_run7_SC_run_3_2013-06-02-15_24_22_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_010_second/behav/SC/SC_Run3)
+TACC Launcher -> Iniating task 28 on c320-206.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_2_005_second/behav/SC/SC_Run3/005_second_SC_3_2013-05-19-15_18_03_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_005_second/behav/SC/SC_Run3)
+TACC Launcher -> Iniating task 32 on c320-206.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py /corral-repl/utexas/ldrc/ldrc_2_010_second/behav/SC/SC_Run1/010_second_run1_SC_1_2013-06-02-14_45_00_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_010_second/behav/SC/SC_Run1)
+  File "  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py  File "  File "", line   File "", line /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30", line 30", line 
+30
+30    30
+    
+
+def checkEqual(lst):
+    def checkEqual(lst):
+    def checkEqual(lst):
+        def checkEqual(lst):
+        ^
+def checkEqual(lst):
+    ^
+^
+    ^
+IndentationError^
+IndentationErrorIndentationError: IndentationError: : IndentationError: : unexpected indentunexpected indentunexpected indentunexpected indent
+unexpected indent
+
+
+
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+      File "^
+/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line IndentationError: 30
+    unexpected indentdef checkEqual(lst):
+    
+^
+IndentationError: unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+      File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "  File "  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line ", line ", line 303030
+
+
+            def checkEqual(lst):
+def checkEqual(lst):
+def checkEqual(lst):
+            ^
+^
+^
+IndentationErrorIndentationErrorIndentationError: : : unexpected indentunexpected indentunexpected indent
+
+
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py  File "", line /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+30    
+def checkEqual(lst):
+        def checkEqual(lst):
+^
+    ^
+IndentationError: IndentationError: unexpected indent
+unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "  File "  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line ", line 3030
+30    
+
+def checkEqual(lst):
+            def checkEqual(lst):
+^
+def checkEqual(lst):
+        ^
+IndentationError^
+: IndentationErrorIndentationError: : unexpected indentunexpected indentunexpected indent
+
+
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line 30
+    def checkEqual(lst):
+    ^
+IndentationError: unexpected indent
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py", line   File "/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py30", line 
+  File "    30/corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.pydef checkEqual(lst):
+
+", line         ^
+def checkEqual(lst):
+30    IndentationError^
+: 
+IndentationError    def checkEqual(lst):
+unexpected indent:     
+^
+unexpected indent
+IndentationError: unexpected indent
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 1720717
+TACC: Done.

@@ -1,0 +1,875 @@
+# Script that runs stats analyses for ROI's
+# Jeanette and Mary Abbe May 2014
+
+
+# LIBRARIES
+  library(ggplot2)
+  library(reshape2)
+  library(gtools)
+
+  wd=getwd()
+
+# FUNCTIONS
+
+# Function that runs everything for group comparison t-tests
+
+runTests = function(rootdir){
+  gfeats = Sys.glob(sprintf("%s/*.gfeat", rootdir))
+  num.gfeats = length(gfeats)
+
+  output = data.frame()
+
+  for (curfeat in 1:num.gfeats){
+    desmat = read.table(sprintf("%s/design.mat", gfeats[curfeat]), skip = 5)
+    
+    rois = Sys.glob(sprintf("%s/rois/*", gfeats[curfeat]))
+    nsubs = dim(desmat)[1]
+    nrois = length(rois)
+    all.roi.dat = matrix(0, nrow=nsubs, ncol = nrois)
+
+    for (i in 1:nrois){
+      all.roi.dat[,i] = as.matrix(read.table(rois[i]))
+      t.test.loop = t.test(all.roi.dat[desmat[,1]==1,i], all.roi.dat[desmat[,2]==1,i])
+      means.loop = c(mean(all.roi.dat[desmat[,1]==1,i]), mean(all.roi.dat[desmat[,2]==1,i]))
+      sd.loop = c(sd(all.roi.dat[desmat[,1]==1,i]), sd(all.roi.dat[desmat[,2]==1,i]))
+      se.loop = c(sd(all.roi.dat[desmat[,1]==1,i])/sqrt(length(all.roi.dat[desmat[,1]==1,i])), sd(all.roi.dat[desmat[,2]==1,i])/sqrt(length(all.roi.dat[desmat[,2]==1,i])))
+      curout = cbind(basename(rois[i]), means.loop[1], means.loop[2], sd.loop[1], sd.loop[2], se.loop[1], se.loop[2], t.test.loop$statistic, t.test.loop$p.value)
+      output = rbind(curout, output)
+    }
+  }
+
+names(output)= c("Analysis", "meanG1", "meanG2", "SDG1", "SDG2","SEG1", "SEG2", "Tstat", "Pval")
+output$meanG1 = as.numeric(as.character(output$meanG1))
+output$meanG2 = as.numeric(as.character(output$meanG2))
+output$SDG1 = as.numeric(as.character(output$SDG1))
+output$SDG2 = as.numeric(as.character(output$SDG2))
+output$SEG1 = as.numeric(as.character(output$SEG1))
+output$SEG2 = as.numeric(as.character(output$SEG2))
+output$Tstat = as.numeric(as.character(output$Tstat))
+output$Pval = as.numeric(as.character(output$Pval))
+
+return(output)
+}
+
+
+# Function that runs everything for repeated measures comparison t-tests
+
+runTestsRM = function(rootdir){
+  gfeats = Sys.glob(sprintf("%s/*.gfeat", rootdir))
+  num.gfeats = length(gfeats)
+
+  output = data.frame()
+  output.perc = data.frame()
+
+  for (curfeat in 1:num.gfeats){
+    desmat = read.table(sprintf("%s/design.mat", gfeats[curfeat]), skip = 5)
+    
+    rois = Sys.glob(sprintf("%s/rois/*", gfeats[curfeat]))
+    nsubs = dim(desmat)[1]
+    nrois = length(rois)
+    all.roi.dat = matrix(0, nrow=nsubs, ncol = nrois)
+
+    for (i in 1:nrois){
+      all.roi.dat[,i] = as.matrix(read.table(rois[i]))
+      t.test.loop = t.test(all.roi.dat[desmat[,1]==1,i], all.roi.dat[desmat[,1]==-1,i], paired=T)
+      diff.loop = (all.roi.dat[desmat[,1]==1,i]) - (all.roi.dat[desmat[,1]==-1,i])
+      means.diff = mean((all.roi.dat[desmat[,1]==1,i]) - (all.roi.dat[desmat[,1]==-1,i]))
+      sd.loop.diff = sd(diff.loop)
+      se.loop.diff = sd(diff.loop)/sqrt(length(diff.loop))
+      curout = cbind(basename(rois[i]), means.diff, sd.loop.diff, se.loop.diff, t.test.loop$statistic, t.test.loop$p.value)
+      output = rbind(curout, output)
+
+      #roi.file = basename(rois[i])
+      #roi = sapply(roi.file, function (s) strsplit(s, '.txt')[[1]][1])
+      #perc = data.frame(T1.mean=(all.roi.dat[desmat[,1]==1,i]),T2.mean=(all.roi.dat[desmat[,1]==-1,i]), diff.loop, roi)
+      #output.perc = rbind(perc, output.perc)
+    }
+  }
+
+names(output)= c("Analysis", "meanDiff", "SD", "SE", "Tstat", "Pval")
+output$meanDiff = as.numeric(as.character(output$meanDiff))
+output$SD = as.numeric(as.character(output$SD))
+output$SE = as.numeric(as.character(output$SE))
+output$Tstat = as.numeric(as.character(output$Tstat))
+output$Pval = as.numeric(as.character(output$Pval))
+
+return(output)
+}
+
+
+
+# Function that runs everything for single group (t-test vs. 0)
+
+runTests2 = function(rootdir){
+  gfeats = Sys.glob(sprintf("%s/*.gfeat", rootdir))
+  num.gfeats = length(gfeats)
+
+  output = data.frame()
+
+  for (curfeat in 1:num.gfeats){
+    desmat = read.table(sprintf("%s/design.mat", gfeats[curfeat]), skip = 5)
+    
+    rois = Sys.glob(sprintf("%s/rois/*", gfeats[curfeat]))
+    nsubs = dim(desmat)[1]
+    nrois = length(rois)
+    all.roi.dat = matrix(0, nrow=nsubs, ncol = nrois)
+
+    for (i in 1:nrois){
+      all.roi.dat[,i] = as.matrix(read.table(rois[i]))
+      t.test.loop = t.test(all.roi.dat[desmat[,1]==1,i], mu=0)
+      means.loop = c(mean(all.roi.dat[desmat[,1]==1,i]))
+      sd.loop = c(sd(all.roi.dat[desmat[,1]==1,i]))
+      se.loop = c(sd(all.roi.dat[desmat[,1]==1,i])/sqrt(length(all.roi.dat[desmat[,1]==1,i])))
+      curout = cbind(basename(rois[i]), means.loop[1], sd.loop[1], se.loop[1],  t.test.loop$statistic, t.test.loop$p.value)
+      output = rbind(curout, output)
+    }
+  }
+
+names(output)= c("Analysis", "meanG1", "SDG1", "SEG1", "Tstat", "Pval")
+output$meanG1 = as.numeric(as.character(output$meanG1))
+output$SDG1 = as.numeric(as.character(output$SDG1))
+output$SEG1 = as.numeric(as.character(output$SEG1))
+output$Tstat = as.numeric(as.character(output$Tstat))
+output$Pval = as.numeric(as.character(output$Pval))
+
+return(output)
+}
+
+
+
+# function for extracting end of string
+  substrRight = function(x, n){
+    substr(x, nchar(x)-n+1, nchar(x))
+  }
+
+  # function for extracting start of string
+    substrLeft=function(x, n){
+      substr(x, 1, n)
+    }
+
+
+# function for cleaning up stat data frames for graphs
+  cleanSig = function(out.sig){
+
+    out.sig.melt1 = melt(out.sig, measure.vars = c("meanG1", "meanG2"), variable.name= "group", value.name="means")
+    out.sig.melt1$group = as.character(out.sig.melt1$group)
+    out.sig.melt1$group = substrRight(out.sig.melt1$group, 2)
+    out.sig.melt1 = out.sig.melt1[,c("Analysis", "Tstat", "Pval", "group", "means")]
+
+    out.sig.melt2 = melt(out.sig, measure.vars = c("SEG1", "SEG2"), variable.name= "group", value.name="se")
+    out.sig.melt2$group = as.character(out.sig.melt2$group)
+    out.sig.melt2$group = substrRight(out.sig.melt2$group, 2)
+    out.sig.melt2 = out.sig.melt2[,c("Analysis", "Tstat", "Pval", "group", "se")]
+
+    out.sig.f = cbind(out.sig.melt1, "se"=out.sig.melt2$se)
+
+    return(out.sig.f)
+  }
+
+
+  cleanSig2 = function(out.sig){
+
+    out.sig.melt1 = melt(out.sig, measure.vars = c("meanG1"), variable.name= "group", value.name="means")
+    out.sig.melt1$group = as.character(out.sig.melt1$group)
+    out.sig.melt1$group = substrRight(out.sig.melt1$group, 2)
+    out.sig.melt1 = out.sig.melt1[,c("Analysis", "Tstat", "Pval", "group", "means")]
+
+    out.sig.melt2 = melt(out.sig, measure.vars = c("SEG1"), variable.name= "group", value.name="se")
+    out.sig.melt2$group = as.character(out.sig.melt2$group)
+    out.sig.melt2$group = substrRight(out.sig.melt2$group, 2)
+    out.sig.melt2 = out.sig.melt2[,c("Analysis", "Tstat", "Pval", "group", "se")]
+
+    out.sig.f2 = cbind(out.sig.melt1, "se"=out.sig.melt2$se)
+
+    return(out.sig.f2)
+  }
+
+
+
+
+# ggplot colors
+gg_color_hue = function(n) {
+  hues = seq(15, 375, length=n+1)
+  hcl(h=hues, l=65, c=100)[1:n]
+}
+
+
+#######################################
+
+
+###########
+# S1
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_c1_c2/SC"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_s1_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_s1_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_c1_c2/SST"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_s1_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_s1_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+
+###########
+# S1 low Austin
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S1low/SC"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_s1_low_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_s1_low_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S1low/SST"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_s1_low_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_s1_low_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+
+###########
+# S1 high Austin
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S1high/SC"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_s1_high_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_s1_high_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+
+
+
+###########
+# S1 (Austin + Houston)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_ah/SC"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_s1_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_s1_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_ah/SST"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_s1_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_s1_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+
+
+
+###########
+# S2
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S2/SC"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_s2_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_s2_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S2/SST"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_s2_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_s2_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+###########
+# S2 (Austin + Houston)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S2_ah/SC"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_s2_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_s2_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S2_ah/SST"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_s2_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_s2_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+
+###########
+# S3
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S3/SC"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_s3_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_s3_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S3/SST"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_s3_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_s3_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+
+
+###########
+# S3 (Austin + Houston)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S3_ah/SC"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_s3_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_s3_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S3_ah/SST"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_s3_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_s3_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+
+###########
+# Controls
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/Controls/SC"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_c_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_c_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/Controls/SST"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_c_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_c_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+    c.sst = cleanSig2(out)
+    c.sst$group2[c.sst$group == "G1"] = "Typical"
+    c.sst$Analysis = as.character(c.sst$Analysis)
+    c.sst$ROI = substrRight(c.sst$Analysis, 15)
+    c.sst$ROI = substrLeft(c.sst$ROI, 11)
+
+    c.sst.go = c.sst[grep('go_corr_v_baseline', c.sst$Analysis),]
+    c.sst.go$contrast = "go_corr_v_baseline"
+
+    c.sst.stopf = c.sst[grep('stop_fail_v_baseline', c.sst$Analysis),]
+    c.sst.stopf$contrast = "stop_fail_v_baseline"
+
+    c.sst.stopc = c.sst[grep('stop_corr_v_baseline', c.sst$Analysis),]
+    c.sst.stopc$contrast = "stop_corr_v_baseline"
+
+    c.sst.stopcf = c.sst[grep('stop_corr_v_stop_fail', c.sst$Analysis),]
+    c.sst.stopcf$contrast = "stop_corr_v_stop_fail"
+
+    c.sst.stopcc = c.sst[grep('stop_corr_v_go_corr', c.sst$Analysis),]
+    c.sst.stopcc$contrast = "stop_corr_v_go_corr"
+
+###########
+# Controls (Austin + Houston)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/Controls_ah/SC"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_c_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_c_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/Controls_ah/SST"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_c_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_c_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+
+
+###########
+# S1low vs. Controls
+
+# SC
+  rootdir = "/corral-repl/utexas/ldrc/GROUP/S1low_v_C/SC"
+  out = runTests(rootdir)
+  out.sig = out[out$Pval<0.05,]
+    setwd(rootdir)
+    write.csv(out, file = "SC_s1low_v_c_roiStats.csv", row.names=TRUE, col.names=TRUE)
+    write.csv(out.sig, file = "SC_s1low_v_c_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+# SST
+  rootdir = "/corral-repl/utexas/ldrc/GROUP/S1low_v_C/SST"
+  out = runTests(rootdir)
+  out.sig = out[out$Pval<0.05,]
+    setwd(rootdir)
+    write.csv(out, file = "SST_s1low_v_c_roiStats.csv", row.names=TRUE, col.names=TRUE)
+    write.csv(out.sig, file = "SST_s1low_v_c_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+###########
+# S1high vs. Controls
+
+# SC
+  rootdir = "/corral-repl/utexas/ldrc/GROUP/S1high_v_C/SC"
+  out = runTests(rootdir)
+  out.sig = out[out$Pval<0.05,]
+    setwd(rootdir)
+    write.csv(out, file = "SC_s1high_v_c_roiStats.csv", row.names=TRUE, col.names=TRUE)
+    write.csv(out.sig, file = "SC_s1high_v_c_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+
+###########
+# S1low vs. S1high
+
+# SC
+  rootdir = "/corral-repl/utexas/ldrc/GROUP/S1low_v_high/SC"
+  out = runTests(rootdir)
+  out.sig = out[out$Pval<0.05,]
+    setwd(rootdir)
+    write.csv(out, file = "SC_s1low_v_high_roiStats.csv", row.names=TRUE, col.names=TRUE)
+    write.csv(out.sig, file = "SC_s1low_v_high_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+
+###########
+# S1 vs. Controls
+
+# SC
+  rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_C_a/SC"
+  out = runTests(rootdir)
+  out.sig = out[out$Pval<0.05,]
+    setwd(rootdir)
+    write.csv(out, file = "SC_s1_v_c_roiStats.csv", row.names=TRUE, col.names=TRUE)
+    write.csv(out.sig, file = "SC_s1_v_c_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+  # clean sig data for graphs
+    s1.c.sc = cleanSig(out)
+    s1.c.sc$session[s1.c.sc$group == "G1"] = "Pre Struggling"
+    s1.c.sc$session[s1.c.sc$group == "G2"] = "Typical"
+    s1.c.sc$Analysis = as.character(s1.c.sc$Analysis)
+    s1.c.sc$ROI = substrRight(s1.c.sc$Analysis, 15)
+    s1.c.sc$ROI = substrLeft(s1.c.sc$ROI, 11)
+
+    s1.c.sc = s1.c.sc[grep('corr_v_baseline', s1.c.sc$Analysis),]
+    s1.c.sc$contrast = "corr_v_baseline"
+    s1.c.sc$session = relevel(as.factor(s1.c.sc$session), ref = "Pre Struggling")
+
+    s1.s2.c.sc = smartbind(s1.c.sc, s2.c.sc[s2.c.sc$session == "Post Struggling",])
+    s1.s2.c.sc$session = as.factor(s1.s2.c.sc$session)
+    s1.s2.c.sc$session = relevel(s1.s2.c.sc$session, ref="Pre Struggling")
+    s1.s2.c.sc$session = relevel(s1.s2.c.sc$session, ref="Typical")
+
+    corr.v.base1 = ggplot(s1.c.sc[s1.c.sc$ROI=="-54_-02_+36",], aes(x=session, y=means, fill = session)) + geom_bar(stat="identity", colour="black", width=0.7, position="dodge") + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.4,0.4)) + ylab("Mean % Signal Change") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.ticks.x = element_blank(), axis.text.x = element_text(size=15), axis.line.x = element_blank(), axis.text.y = element_text(size = 15)) + guides(colour = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SC/A_s1vc_corr_-54_-02_+36_bar_SRCD.pdf",wd),width=5,height=5)
+
+    corr.v.base2 = ggplot(s1.c.sc[s1.c.sc$ROI=="-48_-68_-08",], aes(x=session, y=means, fill = session)) + geom_bar(stat="identity", colour="black", width=0.7, position="dodge") + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.4,0.4)) + ylab("Mean % Signal Change") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.ticks.x = element_blank(), axis.text.x = element_text(size=15), axis.line.x = element_blank(), axis.text.y = element_text(size = 15)) + guides(colour = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SC/A_s1vc_corr_-48_-68_-08_bar_SRCD.pdf",wd),width=5,height=5)
+
+    corr.v.base.all1 = ggplot(s1.s2.c.sc[s1.s2.c.sc$ROI=="-54_-02_+36",], aes(x=session, y=means, fill = session)) + geom_bar(stat="identity", colour="black", width=0.7, position="dodge") +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.4,0.4)) + ylab("Mean % Signal Change") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.ticks.x = element_blank(), axis.text.x = element_text(size=11, face="bold"), axis.line.x = element_blank(), axis.text.y = element_text(size = 15)) + guides(colour = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SC/A_s1vc_s2_corr_-54_-02_+36_bar_SRCD_nb.pdf",wd),width=5,height=5)
+
+    corr.v.base.all2 = ggplot(s1.s2.c.sc[s1.s2.c.sc$ROI=="-48_-68_-08",], aes(x=session, y=means, fill = session)) + geom_bar(stat="identity", colour="black", width=0.7, position="dodge") +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.4,0.4)) + ylab("Mean % Signal Change") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.ticks.x = element_blank(), axis.text.x = element_text(size=11, face="bold"), axis.line.x = element_blank(), axis.text.y = element_text(size = 15)) + guides(colour = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SC/A_s1vc_s2_corr_-48_-68_-08_bar_SRCD_nb.pdf",wd),width=5,height=5)
+
+
+
+
+# SST
+  rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_C_a/SST"
+  out = runTests(rootdir)
+  out.sig = out[out$Pval<0.05,]
+    setwd(rootdir)
+    write.csv(out, file = "SST_s1_v_c_roiStats.csv", row.names=TRUE, col.names=TRUE)
+    write.csv(out.sig, file = "SST_s1_v_c_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+  # clean sig data for graphs
+    s1.c.sst = cleanSig(out)
+    s1.c.sst$session[s1.c.sst$group == "G1"] = "Pre Struggling"
+    s1.c.sst$session[s1.c.sst$group == "G2"] = "Post Struggling"
+    s1.c.sst$Analysis = as.character(s1.c.sst$Analysis)
+    s1.c.sst$ROI = substrRight(s1.c.sst$Analysis, 15)
+    s1.c.sst$ROI = substrLeft(s1.c.sst$ROI, 11)
+
+    #s1.s2.sst.go = s1.s2.sst[grep('go_corr_v_baseline', s1.s2.sst$Analysis),]
+    #s1.s2.sst.go$contrast = "go_corr_v_baseline"
+
+    #s1.s2.sst.go$session = relevel(as.factor(s1.s2.sst.go$session), ref = "Pre Struggling")
+
+
+  # BAR GRAPHS
+
+
+
+
+    go.v.base.df = out.sig.s1.c[grep('go_corr_v_baseline', out.sig.s1.c$Analysis),]
+    go.v.base = ggplot(go.v.base.df, aes(x=Analysis, y=means, fill = session)) + geom_bar(stat="identity", position=position_dodge()) + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) + xlab("ROI") + 
+                ylab("Mean") + ggtitle("Go Correct vs. Baseline")+ guides(color = FALSE) + theme(legend.text=element_text(size=14), legend.title = element_text(size = 14), axis.text.y = element_text(size = 12, color = 'black'), 
+                axis.text.x = element_text(size = 12, angle=0, vjust=.7, color = 'black'), axis.title.x = element_text(size = 14), axis.title.y = element_text(size = 14), panel.background = element_blank(), panel.grid.major = element_blank(), 
+                panel.grid.minor = element_blank(), axis.line = element_line(color = 'black'))
+
+    go.v.base.box = ggplot(data = , aes(x = Analysis,y = means, fill = session)) + geom_boxplot() + geom_point() + xlab("ROI") + ylab("Mean") + ggtitle("Go Correct vs. Baseline")+ guides(color = FALSE) + theme(legend.text=element_text(size=14), legend.title = element_text(size = 14), axis.text.y = element_text(size = 12, color = 'black'), axis.text.x = element_text(size = 12, angle=0, vjust=.7, color = 'black'), axis.title.x = element_text(size = 14), axis.title.y = element_text(size = 14), panel.background = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(color = 'black'))
+
+
+    stop.v.base.df = out.sig.s1.c[grep('stop_corr_v_baseline', out.sig.s1.c$Analysis),]
+    stop.v.base = ggplot(stop.v.base.df, aes(x=Analysis, y=means, fill = session)) + geom_bar(stat="identity", position=position_dodge()) + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) + xlab("ROI") + 
+                  ylab("Mean") + ggtitle("Stop Correct vs. Baseline")+ guides(color = FALSE) + theme(legend.text=element_text(size=14), legend.title = element_text(size = 14), axis.text.y = element_text(size = 12, color = 'black'), 
+                  axis.text.x = element_text(size = 12, angle=0, vjust=.7, color = 'black'), axis.title.x = element_text(size = 14), axis.title.y = element_text(size = 14), panel.background = element_blank(), panel.grid.major = element_blank(), 
+                  panel.grid.minor = element_blank(), axis.line = element_line(color = 'black'))
+
+    stop.v.go.df = out.sig.s1.c[grep('stop_corr_v_go_corr', out.sig.s1.c$Analysis),]
+    stop.v.go = ggplot(stop.v.go.df, aes(x=Analysis, y=means, fill = session)) + geom_bar(stat="identity", position=position_dodge()) + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) + xlab("ROI") + 
+                ylab("Mean") + ggtitle("Stop Correct vs. Go Correct")+ guides(color = FALSE) + theme(legend.text=element_text(size=14), legend.title = element_text(size = 14), axis.text.y = element_text(size = 12, color = 'black'), 
+                axis.text.x = element_text(size = 12, angle=0, vjust=.7, color = 'black'), axis.title.x = element_text(size = 14), axis.title.y = element_text(size = 14), panel.background = element_blank(), panel.grid.major = element_blank(), 
+                panel.grid.minor = element_blank(), axis.line = element_line(color = 'black'))
+
+    stopCorr.v.stopFail.df = out.sig.s1.c[grep('stop_corr_v_stop_fail', out.sig.s1.c$Analysis),]
+    stopCorr.v.stopFail = ggplot(stopCorr.v.stopFail.df, aes(x=Analysis, y=means, fill = session)) + geom_bar(stat="identity", position=position_dodge()) + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) + xlab("ROI") + ylab("Mean") + ggtitle("Stop Correct vs. Stop Fail")+ guides(color = FALSE) + theme(legend.text=element_text(size=14), legend.title = element_text(size = 14), axis.text.y = element_text(size = 12, color = 'black'), axis.text.x = element_text(size = 12, angle=0, vjust=.7, color = 'black'), axis.title.x = element_text(size = 14), axis.title.y = element_text(size = 14), panel.background = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(color = 'black'))
+
+    rt.v.base.df = out.sig.s1.c[grep('rt_all', out.sig.s1.c$Analysis),]
+    rt.v.base = ggplot(rt.v.base.df, aes(x=Analysis, y=means, fill = session)) + geom_bar(stat="identity", position=position_dodge()) + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) + xlab("ROI") 
+                + ylab("Mean") + ggtitle("RT All vs. Baseline")+ guides(color = FALSE) + theme(legend.text=element_text(size=14), legend.title = element_text(size = 14), axis.text.y = element_text(size = 12, color = 'black'), 
+                axis.text.x = element_text(size = 12, angle=0, vjust=.7, color = 'black'), axis.title.x = element_text(size = 14), axis.title.y = element_text(size = 14), panel.background = element_blank(), panel.grid.major = element_blank(), 
+                panel.grid.minor = element_blank(), axis.line = element_line(color = 'black'))
+
+
+###########
+# S1 vs. Controls (Austin + Houston)
+
+# SC
+  rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_C_ah/SC"
+  out = runTests(rootdir)
+  out.sig = out[out$Pval<0.05,]
+    setwd(rootdir)
+    write.csv(out, file = "SC_s1_v_c_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+    write.csv(out.sig, file = "SC_s1_v_c_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+
+# SST
+  rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_C_ah/SST"
+  out = runTests(rootdir)
+  out.sig = out[out$Pval<0.05,]
+    setwd(rootdir)
+    write.csv(out, file = "SST_s1_v_c_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+    write.csv(out.sig, file = "SST_s1_v_c_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+
+
+
+###########
+# S2 vs. Controls
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S2_C_a/SC"
+out = runTests(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_s2_v_c_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_s2_v_c_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+    s2.c.sc = cleanSig(out)
+    s2.c.sc$session[s2.c.sc$group == "G1"] = "Post Struggling"
+    s2.c.sc$session[s2.c.sc$group == "G2"] = "Typical"
+    s2.c.sc$Analysis = as.character(s2.c.sc$Analysis)
+    s2.c.sc$ROI = substrRight(s2.c.sc$Analysis, 15)
+    s2.c.sc$ROI = substrLeft(s2.c.sc$ROI, 11)
+
+    s2.c.sc = s2.c.sc[grep('corr_v_baseline', s2.c.sc$Analysis),]
+    s2.c.sc$contrast = "corr_v_baseline"
+
+    s2.c.sc$session = relevel(as.factor(s2.c.sc$session), ref = "Post Struggling")
+
+
+    corr.v.base1 = ggplot(s2.c.sc[s2.c.sc$ROI=="-54_-02_+36",], aes(x=session, y=means, fill = session)) + geom_bar(stat="identity", colour="black", width=0.7, position="dodge") + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.4,0.4)) + ylab("Mean % Signal Change") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.ticks.x = element_blank(), axis.text.x = element_text(size=15), axis.line.x = element_blank(), axis.text.y = element_text(size = 15)) + guides(colour = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SC/A_s2vc_corr_-54_-02_+36_bar_SRCD.pdf",wd),width=5,height=5)
+
+    corr.v.base2 = ggplot(s2.c.sc[s2.c.sc$ROI=="-48_-68_-08",], aes(x=session, y=means, fill = session)) + geom_bar(stat="identity", colour="black", width=0.7, position="dodge") + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.4,0.4)) + ylab("Mean % Signal Change") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.ticks.x = element_blank(), axis.text.x = element_text(size=15), axis.line.x = element_blank(), axis.text.y = element_text(size = 15)) + guides(colour = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SC/A_s2vc_corr_-48_-68_-08_bar_SRCD.pdf",wd),width=5,height=5)
+
+
+
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S2_C_a/SST"
+out = runTests(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_s2_v_c_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_s2_v_c_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+
+###########
+# S2 vs. Controls (Austin + Houston)
+
+#SC
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S2_v_C_ah/SC"
+out = runTests(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_s2_v_c_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_s2_v_c_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+
+#SST
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S2_v_C_ah/SST"
+out = runTests(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_s2_v_c_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_s2_v_c_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+
+
+
+###########
+# S3 vs. Controls
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S3_C_7_14_14/SC"
+out = runTests(rootdir)
+out[out$Pval<0.05,]
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S3_C_7_14_14/SST"
+out = runTests(rootdir)
+  out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_s3_c_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_s3_c_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+
+
+###########
+# S1 vs. S2
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_S2/SC"
+out = runTests(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_s1_v_s2_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_s1_v_s2_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_S2/SST"
+out = runTests(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_s1_v_s2_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_s1_v_s2_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+
+  # clean sig data for graphs
+    s1.s2.sst = cleanSig(out)
+    s1.s2.sst$group2[s1.s2.sst$group == "G1"] = "Pre Struggling"
+    s1.s2.sst$group2[s1.s2.sst$group == "G2"] = "Post Struggling"
+    s1.s2.sst$Analysis = as.character(s1.s2.sst$Analysis)
+    s1.s2.sst$ROI = substrRight(s1.s2.sst$Analysis, 15)
+    s1.s2.sst$ROI = substrLeft(s1.s2.sst$ROI, 11)
+
+    s1.s2.sst.go = s1.s2.sst[grep('go_corr_v_baseline', s1.s2.sst$Analysis),]
+    s1.s2.sst.go$contrast = "go_corr_v_baseline"
+    s1.s2.sst.go$group2 = relevel(as.factor(s1.s2.sst.go$group2), ref = "Pre Struggling")
+
+    s1.s2.c.sst.go = smartbind(s1.s2.sst.go, c.sst.go)
+    s1.s2.c.sst.go$group2 = as.factor(s1.s2.c.sst.go$group2)
+    s1.s2.c.sst.go$group2 = relevel(as.factor(s1.s2.c.sst.go$group2), ref="Pre Struggling")
+    s1.s2.c.sst.go$group2 = relevel(as.factor(s1.s2.c.sst.go$group2), ref="Typical")
+
+
+    go.v.base1 = ggplot(s1.s2.sst.go[s1.s2.sst.go$ROI=="+34_-50_+46",], aes(x=session, y=means, fill = session)) + geom_bar(stat="identity", colour="black", width=0.7, position="dodge") + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.08,0.08)) + ylab("Mean % Signal Change") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.ticks.x = element_blank(), axis.text.x = element_text(size=15), axis.line.x = element_blank(), axis.text.y = element_text(size = 15)) + guides(colour = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SST/A_s1vs2_goCorr_34_-50_46_bar_SRCD.pdf",wd),width=5,height=5)
+
+
+    go.v.base2 = ggplot(s1.s2.sst.go[s1.s2.sst.go$ROI=="-08_-58_+52",], aes(x=session, y=means, fill = session)) + geom_bar(stat="identity", position="dodge",colour="black", width=0.7) + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.12,0.12)) + ylab("Mean % Signal Change") + guides(color = FALSE) + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.text.x = element_text(size=15), axis.ticks.x = element_blank(), axis.line.x = element_blank(), axis.text.y = element_text(size = 15))  + guides(group = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SST/A_s1vs2_goCorr_-08_-58_52_bar_SRCD.pdf",wd),width=5,height=5)
+
+
+    go.v.base.all1 = ggplot(s1.s2.c.sst.go[s1.s2.c.sst.go$ROI=="+34_-50_+46",], aes(x=group2, y=means, fill = group2)) + geom_bar(stat="identity", colour="black", width=0.7, position="dodge") +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.08,0.08)) + ylab("Mean % Signal Change") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.ticks.x = element_blank(), axis.text.x = element_text(size=11, face="bold"), axis.line.x = element_blank(), axis.text.y = element_text(size = 15)) + guides(colour = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SST/A_s1vs2_c_goCorr_34_-50_46_bar_SRCD_nb.pdf",wd),width=5,height=5)
+
+
+    go.v.base.all2 = ggplot(s1.s2.c.sst.go[s1.s2.c.sst.go$ROI=="-08_-58_+52",], aes(x=group2, y=means, fill = group2)) + geom_bar(stat="identity", position="dodge",colour="black", width=0.7) +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.12,0.12)) + ylab("Mean % Signal Change") + guides(color = FALSE) + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.text.x = element_text(size=11, face="bold"), axis.ticks.x = element_blank(), axis.line.x = element_blank(), axis.text.y = element_text(size = 15))  + guides(group = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SST/A_s1vs2_c_goCorr_-08_-58_52_bar_SRCD_nb.pdf",wd),width=5,height=5)
+
+
+
+
+
+
+ 
+    s1.s2.sst.stop = s1.s2.sst[grep('stop_fail_v_baseline', s1.s2.sst$Analysis),]
+    s1.s2.sst.stop$contrast = "stop_fail_v_baseline"
+    s1.s2.sst.stop$group2 = relevel(as.factor(s1.s2.sst.stop$group2), ref = "Pre Struggling")
+
+    s1.s2.c.sst.stopf = smartbind(s1.s2.sst.stop, c.sst.stopf)
+    s1.s2.c.sst.stopf$group2 = as.factor(s1.s2.c.sst.stopf$group2)
+    s1.s2.c.sst.stopf$group2 = relevel(as.factor(s1.s2.c.sst.stopf$group2), ref="Pre Struggling")
+    s1.s2.c.sst.stopf$group2 = relevel(as.factor(s1.s2.c.sst.stopf$group2), ref="Typical")
+
+           
+     stopfail.v.base1 = ggplot(s1.s2.sst.stop[s1.s2.sst.stop$ROI=="+44_+16_+42",], aes(x=session, y=means, fill = session)) + geom_bar(stat="identity", colour="black", width=0.7, position="dodge") + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.4,0.4)) + ylab("Mean % Signal Change") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.ticks.x = element_blank(), axis.text.x = element_text(size=15), axis.line.x = element_blank(), axis.text.y = element_text(size = 15)) + guides(colour = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SST/A_s1vs2_stopFail_+44_+16_+42_bar_SRCD.pdf",wd),width=5,height=5)
+
+
+    stopfail.v.base2 = ggplot(s1.s2.sst.stop[s1.s2.sst.stop$ROI=="+46_-46_+48",], aes(x=session, y=means, fill = session)) + geom_bar(stat="identity", position="dodge",colour="black", width=0.7) + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.4,0.4)) + ylab("Mean % Signal Change") + guides(color = FALSE) + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.text.x = element_text(size=15), axis.ticks.x = element_blank(), axis.line.x = element_blank(), axis.text.y = element_text(size = 15))  + guides(group = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SST/A_s1vs2_stopFail_+46_-46_+48_bar_SRCD.pdf",wd),width=5,height=5)
+            
+      stopfail.v.base3 = ggplot(s1.s2.sst.stop[s1.s2.sst.stop$ROI=="+06_+26_+30",], aes(x=session, y=means, fill = session)) + geom_bar(stat="identity", position="dodge",colour="black", width=0.7) + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.5,0.5)) + ylab("Mean % Signal Change") + guides(color = FALSE) + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.text.x = element_text(size=15), axis.ticks.x = element_blank(), axis.line.x = element_blank(), axis.text.y = element_text(size = 15))  + guides(group = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SST/A_s1vs2_stopFail_+06_+26_+30_bar_SRCD.pdf",wd),width=5,height=5)
+                    
+      stopfail.v.base4 = ggplot(s1.s2.sst.stop[s1.s2.sst.stop$ROI=="+06_+34_+12",], aes(x=session, y=means, fill = session)) + geom_bar(stat="identity", position="dodge",colour="black", width=0.7) + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.4,0.4)) + ylab("Mean % Signal Change") + guides(color = FALSE) + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.text.x = element_text(size=11, face="bold"), axis.ticks.x = element_blank(), axis.line.x = element_blank(), axis.text.y = element_text(size = 15))  + guides(group = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SST/A_s1vs2_stopFail_+06_+34_+12_bar_SRCD.pdf",wd),width=5,height=5)
+  
+     stopfail.v.base.all1 = ggplot(s1.s2.c.sst.stopf[s1.s2.c.sst.stopf$ROI=="+44_+16_+42",], aes(x=group2, y=means, fill = group2)) + geom_bar(stat="identity", colour="black", width=0.7, position="dodge") +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.4,0.4)) + ylab("Mean % Signal Change") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.ticks.x = element_blank(), axis.text.x = element_text(size=11, face="bold"), axis.line.x = element_blank(), axis.text.y = element_text(size = 15)) + guides(colour = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SST/A_s1vs2_c_stopFail_+44_+16_+42_bar_SRCD_nb.pdf",wd),width=5,height=5)
+
+
+    stopfail.v.base.all2 = ggplot(s1.s2.c.sst.stopf[s1.s2.c.sst.stopf$ROI=="+46_-46_+48",], aes(x=group2, y=means, fill = group2)) + geom_bar(stat="identity", position="dodge",colour="black", width=0.7) + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.4,0.4)) + ylab("Mean % Signal Change") + guides(color = FALSE) + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.text.x = element_text(size=11, face="bold"), axis.ticks.x = element_blank(), axis.line.x = element_blank(), axis.text.y = element_text(size = 15))  + guides(group = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SST/A_s1vs2_c_stopFail_+46_-46_+48_bar_SRCD.pdf",wd),width=5,height=5)
+            
+      stopfail.v.base.all3 = ggplot(s1.s2.c.sst.stopf[s1.s2.c.sst.stopf$ROI=="+06_+26_+30",], aes(x=group2, y=means, fill = group2)) + geom_bar(stat="identity", position="dodge",colour="black", width=0.7) +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.5,0.5)) + ylab("Mean % Signal Change") + guides(color = FALSE) + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.text.x = element_text(size=11, face="bold"), axis.ticks.x = element_blank(), axis.line.x = element_blank(), axis.text.y = element_text(size = 15))  + guides(group = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SST/A_s1vs2_c_stopFail_+06_+26_+30_bar_SRCD_nb.pdf",wd),width=5,height=5)
+                    
+      stopfail.v.base.all4 = ggplot(s1.s2.c.sst.stopf[s1.s2.c.sst.stopf$ROI=="+06_+34_+12",], aes(x=group2, y=means, fill = group2)) + geom_bar(stat="identity", position="dodge",colour="black", width=0.7) + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.4,0.4)) + ylab("Mean % Signal Change") + guides(color = FALSE) + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.text.x = element_text(size=11, face="bold"), axis.ticks.x = element_blank(), axis.line.x = element_blank(), axis.text.y = element_text(size = 15))  + guides(group = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SST/A_s1vs2_c_stopFail_+06_+34_+12_bar_SRCD.pdf",wd),width=5,height=5)
+  
+                              
+    s1.s2.sst.stopcf = s1.s2.sst[grep('stop_corr_v_stop_fail', s1.s2.sst$Analysis),]
+    s1.s2.sst.stopcf$contrast = "stop_fail_v_stop_fail"
+    s1.s2.sst.stopcf$group2 = relevel(as.factor(s1.s2.sst.stopcf$group2), ref = "Pre Struggling")
+
+    s1.s2.c.sst.stopcf = smartbind(s1.s2.sst.stopcf, c.sst.stopcf)
+    s1.s2.c.sst.stopcf$group2 = as.factor(s1.s2.c.sst.stopcf$group2)
+    s1.s2.c.sst.stopcf$group2 = relevel(as.factor(s1.s2.c.sst.stopcf$group2), ref="Pre Struggling")
+    s1.s2.c.sst.stopcf$group2 = relevel(as.factor(s1.s2.c.sst.stopcf$group2), ref="Typical")
+
+      stopcorr_v_stopfail = ggplot(s1.s2.c.sst.stopcf[s1.s2.c.sst.stopcf$ROI=="+46_+42_+08",], aes(x=group2, y=means, fill = group2)) + geom_bar(stat="identity", position="dodge",colour="black", width=0.7) + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.2,0.2)) + ylab("Mean % Signal Change") + guides(color = FALSE) + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.text.x = element_text(size=11, face="bold"), axis.ticks.x = element_blank(), axis.line.x = element_blank(), axis.text.y = element_text(size = 15))  + guides(group = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SST/A_s1vs2_c_stopcf_+46_+42_+08_bar_SRCD.pdf",wd),width=5,height=5)
+
+ 
+    s1.s2.sst.stopcc = s1.s2.sst[grep('stop_corr_v_go_corr', s1.s2.sst$Analysis),]
+    s1.s2.sst.stopcc$contrast = "stop_corr_v_go_corr"
+    s1.s2.sst.stopcc$group2 = relevel(as.factor(s1.s2.sst.stopcc$group2), ref = "Pre Struggling")
+
+    s1.s2.c.sst.stopcc = smartbind(s1.s2.sst.stopcc, c.sst.stopcc)
+    s1.s2.c.sst.stopcc$group2 = as.factor(s1.s2.c.sst.stopcc$group2)
+    s1.s2.c.sst.stopcc$group2 = relevel(as.factor(s1.s2.c.sst.stopcc$group2), ref="Pre Struggling")
+    s1.s2.c.sst.stopcc$group2 = relevel(as.factor(s1.s2.c.sst.stopcc$group2), ref="Typical")
+
+
+      stopcorr_v_gocorr = ggplot(s1.s2.c.sst.stopcc[s1.s2.c.sst.stopcc$ROI=="+46_+42_+08",], aes(x=group2, y=means, fill = group2)) + geom_bar(stat="identity", position="dodge",colour="black", width=0.7) + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.1,0.1)) + ylab("Mean % Signal Change") + guides(color = FALSE) + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.text.x = element_text(size=11, face="bold"), axis.ticks.x = element_blank(), axis.line.x = element_blank(), axis.text.y = element_text(size = 15))  + guides(group = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SST/A_s1vs2_c_stopcc_+46_+42_+08_bar_SRCD.pdf",wd),width=5,height=5)
+ 
+
+
+    s1.s2.sst.stopc = s1.s2.sst[grep('stop_corr_v_baseline', s1.s2.sst$Analysis),]
+    s1.s2.sst.stopc$contrast = "stop_corr_v_baseline"
+    s1.s2.sst.stopc$group2 = relevel(as.factor(s1.s2.sst.stopc$group2), ref = "Pre Struggling")
+
+
+    s1.s2.c.sst.stopc = smartbind(s1.s2.sst.stopc, c.sst.stopc)
+    s1.s2.c.sst.stopc$group2 = as.factor(s1.s2.c.sst.stopc$group2)
+    s1.s2.c.sst.stopc$group2 = relevel(as.factor(s1.s2.c.sst.stopc$group2), ref="Pre Struggling")
+    s1.s2.c.sst.stopc$group2 = relevel(as.factor(s1.s2.c.sst.stopc$group2), ref="Typical")
+
+     
+    s1.s2.c.sst.3 = smartbind(s1.s2.c.sst.go, s1.s2.c.sst.stopf, s1.s2.c.sst.stopc)
+    s1.s2.c.sst.3$contrast = as.factor(s1.s2.c.sst.3$contrast)
+    s1.s2.c.sst.3$contrast = relevel(s1.s2.c.sst.3$contrast, ref="stop_fail_v_baseline")
+    s1.s2.c.sst.3$contrast = relevel(s1.s2.c.sst.3$contrast, ref="go_corr_v_baseline")
+    s1.s2.c.sst.3$group2 = as.factor(s1.s2.c.sst.3$group2)
+
+      gocorr_stopfail_stopcorr = ggplot(s1.s2.c.sst.3[s1.s2.c.sst.3$ROI=="+46_+42_+08",], aes(x=contrast, y=means, fill = group2)) + geom_bar(stat="identity", position="dodge",colour="black") + geom_errorbar(aes(y = means, ymin = means-se, ymax = means+se), position = position_dodge(.9), width=.2) +geom_abline(intercept = 0, slope = 0) + coord_cartesian(ylim=c(-0.2,0.2)) + ylab("Mean % Signal Change") + guides(color = FALSE) + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_blank(), axis.text.x = element_text(size=8, face="bold"), axis.ticks.x = element_blank(), axis.line.x = element_blank(), axis.text.y = element_text(size = 15))  + guides(group = FALSE, fill=FALSE) 
+                ggsave(filename=sprintf("%s/figures/Project_4/SST/A_s1vs2_c_3_+46_+42_+08_bar_SRCD.pdf",wd),width=5,height=5)
+ 
+
+
+###########
+# S1 vs. S2 (Austin RM)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_S2_a_rm/SC"
+out = runTestsRM(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_s1_v_s2_rm_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_s1_v_s2_rm_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(output.perc, file = "SC_s1_v_s2_rm_perc_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_S2_a_rm/SST"
+out = runTestsRM(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_s1_v_s2_rm_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_s1_v_s2_rm_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(output.perc, file = "SST_s1_v_s2_rm_perc_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+
+
+
+
+
+
+###########
+# S1 vs. S2 (Austin + Houston)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_S2_ah/SC"
+out = runTests(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_s1_v_s2_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_s1_v_s2_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_S2_ah/SST"
+out = runTests(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_s1_v_s2_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_s1_v_s2_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+
+
+
+
+
+
+
+###########
+# P1 vs. P2
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/P1_P2_4_28_14/SC"
+out = runTests(rootdir)
+out[out$Pval<0.05,]
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/P1_P2_4_28_14/SST"
+out = runTests(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_p1_p2_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_p1_p2_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+
+
+###########
+# C,S1,S2
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/C_S1_S2_a/SC"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_c_s1_s2_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_c_s1_s2_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/C_S1_S2_a/SST"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_c_s1_s2_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_c_s1_s2_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+
+###########
+# C vs. S1 vs. S2
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_S2_v_C/SC"
+out = runTests(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_s1_v_s2_v_c_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_s1_v_s2_v_c_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+
+
+
+
+----------------------------------------------------------------------------------------

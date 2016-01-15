@@ -1,0 +1,64 @@
+#JEM Jan 2014
+#sets up the filenames for the subjects in main folder-both austin and houston
+
+#Austin and Houston data
+dir = '/corral-repl/utexas/ldrc/'
+#filenames = c(Sys.glob(sprintf('%sldrc_*', dir)), Sys.glob(sprintf('%sH_*', dir)), Sys.glob(sprintf('%sPHILIPS/H_*', dir)))
+filenames = c(Sys.glob(sprintf('%sH_*_second', dir)), Sys.glob(sprintf('%sPHILIPS/H_*', dir)))
+
+#SC
+for (i in 1: length(filenames)){
+
+	#Below is the two step way of finding ___ directories
+	#behav.dir = list.dirs(filenames[i])[grep('behav', list.dirs(filenames[i]))]
+	#sc.dir = behav.dir[grep('SC', behav.dir)]
+	
+	#Below is the one line way of finding ____ directories
+	behav.dir = list.dirs(filenames[i])[grepl("(?=.*behav)(?=.*SC)", list.dirs(filenames[i]), perl = TRUE)]
+	
+	#lists all the files within the ____ directories
+	behav.files = list.files(behav.dir, include.dirs = F, full.names = T, all.files = F)
+	
+	#Takes .pkl files out of the list. Unfortunately it keeps folders in the list.
+	trashdir = behav.files[grep('.pkl', behav.files, invert = T)]
+	
+	#Takes folders out of the list of files (leaves anything that is not a folder in ex. .txt, .png, .Rout)
+	trash = trashdir[file.info(trashdir)$isdir == "FALSE"]
+	
+	#For the researcher, it lists what subject the script is currently working on
+	print(filenames[i])
+	
+	#Deletes the non .plk and non folder files
+	file.remove(trash)
+}
+
+#SST
+for (i in 1: length(filenames)){
+
+	#Below is the two step way of finding ___ directories
+	#behav.dir = list.dirs(filenames[i])[grep('behav', list.dirs(filenames[i]))]
+	#sc.dir = behav.dir[grep('SST', behav.dir)]
+	
+	#how to skip people. Find their index in filenames and just add it to the if statement.
+	#if(i == 22){
+	#next
+	#}
+	
+	#Below is the one line way of finding ____ directories
+	behav.dir = list.dirs(filenames[i])[grepl("(?=.*behav)(?=.*SST)", list.dirs(filenames[i]), perl = TRUE)]
+	
+	#lists all the files within the ____ directories
+	behav.files = list.files(behav.dir, include.dirs = F, full.names = T, all.files = F)
+	
+	#Takes .pkl files out of the list. Unfortunately it keeps folders in the list.
+	trashdir = behav.files[grep('.pkl', behav.files, invert = T)]
+	
+	#Takes folders out of the list of files (leaves anything that is not a folder in ex. .txt, .png, .Rout)
+	trash = trashdir[file.info(trashdir)$isdir == "FALSE"]
+	
+	#For the researcher, it lists what subject the script is currently working on
+	print(filenames[i])
+	
+	#Deletes the non .plk and non folder files
+	file.remove(trash)
+}

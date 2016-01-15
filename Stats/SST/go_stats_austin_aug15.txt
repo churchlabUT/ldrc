@@ -1,0 +1,78 @@
+[1] "Mean Go RT - S1 vs. Controls"
+
+	Welch Two Sample t-test
+
+data:  go_rt_mean by group3
+t = -1.6936, df = 51.691, p-value = 0.09635
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.061398759  0.005198041
+sample estimates:
+mean in group control   mean in group first 
+            0.6287424             0.6568428 
+
+[1] "Mean Go Accuracy - S1 vs. Controls"
+
+	Welch Two Sample t-test
+
+data:  go_acc_mean by group3
+t = 1.5568, df = 48.738, p-value = 0.126
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.006842476  0.053870662
+sample estimates:
+mean in group control   mean in group first 
+            0.9023438             0.8788297 
+
+[1] "Mean Go RT - S2 vs. Controls"
+
+	Welch Two Sample t-test
+
+data:  go_rt_mean by group3
+t = -0.38092, df = 43.712, p-value = 0.7051
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.04343555  0.02962854
+sample estimates:
+mean in group control  mean in group second 
+            0.6287424             0.6356460 
+
+[1] "Mean Go Accuracy - S2 vs. Controls"
+
+	Welch Two Sample t-test
+
+data:  go_acc_mean by group3
+t = 1.5353, df = 45, p-value = 0.1317
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.007804583  0.057862453
+sample estimates:
+mean in group control  mean in group second 
+            0.9023438             0.8773148 
+
+[1] "Mean Go RT - S1 vs. s2"
+
+	Welch Two Sample t-test
+
+data:  go_rt_mean by group3
+t = 1.0844, df = 55.274, p-value = 0.2829
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.01797085  0.06036456
+sample estimates:
+ mean in group first mean in group second 
+           0.6568428            0.6356460 
+
+[1] "Mean Go Accuracy - S1 vs. S2"
+
+	Welch Two Sample t-test
+
+data:  go_acc_mean by group3
+t = 0.092134, df = 55.274, p-value = 0.9269
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.03143149  0.03446117
+sample estimates:
+ mean in group first mean in group second 
+           0.8788297            0.8773148 
+

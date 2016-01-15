@@ -1,0 +1,108 @@
+TACC: Setting memory limits for job 1722515 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/bash
+#
+# SGE control file automatically created by launch
+# Launching single command: setup_H_LDIMG9012.sh
+#
+#
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N setup_H_LDIMG9012       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 1way 12
+#$ -q serial
+#$ -l h_rt=10:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+
+
+set -x                   # Echo commands, use "set echo" with csh
+setup_H_LDIMG9012.sh
+--------------------------------------------------------------------------------
+TACC: Done.
++ setup_H_LDIMG9012.sh
+subdir /corral-repl/utexas/ldrc/H_LDIMG9012 already exists
+overwriting...
+detected raw: (1) localizer localizer
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9012/raw /corral-repl/utexas/ldrc/H_LDIMG9012/raw/H_LDIMG9012/1
+detected raw: (2) localizer localizer
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9012/raw /corral-repl/utexas/ldrc/H_LDIMG9012/raw/H_LDIMG9012/2
+detected anatomy: (3) t1_mprage_sag_p2_iso_1 t1_mprage_sag_p2_iso_1
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy /corral-repl/utexas/ldrc/H_LDIMG9012/raw/H_LDIMG9012/3
+detected anatomy: (4) t2_spc_sag_p2_iso t2_spc_sag_p2_iso
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy /corral-repl/utexas/ldrc/H_LDIMG9012/raw/H_LDIMG9012/4
+detected DTI: (5) DTI_ep2d_diff_mddw_64_2_iso DTI_ep2d_diff_mddw_64_2_iso
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9012/DTI /corral-repl/utexas/ldrc/H_LDIMG9012/raw/H_LDIMG9012/5
+skipping derived series  6
+detected derived: (6) DTI_ep2d_diff_mddw_64_2_iso DTI_ep2d_diff_mddw_64_2_iso_ADC
+skipping derived series  7
+detected derived: (7) DTI_ep2d_diff_mddw_64_2_iso DTI_ep2d_diff_mddw_64_2_iso_TRACEW
+skipping derived series  8
+detected derived: (8) DTI_ep2d_diff_mddw_64_2_iso DTI_ep2d_diff_mddw_64_2_iso_FA
+t1mpragesagp2iso1s003a1001.nii.gz
+ot1mpragesagp2iso1s003a1001.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/ot1mpragesagp2iso1s003a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/highres001.nii.gz
+highresctr is at  2
+mv /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/ot1mpragesagp2iso1s003a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/highres002.nii.gz
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/ot1mpragesagp2iso1s003a1001.nii.gz': No such file or directory
+
+highresctr is at  3
+mv /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/ot1mpragesagp2iso1s003a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/highres003.nii.gz
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/ot1mpragesagp2iso1s003a1001.nii.gz': No such file or directory
+
+highresctr is at  4
+cot1mpragesagp2iso1s003a1001.nii.gz
+t2spcsagp2isos004a1001.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/t2spcsagp2isos004a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/other
+ot2spcsagp2isos004a1001.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/ot2spcsagp2isos004a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/other
+t1mpragesagp2iso1s003a1001A.nii.gz
+ot1mpragesagp2iso1s003a1001A.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/ot1mpragesagp2iso1s003a1001A.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/highres004.nii.gz
+highresctr is at  5
+mv /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/ot1mpragesagp2iso1s003a1001A.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/highres005.nii.gz
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/ot1mpragesagp2iso1s003a1001A.nii.gz': No such file or directory
+
+highresctr is at  6
+mv /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/ot1mpragesagp2iso1s003a1001A.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/highres006.nii.gz
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/ot1mpragesagp2iso1s003a1001A.nii.gz': No such file or directory
+
+highresctr is at  7
+cot1mpragesagp2iso1s003a1001A.nii.gz
+t2spcsagp2isos004a1001A.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/t2spcsagp2isos004a1001A.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/other
+ot2spcsagp2isos004a1001A.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/ot2spcsagp2isos004a1001A.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/other
+mv /corral-repl/utexas/ldrc/H_LDIMG9012/DTI/DTIep2ddiffmddw642isos005a001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9012/DTI/DTI_1.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9012/DTI/DTIep2ddiffmddw642isos005a001.bvec /corral-repl/utexas/ldrc/H_LDIMG9012/DTI/DTI_1.bvec
+mv /corral-repl/utexas/ldrc/H_LDIMG9012/DTI/DTIep2ddiffmddw642isos005a001.bval /corral-repl/utexas/ldrc/H_LDIMG9012/DTI/DTI_1.bval
+mv /corral-repl/utexas/ldrc/H_LDIMG9012/DTI/DTIep2ddiffmddw642isos005a001A.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9012/DTI/DTI_2.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9012/DTI/DTIep2ddiffmddw642isos005a001A.bvec /corral-repl/utexas/ldrc/H_LDIMG9012/DTI/DTI_2.bvec
+mv /corral-repl/utexas/ldrc/H_LDIMG9012/DTI/DTIep2ddiffmddw642isos005a001A.bval /corral-repl/utexas/ldrc/H_LDIMG9012/DTI/DTI_2.bval
+bolddirs:
+[]
+recon-all -i /corral-repl/utexas/ldrc/H_LDIMG9012/anatomy/highres001.nii.gz -subjid ldrc_H_LDIMG9012 -sd /corral-repl/utexas/poldracklab/data/subdir
+subject dir /corral-repl/utexas/poldracklab/data/subdir/ldrc_H_LDIMG9012 does not exist - skipping autorecon1
+brainmask /corral-repl/utexas/poldracklab/data/subdir/ldrc_H_LDIMG9012/mri/brainmask.mgz does not exist - skipping copy
+found DTI file: DTI_2.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9012/DTI/DTI_2.nii.gz
+found DTI file: DTI_1.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9012/DTI/DTI_1.nii.gz
+logs: ERROR: Traceback (most recent call last):
+  File "/corral-repl/utexas/poldracklab/software_lonestar/local/bin/dtiqa.py", line 138, in <module>
+    bvals=N.loadtxt(bvalfile)
+  File "/corral-repl/utexas/poldracklab/software_lonestar/python/lib/python2.7/site-packages/numpy/lib/npyio.py", line 729, in loadtxt
+    fh = iter(open(fname, 'U'))
+IOError: [Errno 13] Permission denied: '/corral-repl/utexas/ldrc/H_LDIMG9012/DTI/DTI_1.bval'
+
+TACC: Cleaning up after job: 1722515
+TACC: Done.

@@ -1,0 +1,15 @@
+#4 (left) and 2 (right)
+/corral-repl/utexas/ldrc/ldrc_1_015_second/behav/SST/SST_Run1
+/corral-repl/utexas/ldrc/ldrc_1_015_second/behav/SST/SST_Run2
+/corral-repl/utexas/ldrc/ldrc_1_020_second/behav/SST/SST_Run1
+/corral-repl/utexas/ldrc/ldrc_1_020_second/behav/SST/SST_Run2
+# 4 (left) and 1 (right)
+/corral-repl/utexas/ldrc/ldrc_1_001_third/behav/SST/SST_Run1
+/corral-repl/utexas/ldrc/ldrc_c_061/behav/SST/SST_Run1
+/corral-repl/utexas/ldrc/H_LDIMG8960_c_second/behav/SST/SST_Run1
+#2 (left) and 1 (right)
+/corral-repl/utexas/ldrc/H_LDFHO2436_2_second/behav/SST/SST_Run1
+/corral-repl/utexas/ldrc/H_LDFHO2436_2_second/behav/SST/SST_Run2
+#9 (left) and 6 (right)
+/corral-repl/utexas/ldrc/H_LDIMG8960_c_third/behav/SST/SST_Run1
+/corral-repl/utexas/ldrc/H_LDIMG8960_c_third/behav/SST/SST_Run2

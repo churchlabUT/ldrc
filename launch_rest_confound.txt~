@@ -1,0 +1,15 @@
+/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/LDFHO23801_1/BOLD/run01_10_REST_1/bold.nii.gz 0.2
+/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/LDFHO23801_1/BOLD/run05_15_REST_2/bold.nii.gz 0.2
+/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/LDFHO23901_1/BOLD/run01_13_REST_1/bold.nii.gz 0.2
+/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/LDFHO24617_1/BOLD/bad_run01_5_REST_1/bold.nii.gz 0.2
+/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/LDFHO24617_1/BOLD/bad_run01_6_REST_1/bold.nii.gz 0.2
+/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/LDFHO24617_1/BOLD/run01_7_REST_1/bold.nii.gz 0.2
+/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/LDFHO24617_1/BOLD/run05_17_REST_2/bold.nii.gz 0.2
+/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/LDFHO24761_1/BOLD/run01_4_REST_1/bold.nii.gz 0.2
+/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/LDFHO24761_1/BOLD/run05_18_REST_2/bold.nii.gz 0.2
+/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/LDFHO24768_1/BOLD/run01_7_REST_1/bold.nii.gz 0.2
+/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/LDFHO24768_1/BOLD/run05_17_REST_2/bold.nii.gz 0.2
+/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/LDFHO24839_1/BOLD/run01_4_REST_1/bold.nii.gz 0.2
+/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/LDFHO24839_1/BOLD/run05_14_REST_2/bold.nii.gz 0.2
+/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/LDFHO24861_1/BOLD/run01_5_REST_1/bold.nii.gz 0.2
+/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/LDFHO24861_1/BOLD/run05_16_REST_2/bold.nii.gz 0.2

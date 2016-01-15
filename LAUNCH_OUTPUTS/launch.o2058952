@@ -1,0 +1,119 @@
+TACC: Setting memory limits for job 2058952 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: launch_A_SC_lev2_gfeats.txt
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N launch       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 2way 120
+#$ -q normal
+#$ -l h_rt=04:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE launch_A_SC_lev2_gfeats.txt
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+/bin/.: Permission denied.
+setenv: Too many arguments.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 2058952
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+Warning: Permanently added 'c338-114.ls4.tacc.utexas.edu,206.76.199.97' (RSA) to the list of known hosts.
+Warning: Permanently added 'c327-212.ls4.tacc.utexas.edu,206.76.197.95' (RSA) to the list of known hosts.
+--------------------------------------------------
+TACC Launcher -> 20 processors allocated.
+TACC Launcher -> 30 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c326-114.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope1.fsf)
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope1_lev2.gfeat/report_log.html
+TACC Launcher -> Iniating task 2 on c326-114.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope10.fsf)
+TACC Launcher -> Iniating task 4 on c308-101.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope3.fsf)
+TACC Launcher -> Iniating task 9 on c334-112.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope8.fsf)
+TACC Launcher -> Iniating task 6 on c328-303.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope5.fsf)
+TACC Launcher -> Iniating task 12 on c329-306.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope10.fsf)
+TACC Launcher -> Iniating task 8 on c301-307.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope7.fsf)
+TACC Launcher -> Iniating task 13 on c330-105.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope2.fsf)
+TACC Launcher -> Iniating task 3 on c308-101.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope2.fsf)
+TACC Launcher -> Iniating task 20 on c329-204.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope9.fsf)
+TACC Launcher -> Iniating task 10 on c334-112.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope9.fsf)
+TACC Launcher -> Iniating task 5 on c328-303.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope4.fsf)
+TACC Launcher -> Iniating task 11 on c329-306.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope1.fsf)
+TACC Launcher -> Iniating task 7 on c301-307.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope6.fsf)
+TACC Launcher -> Iniating task 14 on c330-105.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope3.fsf)
+TACC Launcher -> Iniating task 16 on c327-212.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope5.fsf)
+TACC Launcher -> Iniating task 19 on c329-204.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope8.fsf)
+TACC Launcher -> Iniating task 15 on c327-212.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope4.fsf)
+TACC Launcher -> Iniating task 18 on c338-114.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope7.fsf)
+TACC Launcher -> Iniating task 17 on c338-114.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope6.fsf)
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope2_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope3_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope10_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope7_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope6_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope5_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope4_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope9_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_0_013_third/model/SC/cope8_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope5_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope4_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope7_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope10_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope6_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope1_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope9_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope8_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope3_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_1_001_third/model/SC/cope2_lev2.gfeat/report_log.html
+TACC Launcher -> Iniating task 27 on c301-307.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope6.fsf)
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope6_lev2.gfeat/report_log.html
+TACC Launcher -> Iniating task 28 on c301-307.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope7.fsf)
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope7_lev2.gfeat/report_log.html
+TACC Launcher -> Iniating task 29 on c334-112.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope8.fsf)
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope8_lev2.gfeat/report_log.html
+TACC Launcher -> Iniating task 23 on c308-101.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope2.fsf)
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope2_lev2.gfeat/report_log.html
+TACC Launcher -> Iniating task 30 on c334-112.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope9.fsf)
+TACC Launcher -> Iniating task 21 on c326-114.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope1.fsf)
+TACC Launcher -> Iniating task 22 on c326-114.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope10.fsf)
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope9_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope10_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope1_lev2.gfeat/report_log.html
+TACC Launcher -> Iniating task 26 on c328-303.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope5.fsf)
+TACC Launcher -> Iniating task 25 on c328-303.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope4.fsf)
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope4_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope5_lev2.gfeat/report_log.html
+TACC Launcher -> Iniating task 24 on c308-101.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope3.fsf)
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_2_005_third/model/SC/cope3_lev2.gfeat/report_log.html
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 2058952
+TACC: Done.

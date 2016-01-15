@@ -1,0 +1,5 @@
+fmriqa.py /corral-repl/utexas/ldrc/ldrc_c_061/BOLD/run04_17_SC_2/bold_mcf.nii.gz 2.0
+fmriqa.py /corral-repl/utexas/ldrc/ldrc_c_061/BOLD/run07_23_SC_3/bold_mcf.nii.gz 2.0
+fmriqa.py /corral-repl/utexas/ldrc/ldrc_c_068/BOLD/run02_11_SC_1/bold_mcf.nii.gz 2.0
+fmriqa.py /corral-repl/utexas/ldrc/ldrc_c_068/BOLD/run04_15_SC_2/bold_mcf.nii.gz 2.0
+fmriqa.py /corral-repl/utexas/ldrc/ldrc_c_068/BOLD/run06_21_SST_2/bold_mcf.nii.gz 2.0

@@ -1,0 +1,514 @@
+"Sentence","cond_type","Resp","N"
+"A basement won the family.","active_ns","nonsense",43
+"A basement won the family.","active_ns","sense",5
+"A basement won the family.","active_ns",NA,2
+"A bird dropped the worm.","active_s","nonsense",3
+"A bird dropped the worm.","active_s","sense",52
+"A bird dropped the worm.","active_s",NA,1
+"A cat was saved by a king.","passive_s","nonsense",13
+"A cat was saved by a king.","passive_s","sense",34
+"A cat was saved by a king.","passive_s",NA,3
+"A chair was tasted by a frame.","passive_ns","nonsense",51
+"A chair was tasted by a frame.","passive_ns",NA,1
+"A cup was cut by the pillow.","passive_ns","nonsense",48
+"A cup was cut by the pillow.","passive_ns","sense",3
+"A cup was cut by the pillow.","passive_ns",NA,2
+"A fence walked to the mother.","active_ns","nonsense",44
+"A fence walked to the mother.","active_ns","sense",11
+"A fence walked to the mother.","active_ns",NA,2
+"A fly entered the house.","active_s","nonsense",8
+"A fly entered the house.","active_s","sense",43
+"A fly entered the house.","active_s",NA,1
+"A hen carried the dancer.","active_ns","nonsense",63
+"A hen carried the dancer.","active_ns","sense",4
+"A joke hugged the dragon.","active_ns","nonsense",46
+"A joke hugged the dragon.","active_ns","sense",2
+"A mouse chewed on the cheese.","active_s","nonsense",1
+"A mouse chewed on the cheese.","active_s","sense",53
+"A phone was used by a doctor.","passive_s","nonsense",5
+"A phone was used by a doctor.","passive_s","sense",43
+"A phone was used by a doctor.","passive_s",NA,1
+"A rope was sold by the frog.","passive_ns","nonsense",54
+"A rope was sold by the frog.","passive_ns","sense",3
+"A rope was sold by the frog.","passive_ns",NA,1
+"A rug was rolled by the actor.","passive_s","nonsense",13
+"A rug was rolled by the actor.","passive_s","sense",35
+"A rug was rolled by the actor.","passive_s",NA,2
+"A tiger scared the zebra.","active_s","nonsense",5
+"A tiger scared the zebra.","active_s","sense",55
+"A tiger scared the zebra.","active_s",NA,1
+"Bread was scratched by a tray.","passive_ns","nonsense",49
+"Bread was scratched by a tray.","passive_ns","sense",8
+"Bread was scratched by a tray.","passive_ns",NA,2
+"Fire was licked by a banana.","passive_ns","nonsense",64
+"Fire was licked by a banana.","passive_ns","sense",4
+"Pasta was waved by a fish.","passive_ns","nonsense",45
+"Pasta was waved by a fish.","passive_ns","sense",1
+"Pasta was waved by a fish.","passive_ns",NA,2
+"Pie was raised by the letter.","passive_ns","nonsense",55
+"Pie was raised by the letter.","passive_ns","sense",12
+"Pie was raised by the letter.","passive_ns",NA,1
+"Pizza was cooked by the man.","passive_s","nonsense",2
+"Pizza was cooked by the man.","passive_s","sense",49
+"Pizza was cooked by the man.","passive_s",NA,2
+"Soup was served by a woman.","passive_s","nonsense",5
+"Soup was served by a woman.","passive_s","sense",47
+"The banker counted the money.","active_s","nonsense",5
+"The banker counted the money.","active_s","sense",53
+"The banker counted the money.","active_s",NA,1
+"The boy cleared off the table.","active_s","nonsense",3
+"The boy cleared off the table.","active_s","sense",49
+"The couch sang to the duck.","active_ns","nonsense",45
+"The couch sang to the duck.","active_ns","sense",5
+"The ear dressed a student.","active_ns","nonsense",45
+"The ear dressed a student.","active_ns","sense",3
+"The ear dressed a student.","active_ns",NA,2
+"The girl was told by a fork.","passive_ns","nonsense",51
+"The girl was told by a fork.","passive_ns","sense",4
+"The girl was told by a fork.","passive_ns",NA,3
+"The iron borrowed a teacher.","active_ns","nonsense",56
+"The iron borrowed a teacher.","active_ns","sense",2
+"The iron borrowed a teacher.","active_ns",NA,2
+"The lamp was bought by the sister.","passive_s","nonsense",6
+"The lamp was bought by the sister.","passive_s","sense",44
+"The lamp was bought by the sister.","passive_s",NA,7
+"The queen planted a flower.","active_s","nonsense",2
+"The queen planted a flower.","active_s","sense",56
+"The shirt was stained by mud.","passive_s","nonsense",11
+"The shirt was stained by mud.","passive_s","sense",35
+"The shirt was stained by mud.","passive_s",NA,2
+"The show was seen by a child.","passive_s","nonsense",5
+"The show was seen by a child.","passive_s","sense",42
+"The show was seen by a child.","passive_s",NA,3
+"The snake asked for the father.","active_ns","nonsense",54
+"The snake asked for the father.","active_ns","sense",3
+"The uncle put sugar in the tea.","active_s","nonsense",3
+"The uncle put sugar in the tea.","active_s","sense",44
+"The uncle put sugar in the tea.","active_s",NA,2
+"A boat raced in the library.","active_ns","nonsense",36
+"A boat raced in the library.","active_ns",NA,1
+"A chicken was asked by a bell.","passive_ns","nonsense",33
+"A chicken was asked by a bell.","passive_ns","sense",2
+"A chicken was asked by a bell.","passive_ns",NA,1
+"A clown let go of a balloon.","active_s","nonsense",1
+"A clown let go of a balloon.","active_s","sense",36
+"A clown let go of a balloon.","active_s",NA,2
+"A cousin wanted a pillow.","active_s","nonsense",9
+"A cousin wanted a pillow.","active_s","sense",27
+"A cousin wanted a pillow.","active_s",NA,2
+"A falcon grabbed the egg.","active_s","nonsense",11
+"A falcon grabbed the egg.","active_s","sense",25
+"A falcon grabbed the egg.","active_s",NA,1
+"A girl kicked the ball.","active_s","nonsense",3
+"A girl kicked the ball.","active_s","sense",35
+"A goat graded the mirror.","active_ns","nonsense",35
+"A goat graded the mirror.","active_ns","sense",5
+"A goat graded the mirror.","active_ns",NA,1
+"A home was entered by the men.","passive_s","nonsense",10
+"A home was entered by the men.","passive_s","sense",29
+"A home was entered by the men.","passive_s",NA,2
+"A horse was peeled by salt.","passive_ns","nonsense",36
+"A horse was peeled by salt.","passive_ns","sense",1
+"A king was chewed by a tree.","passive_ns","nonsense",36
+"A king was chewed by a tree.","passive_ns","sense",3
+"A raccoon scratched at the box.","active_s","nonsense",6
+"A raccoon scratched at the box.","active_s","sense",29
+"A raccoon scratched at the box.","active_s",NA,1
+"A rope was pulled by the ape.","passive_s","nonsense",16
+"A rope was pulled by the ape.","passive_s","sense",19
+"A song was sung by the cowboy.","passive_s","nonsense",6
+"A song was sung by the cowboy.","passive_s","sense",32
+"A song was sung by the cowboy.","passive_s",NA,3
+"A table was planted by a kid.","passive_ns","nonsense",36
+"A table was planted by a kid.","passive_ns","sense",5
+"Pizza was used by a book.","passive_ns","nonsense",34
+"Pizza was used by a book.","passive_ns","sense",3
+"Pizza was used by a book.","passive_ns",NA,1
+"Seed was pecked by a hen.","passive_s","nonsense",9
+"Seed was pecked by a hen.","passive_s","sense",26
+"Seed was pecked by a hen.","passive_s",NA,3
+"The actress watched a show.","active_s","nonsense",7
+"The actress watched a show.","active_s","sense",30
+"The actress watched a show.","active_s",NA,1
+"The baker stirred the spoon.","active_s","nonsense",18
+"The baker stirred the spoon.","active_s","sense",16
+"The baker stirred the spoon.","active_s",NA,3
+"The banana lost the worm.","active_ns","nonsense",41
+"The banana lost the worm.","active_ns","sense",2
+"The banana lost the worm.","active_ns",NA,1
+"The barn barked at the driver.","active_ns","nonsense",32
+"The barn barked at the driver.","active_ns","sense",1
+"The barn barked at the driver.","active_ns",NA,2
+"The boy was owned by a lamp.","passive_ns","nonsense",36
+"The boy was owned by a lamp.","passive_ns","sense",7
+"The car was chased by a dog.","passive_s","nonsense",5
+"The car was chased by a dog.","passive_s","sense",37
+"The door was eaten by a pot.","passive_ns","nonsense",36
+"The door was eaten by a pot.","passive_ns",NA,2
+"The flag roared at a flower.","active_ns","nonsense",45
+"The flag roared at a flower.","active_ns","sense",3
+"The flag roared at a flower.","active_ns",NA,2
+"The key opened the carrot.","active_ns","nonsense",41
+"The key opened the carrot.","active_ns","sense",5
+"The mother carried a cake.","active_s","nonsense",3
+"The mother carried a cake.","active_s","sense",36
+"The mother carried a cake.","active_s",NA,1
+"The movie was played by dad.","passive_s","nonsense",6
+"The movie was played by dad.","passive_s","sense",29
+"The movie was played by dad.","passive_s",NA,1
+"The plum was tasted by a bear.","passive_s","nonsense",14
+"The plum was tasted by a bear.","passive_s","sense",21
+"The plum was tasted by a bear.","passive_s",NA,1
+"The sock listened to the pig.","active_ns","nonsense",35
+"The sock listened to the pig.","active_ns","sense",2
+"The soup was caught by a ring.","passive_ns","nonsense",36
+"The soup was caught by a ring.","passive_ns","sense",2
+"The soup was caught by a ring.","passive_ns",NA,1
+"The test was read by a teacher.","passive_s","nonsense",2
+"The test was read by a teacher.","passive_s","sense",34
+"The test was read by a teacher.","passive_s",NA,1
+"The woman scared the paper.","active_ns","nonsense",35
+"The woman scared the paper.","active_ns","sense",3
+"A game owned the doctor.","active_ns","nonsense",39
+"A game owned the doctor.","active_ns","sense",8
+"A gift was opened by a boy.","passive_s","nonsense",2
+"A gift was opened by a boy.","passive_s","sense",42
+"A gift was opened by a boy.","passive_s",NA,1
+"A hand was licked by a puppy.","passive_s","nonsense",5
+"A hand was licked by a puppy.","passive_s","sense",41
+"A pig was scared by a fox.","passive_s","nonsense",6
+"A pig was scared by a fox.","passive_s","sense",42
+"A plate stained a kitten.","active_ns","nonsense",44
+"A plate stained a kitten.","active_ns","sense",3
+"A plate stained a kitten.","active_ns",NA,4
+"A ring prepared for a potato.","active_ns","nonsense",46
+"A ring prepared for a potato.","active_ns","sense",5
+"A shirt chopped at the tray.","active_ns","nonsense",37
+"A shirt chopped at the tray.","active_ns","sense",8
+"A shirt chopped at the tray.","active_ns",NA,2
+"A song was picked by a cat.","passive_ns","nonsense",38
+"A song was picked by a cat.","passive_ns","sense",8
+"A test was cooked by a bat.","passive_ns","nonsense",41
+"A test was cooked by a bat.","passive_ns","sense",1
+"A wall was marked with paint.","passive_s","nonsense",11
+"A wall was marked with paint.","passive_s","sense",27
+"A wall was marked with paint.","passive_s",NA,3
+"A woman bought a pizza.","active_s","sense",42
+"A worm was dropped by the bird.","passive_s","nonsense",6
+"A worm was dropped by the bird.","passive_s","sense",35
+"A worm was dropped by the bird.","passive_s",NA,5
+"Dirt was borrowed by the chalk.","passive_ns","nonsense",38
+"Dirt was borrowed by the chalk.","passive_ns","sense",5
+"Mud was dressed by air.","passive_ns","nonsense",38
+"Mud was dressed by air.","passive_ns","sense",1
+"Mud was dressed by air.","passive_ns",NA,1
+"Tea was stirred by the aunt.","passive_s","nonsense",15
+"Tea was stirred by the aunt.","passive_s","sense",24
+"Tea was stirred by the aunt.","passive_s",NA,2
+"The actress chased the sugar.","active_ns","nonsense",41
+"The actress chased the sugar.","active_ns","sense",2
+"The actress chased the sugar.","active_ns",NA,2
+"The baby rolled in the crib.","active_s","nonsense",6
+"The baby rolled in the crib.","active_s","sense",33
+"The baby rolled in the crib.","active_s",NA,2
+"The broom grabbed the queen.","active_ns","nonsense",45
+"The broom grabbed the queen.","active_ns","sense",3
+"The cattle listened to the bell.","active_s","nonsense",13
+"The cattle listened to the bell.","active_s","sense",27
+"The cattle listened to the bell.","active_s",NA,1
+"The chicken ate some seed.","active_s","nonsense",5
+"The chicken ate some seed.","active_s","sense",35
+"The chicken ate some seed.","active_s",NA,2
+"The dog was raised by a spoon.","passive_ns","nonsense",46
+"The dog was raised by a spoon.","passive_ns","sense",1
+"The father played the movie.","active_s","nonsense",3
+"The father played the movie.","active_s","sense",40
+"The grass was moved by wind.","passive_s","nonsense",10
+"The grass was moved by wind.","passive_s","sense",36
+"The hill was addressed by soap.","passive_ns","nonsense",37
+"The hill was addressed by soap.","passive_ns","sense",4
+"The hill was addressed by soap.","passive_ns",NA,1
+"The lion roared at the meat.","active_s","nonsense",22
+"The lion roared at the meat.","active_s","sense",21
+"The mirror was read by a car.","passive_ns","nonsense",38
+"The mirror was read by a car.","passive_ns","sense",3
+"The phone was boiled by a rat.","passive_ns","nonsense",41
+"The phone was boiled by a rat.","passive_ns","sense",1
+"The phone was boiled by a rat.","passive_ns",NA,1
+"The pillow jumped at a bear.","active_ns","nonsense",49
+"The pillow jumped at a bear.","active_ns","sense",1
+"The sheep escaped from the wolf.","active_s","nonsense",8
+"The sheep escaped from the wolf.","active_s","sense",34
+"The shot was given by a nurse.","passive_s","nonsense",8
+"The shot was given by a nurse.","passive_s","sense",33
+"The table climbed on a brother.","active_ns","nonsense",44
+"The table climbed on a brother.","active_ns","sense",4
+"The worker built the barn.","active_s","nonsense",2
+"The worker built the barn.","active_s","sense",38
+"The worker built the barn.","active_s",NA,2
+"A ball was prepared by glass.","passive_ns","nonsense",35
+"A ball was prepared by glass.","passive_ns","sense",7
+"A ball was prepared by glass.","passive_ns",NA,1
+"A candle sold the question.","active_ns","nonsense",42
+"A candle sold the question.","active_ns","sense",4
+"A card was scared by a baby.","passive_ns","nonsense",39
+"A card was scared by a baby.","passive_ns","sense",1
+"A card was scared by a baby.","passive_ns",NA,1
+"A chicken shopped at a movie.","active_ns","nonsense",95
+"A chicken shopped at a movie.","active_ns","sense",4
+"A chicken shopped at a movie.","active_ns",NA,3
+"A driver honked at the walker.","active_s","nonsense",8
+"A driver honked at the walker.","active_s","sense",32
+"A driver honked at the walker.","active_s",NA,1
+"A family baked some bread.","active_s","nonsense",6
+"A family baked some bread.","active_s","sense",40
+"A family baked some bread.","active_s",NA,1
+"A fence was jumped by a horse.","passive_s","nonsense",10
+"A fence was jumped by a horse.","passive_s","sense",28
+"A fence was jumped by a horse.","passive_s",NA,2
+"A joke was told by the queen.","passive_s","nonsense",8
+"A joke was told by the queen.","passive_s","sense",33
+"A mom addressed the letter.","active_s","nonsense",7
+"A mom addressed the letter.","active_s","sense",32
+"A mom addressed the letter.","active_s",NA,2
+"A nurse helped a student.","active_s","nonsense",2
+"A nurse helped a student.","active_s","sense",41
+"A tree was planted in dirt.","active_s","nonsense",6
+"A tree was planted in dirt.","active_s","sense",39
+"A tree was planted in dirt.","active_s",NA,1
+"A wolf was found by a fan.","passive_ns","nonsense",36
+"A wolf was found by a fan.","passive_ns","sense",4
+"Clay was rolled by the artist.","passive_s","nonsense",11
+"Clay was rolled by the artist.","passive_s","sense",31
+"Clay was rolled by the artist.","passive_s",NA,1
+"Iron was chased by the bee.","passive_ns","nonsense",46
+"Iron was chased by the bee.","passive_ns","sense",5
+"Meat was eaten by a lion.","passive_s","nonsense",3
+"Meat was eaten by a lion.","passive_s","sense",39
+"Pie was made by a cousin.","passive_s","nonsense",8
+"Pie was made by a cousin.","passive_s","sense",35
+"Sugar was moved by the sock.","passive_ns","nonsense",37
+"Sugar was moved by the sock.","passive_ns","sense",6
+"The aunt walked on the boat.","active_s","nonsense",9
+"The aunt walked on the boat.","active_s","sense",32
+"The bear tasted the apple.","active_s","nonsense",9
+"The bear tasted the apple.","active_s","sense",36
+"The book was read by a friend.","passive_s","nonsense",5
+"The book was read by a friend.","passive_s","sense",37
+"The book was read by a friend.","passive_s",NA,1
+"The child peeled the banana.","active_s","nonsense",7
+"The child peeled the banana.","active_s","sense",49
+"The child peeled the banana.","active_s",NA,1
+"The fork called to a sister.","active_ns","nonsense",37
+"The fork called to a sister.","active_ns","sense",1
+"The fork called to a sister.","active_ns",NA,3
+"The mat was raced by a fox.","passive_ns","nonsense",36
+"The mat was raced by a fox.","passive_ns","sense",2
+"The mat was raced by a fox.","passive_ns",NA,2
+"The money counted the singer.","active_ns","nonsense",33
+"The money counted the singer.","active_ns","sense",6
+"The money counted the singer.","active_ns",NA,3
+"The mouse was graded by a flag.","passive_ns","nonsense",37
+"The mouse was graded by a flag.","passive_ns","sense",2
+"The mouse was graded by a flag.","passive_ns",NA,2
+"The puppy scored a dress.","active_ns","nonsense",40
+"The puppy scored a dress.","active_ns","sense",1
+"The rabbit bought the worker.","active_ns","nonsense",39
+"The rabbit bought the worker.","active_ns","sense",3
+"The rabbit bought the worker.","active_ns",NA,1
+"The ring was owned by a dancer.","passive_s","nonsense",15
+"The ring was owned by a dancer.","passive_s","sense",35
+"The soup hired a cowboy.","active_ns","nonsense",43
+"The soup hired a cowboy.","active_ns","sense",2
+"The soup hired a cowboy.","active_ns",NA,1
+"The spoon was waved by a cook.","passive_s","nonsense",14
+"The spoon was waved by a cook.","passive_s","sense",26
+"The spoon was waved by a cook.","passive_s",NA,1
+"The store cooked on the grass.","active_ns","nonsense",36
+"The store cooked on the grass.","active_ns","sense",2
+"The store cooked on the grass.","active_ns",NA,5
+"The woman was pulled by a nut.","passive_ns","nonsense",41
+"The woman was pulled by a nut.","passive_ns","sense",2
+"A barn was built by the uncle.","passive_s","nonsense",5
+"A barn was built by the uncle.","passive_s","sense",30
+"A barn was built by the uncle.","passive_s",NA,1
+"A box was walked by a duck.","passive_ns","nonsense",32
+"A box was walked by a duck.","passive_ns","sense",2
+"A box was walked by a duck.","passive_ns",NA,2
+"A brother opened the present.","active_s","nonsense",3
+"A brother opened the present.","active_s","sense",33
+"A clown was bought by the hen.","passive_ns","nonsense",35
+"A clown was bought by the hen.","passive_ns","sense",2
+"A father was spotted by the egg.","passive_ns","nonsense",30
+"A father was spotted by the egg.","passive_ns","sense",4
+"A father was spotted by the egg.","passive_ns",NA,3
+"A hill was climbed by the bug.","passive_s","nonsense",18
+"A hill was climbed by the bug.","passive_s","sense",13
+"A hill was climbed by the bug.","passive_s",NA,4
+"A king wished for a horse.","active_s","nonsense",5
+"A king wished for a horse.","active_s","sense",31
+"A pizza dropped the cousin.","active_ns","nonsense",32
+"A pizza dropped the cousin.","active_ns","sense",4
+"A pizza dropped the cousin.","active_ns",NA,1
+"A queen was lost by a pen.","passive_ns","nonsense",34
+"A queen was lost by a pen.","passive_ns","sense",1
+"A queen was lost by a pen.","passive_ns",NA,1
+"A rope listened to the salt.","active_ns","nonsense",35
+"A rope listened to the salt.","active_ns",NA,1
+"A sister hugged the dancer.","active_s","nonsense",4
+"A sister hugged the dancer.","active_s","sense",33
+"A sister hugged the dancer.","active_s",NA,1
+"A snake was caught by a girl.","passive_s","nonsense",8
+"A snake was caught by a girl.","passive_s","sense",27
+"A worm was jumped by a dress.","passive_ns","nonsense",35
+"A worm was jumped by a dress.","passive_ns","sense",2
+"Bread was picked by a boy.","passive_s","nonsense",9
+"Bread was picked by a boy.","passive_s","sense",26
+"Bread was picked by a boy.","passive_s",NA,2
+"Meat was watched by an ear.","passive_ns","nonsense",35
+"Meat was watched by an ear.","passive_ns","sense",1
+"Money was won by a team.","passive_s","nonsense",11
+"Money was won by a team.","passive_s","sense",23
+"Money was won by a team.","passive_s",NA,1
+"The actor was kicked by cake.","passive_ns","nonsense",33
+"The actor was kicked by cake.","passive_ns","sense",2
+"The actor was kicked by cake.","passive_ns",NA,2
+"The bird was told by the boat.","passive_ns","nonsense",33
+"The bird was told by the boat.","passive_ns","sense",1
+"The bird was told by the boat.","passive_ns",NA,1
+"The clerk asked a question.","active_s","nonsense",11
+"The clerk asked a question.","active_s","sense",24
+"The cowboy cooked some pasta.","active_s","nonsense",6
+"The cowboy cooked some pasta.","active_s","sense",29
+"The door was shut by wind.","passive_s","nonsense",11
+"The door was shut by wind.","passive_s","sense",25
+"The door was shut by wind.","passive_s",NA,1
+"The farmer owned a broom.","active_s","nonsense",9
+"The farmer owned a broom.","active_s","sense",28
+"The friend borrowed a book.","active_s","nonsense",7
+"The friend borrowed a book.","active_s","sense",31
+"The honey was made by a bee.","passive_s","nonsense",3
+"The honey was made by a bee.","passive_s","sense",34
+"The house chewed on the phone.","active_ns","nonsense",37
+"The house chewed on the phone.","active_ns","sense",1
+"The lamp wrote to the nurse.","active_ns","nonsense",34
+"The lamp wrote to the nurse.","active_ns",NA,1
+"The mother shopped at the store.","active_s","nonsense",1
+"The mother shopped at the store.","active_s","sense",34
+"The seed raised a turtle.","active_ns","nonsense",33
+"The seed raised a turtle.","active_ns","sense",3
+"The soap tasted the monkey.","active_ns","nonsense",34
+"The soap tasted the monkey.","active_ns","sense",2
+"The soap tasted the monkey.","active_ns",NA,1
+"The tiger played a letter.","active_ns","nonsense",34
+"The tiger played a letter.","active_ns",NA,1
+"The zebra milked the show.","active_ns","nonsense",38
+"The zebra milked the show.","active_ns","sense",1
+"Water was splashed by a bear.","passive_s","nonsense",9
+"Water was splashed by a bear.","passive_s","sense",26
+"Water was splashed by a bear.","passive_s",NA,1
+"A card was marked with paint.","passive_s",NA,1
+"A box was cut by the worker.","passive_s","nonsense",9
+"A box was cut by the worker.","passive_s","sense",45
+"A box was cut by the worker.","passive_s",NA,1
+"A broom was sold by a farmer.","passive_s","nonsense",15
+"A broom was sold by a farmer.","passive_s","sense",36
+"A broom was sold by a farmer.","passive_s",NA,2
+"A cake was baked by mom.","passive_s","nonsense",1
+"A cake was baked by mom.","passive_s","sense",43
+"A cake was baked by mom.","passive_s",NA,2
+"A couch was saved by a plum.","passive_ns","nonsense",50
+"A couch was saved by a plum.","passive_ns","sense",2
+"A couch was saved by a plum.","passive_ns",NA,1
+"A cowgirl caught a snake.","active_s","nonsense",3
+"A cowgirl caught a snake.","active_s","sense",54
+"A cowgirl caught a snake.","active_s",NA,2
+"A flower was milked by a bear.","passive_ns","nonsense",64
+"A flower was milked by a bear.","passive_ns","sense",1
+"A flower was milked by a bear.","passive_ns",NA,3
+"A fork was found by the kid.","passive_s","nonsense",27
+"A fork was found by the kid.","passive_s","sense",31
+"A fork was found by the kid.","passive_s",NA,3
+"A hand was built by the ant.","passive_ns","nonsense",62
+"A hand was built by the ant.","passive_ns","sense",3
+"A hand was built by the ant.","passive_ns",NA,1
+"A man was scored by wind.","passive_ns","nonsense",36
+"A man was scored by wind.","passive_ns","sense",6
+"A man was scored by wind.","passive_ns",NA,6
+"A piano planted a brother.","active_ns","nonsense",42
+"A piano planted a brother.","active_ns",NA,2
+"A pillow scratched the fish.","active_ns","nonsense",45
+"A pillow scratched the fish.","active_ns","sense",3
+"A present picked the raccoon.","active_ns","nonsense",41
+"A present picked the raccoon.","active_ns","sense",2
+"A present picked the raccoon.","active_ns",NA,3
+"A teacher graded a paper.","active_s","nonsense",3
+"A teacher graded a paper.","active_s","sense",43
+"A teacher graded a paper.","active_s",NA,1
+"A turtle crawled to the water.","active_s","nonsense",5
+"A turtle crawled to the water.","active_s","sense",41
+"A turtle crawled to the water.","active_s",NA,2
+"Cheese was chewed by a rat.","passive_s","nonsense",8
+"Cheese was chewed by a rat.","passive_s","sense",57
+"Cheese was chewed by a rat.","passive_s",NA,1
+"Seed was raised by the rug.","passive_ns","nonsense",40
+"Seed was raised by the rug.","passive_ns","sense",5
+"Seed was raised by the rug.","passive_ns",NA,3
+"The actor pulled on a rope.","active_s","nonsense",7
+"The actor pulled on a rope.","active_s","sense",51
+"The actor pulled on a rope.","active_s",NA,2
+"The apple watched a king.","active_ns","nonsense",57
+"The apple watched a king.","active_ns","sense",1
+"The apple watched a king.","active_ns",NA,1
+"The ball was kicked by a girl.","passive_s","nonsense",2
+"The ball was kicked by a girl.","passive_s","sense",48
+"The ball was kicked by a girl.","passive_s",NA,1
+"The bread heard a camel.","active_ns","nonsense",43
+"The bread heard a camel.","active_ns","sense",4
+"The bread heard a camel.","active_ns",NA,2
+"The bucket told a horse.","active_ns","nonsense",57
+"The bucket told a horse.","active_ns","sense",2
+"The bucket told a horse.","active_ns",NA,1
+"The bug was cooked by a key.","passive_ns","nonsense",50
+"The chalk wanted a child.","active_ns","nonsense",41
+"The chalk wanted a child.","active_ns","sense",4
+"The chalk wanted a child.","active_ns",NA,6
+"The doctor used the phone.","active_s","nonsense",2
+"The doctor used the phone.","active_s","sense",44
+"The dog chased the car.","active_s","nonsense",17
+"The dog chased the car.","active_s","sense",46
+"The dog chased the car.","active_s",NA,2
+"The dragon was won by clay.","passive_ns","nonsense",48
+"The dragon was won by clay.","passive_ns","sense",5
+"The dragon was won by clay.","passive_ns",NA,7
+"The egg was lost by the duck.","passive_s","nonsense",1
+"The egg was lost by the duck.","passive_s","sense",1
+"The monkey climbed a tree.","active_s","nonsense",3
+"The monkey climbed a tree.","active_s","sense",47
+"The monkey climbed a tree.","active_s",NA,1
+"The pig was hugged by a joke.","passive_ns","nonsense",39
+"The pig was hugged by a joke.","passive_ns","sense",3
+"The pig was hugged by a joke.","passive_ns",NA,2
+"The rabbit jumped in the grass.","active_s","nonsense",5
+"The rabbit jumped in the grass.","active_s","sense",49
+"The rabbit jumped in the grass.","active_s",NA,1
+"The sock was worn by a baby.","passive_s","nonsense",22
+"The sock was worn by a baby.","passive_s","sense",33
+"The sock was worn by a baby.","passive_s",NA,2
+"The egg was laid by the duck.","passive_s","nonsense",8
+"The egg was laid by the duck.","passive_s","sense",32
+"The egg was laid by the duck.","passive_s",NA,2
+"A home was entered by the fly.","passive_s","nonsense",1
+"A notebook knocked at a door.","active_ns","nonsense",1
+"The spoon was used by a cook.","passive_s","sense",1
+"Tea was spilled by the aunt.","passive_s","sense",1
+"The farmer listened to the bell.","active_s","sense",1
+"The lion sniffed at the meat.","active_s","sense",1
+"A leaf was climbed by the bug.","passive_s","nonsense",1
+"Medals were won by a team.","passive_s","nonsense",1
+"A dime was found by the kid.","passive_s","sense",1
+"The bib was worn by a baby.","passive_s","sense",1
+"A father cooked the eggs.","active_s","sense",1
+"A rope was pulled by the man.","passive_s","sense",1
+"The baker rolled the dough.","active_s","sense",1
+"The fish was eaten by a bear.","passive_s","sense",1

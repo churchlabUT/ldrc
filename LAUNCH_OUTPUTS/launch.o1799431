@@ -1,0 +1,2227 @@
+TACC: Setting memory limits for job 1799431 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: run_fmriqa.txt
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N launch       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 12way 12
+#$ -q normal
+#$ -l h_rt=02:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE run_fmriqa.txt
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+/bin/.: Permission denied.
+setenv: Too many arguments.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 1799431
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+--------------------------------------------------
+TACC Launcher -> 12 processors allocated.
+TACC Launcher -> 5 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c324-113.ls4.tacc.utexas.edu (fmriqa.py /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run01_4_SC_1/bold_mcf.nii.gz 2.0)
+TACC Launcher -> Iniating task 4 on c324-113.ls4.tacc.utexas.edu (fmriqa.py /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run04_7_SST_2/bold_mcf.nii.gz 2.0)
+TACC Launcher -> Iniating task 2 on c324-113.ls4.tacc.utexas.edu (fmriqa.py /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run02_5_SST_1/bold_mcf.nii.gz 2.0)
+TACC Launcher -> Iniating task 3 on c324-113.ls4.tacc.utexas.edu (fmriqa.py /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run03_6_SC_2/bold_mcf.nii.gz 2.0)
+TACC Launcher -> Iniating task 5 on c324-113.ls4.tacc.utexas.edu (fmriqa.py /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run05_9_SC_3/bold_mcf.nii.gz 2.0)
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:26: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  nrows=int(N.ceil(N.float(imgdata.shape[min_dim])/ncols))
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:26: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  nrows=int(N.ceil(N.float(imgdata.shape[min_dim])/ncols))
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:26: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  nrows=int(N.ceil(N.float(imgdata.shape[min_dim])/ncols))
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:26: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  nrows=int(N.ceil(N.float(imgdata.shape[min_dim])/ncols))
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:26: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  nrows=int(N.ceil(N.float(imgdata.shape[min_dim])/ncols))
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:26: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  nrows=int(N.ceil(N.float(imgdata.shape[min_dim])/ncols))
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:26: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  nrows=int(N.ceil(N.float(imgdata.shape[min_dim])/ncols))
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+infile: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run02_5_SST_1/bold_mcf.nii.gz
+maskfile: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run02_5_SST_1/bold_mcf_brain_mask.nii.gz
+motfile: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run02_5_SST_1/bold_mcf.par
+outdir: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run02_5_SST_1
+computing image stats
+nmaskvox: 55823
+computing spike stats
+computing outliers
+before plot
+after plot
+min_dim: [2]
+slice_dim: [0 1]
+(576, 576)
+0 96 0 96
+(96, 96)
+0 96 96 192
+(96, 96)
+0 96 192 288
+(96, 96)
+0 96 288 384
+(96, 96)
+0 96 384 480
+(96, 96)
+0 96 480 576
+(96, 96)
+96 192 0 96
+(96, 96)
+96 192 96 192
+(96, 96)
+96 192 192 288
+(96, 96)
+96 192 288 384
+(96, 96)
+96 192 384 480
+(96, 96)
+96 192 480 576
+(96, 96)
+192 288 0 96
+(96, 96)
+192 288 96 192
+(96, 96)
+192 288 192 288
+(96, 96)
+192 288 288 384
+(96, 96)
+192 288 384 480
+(96, 96)
+192 288 480 576
+(96, 96)
+288 384 0 96
+(96, 96)
+288 384 96 192
+(96, 96)
+288 384 192 288
+(96, 96)
+288 384 288 384
+(96, 96)
+288 384 384 480
+(96, 96)
+288 384 480 576
+(96, 96)
+384 480 0 96
+(96, 96)
+384 480 96 192
+(96, 96)
+384 480 192 288
+(96, 96)
+384 480 288 384
+(96, 96)
+384 480 384 480
+(96, 96)
+384 480 480 576
+(96, 96)
+480 576 0 96
+(96, 96)
+480 576 96 192
+(96, 96)
+min_dim: [2]
+slice_dim: [0 1]
+(576, 576)
+0 96 0 96
+(96, 96)
+0 96 96 192
+(96, 96)
+0 96 192 288
+(96, 96)
+0 96 288 384
+(96, 96)
+0 96 384 480
+(96, 96)
+0 96 480 576
+(96, 96)
+96 192 0 96
+(96, 96)
+96 192 96 192
+(96, 96)
+96 192 192 288
+(96, 96)
+96 192 288 384
+(96, 96)
+96 192 384 480
+(96, 96)
+96 192 480 576
+(96, 96)
+192 288 0 96
+(96, 96)
+192 288 96 192
+(96, 96)
+192 288 192 288
+(96, 96)
+192 288 288 384
+(96, 96)
+192 288 384 480
+(96, 96)
+192 288 480 576
+(96, 96)
+288 384 0 96
+(96, 96)
+288 384 96 192
+(96, 96)
+288 384 192 288
+(96, 96)
+288 384 288 384
+(96, 96)
+288 384 384 480
+(96, 96)
+288 384 480 576
+(96, 96)
+384 480 0 96
+(96, 96)
+384 480 96 192
+(96, 96)
+384 480 192 288
+(96, 96)
+384 480 288 384
+(96, 96)
+384 480 384 480
+(96, 96)
+384 480 480 576
+(96, 96)
+480 576 0 96
+(96, 96)
+480 576 96 192
+(96, 96)
+min_dim: [2]
+slice_dim: [0 1]
+(576, 576)
+0 96 0 96
+(96, 96)
+0 96 96 192
+(96, 96)
+0 96 192 288
+(96, 96)
+0 96 288 384
+(96, 96)
+0 96 384 480
+(96, 96)
+0 96 480 576
+(96, 96)
+96 192 0 96
+(96, 96)
+96 192 96 192
+(96, 96)
+96 192 192 288
+(96, 96)
+96 192 288 384
+(96, 96)
+96 192 384 480
+(96, 96)
+96 192 480 576
+(96, 96)
+192 288 0 96
+(96, 96)
+192 288 96 192
+(96, 96)
+192 288 192 288
+(96, 96)
+192 288 288 384
+(96, 96)
+192 288 384 480
+(96, 96)
+192 288 480 576
+(96, 96)
+288 384 0 96
+(96, 96)
+288 384 96 192
+(96, 96)
+288 384 192 288
+(96, 96)
+288 384 288 384
+(96, 96)
+288 384 384 480
+(96, 96)
+288 384 480 576
+(96, 96)
+384 480 0 96
+(96, 96)
+384 480 96 192
+(96, 96)
+384 480 192 288
+(96, 96)
+384 480 288 384
+(96, 96)
+384 480 384 480
+(96, 96)
+384 480 480 576
+(96, 96)
+480 576 0 96
+(96, 96)
+480 576 96 192
+(96, 96)
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:26: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  nrows=int(N.ceil(N.float(imgdata.shape[min_dim])/ncols))
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+infile: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run04_7_SST_2/bold_mcf.nii.gz
+maskfile: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run04_7_SST_2/bold_mcf_brain_mask.nii.gz
+motfile: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run04_7_SST_2/bold_mcf.par
+outdir: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run04_7_SST_2
+computing image stats
+nmaskvox: 56429
+computing spike stats
+computing outliers
+before plot
+after plot
+min_dim: [2]
+slice_dim: [0 1]
+(576, 576)
+0 96 0 96
+(96, 96)
+0 96 96 192
+(96, 96)
+0 96 192 288
+(96, 96)
+0 96 288 384
+(96, 96)
+0 96 384 480
+(96, 96)
+0 96 480 576
+(96, 96)
+96 192 0 96
+(96, 96)
+96 192 96 192
+(96, 96)
+96 192 192 288
+(96, 96)
+96 192 288 384
+(96, 96)
+96 192 384 480
+(96, 96)
+96 192 480 576
+(96, 96)
+192 288 0 96
+(96, 96)
+192 288 96 192
+(96, 96)
+192 288 192 288
+(96, 96)
+192 288 288 384
+(96, 96)
+192 288 384 480
+(96, 96)
+192 288 480 576
+(96, 96)
+288 384 0 96
+(96, 96)
+288 384 96 192
+(96, 96)
+288 384 192 288
+(96, 96)
+288 384 288 384
+(96, 96)
+288 384 384 480
+(96, 96)
+288 384 480 576
+(96, 96)
+384 480 0 96
+(96, 96)
+384 480 96 192
+(96, 96)
+384 480 192 288
+(96, 96)
+384 480 288 384
+(96, 96)
+384 480 384 480
+(96, 96)
+384 480 480 576
+(96, 96)
+480 576 0 96
+(96, 96)
+480 576 96 192
+(96, 96)
+min_dim: [2]
+slice_dim: [0 1]
+(576, 576)
+0 96 0 96
+(96, 96)
+0 96 96 192
+(96, 96)
+0 96 192 288
+(96, 96)
+0 96 288 384
+(96, 96)
+0 96 384 480
+(96, 96)
+0 96 480 576
+(96, 96)
+96 192 0 96
+(96, 96)
+96 192 96 192
+(96, 96)
+96 192 192 288
+(96, 96)
+96 192 288 384
+(96, 96)
+96 192 384 480
+(96, 96)
+96 192 480 576
+(96, 96)
+192 288 0 96
+(96, 96)
+192 288 96 192
+(96, 96)
+192 288 192 288
+(96, 96)
+192 288 288 384
+(96, 96)
+192 288 384 480
+(96, 96)
+192 288 480 576
+(96, 96)
+288 384 0 96
+(96, 96)
+288 384 96 192
+(96, 96)
+288 384 192 288
+(96, 96)
+288 384 288 384
+(96, 96)
+288 384 384 480
+(96, 96)
+288 384 480 576
+(96, 96)
+384 480 0 96
+(96, 96)
+384 480 96 192
+(96, 96)
+384 480 192 288
+(96, 96)
+384 480 288 384
+(96, 96)
+384 480 384 480
+(96, 96)
+384 480 480 576
+(96, 96)
+480 576 0 96
+(96, 96)
+480 576 96 192
+(96, 96)
+min_dim: [2]
+slice_dim: [0 1]
+(576, 576)
+0 96 0 96
+(96, 96)
+0 96 96 192
+(96, 96)
+0 96 192 288
+(96, 96)
+0 96 288 384
+(96, 96)
+0 96 384 480
+(96, 96)
+0 96 480 576
+(96, 96)
+96 192 0 96
+(96, 96)
+96 192 96 192
+(96, 96)
+96 192 192 288
+(96, 96)
+96 192 288 384
+(96, 96)
+96 192 384 480
+(96, 96)
+96 192 480 576
+(96, 96)
+192 288 0 96
+(96, 96)
+192 288 96 192
+(96, 96)
+192 288 192 288
+(96, 96)
+192 288 288 384
+(96, 96)
+192 288 384 480
+(96, 96)
+192 288 480 576
+(96, 96)
+288 384 0 96
+(96, 96)
+288 384 96 192
+(96, 96)
+288 384 192 288
+(96, 96)
+288 384 288 384
+(96, 96)
+288 384 384 480
+(96, 96)
+288 384 480 576
+(96, 96)
+384 480 0 96
+(96, 96)
+384 480 96 192
+(96, 96)
+384 480 192 288
+(96, 96)
+384 480 288 384
+(96, 96)
+384 480 384 480
+(96, 96)
+384 480 480 576
+(96, 96)
+480 576 0 96
+(96, 96)
+480 576 96 192
+(96, 96)
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:26: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  nrows=int(N.ceil(N.float(imgdata.shape[min_dim])/ncols))
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:26: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  nrows=int(N.ceil(N.float(imgdata.shape[min_dim])/ncols))
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:26: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  nrows=int(N.ceil(N.float(imgdata.shape[min_dim])/ncols))
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:26: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  nrows=int(N.ceil(N.float(imgdata.shape[min_dim])/ncols))
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:26: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  nrows=int(N.ceil(N.float(imgdata.shape[min_dim])/ncols))
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:26: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  nrows=int(N.ceil(N.float(imgdata.shape[min_dim])/ncols))
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:26: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  nrows=int(N.ceil(N.float(imgdata.shape[min_dim])/ncols))
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+/corral-repl/utexas/poldracklab/software_lonestar/local/lib/python/mk_slice_mosaic.py:37: DeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
+  if ctr<imgdata.shape[min_dim]:
+infile: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run01_4_SC_1/bold_mcf.nii.gz
+maskfile: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run01_4_SC_1/bold_mcf_brain_mask.nii.gz
+motfile: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run01_4_SC_1/bold_mcf.par
+outdir: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run01_4_SC_1
+computing image stats
+nmaskvox: 55652
+computing spike stats
+computing outliers
+before plot
+after plot
+min_dim: [2]
+slice_dim: [0 1]
+(576, 576)
+0 96 0 96
+(96, 96)
+0 96 96 192
+(96, 96)
+0 96 192 288
+(96, 96)
+0 96 288 384
+(96, 96)
+0 96 384 480
+(96, 96)
+0 96 480 576
+(96, 96)
+96 192 0 96
+(96, 96)
+96 192 96 192
+(96, 96)
+96 192 192 288
+(96, 96)
+96 192 288 384
+(96, 96)
+96 192 384 480
+(96, 96)
+96 192 480 576
+(96, 96)
+192 288 0 96
+(96, 96)
+192 288 96 192
+(96, 96)
+192 288 192 288
+(96, 96)
+192 288 288 384
+(96, 96)
+192 288 384 480
+(96, 96)
+192 288 480 576
+(96, 96)
+288 384 0 96
+(96, 96)
+288 384 96 192
+(96, 96)
+288 384 192 288
+(96, 96)
+288 384 288 384
+(96, 96)
+288 384 384 480
+(96, 96)
+288 384 480 576
+(96, 96)
+384 480 0 96
+(96, 96)
+384 480 96 192
+(96, 96)
+384 480 192 288
+(96, 96)
+384 480 288 384
+(96, 96)
+384 480 384 480
+(96, 96)
+384 480 480 576
+(96, 96)
+480 576 0 96
+(96, 96)
+480 576 96 192
+(96, 96)
+min_dim: [2]
+slice_dim: [0 1]
+(576, 576)
+0 96 0 96
+(96, 96)
+0 96 96 192
+(96, 96)
+0 96 192 288
+(96, 96)
+0 96 288 384
+(96, 96)
+0 96 384 480
+(96, 96)
+0 96 480 576
+(96, 96)
+96 192 0 96
+(96, 96)
+96 192 96 192
+(96, 96)
+96 192 192 288
+(96, 96)
+96 192 288 384
+(96, 96)
+96 192 384 480
+(96, 96)
+96 192 480 576
+(96, 96)
+192 288 0 96
+(96, 96)
+192 288 96 192
+(96, 96)
+192 288 192 288
+(96, 96)
+192 288 288 384
+(96, 96)
+192 288 384 480
+(96, 96)
+192 288 480 576
+(96, 96)
+288 384 0 96
+(96, 96)
+288 384 96 192
+(96, 96)
+288 384 192 288
+(96, 96)
+288 384 288 384
+(96, 96)
+288 384 384 480
+(96, 96)
+288 384 480 576
+(96, 96)
+384 480 0 96
+(96, 96)
+384 480 96 192
+(96, 96)
+384 480 192 288
+(96, 96)
+384 480 288 384
+(96, 96)
+384 480 384 480
+(96, 96)
+384 480 480 576
+(96, 96)
+480 576 0 96
+(96, 96)
+480 576 96 192
+(96, 96)
+min_dim: [2]
+slice_dim: [0 1]
+(576, 576)
+0 96 0 96
+(96, 96)
+0 96 96 192
+(96, 96)
+0 96 192 288
+(96, 96)
+0 96 288 384
+(96, 96)
+0 96 384 480
+(96, 96)
+0 96 480 576
+(96, 96)
+96 192 0 96
+(96, 96)
+96 192 96 192
+(96, 96)
+96 192 192 288
+(96, 96)
+96 192 288 384
+(96, 96)
+96 192 384 480
+(96, 96)
+96 192 480 576
+(96, 96)
+192 288 0 96
+(96, 96)
+192 288 96 192
+(96, 96)
+192 288 192 288
+(96, 96)
+192 288 288 384
+(96, 96)
+192 288 384 480
+(96, 96)
+192 288 480 576
+(96, 96)
+288 384 0 96
+(96, 96)
+288 384 96 192
+(96, 96)
+288 384 192 288
+(96, 96)
+288 384 288 384
+(96, 96)
+288 384 384 480
+(96, 96)
+288 384 480 576
+(96, 96)
+384 480 0 96
+(96, 96)
+384 480 96 192
+(96, 96)
+384 480 192 288
+(96, 96)
+384 480 288 384
+(96, 96)
+384 480 384 480
+(96, 96)
+384 480 480 576
+(96, 96)
+480 576 0 96
+(96, 96)
+480 576 96 192
+(96, 96)
+infile: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run03_6_SC_2/bold_mcf.nii.gz
+maskfile: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run03_6_SC_2/bold_mcf_brain_mask.nii.gz
+motfile: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run03_6_SC_2/bold_mcf.par
+outdir: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run03_6_SC_2
+computing image stats
+nmaskvox: 56606
+computing spike stats
+computing outliers
+before plot
+after plot
+min_dim: [2]
+slice_dim: [0 1]
+(576, 576)
+0 96 0 96
+(96, 96)
+0 96 96 192
+(96, 96)
+0 96 192 288
+(96, 96)
+0 96 288 384
+(96, 96)
+0 96 384 480
+(96, 96)
+0 96 480 576
+(96, 96)
+96 192 0 96
+(96, 96)
+96 192 96 192
+(96, 96)
+96 192 192 288
+(96, 96)
+96 192 288 384
+(96, 96)
+96 192 384 480
+(96, 96)
+96 192 480 576
+(96, 96)
+192 288 0 96
+(96, 96)
+192 288 96 192
+(96, 96)
+192 288 192 288
+(96, 96)
+192 288 288 384
+(96, 96)
+192 288 384 480
+(96, 96)
+192 288 480 576
+(96, 96)
+288 384 0 96
+(96, 96)
+288 384 96 192
+(96, 96)
+288 384 192 288
+(96, 96)
+288 384 288 384
+(96, 96)
+288 384 384 480
+(96, 96)
+288 384 480 576
+(96, 96)
+384 480 0 96
+(96, 96)
+384 480 96 192
+(96, 96)
+384 480 192 288
+(96, 96)
+384 480 288 384
+(96, 96)
+384 480 384 480
+(96, 96)
+384 480 480 576
+(96, 96)
+480 576 0 96
+(96, 96)
+480 576 96 192
+(96, 96)
+min_dim: [2]
+slice_dim: [0 1]
+(576, 576)
+0 96 0 96
+(96, 96)
+0 96 96 192
+(96, 96)
+0 96 192 288
+(96, 96)
+0 96 288 384
+(96, 96)
+0 96 384 480
+(96, 96)
+0 96 480 576
+(96, 96)
+96 192 0 96
+(96, 96)
+96 192 96 192
+(96, 96)
+96 192 192 288
+(96, 96)
+96 192 288 384
+(96, 96)
+96 192 384 480
+(96, 96)
+96 192 480 576
+(96, 96)
+192 288 0 96
+(96, 96)
+192 288 96 192
+(96, 96)
+192 288 192 288
+(96, 96)
+192 288 288 384
+(96, 96)
+192 288 384 480
+(96, 96)
+192 288 480 576
+(96, 96)
+288 384 0 96
+(96, 96)
+288 384 96 192
+(96, 96)
+288 384 192 288
+(96, 96)
+288 384 288 384
+(96, 96)
+288 384 384 480
+(96, 96)
+288 384 480 576
+(96, 96)
+384 480 0 96
+(96, 96)
+384 480 96 192
+(96, 96)
+384 480 192 288
+(96, 96)
+384 480 288 384
+(96, 96)
+384 480 384 480
+(96, 96)
+384 480 480 576
+(96, 96)
+480 576 0 96
+(96, 96)
+480 576 96 192
+(96, 96)
+min_dim: [2]
+slice_dim: [0 1]
+(576, 576)
+0 96 0 96
+(96, 96)
+0 96 96 192
+(96, 96)
+0 96 192 288
+(96, 96)
+0 96 288 384
+(96, 96)
+0 96 384 480
+(96, 96)
+0 96 480 576
+(96, 96)
+96 192 0 96
+(96, 96)
+96 192 96 192
+(96, 96)
+96 192 192 288
+(96, 96)
+96 192 288 384
+(96, 96)
+96 192 384 480
+(96, 96)
+96 192 480 576
+(96, 96)
+192 288 0 96
+(96, 96)
+192 288 96 192
+(96, 96)
+192 288 192 288
+(96, 96)
+192 288 288 384
+(96, 96)
+192 288 384 480
+(96, 96)
+192 288 480 576
+(96, 96)
+288 384 0 96
+(96, 96)
+288 384 96 192
+(96, 96)
+288 384 192 288
+(96, 96)
+288 384 288 384
+(96, 96)
+288 384 384 480
+(96, 96)
+288 384 480 576
+(96, 96)
+384 480 0 96
+(96, 96)
+384 480 96 192
+(96, 96)
+384 480 192 288
+(96, 96)
+384 480 288 384
+(96, 96)
+384 480 384 480
+(96, 96)
+384 480 480 576
+(96, 96)
+480 576 0 96
+(96, 96)
+480 576 96 192
+(96, 96)
+infile: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run05_9_SC_3/bold_mcf.nii.gz
+maskfile: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run05_9_SC_3/bold_mcf_brain_mask.nii.gz
+motfile: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run05_9_SC_3/bold_mcf.par
+outdir: /corral-repl/utexas/ldrc/H_LDIMG9015_c_second/BOLD/run05_9_SC_3
+computing image stats
+nmaskvox: 56890
+computing spike stats
+computing outliers
+before plot
+after plot
+min_dim: [2]
+slice_dim: [0 1]
+(576, 576)
+0 96 0 96
+(96, 96)
+0 96 96 192
+(96, 96)
+0 96 192 288
+(96, 96)
+0 96 288 384
+(96, 96)
+0 96 384 480
+(96, 96)
+0 96 480 576
+(96, 96)
+96 192 0 96
+(96, 96)
+96 192 96 192
+(96, 96)
+96 192 192 288
+(96, 96)
+96 192 288 384
+(96, 96)
+96 192 384 480
+(96, 96)
+96 192 480 576
+(96, 96)
+192 288 0 96
+(96, 96)
+192 288 96 192
+(96, 96)
+192 288 192 288
+(96, 96)
+192 288 288 384
+(96, 96)
+192 288 384 480
+(96, 96)
+192 288 480 576
+(96, 96)
+288 384 0 96
+(96, 96)
+288 384 96 192
+(96, 96)
+288 384 192 288
+(96, 96)
+288 384 288 384
+(96, 96)
+288 384 384 480
+(96, 96)
+288 384 480 576
+(96, 96)
+384 480 0 96
+(96, 96)
+384 480 96 192
+(96, 96)
+384 480 192 288
+(96, 96)
+384 480 288 384
+(96, 96)
+384 480 384 480
+(96, 96)
+384 480 480 576
+(96, 96)
+480 576 0 96
+(96, 96)
+480 576 96 192
+(96, 96)
+min_dim: [2]
+slice_dim: [0 1]
+(576, 576)
+0 96 0 96
+(96, 96)
+0 96 96 192
+(96, 96)
+0 96 192 288
+(96, 96)
+0 96 288 384
+(96, 96)
+0 96 384 480
+(96, 96)
+0 96 480 576
+(96, 96)
+96 192 0 96
+(96, 96)
+96 192 96 192
+(96, 96)
+96 192 192 288
+(96, 96)
+96 192 288 384
+(96, 96)
+96 192 384 480
+(96, 96)
+96 192 480 576
+(96, 96)
+192 288 0 96
+(96, 96)
+192 288 96 192
+(96, 96)
+192 288 192 288
+(96, 96)
+192 288 288 384
+(96, 96)
+192 288 384 480
+(96, 96)
+192 288 480 576
+(96, 96)
+288 384 0 96
+(96, 96)
+288 384 96 192
+(96, 96)
+288 384 192 288
+(96, 96)
+288 384 288 384
+(96, 96)
+288 384 384 480
+(96, 96)
+288 384 480 576
+(96, 96)
+384 480 0 96
+(96, 96)
+384 480 96 192
+(96, 96)
+384 480 192 288
+(96, 96)
+384 480 288 384
+(96, 96)
+384 480 384 480
+(96, 96)
+384 480 480 576
+(96, 96)
+480 576 0 96
+(96, 96)
+480 576 96 192
+(96, 96)
+min_dim: [2]
+slice_dim: [0 1]
+(576, 576)
+0 96 0 96
+(96, 96)
+0 96 96 192
+(96, 96)
+0 96 192 288
+(96, 96)
+0 96 288 384
+(96, 96)
+0 96 384 480
+(96, 96)
+0 96 480 576
+(96, 96)
+96 192 0 96
+(96, 96)
+96 192 96 192
+(96, 96)
+96 192 192 288
+(96, 96)
+96 192 288 384
+(96, 96)
+96 192 384 480
+(96, 96)
+96 192 480 576
+(96, 96)
+192 288 0 96
+(96, 96)
+192 288 96 192
+(96, 96)
+192 288 192 288
+(96, 96)
+192 288 288 384
+(96, 96)
+192 288 384 480
+(96, 96)
+192 288 480 576
+(96, 96)
+288 384 0 96
+(96, 96)
+288 384 96 192
+(96, 96)
+288 384 192 288
+(96, 96)
+288 384 288 384
+(96, 96)
+288 384 384 480
+(96, 96)
+288 384 480 576
+(96, 96)
+384 480 0 96
+(96, 96)
+384 480 96 192
+(96, 96)
+384 480 192 288
+(96, 96)
+384 480 288 384
+(96, 96)
+384 480 384 480
+(96, 96)
+384 480 480 576
+(96, 96)
+480 576 0 96
+(96, 96)
+480 576 96 192
+(96, 96)
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 1799431
+TACC: Done.

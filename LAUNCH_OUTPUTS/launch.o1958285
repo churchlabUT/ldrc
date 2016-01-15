@@ -1,0 +1,123 @@
+TACC: Setting memory limits for job 1958285 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: launch_A_SST_lev2_gfeats.txt
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N launch       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 2way 120
+#$ -q normal
+#$ -l h_rt=04:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE launch_A_SST_lev2_gfeats.txt
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 1958285
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+Warning: Permanently added 'c313-209.ls4.tacc.utexas.edu,206.76.194.188' (RSA) to the list of known hosts.
+Warning: Permanently added 'c331-215.ls4.tacc.utexas.edu,206.76.198.34' (RSA) to the list of known hosts.
+Warning: Permanently added 'c336-205.ls4.tacc.utexas.edu,206.76.199.8' (RSA) to the list of known hosts.
+Warning: Permanently added 'c326-204.ls4.tacc.utexas.edu,206.76.197.39' (RSA) to the list of known hosts.
+Warning: Permanently added 'c323-203.ls4.tacc.utexas.edu,206.76.196.150' (RSA) to the list of known hosts.
+Warning: Permanently added 'c329-109.ls4.tacc.utexas.edu,206.76.197.172' (RSA) to the list of known hosts.
+Warning: Permanently added 'c312-105.ls4.tacc.utexas.edu,206.76.194.120' (RSA) to the list of known hosts.
+Warning: Permanently added 'c333-315.ls4.tacc.utexas.edu,206.76.198.146' (RSA) to the list of known hosts.
+Warning: Permanently added 'c335-207.ls4.tacc.utexas.edu,206.76.198.218' (RSA) to the list of known hosts.
+Warning: Permanently added 'c335-208.ls4.tacc.utexas.edu,206.76.198.219' (RSA) to the list of known hosts.
+
+
+
+
+
+
+
+
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+
+--------------------------------------------------
+TACC Launcher -> 20 processors allocated.
+TACC Launcher -> 9 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c313-209.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_032/model/SST/cope1.fsf)
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+TACC Launcher -> Iniating task 2 on c313-209.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_032/model/SST/cope2.fsf)
+TACC Launcher -> Iniating task 5 on c335-207.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_032/model/SST/cope5.fsf)
+TACC Launcher -> Iniating task 6 on c335-207.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_032/model/SST/cope6.fsf)
+TACC Launcher -> Iniating task 3 on c335-208.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_032/model/SST/cope3.fsf)
+TACC Launcher -> Iniating task 4 on c335-208.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_032/model/SST/cope4.fsf)
+TACC Launcher -> Iniating task 9 on c326-204.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_032/model/SST/cope9.fsf)
+TACC Launcher -> Iniating task 8 on c329-109.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_032/model/SST/cope8.fsf)
+TACC Launcher -> Iniating task 7 on c329-109.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_032/model/SST/cope7.fsf)
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_c_032/model/SST/cope1_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_c_032/model/SST/cope5_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_c_032/model/SST/cope2_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_c_032/model/SST/cope6_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_c_032/model/SST/cope7_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_c_032/model/SST/cope8_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_c_032/model/SST/cope3_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_c_032/model/SST/cope4_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_c_032/model/SST/cope9_lev2.gfeat/report_log.html
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 1958285
+TACC: Done.

@@ -1,0 +1,66 @@
+#!/bin/sh
+
+#This will create a text file that can be launched on tacc to make all the SC onset files. 
+
+
+rm /corral-repl/utexas/ldrc/SCRIPTS/launch_A_SC_onsets.txt
+rm /corral-repl/utexas/ldrc/SCRIPTS/launch_H_SC_onsets.txt 
+
+
+basedir='/corral-repl/utexas/ldrc'
+
+#subnums=`ls -d ${basedir}/ldrc_?_[0-9][0-9][0-9]`
+
+subnums=`ls -d ${basedir}/ldrc_c_[0-9][0-9][0-9]`
+
+#subnums=`ls -d ${basedir}/ldrc_*second`
+
+
+for sub in $subnums
+
+do
+  
+  run_labels=`ls -d ${sub}/BOLD/run*SC*`
+  for run in ${run_labels}
+  do
+    runnum=`echo ${run} | sed 's/^.*\(.\)$/\1/' `
+ 
+    numfiles=`ls  ${sub}/behav/SC/SC_Run${runnum}/  | wc -l`
+ 
+
+#A python code will actually create the onset files for the sc task. It is called make_SC_onsets.py. This script simply creates a text file to be launched.
+
+    if [ "$numfiles" -ge 1 ]  && [ "$numfiles" -le 4 ] ; then
+	echo python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py ${sub}/behav/SC/SC_Run${runnum}/*subdata.pkl ${sub}/behav/SC/SC_Run${runnum} >> launch_A_SC_onsets.txt
+    fi
+  
+  done
+  
+done
+
+
+
+#subnums=`ls -d ${basedir}/H_LD*[0-9]/`
+#subnums=`ls -d ${basedir}/PHILIPS/H_LD*[0-9]`
+
+for sub in $subnums
+
+do  
+
+  run_labels=`ls -d ${sub}/BOLD/*run*SC*`
+
+  for run in ${run_labels}
+
+  do
+    runnum=`echo ${run} | sed 's/^.*\(.\)$/\1/' `
+
+    numfiles=`ls  ${sub}behav/SC/SC_Run${runnum}/  | wc -l`
+    
+
+    if [ "$numfiles" -ge 1 ]  && [ "$numfiles" -le 4 ] ; then
+      echo python /corral-repl/utexas/ldrc/SCRIPTS/mk_SC_onsets.py ${sub}behav/SC/SC_Run${runnum}/*subdata.pkl ${sub}/behav/SC/SC_Run${runnum} >> launch_H_SC_onsets.txt
+    fi
+  
+  done
+  
+done

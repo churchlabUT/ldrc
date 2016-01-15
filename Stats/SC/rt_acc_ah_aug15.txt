@@ -1,0 +1,78 @@
+[1] "Mean RT - S1 vs. Controls"
+
+	Welch Two Sample t-test
+
+data:  rt_mean by group2
+t = -4.6153, df = 63.119, p-value = 1.975e-05
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -1.2070615 -0.4776478
+sample estimates:
+mean in group control   mean in group first 
+             3.501166              4.343520 
+
+[1] "Mean Accuracy - S1 vs. Controls"
+
+	Welch Two Sample t-test
+
+data:  acc_mean by group2
+t = 3.7732, df = 61.333, p-value = 0.0003656
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 0.03114319 0.10135240
+sample estimates:
+mean in group control   mean in group first 
+            0.9018133             0.8355655 
+
+[1] "Mean RT - S2 vs. Controls"
+
+	Welch Two Sample t-test
+
+data:  rt_mean by group2
+t = -4.5967, df = 62.541, p-value = 2.138e-05
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -1.2037836 -0.4742039
+sample estimates:
+mean in group control  mean in group second 
+             3.501166              4.340160 
+
+[1] "Mean Accuracy - S2 vs. Controls"
+
+	Welch Two Sample t-test
+
+data:  acc_mean by group2
+t = 3.3564, df = 65.5, p-value = 0.001318
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 0.02645222 0.10415603
+sample estimates:
+mean in group control  mean in group second 
+            0.9018133             0.8365091 
+
+[1] "Mean RT - S1 vs. s2"
+
+	Welch Two Sample t-test
+
+data:  rt_mean by group2
+t = 0.01858, df = 80.987, p-value = 0.9852
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.3565540  0.3632758
+sample estimates:
+ mean in group first mean in group second 
+             4.34352              4.34016 
+
+[1] "Mean Accuracy - S1 vs. S2"
+
+	Welch Two Sample t-test
+
+data:  acc_mean by group2
+t = -0.049997, df = 77.589, p-value = 0.9603
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.03852326  0.03663592
+sample estimates:
+ mean in group first mean in group second 
+           0.8355655            0.8365091 
+

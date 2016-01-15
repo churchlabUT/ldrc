@@ -1,0 +1,1 @@
+/corral-repl/utexas/poldracklab/software_lonestar/setup-subject/setup_subject_phillips.py -o --dcm2nii --motcorr --qa --betfunc --dtiqa --fsrecon --keepdata -b /corral-repl/utexas/ --studyname ldrc -s LDRC_NEW_PARAMETERS_PHANTOM

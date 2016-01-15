@@ -1,0 +1,128 @@
+TACC: Setting memory limits for job 1895955 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: launch_A_SC_lev1.txt
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N launch       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 2way 120
+#$ -q normal
+#$ -l h_rt=04:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE launch_A_SC_lev1.txt
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+/bin/.: Permission denied.
+setenv: Too many arguments.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 1895955
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+Warning: Permanently added 'c331-112.ls4.tacc.utexas.edu,206.76.198.15' (RSA) to the list of known hosts.
+Warning: Permanently added 'c339-103.ls4.tacc.utexas.edu,206.76.199.134' (RSA) to the list of known hosts.
+Warning: Permanently added 'c303-302.ls4.tacc.utexas.edu,206.76.192.229' (RSA) to the list of known hosts.
+Warning: Permanently added 'c320-215.ls4.tacc.utexas.edu,206.76.196.18' (RSA) to the list of known hosts.
+Warning: Permanently added 'c339-316.ls4.tacc.utexas.edu,206.76.199.179' (RSA) to the list of known hosts.
+Warning: Permanently added 'c325-206.ls4.tacc.utexas.edu,206.76.196.249' (RSA) to the list of known hosts.
+--------------------------------------------------
+TACC Launcher -> 20 processors allocated.
+TACC Launcher -> 65 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c329-205.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_2_031/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 2 on c329-205.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_2_031/model/SC/designs/run3.fsf)
+TACC Launcher -> Iniating task 9 on c339-109.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_1_028/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 7 on c311-204.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_068/model/SC/designs/run3.fsf)
+TACC Launcher -> Iniating task 18 on c338-102.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_1_002/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 20 on c331-112.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_032/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 10 on c339-109.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_0_013/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 13 on c339-316.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_1_001/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 12 on c320-215.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_0_013/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 8 on c311-204.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_1_028/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 17 on c338-102.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_2_011/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 15 on c339-103.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_1_001/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 19 on c331-112.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_1_002/model/SC/designs/run3.fsf)
+TACC Launcher -> Iniating task 4 on c325-206.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_0_025/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 14 on c339-316.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_1_001/model/SC/designs/run3.fsf)
+TACC Launcher -> Iniating task 11 on c320-215.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_0_013/model/SC/designs/run3.fsf)
+TACC Launcher -> Iniating task 16 on c339-103.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_2_011/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 3 on c325-206.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_2_031/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 5 on c303-302.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_0_025/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 6 on c303-302.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_068/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 38 on c338-102.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_0_009/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 39 on c331-112.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_043/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 30 on c339-109.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_062/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 31 on c320-215.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_062/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 32 on c320-215.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_040/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 34 on c339-316.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_057/model/SC/designs/run3.fsf)
+TACC Launcher -> Iniating task 35 on c339-103.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_057/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 33 on c339-316.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_057/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 23 on c325-206.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_2_027/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 22 on c329-205.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_032/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 21 on c329-205.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_032/model/SC/designs/run3.fsf)
+TACC Launcher -> Iniating task 36 on c339-103.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_0_009/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 29 on c339-109.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_044/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 40 on c331-112.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_043/model/SC/designs/run3.fsf)
+TACC Launcher -> Iniating task 28 on c311-204.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_044/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 24 on c325-206.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_2_027/model/SC/designs/run3.fsf)
+TACC Launcher -> Iniating task 25 on c303-302.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_2_027/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 37 on c338-102.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_0_009/model/SC/designs/run3.fsf)
+TACC Launcher -> Iniating task 27 on c311-204.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_045/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 26 on c303-302.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_045/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 58 on c338-102.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_037/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 52 on c320-215.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_081/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 50 on c339-109.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_084/model/SC/designs/run3.fsf)
+TACC Launcher -> Iniating task 56 on c339-103.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_061/model/SC/designs/run3.fsf)
+TACC Launcher -> Iniating task 51 on c320-215.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_084/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 54 on c339-316.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_081/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 59 on c331-112.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_037/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 55 on c339-103.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_061/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 53 on c339-316.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_081/model/SC/designs/run3.fsf)
+TACC Launcher -> Iniating task 43 on c325-206.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_078/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 41 on c329-205.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_043/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 42 on c329-205.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_047/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 49 on c339-109.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_084/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 48 on c311-204.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_082/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 57 on c338-102.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_061/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 44 on c325-206.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_078/model/SC/designs/run3.fsf)
+TACC Launcher -> Iniating task 45 on c303-302.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_078/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 60 on c331-112.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_054/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 47 on c311-204.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_082/model/SC/designs/run3.fsf)
+TACC Launcher -> Iniating task 46 on c303-302.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_082/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 62 on c329-205.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_059/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 61 on c329-205.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_054/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 63 on c325-206.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_059/model/SC/designs/run3.fsf)
+TACC Launcher -> Iniating task 64 on c325-206.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_059/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 65 on c303-302.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_046/model/SC/designs/run1.fsf)
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 1895955
+TACC: Done.

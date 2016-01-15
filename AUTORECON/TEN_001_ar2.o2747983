@@ -1,0 +1,65 @@
+TACC: Setting memory limits for job 2747983 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/bash
+#
+# SGE control file automatically created by launch
+# Launching single command: TEN_001_ar2.sh
+#
+#
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N TEN_001_ar2       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 1way 12
+#$ -q serial
+#$ -l h_rt=12:00:00
+#$ -M church@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+
+
+set -x                   # Echo commands, use "set echo" with csh
+TEN_001_ar2.sh
+--------------------------------------------------------------------------------
+TACC: Done.
++ TEN_001_ar2.sh
+Subject Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+Current Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+INFO: SUBJECTS_DIR is /corral-repl/utexas/ldrc/FREESURFER
+Actual FREESURFER_HOME /corral-repl/utexas/ldrc/MODULES/freesurfer/freesurfer
+-rw-rw---- 1 maryabbe G-803075 355339 Aug 16 11:23 /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_1_001_second/scripts/recon-all.log
+Linux c340-110.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+
+ERROR: it appears that recon-all is already running
+for ldrc_ldrc_1_001_second based on the presence of /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_1_001_second/scripts/IsRunning.lh+rh. It could
+also be that recon-all was running at one point but
+died in an unexpected way. If it is the case that there
+is a process running, you can kill it and start over or
+just let it run. If the process has died, you should type:
+
+rm /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_1_001_second/scripts/IsRunning.lh+rh
+
+and re-run. Or you can add -no-isrunning to the recon-all
+command-line. The contents of this file are:
+----------------------------------------------------------
+------------------------------
+SUBJECT ldrc_ldrc_1_001_second
+HEMI    lh rh
+DATE Fri Aug 14 21:49:00 CDT 2015
+USER jess
+HOST c333-208.ls4.tacc.utexas.edu
+PROCESSID 24876 
+PROCESSOR x86_64
+OS Linux
+Linux c333-208.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+$Id: recon-all,v 1.379.2.73 2013/05/12 23:15:37 nicks Exp $
+----------------------------------------------------------
+TACC: Cleaning up after job: 2747983
+TACC: Done.

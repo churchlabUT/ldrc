@@ -1,0 +1,3 @@
+python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc3_1_225/behav/SST/SST_Run1/ldrc3_225_sst1_2015-12-19-11_28_56_subdata.pkl /corral-repl/utexas/ldrc/ldrc3_1_225/behav/SST/SST_Run1
+python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc3_1_228/behav/SST/SST_Run1/ldrc3_228_SST1_2015-12-20-14_59_41_subdata.pkl /corral-repl/utexas/ldrc/ldrc3_1_228/behav/SST/SST_Run1
+python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc3_1_241/behav/SST/SST_Run1/ldrc3_241_SST1_2015-12-18-15_42_26_subdata.pkl /corral-repl/utexas/ldrc/ldrc3_1_241/behav/SST/SST_Run1

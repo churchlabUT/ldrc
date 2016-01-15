@@ -1,0 +1,39 @@
+[1] "S1 vs. Controls"
+
+	Welch Two Sample t-test
+
+data:  A_corr_med$rt_med[A_corr_med$go == "2" & A_corr_med$group2 ==  and A_corr_med$rt_med[A_corr_med$go == "2" & A_corr_med$group2 ==      "A_first"] and     "A_control"] 
+t = 2.7827, df = 48.996, p-value = 0.007635
+alternative hypothesis: true difference in means is not equal to 0 
+95 percent confidence interval:
+ 0.01628786 0.10096302 
+sample estimates:
+mean of x mean of y 
+0.6701811 0.6115556 
+
+[1] "S2 vs. Controls"
+
+	Welch Two Sample t-test
+
+data:  A_corr_med$rt_med[A_corr_med$go == "2" & A_corr_med$group2 ==  and A_corr_med$rt_med[A_corr_med$go == "2" & A_corr_med$group2 ==      "A_second"] and     "A_control"] 
+t = 0.024, df = 22.273, p-value = 0.9811
+alternative hypothesis: true difference in means is not equal to 0 
+95 percent confidence interval:
+ -0.05997033  0.06137658 
+sample estimates:
+mean of x mean of y 
+0.6122587 0.6115556 
+
+[1] "S1 vs. S2"
+
+	Welch Two Sample t-test
+
+data:  A_corr_med$rt_med[A_corr_med$go == "2" & A_corr_med$group2 ==  and A_corr_med$rt_med[A_corr_med$go == "2" & A_corr_med$group2 ==      "A_first"] and     "A_second"] 
+t = 1.8688, df = 27.176, p-value = 0.07246
+alternative hypothesis: true difference in means is not equal to 0 
+95 percent confidence interval:
+ -0.005653444  0.121498073 
+sample estimates:
+mean of x mean of y 
+0.6701811 0.6122587 
+

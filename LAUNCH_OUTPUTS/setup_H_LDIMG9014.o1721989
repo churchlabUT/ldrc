@@ -1,0 +1,113 @@
+TACC: Setting memory limits for job 1721989 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: setup_H_LDIMG9014.sh
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N setup_H_LDIMG9014       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 12way 12
+#$ -q normal
+#$ -l h_rt=10:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE setup_H_LDIMG9014.sh
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 1721989
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+Warning: Permanently added 'c334-316.ls4.tacc.utexas.edu,206.76.198.195' (RSA) to the list of known hosts.
+--------------------------------------------------
+TACC Launcher -> 12 processors allocated.
+TACC Launcher -> 1 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c334-316.ls4.tacc.utexas.edu (/corral-repl/utexas/poldracklab/software_lonestar/local/bin/setup_subject.py -o --dcm2nii --motcorr --qa --betfunc --dtiqa --fsrecon --fs-subdir /corral-repl/utexas/ldrc/FREESURFER/ --keepdata -b /corral-repl/utexas/ --studyname ldrc -s H_LDIMG9014)
+subdir /corral-repl/utexas/ldrc/H_LDIMG9014 already exists
+overwriting...
+detected raw: (1) localizer localizer
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9014/raw /corral-repl/utexas/ldrc/H_LDIMG9014/raw/H_LDIMG9014/1
+detected anatomy: (2) t1_mprage_sag_p2_iso_1 t1_mprage_sag_p2_iso_1
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy /corral-repl/utexas/ldrc/H_LDIMG9014/raw/H_LDIMG9014/2
+detected anatomy: (3) t2_spc_sag_p2_iso t2_spc_sag_p2_iso
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy /corral-repl/utexas/ldrc/H_LDIMG9014/raw/H_LDIMG9014/3
+detected anatomy: (4) t1_mprage_sag_p2_iso_1 t1_mprage_sag_p2_iso_1
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy /corral-repl/utexas/ldrc/H_LDIMG9014/raw/H_LDIMG9014/4
+detected DTI: (5) DTI_ep2d_diff_mddw_64_2_iso DTI_ep2d_diff_mddw_64_2_iso
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9014/DTI /corral-repl/utexas/ldrc/H_LDIMG9014/raw/H_LDIMG9014/5
+t1mpragesagp2iso1s002a1001.nii.gz
+ot1mpragesagp2iso1s002a1001.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s002a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres001.nii.gz
+highresctr is at  2
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s002a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres002.nii.gz
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s002a1001.nii.gz': No such file or directory
+
+highresctr is at  3
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s002a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres003.nii.gz
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s002a1001.nii.gz': No such file or directory
+
+highresctr is at  4
+cot1mpragesagp2iso1s002a1001.nii.gz
+t2spcsagp2isos003a1001.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/t2spcsagp2isos003a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/other
+ot2spcsagp2isos003a1001.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot2spcsagp2isos003a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/other
+t1mpragesagp2iso1s004a1001.nii.gz
+ot1mpragesagp2iso1s004a1001.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s004a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres004.nii.gz
+highresctr is at  5
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s004a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres005.nii.gz
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s004a1001.nii.gz': No such file or directory
+
+highresctr is at  6
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s004a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres006.nii.gz
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s004a1001.nii.gz': No such file or directory
+
+highresctr is at  7
+cot1mpragesagp2iso1s004a1001.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_1.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_1.bvec
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_1.bval
+bolddirs:
+[]
+subject dir %s already exists - overwriting
+brainmask /corral-repl/utexas/ldrc/FREESURFER/ldrc_H_LDIMG9014/mri/brainmask.mgz already exists - skipping autorecon1
+mri_convert --out_orientation LAS /corral-repl/utexas/ldrc/FREESURFER/ldrc_H_LDIMG9014/mri/brainmask.mgz --reslice_like /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres001.nii.gz  /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres001_brain.nii
+gzip  /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres001_brain.nii
+logs: ERROR: gzip: No such file or directory
+
+fslmaths /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres001_brain.nii.gz -thr 1 -bin /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres001_brain_mask.nii.gz
+found DTI file: DTI_1.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_1.nii.gz
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 1721989
+TACC: Done.

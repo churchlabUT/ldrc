@@ -1,0 +1,127 @@
+TACC: Setting memory limits for job 1909407 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: launch_A_SC_lev2fsf.txt
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N launch       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 12way 48
+#$ -q normal
+#$ -l h_rt=04:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE launch_A_SC_lev2fsf.txt
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+/bin/.: Permission denied.
+setenv: Too many arguments.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 1909407
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+Warning: Permanently added 'c333-312.ls4.tacc.utexas.edu,206.76.198.143' (RSA) to the list of known hosts.
+--------------------------------------------------
+TACC Launcher -> 48 processors allocated.
+TACC Launcher -> 41 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c312-104.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_0_009/model/SC /corral-repl/utexas/ldrc/ldrc_0_009/model/SC)
+TACC Launcher -> Iniating task 5 on c312-104.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_0_026/model/SC /corral-repl/utexas/ldrc/ldrc_0_026/model/SC)
+TACC Launcher -> Iniating task 12 on c312-104.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_2_003/model/SC /corral-repl/utexas/ldrc/ldrc_2_003/model/SC)
+TACC Launcher -> Iniating task 4 on c312-104.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_0_025/model/SC /corral-repl/utexas/ldrc/ldrc_0_025/model/SC)
+TACC Launcher -> Iniating task 10 on c312-104.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_1_020/model/SC /corral-repl/utexas/ldrc/ldrc_1_020/model/SC)
+TACC Launcher -> Iniating task 8 on c312-104.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_1_007/model/SC /corral-repl/utexas/ldrc/ldrc_1_007/model/SC)
+TACC Launcher -> Iniating task 3 on c312-104.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_0_023/model/SC /corral-repl/utexas/ldrc/ldrc_0_023/model/SC)
+TACC Launcher -> Iniating task 11 on c312-104.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_1_028/model/SC /corral-repl/utexas/ldrc/ldrc_1_028/model/SC)
+TACC Launcher -> Iniating task 9 on c312-104.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_1_015/model/SC /corral-repl/utexas/ldrc/ldrc_1_015/model/SC)
+TACC Launcher -> Iniating task 6 on c312-104.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_1_001/model/SC /corral-repl/utexas/ldrc/ldrc_1_001/model/SC)
+TACC Launcher -> Iniating task 7 on c312-104.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_1_002/model/SC /corral-repl/utexas/ldrc/ldrc_1_002/model/SC)
+TACC Launcher -> Iniating task 2 on c312-104.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_0_013/model/SC /corral-repl/utexas/ldrc/ldrc_0_013/model/SC)
+TACC Launcher -> Iniating task 33 on c333-312.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_059/model/SC /corral-repl/utexas/ldrc/ldrc_c_059/model/SC)
+TACC Launcher -> Iniating task 28 on c333-312.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_046/model/SC /corral-repl/utexas/ldrc/ldrc_c_046/model/SC)
+TACC Launcher -> Iniating task 36 on c333-312.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_068/model/SC /corral-repl/utexas/ldrc/ldrc_c_068/model/SC)
+TACC Launcher -> Iniating task 35 on c333-312.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_062/model/SC /corral-repl/utexas/ldrc/ldrc_c_062/model/SC)
+TACC Launcher -> Iniating task 25 on c333-312.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_043/model/SC /corral-repl/utexas/ldrc/ldrc_c_043/model/SC)
+TACC Launcher -> Iniating task 30 on c333-312.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_054/model/SC /corral-repl/utexas/ldrc/ldrc_c_054/model/SC)
+TACC Launcher -> Iniating task 29 on c333-312.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_047/model/SC /corral-repl/utexas/ldrc/ldrc_c_047/model/SC)
+TACC Launcher -> Iniating task 34 on c333-312.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_061/model/SC /corral-repl/utexas/ldrc/ldrc_c_061/model/SC)
+TACC Launcher -> Iniating task 27 on c333-312.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_045/model/SC /corral-repl/utexas/ldrc/ldrc_c_045/model/SC)
+TACC Launcher -> Iniating task 26 on c333-312.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_044/model/SC /corral-repl/utexas/ldrc/ldrc_c_044/model/SC)
+TACC Launcher -> Iniating task 32 on c333-312.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_058/model/SC /corral-repl/utexas/ldrc/ldrc_c_058/model/SC)
+TACC Launcher -> Iniating task 31 on c333-312.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_057/model/SC /corral-repl/utexas/ldrc/ldrc_c_057/model/SC)
+TACC Launcher -> Iniating task 41 on c316-102.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_084/model/SC /corral-repl/utexas/ldrc/ldrc_c_084/model/SC)
+TACC Launcher -> Iniating task 39 on c316-102.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_081/model/SC /corral-repl/utexas/ldrc/ldrc_c_081/model/SC)
+TACC Launcher -> Iniating task 37 on c316-102.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_078/model/SC /corral-repl/utexas/ldrc/ldrc_c_078/model/SC)
+TACC Launcher -> Iniating task 40 on c316-102.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_082/model/SC /corral-repl/utexas/ldrc/ldrc_c_082/model/SC)
+TACC Launcher -> Iniating task 38 on c316-102.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_079/model/SC /corral-repl/utexas/ldrc/ldrc_c_079/model/SC)
+TACC Launcher -> Iniating task 23 on c301-215.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_039/model/SC /corral-repl/utexas/ldrc/ldrc_c_039/model/SC)
+TACC Launcher -> Iniating task 20 on c301-215.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_030/model/SC /corral-repl/utexas/ldrc/ldrc_c_030/model/SC)
+TACC Launcher -> Iniating task 21 on c301-215.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_032/model/SC /corral-repl/utexas/ldrc/ldrc_c_032/model/SC)
+TACC Launcher -> Iniating task 22 on c301-215.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_037/model/SC /corral-repl/utexas/ldrc/ldrc_c_037/model/SC)
+TACC Launcher -> Iniating task 18 on c301-215.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_2_031/model/SC /corral-repl/utexas/ldrc/ldrc_2_031/model/SC)
+TACC Launcher -> Iniating task 15 on c301-215.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_2_010/model/SC /corral-repl/utexas/ldrc/ldrc_2_010/model/SC)
+TACC Launcher -> Iniating task 17 on c301-215.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_2_027/model/SC /corral-repl/utexas/ldrc/ldrc_2_027/model/SC)
+TACC Launcher -> Iniating task 16 on c301-215.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_2_011/model/SC /corral-repl/utexas/ldrc/ldrc_2_011/model/SC)
+TACC Launcher -> Iniating task 13 on c301-215.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_2_005/model/SC /corral-repl/utexas/ldrc/ldrc_2_005/model/SC)
+TACC Launcher -> Iniating task 19 on c301-215.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_018/model/SC /corral-repl/utexas/ldrc/ldrc_c_018/model/SC)
+TACC Launcher -> Iniating task 14 on c301-215.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_2_008/model/SC /corral-repl/utexas/ldrc/ldrc_2_008/model/SC)
+TACC Launcher -> Iniating task 24 on c301-215.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py /corral-repl/utexas/ldrc/ldrc_c_040/model/SC /corral-repl/utexas/ldrc/ldrc_c_040/model/SC)
+Traceback (most recent call last):
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py", line 91, in <module>
+    for c in sorted(copelist.keys()):
+NameError: name 'copelist' is not defined
+Traceback (most recent call last):
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py", line 91, in <module>
+    for c in sorted(copelist.keys()):
+NameError: name 'copelist' is not defined
+Traceback (most recent call last):
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py", line 91, in <module>
+    for c in sorted(copelist.keys()):
+NameError: name 'copelist' is not defined
+Traceback (most recent call last):
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py", line 91, in <module>
+    for c in sorted(copelist.keys()):
+NameError: name 'copelist' is not defined
+Traceback (most recent call last):
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py", line 91, in <module>
+    for c in sorted(copelist.keys()):
+NameError: name 'copelist' is not defined
+Traceback (most recent call last):
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py", line 91, in <module>
+    for c in sorted(copelist.keys()):
+NameError: name 'copelist' is not defined
+Traceback (most recent call last):
+  File "/corral-repl/utexas/ldrc/SCRIPTS/mk_lev2fsf.py", line 91, in <module>
+    for c in sorted(copelist.keys()):
+NameError: name 'copelist' is not defined
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 1909407
+TACC: Done.

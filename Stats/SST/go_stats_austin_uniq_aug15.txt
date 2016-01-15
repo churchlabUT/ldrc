@@ -1,0 +1,50 @@
+   subind     group N go_rt_mean   go_rt_se go_acc_mean go_error_mean group2 ID
+16  2_031   A_first 2  0.7116235 0.03469250   0.8958333    0.01041667  first  2
+43  0_104  A2_first 2  0.7276098 0.00247825   0.9375000    0.00000000  first  0
+47  0_135  A2_first 1  0.6384180         NA   0.7812500    0.02083333  first  0
+52  0_151  A2_first 2  0.6432967 0.01442525   0.9739583    0.00000000  first  0
+53  0_172  A2_first 2  0.7554452 0.03827475   0.9010417    0.01041667  first  0
+56  1_139  A2_first 1  0.6484550         NA   0.8229167    0.04166667  first  1
+57  1_141  A2_first 2  0.5716070 0.01425100   0.8489583    0.04166667  first  1
+59  1_152  A2_first 1  0.7457740         NA   0.8020833    0.01041667  first  1
+60  1_157  A2_first 2  0.7358870 0.03015100   0.8906250    0.01562500  first  1
+68  1_115 A2_second 1  0.6744240         NA   0.8229167    0.00000000 second  1
+69  1_125 A2_second 1  0.7022745         NA   0.7500000    0.01041667 second  1
+   ID2 INT   city rep
+16   1   i Austin   u
+43   0   i Austin   u
+47   0   i Austin   u
+52   0   i Austin   u
+53   0   i Austin   u
+56   1   i Austin   u
+57   1   i Austin   u
+59   1   i Austin   u
+60   1   i Austin   u
+68   1   i Austin   u
+69   1   i Austin   u
+[1] "Mean Go RT - S1 vs. s2 Unique"
+
+	Welch Two Sample t-test
+
+data:  go_rt_mean by group2
+t = -0.074999, df = 6.5236, p-value = 0.9425
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.06243498  0.05865121
+sample estimates:
+ mean in group first mean in group second 
+           0.6864574            0.6883492 
+
+[1] "Mean Go Accuracy - S1 vs. S2 Unique"
+
+	Welch Two Sample t-test
+
+data:  go_acc_mean by group2
+t = 2.0434, df = 1.7691, p-value = 0.1941
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.1200461  0.2924998
+sample estimates:
+ mean in group first mean in group second 
+           0.8726852            0.7864583 
+

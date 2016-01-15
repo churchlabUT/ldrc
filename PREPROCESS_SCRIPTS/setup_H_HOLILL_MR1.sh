@@ -1,0 +1,1 @@
+/corral-repl/utexas/poldracklab/software_lonestar/setup-subject/setup_subject_phillips.py -o --dcm2nii --motcorr --qa --unzip -f /corral-repl/utexas/ldrc/H_HOLILL_MR1_2_15_2013_20_21_55.tar.gz --betfunc --dtiqa --fsrecon --keepdata -b /corral-repl/utexas/ --studyname ldrc -s H_HOLILL_MR1

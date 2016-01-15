@@ -1,0 +1,10 @@
+recon-all -autorecon3 -s ldrc_ldrc_c_032 -sd /corral-repl/utexas/ldrc/FREESURFER/ 
+recon-all -autorecon3 -s ldrc_ldrc2_137 -sd /corral-repl/utexas/ldrc/FREESURFER/ 
+recon-all -autorecon3 -s ldrc_ldrc2_137_second -sd /corral-repl/utexas/ldrc/FREESURFER/
+recon-all -autorecon3 -s ldrc_ldrc2_139_second -sd /corral-repl/utexas/ldrc/FREESURFER/ 
+recon-all -autorecon3 -s ldrc_ldrc2_140_second -sd /corral-repl/utexas/ldrc/FREESURFER/ 
+recon-all -autorecon3 -s ldrc_ldrc2_143_second -sd /corral-repl/utexas/ldrc/FREESURFER/
+recon-all -autorecon3 -s ldrc_ldrc2_145_second -sd /corral-repl/utexas/ldrc/FREESURFER/ 
+recon-all -autorecon3 -s ldrc_ldrc2_147_second -sd /corral-repl/utexas/ldrc/FREESURFER/ 
+recon-all -autorecon3 -s ldrc_ldrc2_154_second -sd /corral-repl/utexas/ldrc/FREESURFER/
+recon-all -autorecon3 -s ldrc_ldrc2_173_second -sd /corral-repl/utexas/ldrc/FREESURFER/

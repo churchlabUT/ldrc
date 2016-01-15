@@ -1,0 +1,104 @@
+   subind     group N stop_acc_me stop_error_me stop_fail_cor_me
+1   0_009   A_first 2    0.484375      0.515625         0.500000
+2   0_018   A_first 2    0.546875      0.453125         0.453125
+3   0_025   A_first 1    0.562500      0.437500         0.437500
+5   0_054   A_first 2    0.531250      0.468750         0.453125
+6   0_057   A_first 1    0.562500      0.437500         0.437500
+8   1_007   A_first 2    0.515625      0.484375         0.484375
+14  2_011   A_first 1    0.562500      0.437500         0.437500
+15  2_027   A_first 2    0.546875      0.453125         0.453125
+17  0_013  A_second 2    0.500000      0.500000         0.468750
+19  0_049  A_second 2    0.500000      0.500000         0.421875
+20  1_001  A_second 1    0.625000      0.375000         0.375000
+25  1_036  A_second 2    0.562500      0.437500         0.437500
+26  2_005  A_second 1    0.531250      0.468750         0.343750
+30  2_034  A_second 1    0.531250      0.468750         0.468750
+31  2_048  A_second 2    0.531250      0.468750         0.453125
+43  0_104  A2_first 2    0.578125      0.421875         0.421875
+47  0_135  A2_first 1    0.500000      0.500000         0.500000
+52  0_151  A2_first 2    0.562500      0.437500         0.421875
+53  0_172  A2_first 2    0.578125      0.421875         0.421875
+56  1_139  A2_first 1    0.593750      0.406250         0.406250
+57  1_141  A2_first 2    0.531250      0.468750         0.437500
+59  1_152  A2_first 1    0.531250      0.468750         0.468750
+60  1_157  A2_first 2    0.578125      0.421875         0.421875
+68  1_115 A2_second 1    0.593750      0.406250         0.406250
+69  1_125 A2_second 1    0.593750      0.406250         0.406250
+   stop_fail_incor_me       ssd quantileRT_me   SSRT_me group2 ID ID2 INT
+1            0.500000 0.2515625     0.5214816 0.2699191  first  0   0   i
+2            0.453125 0.2375000     0.5730605 0.3355605  first  0   0   i
+3            0.437500 0.3781250     0.5811539 0.2030289  first  0   0   i
+5            0.453125 0.3593750     0.5929360 0.2335610  first  0   0   i
+6            0.437500 0.4812500     0.6811387 0.1998887  first  0   0   i
+8            0.484375 0.3296875     0.6138619 0.2841744  first  1   1   i
+14           0.437500 0.4000000     0.6579420 0.2579420  first  2   1   i
+15           0.453125 0.4796875     0.6452542 0.1655667  first  2   1   i
+17           0.468750 0.2968750     0.5326514 0.2357764 second  0   0   i
+19           0.421875 0.2500000     0.4710458 0.2210458 second  0   0   i
+20           0.375000 0.6250000     0.7562145 0.1312145 second  1   1   i
+25           0.437500 0.3906250     0.6590241 0.2683991 second  1   1   i
+26           0.343750 0.3250000     0.5435912 0.2185912 second  2   1   i
+30           0.468750 0.3625000     0.5971166 0.2346166 second  2   1   i
+31           0.453125 0.3734375     0.6182187 0.2447812 second  2   1   i
+43           0.421875 0.4468750     0.7003794 0.2535044  first  0   0   i
+47           0.500000 0.2937500     0.6384180 0.3446680  first  0   0   i
+52           0.421875 0.4078125     0.6294832 0.2216707  first  0   0   i
+53           0.421875 0.4843750     0.7314398 0.2470648  first  0   0   i
+56           0.406250 0.4531250     0.6236677 0.1705427  first  1   1   i
+57           0.437500 0.3015625     0.5639588 0.2623963  first  1   1   i
+59           0.468750 0.4968750     0.7314953 0.2346203  first  1   1   i
+60           0.421875 0.5078125     0.7096576 0.2018451  first  1   1   i
+68           0.406250 0.5093750     0.6370276 0.1276526 second  1   1   i
+69           0.406250 0.5437500     0.6731684 0.1294184 second  1   1   i
+     city rep
+1  Austin   u
+2  Austin   u
+3  Austin   u
+5  Austin   u
+6  Austin   u
+8  Austin   u
+14 Austin   u
+15 Austin   u
+17 Austin   u
+19 Austin   u
+20 Austin   u
+25 Austin   u
+26 Austin   u
+30 Austin   u
+31 Austin   u
+43 Austin   u
+47 Austin   u
+52 Austin   u
+53 Austin   u
+56 Austin   u
+57 Austin   u
+59 Austin   u
+60 Austin   u
+68 Austin   u
+69 Austin   u
+[1] "Mean SSD - S1 vs. s2 Unique"
+
+	Welch Two Sample t-test
+
+data:  ssd by group2
+t = -0.30042, df = 12.846, p-value = 0.7687
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.11620037  0.08785836
+sample estimates:
+ mean in group first mean in group second 
+           0.3943359            0.4085069 
+
+[1] "Mean SSRT  - S1 vs. S2 Unique"
+
+	Welch Two Sample t-test
+
+data:  SSRT_me by group2
+t = 1.8448, df = 15.478, p-value = 0.08428
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.006333271  0.089522866
+sample estimates:
+ mean in group first mean in group second 
+           0.2428721            0.2012773 
+

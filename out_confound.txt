@@ -1,0 +1,9 @@
+mcf = /corral-repl/utexas/ldrc/ldrc_c_085/BOLD/run04_15_SC_2/bold ; outfile = /corral-repl/utexas/ldrc/ldrc_c_085/BOLD/run04_15_SC_2/scrub_files/fd_confounds.txt ; ndel = 0 ; mask =  ; do_moco = yes ; thresh = 0.9 ; use_thresh = yes ; metric = fd
+refnum = 106
+Original_refvol = 106
+brainmed = 12347.579102  ; maskmean = 0.180990 
+Calculating outliers
+Range of metric values: 0.032143 1.963590 
+Found 4 outliers over 0.9
+Generating EVs
+Found spikes at  1 33 34 103

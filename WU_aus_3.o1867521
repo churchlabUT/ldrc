@@ -1,0 +1,74 @@
+TACC: Setting memory limits for job 1867521 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/bash
+#
+# SGE control file automatically created by launch
+# Launching single command: WU_preprocess_austin_3.txt
+#
+#
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N WU_aus_3       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 1way 12
+#$ -q serial
+#$ -l h_rt=10:00:00
+#$ -M church@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+
+
+set -x                   # Echo commands, use "set echo" with csh
+WU_preprocess_austin_3.txt
+--------------------------------------------------------------------------------
+TACC: Done.
++ WU_preprocess_austin_3.txt
+***  /corral-repl/utexas/ldrc/WU_files/bin/preprocess  ***
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+tail: cannot open `+3' for reading: No such file or directory
+tail: cannot open `+3' for reading: No such file or directory
+***  /corral-repl/utexas/ldrc/WU_files/bin/preprocess  ***
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+tail: cannot open `+3' for reading: No such file or directory
+tail: cannot open `+3' for reading: No such file or directory
+***  /corral-repl/utexas/ldrc/WU_files/bin/preprocess  ***
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+tail: cannot open `+3' for reading: No such file or directory
+tail: cannot open `+3' for reading: No such file or directory
+***  /corral-repl/utexas/ldrc/WU_files/bin/preprocess  ***
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+/bin/rm: No match.
+tail: cannot open `+3' for reading: No such file or directory
+tail: cannot open `+3' for reading: No such file or directory
+TACC: Cleaning up after job: 1867521
+TACC: Done.

@@ -1,0 +1,77 @@
+#!/bin/sh
+
+#This will create a txt file that can be launched on tacc to trim Houston BOLD runs before running the rest of setup subject
+#Created by Mary Abbe Roe, April 2015
+
+rm /corral-repl/utexas/ldrc/SCRIPTS/launch_SC_trim_h.txt
+rm /corral-repl/utexas/ldrc/SCRIPTS/launch_SST_rest_trim_h.txt 
+
+basedir='/corral-repl/utexas/ldrc'
+
+#subnums=`ls -d ${basedir}/H_LD*_second`
+#subnums=`ls -d ${basedir}/H_LD*_third`
+#subnums=`ls -d ${basedir}/LDFHO*`
+#subnums=`ls -d ${basedir}/LDFHO*_second*`
+subnums=`ls -d ${basedir}/LDFHO[0-9][0-9][0-9][0-9][0-9]_F2015_V1`
+
+# FOR SC
+
+for sub in $subnums
+
+do
+  
+  run_labels=`ls -d ${sub}/BOLD/*SC*`
+  for run in ${run_labels}
+  do
+    runnum=`echo ${run} | sed 's/^.*\(.\)$/\1/' `
+
+    cp ${run}/bold.nii.gz ${run}/bold_orig.nii.gz
+
+    echo fslroi ${run}/bold_orig.nii.gz ${run}/bold.nii.gz 5 212 >> launch_SC_trim_h.txt
+  
+  done
+  
+done
+
+
+
+
+# FOR SST
+
+for sub in $subnums
+
+do
+  
+  run_labels=`ls -d ${sub}/BOLD/*SST*`
+  for run in ${run_labels}
+  do
+    runnum=`echo ${run} | sed 's/^.*\(.\)$/\1/' `
+
+    cp ${run}/bold.nii.gz ${run}/bold_orig.nii.gz
+
+    echo fslroi ${run}/bold_orig.nii.gz ${run}/bold.nii.gz 5 180 >> launch_SST_rest_trim_h.txt
+  
+  done
+  
+done
+
+
+
+# FOR Rest
+
+for sub in $subnums
+
+do
+  
+  run_labels=`ls -d ${sub}/BOLD/*Rest*`
+  for run in ${run_labels}
+  do
+    runnum=`echo ${run} | sed 's/^.*\(.\)$/\1/' `
+
+    cp ${run}/bold.nii.gz ${run}/bold_orig.nii.gz
+
+    echo fslroi ${run}/bold_orig.nii.gz ${run}/bold.nii.gz 5 180 >> launch_SST_rest_trim_h.txt
+  
+  done
+  
+done

@@ -1,0 +1,60 @@
+#!/bin/bash
+
+# this script will move old log files into a new folder, then remove all data except original raw imaging files, behavioral files, and WU_preprocess
+
+basedir='/work/IRC/church/ldrc'
+
+#subnums=`ls -d ${basedir}/ldrc*_*_[0-9][0-9][0-9]*`
+#subnums=`ls -d ${basedir}/ldrc_c_[0-9][0-9][0-9]`
+#subnums=`ls -d ${basedir}/ldrc_0_[0-9][0-9][0-9]`
+#subnums=`ls -d ${basedir}/ldrc_*second`
+#subnums=`ls -d ${basedir}/ldrc_*third`
+#subnums=`ls -d ${basedir}/ldrc2_*`
+#subnums=`ls -d ${basedir}/*LD*`
+#subnums=`ls -d ${basedir}/H_LD*_second`
+#subnums=`ls -d ${basedir}/H_LD*_third`
+subnums=`ls -d ${basedir}/LDFHO*`
+
+
+for sub in $subnums
+
+do
+  # move old logs into a new folder /${sub}/logs/old_logs and delete them
+    if [[ ! -d `${sub}/logs/old_logs` ]]
+    then
+    mkdir ${sub}/logs/old_logs   
+    mv ${sub}/logs/* ${sub}/logs/old_logs
+    fi   
+  
+  # remove localizer files under /${sub}/raw created by running -dcm2nii flag in setup subject 
+    if [ -d `${sub}/raw/` ]
+    then 
+    rm -f ${sub}/raw/*.nii.gz
+    fi
+
+  # remove data from  /${sub}/anatomy,  /${sub}/BOLD,  /${sub}/DTI,  /${sub}/model
+    if [[ ! -d `${sub}/anatomy/old_anatomy` ]]
+    then
+    mkdir ${sub}/anatomy/old_anatomy   
+    mv ${sub}/anatomy/* ${sub}/anatomy/old_anatomy
+    fi   
+
+    if [ -d `${sub}/BOLD/` ]
+    then 
+    rm -r ${sub}/BOLD/*run*
+    fi
+
+    if [[ ! -d `${sub}/DTI/old_DTI_QA` ]]
+    then
+    mkdir ${sub}/DTI/old_DTI_QA
+    mv ${sub}/DTI/DTI_1_QA ${sub}/DTI/old_DTI_QA
+    rm -f ${sub}/DTI/*.*
+    fi   
+
+    if [ -d `${sub}/model/` ]
+    then 
+    rm -r "${sub}"/model/SC*
+    rm -r "${sub}"/model/SST
+    fi
+  
+done

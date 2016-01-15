@@ -1,0 +1,1 @@
+launch -s /corral-repl/utexas/ldrc/SCRIPTS/H_sst_onset_files.txt  -j Analysis_Lonestar -r 01:00:00 -m lolmedo@austin.utexas.edu -e 1way

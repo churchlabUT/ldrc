@@ -1,0 +1,12 @@
+/corral-repl/utexas/ldrc/H_LDIMG8963_MR1/model/SC/cope1_lev2.gfeat/cope1.feat/stats/cope1.nii.gz 
+/corral-repl/utexas/ldrc/H_HELILL_2_MR1/model/SC/cope1_lev2.gfeat/cope1.feat/stats/cope1.nii.gz 
+/corral-repl/utexas/ldrc/H_BRGAS_MR1/model/SC/cope1_lev2.gfeat/cope1.feat/stats/cope1.nii.gz 
+/corral-repl/utexas/ldrc/H_ANSKO_MR1/model/SC/cope1_lev2.gfeat/cope1.feat/stats/cope1.nii.gz 
+/corral-repl/utexas/ldrc/H_ANJON_MR1/model/SC/cope1_lev2.gfeat/cope1.feat/stats/cope1.nii.gz 
+/corral-repl/utexas/ldrc/H_HOLILL_MR1/model/SC/cope1_lev2.gfeat/cope1.feat/stats/cope1.nii.gz 
+/corral-repl/utexas/ldrc/H_MATHOM_1_MR1/model/SC/cope1_lev2.gfeat/cope1.feat/stats/cope1.nii.gz 
+/corral-repl/utexas/ldrc/H_MATHOM_2_MR1/model/SC/cope1_lev2.gfeat/cope1.feat/stats/cope1.nii.gz 
+/corral-repl/utexas/ldrc/H_TAJON_MR1/model/SC/cope1_lev2.gfeat/cope1.feat/stats/cope1.nii.gz 
+/corral-repl/utexas/ldrc/H_Kemez_MR1/model/SC/cope1_lev2.gfeat/cope1.feat/stats/cope1.nii.gz 
+/corral-repl/utexas/ldrc/H_WALOC_MR1/model/SC/cope1_lev2.gfeat/cope1.feat/stats/cope1.nii.gz 
+/corral-repl/utexas/ldrc/H_ALMOG_MR1/model/SC/cope1_lev2.gfeat/cope1.feat/stats/cope1.nii.gz 

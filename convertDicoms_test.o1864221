@@ -1,0 +1,36 @@
+TACC: Setting memory limits for job 1864221 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/bash
+#
+# SGE control file automatically created by launch
+# Launching single command: convert_test.sh
+#
+#
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N convertDicoms_test       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 1way 12
+#$ -q serial
+#$ -l h_rt=10:00:00
+#$ -M church@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+
+
+set -x                   # Echo commands, use "set echo" with csh
+convert_test.sh
+--------------------------------------------------------------------------------
+TACC: Done.
++ convert_test.sh
+./convert_test.sh: line 1: syntax error near unexpected token `('
+./convert_test.sh: line 1: `foreach x (ldrc_1_001)'
+TACC: Cleaning up after job: 1864221
+TACC: Done.

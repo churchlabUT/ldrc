@@ -1,0 +1,2 @@
+python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets_buttonfix.py /corral-repl/utexas/ldrc/LDFHO24768_1/behav/SST/SST_Run1/LDFHO24768_F2015_V1_2015-12-11-15_23_27_subdata.pkl /corral-repl/utexas/ldrc/LDFHO24768_1/behav/SST/SST_Run1
+python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets_buttonfix.py /corral-repl/utexas/ldrc/LDFHO24768_1/behav/SST/SST_Run2/LDFHO24768_F2015_V1_2015-12-11-16_12_35_subdata.pkl /corral-repl/utexas/ldrc/LDFHO24768_1/behav/SST/SST_Run2

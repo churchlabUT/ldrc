@@ -1,0 +1,70 @@
+TACC: Setting memory limits for job 2330120 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: launch_A_SC_lev1_3.txt
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N launch       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 2way 108
+#$ -q normal
+#$ -l h_rt=24:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE launch_A_SC_lev1_3.txt
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+/bin/.: Permission denied.
+setenv: Too many arguments.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 2330120
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+Warning: Permanently added 'c309-305.ls4.tacc.utexas.edu,206.76.194.8' (RSA) to the list of known hosts.
+Warning: Permanently added 'c329-208.ls4.tacc.utexas.edu,206.76.197.187' (RSA) to the list of known hosts.
+Warning: Permanently added 'c337-207.ls4.tacc.utexas.edu,206.76.199.58' (RSA) to the list of known hosts.
+Warning: Permanently added 'c333-202.ls4.tacc.utexas.edu,206.76.198.117' (RSA) to the list of known hosts.
+--------------------------------------------------
+TACC Launcher -> 18 processors allocated.
+TACC Launcher -> 9 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c306-209.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_104/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 2 on c306-209.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_104/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 4 on c333-202.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_151/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 3 on c333-202.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_104/model/SC/designs/run3.fsf)
+TACC Launcher -> Iniating task 9 on c331-208.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_1_157/model/SC/designs/run3.fsf)
+TACC Launcher -> Iniating task 7 on c338-112.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_1_157/model/SC/designs/run1.fsf)
+TACC Launcher -> Iniating task 8 on c338-112.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_1_157/model/SC/designs/run2.fsf)
+TACC Launcher -> Iniating task 6 on c337-207.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_151/model/SC/designs/run3.fsf)
+TACC Launcher -> Iniating task 5 on c337-207.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_151/model/SC/designs/run2.fsf)
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 2330120
+TACC: Done.

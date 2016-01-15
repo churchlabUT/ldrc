@@ -1,0 +1,1 @@
+/corral-repl/utexas/poldracklab/software_lonestar/setup-subject/setup_subject_phillips.py -o --dcm2nii --motcorr --qa --unzip -f /corral-repl/utexas/ldrc/HOU_phantom_MR1_2_22_2013_16_17_9.tar.gz --betfunc --dtiqa --fsrecon --keepdata -b /corral-repl/utexas/ --studyname ldrc -s HOU_phantom_MR1

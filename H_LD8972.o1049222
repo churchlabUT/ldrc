@@ -1,0 +1,97 @@
+TACC: Setting memory limits for job 1049222 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/bash
+#
+# SGE control file automatically created by launch
+# Launching single command: setup_LDIMG8972.sh
+#
+#
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N H_LD8972       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 1way 12
+#$ -q serial
+#$ -l h_rt=10:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+
+
+set -x                   # Echo commands, use "set echo" with csh
+setup_LDIMG8972.sh
+--------------------------------------------------------------------------------
+TACC: Done.
++ setup_LDIMG8972.sh
+subdir /corral-repl/utexas/ldrc/LDIMG8972_MR1 already exists
+overwriting...
+checking for /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS
+parsing  1301
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1301/DICOM
+detected BOLD: (1301) FMRI_REST_EYES OPEN_2 SENSE FMRI_REST_EYES OPEN_2
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1301/DICOM
+parsing  1401
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1401/DICOM
+detected BOLD: (1401) FMRI_SST_2 SENSE FMRI_SST_2
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1401/DICOM
+parsing  1501
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1501/DICOM
+detected BOLD: (1501) FMRI_SC_3 SENSE FMRI_SC_3
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1501/DICOM
+parsing  1601
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1601/DICOM
+detected DTI: (1601) WIP AX DTI 60DIR SENSE AX DTI 60DIR
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/DTI /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1601/DICOM
+parsing  1701
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1701/DICOM
+detected fieldmap: (1701) WIP Ax B0_Map_yes SENSE Ax B0_Map_yes
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/fieldmap /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1701/DICOM
+parsing  1801
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1801/DICOM
+detected fieldmap: (1801) WIP Ax B0_Map_yes SENSE Ax B0_Map_yes
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/fieldmap /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1801/DICOM
+parsing  401
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/401/DICOM
+detected anatomy: (401) 3DSAG VISTA_T2_FATSAT SENSE 3DSAG VISTA_T2_FATSAT
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/anatomy /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/401/DICOM
+parsing  501
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/501/DICOM
+detected BOLD: (501) FMRI_REST_EYES OPEN_1 SENSE FMRI_REST_EYES OPEN_1
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/501/DICOM
+parsing  701
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/701/DICOM
+detected BOLD: (701) FMRI_SC_1 SENSE FMRI_SC_1
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/701/DICOM
+parsing  801
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/801/DICOM
+detected BOLD: (801) FMRI_SST 1 SENSE FMRI_SST 1
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/801/DICOM
+parsing  1201
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1201/DICOM
+detected BOLD: (1201) FMRI_SC_2 SENSE FMRI_SC_2
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/1201/DICOM
+parsing  301
+checking for dicom files in /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/301/DICOM
+detected anatomy: (301) 3DSAG_T1_1MM_PRE SENSE 3DSAG_T1_1MM_PRE
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/LDIMG8972_MR1/anatomy /corral-repl/utexas/ldrc/LDIMG8972_MR1/LDIMG8972_MR1/SCANS/301/DICOM
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRIRESTEYESOPEN2SENSEs1301a1013.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_REST_EYES_OPEN_2_SENSE_1301/bold.nii.gz
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRISST2SENSEs1401a1014.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SST_2_SENSE_1401/bold.nii.gz
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRISC3SENSEs1501a1015.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SC_3_SENSE_1501/bold.nii.gz
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRIRESTEYESOPEN1SENSEs501a1005.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_REST_EYES_OPEN_1_SENSE_501/bold.nii.gz
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRISC1SENSEs701a1007.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SC_1_SENSE_701/bold.nii.gz
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRISST1SENSEs801a1008.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SST_1_SENSE_801/bold.nii.gz
+mv /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRISC2SENSEs1201a1012.nii.gz /corral-repl/utexas/ldrc/LDIMG8972_MR1/BOLD/FMRI_SC_2_SENSE_1201/bold.nii.gz
+highres001.nii.gz
+Traceback (most recent call last):
+  File "/corral-repl/utexas/poldracklab/software_lonestar/setup-subject/setup_subject_phillips.py", line 474, in <module>
+    runnum=a.rsplit('a')[-2].rsplit('s')[-1].lstrip('0')
+IndexError: list index out of range
+TACC: Cleaning up after job: 1049222
+TACC: Done.

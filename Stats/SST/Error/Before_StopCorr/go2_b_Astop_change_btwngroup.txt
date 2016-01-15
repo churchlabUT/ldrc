@@ -1,0 +1,39 @@
+[1] "S1 vs. Controls"
+
+	Welch Two Sample t-test
+
+data:  A_corr_b_med_diff$med_diff[A_corr_b_med_diff$group2 == "A_first"] and A_corr_b_med_diff$med_diff[A_corr_b_med_diff$group2 == "A_control"] 
+t = -1.4834, df = 42.677, p-value = 0.1453
+alternative hypothesis: true difference in means is not equal to 0 
+95 percent confidence interval:
+ -0.064617207  0.009852154 
+sample estimates:
+  mean of x   mean of y 
+-0.03773945 -0.01035692 
+
+[1] "S2 vs. Controls"
+
+	Welch Two Sample t-test
+
+data:  A_corr_b_med_diff$med_diff[A_corr_b_med_diff$group2 == "A_second"] and A_corr_b_med_diff$med_diff[A_corr_b_med_diff$group2 == "A_control"] 
+t = 0.0075, df = 27.742, p-value = 0.994
+alternative hypothesis: true difference in means is not equal to 0 
+95 percent confidence interval:
+ -0.05030018  0.05067128 
+sample estimates:
+  mean of x   mean of y 
+-0.01017138 -0.01035692 
+
+[1] "S1 vs.S2"
+
+	Welch Two Sample t-test
+
+data:  A_corr_b_med_diff$med_diff[A_corr_b_med_diff$group2 == "A_first"] and A_corr_b_med_diff$med_diff[A_corr_b_med_diff$group2 == "A_second"] 
+t = -1.1696, df = 25.824, p-value = 0.2529
+alternative hypothesis: true difference in means is not equal to 0 
+95 percent confidence interval:
+ -0.07603588  0.02089972 
+sample estimates:
+  mean of x   mean of y 
+-0.03773945 -0.01017138 
+

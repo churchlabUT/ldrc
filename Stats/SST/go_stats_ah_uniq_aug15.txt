@@ -1,0 +1,70 @@
+     subind     group N go_rt_mean   go_rt_se go_acc_mean go_error_mean group2
+16    2_031   A_first 2  0.7116235 0.03469250   0.8958333   0.010416667  first
+43    0_104  A2_first 2  0.7276098 0.00247825   0.9375000   0.000000000  first
+47    0_135  A2_first 1  0.6384180         NA   0.7812500   0.020833333  first
+52    0_151  A2_first 2  0.6432967 0.01442525   0.9739583   0.000000000  first
+53    0_172  A2_first 2  0.7554452 0.03827475   0.9010417   0.010416667  first
+56    1_139  A2_first 1  0.6484550         NA   0.8229167   0.041666667  first
+57    1_141  A2_first 2  0.5716070 0.01425100   0.8489583   0.041666667  first
+59    1_152  A2_first 1  0.7457740         NA   0.8020833   0.010416667  first
+60    1_157  A2_first 2  0.7358870 0.03015100   0.8906250   0.015625000  first
+68    1_115 A2_second 1  0.6744240         NA   0.8229167   0.000000000 second
+69    1_125 A2_second 1  0.7022745         NA   0.7500000   0.010416667 second
+110  1986_1  H_second 1  0.7584200         NA   0.7708333   0.010416667 second
+211  2436_2  H_second 2  0.7318180 0.02609700   0.8125000   0.005208333 second
+32   2569_2  H_second 1  0.7917790         NA   0.7500000   0.000000000 second
+41   2748_1  H_second 1  0.5185045         NA   0.8750000   0.062500000 second
+121 10297_1  H2_first 1  0.6325170         NA   0.9166667   0.041666667  first
+141 10394_1  H2_first 1  0.5796800         NA   0.8854167   0.031250000  first
+151 10452_1  H2_first 2  0.5468717 0.02843725   0.8489583   0.057291667  first
+191 O5782_1  H2_first 2  0.6620592 0.00339775   0.7447917   0.052083333  first
+201 O6598_0  H2_first 2  0.6899600 0.01170550   0.8229167   0.005208333  first
+241 10942_1 H2_second 2  0.7607803 0.03637325   0.8020833   0.026041667 second
+    ID ID2 INT    city rep
+16   2   1   i  Austin   u
+43   0   0   i  Austin   u
+47   0   0   i  Austin   u
+52   0   0   i  Austin   u
+53   0   0   i  Austin   u
+56   1   1   i  Austin   u
+57   1   1   i  Austin   u
+59   1   1   i  Austin   u
+60   1   1   i  Austin   u
+68   1   1   i  Austin   u
+69   1   1   i  Austin   u
+110  1   1   i Houston   u
+211  2   1   i Houston   u
+32   2   1   i Houston   u
+41   1   1   i Houston   u
+121  1   1   i Houston   u
+141  1   1   i Houston   u
+151  1   1   i Houston   u
+191  1   1   i Houston   u
+201  0   0   i Houston   u
+241  1   1   i Houston   u
+[1] "Mean Go RT - S1 vs. s2 Unique"
+
+	Welch Two Sample t-test
+
+data:  go_rt_mean by group2
+t = -1.0777, df = 9.389, p-value = 0.3081
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.1293393  0.0455113
+sample estimates:
+ mean in group first mean in group second 
+           0.6635146            0.7054286 
+
+[1] "Mean Go Accuracy - S1 vs. S2 Unique"
+
+	Welch Two Sample t-test
+
+data:  go_acc_mean by group2
+t = 2.6946, df = 16.418, p-value = 0.01569
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 0.01391169 0.11555260
+sample estimates:
+ mean in group first mean in group second 
+           0.8623512            0.7976190 
+

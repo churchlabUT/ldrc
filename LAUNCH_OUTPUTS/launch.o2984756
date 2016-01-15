@@ -1,0 +1,1009 @@
+TACC: Setting memory limits for job 2984756 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: launch_NB_confound_twins.txt
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N launch       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 2way 120
+#$ -q normal
+#$ -l h_rt=04:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE launch_NB_confound_twins.txt
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 2984756
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+Warning: Permanently added 'c328-104.ls4.tacc.utexas.edu,206.76.197.119' (RSA) to the list of known hosts.
+Warning: Permanently added 'c308-214.ls4.tacc.utexas.edu,206.76.193.209' (RSA) to the list of known hosts.
+Warning: Permanently added 'c322-203.ls4.tacc.utexas.edu,206.76.196.102' (RSA) to the list of known hosts.
+Warning: Permanently added 'c324-110.ls4.tacc.utexas.edu,206.76.196.189' (RSA) to the list of known hosts.
+Warning: Permanently added 'c322-116.ls4.tacc.utexas.edu,206.76.196.99' (RSA) to the list of known hosts.
+Warning: Permanently added 'c338-314.ls4.tacc.utexas.edu,206.76.199.129' (RSA) to the list of known hosts.
+Warning: Permanently added 'c322-304.ls4.tacc.utexas.edu,206.76.196.119' (RSA) to the list of known hosts.
+Warning: Permanently added 'c332-105.ls4.tacc.utexas.edu,206.76.198.56' (RSA) to the list of known hosts.
+Warning: Permanently added 'c319-103.ls4.tacc.utexas.edu,206.76.195.198' (RSA) to the list of known hosts.
+--------------------------------------------------
+TACC Launcher -> 20 processors allocated.
+TACC Launcher -> 135 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c319-103.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B100922/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 5 on c332-105.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B101921/BOLD/Run03_22_NB_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 2 on c319-103.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B100922/BOLD/Run06_22_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 6 on c332-105.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B101922/BOLD/Run03_22_NB_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 18 on c322-203.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B103222/BOLD/Run06_22_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 17 on c322-203.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B103222/BOLD/Run03_16_NB_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 12 on c308-214.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B102421/BOLD/Run06_22_NB_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 19 on c322-304.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B103721/BOLD/Run03_18_NB_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 15 on c322-116.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B103221/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 10 on c328-104.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B102322/BOLD/Run06_20_NB_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 8 on c338-314.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B102321/BOLD/Run06_22_NB_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 4 on c324-110.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B101322/BOLD/Run06_21_NB_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 11 on c308-214.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B102421/BOLD/Run03_16_NB_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 20 on c322-304.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B103721/BOLD/Run06_24_NB_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 13 on c308-111.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B102422/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 16 on c322-116.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B103221/BOLD/Run06_22_NB_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 9 on c328-104.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B102322/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 3 on c324-110.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B101322/BOLD/Run03_15_NB_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 7 on c338-314.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B102321/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 14 on c308-111.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B102422/BOLD/Run06_28_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+Computing FD and scrubbing mask regressors 
+(this will take a few minutes) ... 
+
+
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 22 on c319-103.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B103722/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 42 on c319-103.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B105822/BOLD/Run06_20_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 21 on c319-103.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B103722/BOLD/bad_Run06_20_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 41 on c319-103.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B105822/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 39 on c322-304.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B105821/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 40 on c322-304.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B105821/BOLD/Run06_20_NB_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 34 on c308-111.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B104622/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 33 on c308-111.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B104621/BOLD/Run03_19_NB_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 25 on c332-105.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B103822/BOLD/Run06_20_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 32 on c308-214.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B104122/BOLD/Run06_22_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 31 on c308-214.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B104122/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 26 on c332-105.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B103823/BOLD/Run03_16_NB_1/bold.nii.gz 0.9)
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 35 on c322-116.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B104622/BOLD/Run06_22_NB_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 23 on c324-110.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B103722/BOLD/Run06_22_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 24 on c324-110.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B103822/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 36 on c322-116.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B105621/BOLD/Run03_20_NB_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 27 on c338-314.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B103823/BOLD/Run06_22_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 38 on c322-203.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B105622/BOLD/Run03_19_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 37 on c322-203.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B105621/BOLD/Run06_28_NB_2/bold.nii.gz 0.9)
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 29 on c328-104.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B104121/BOLD/Run06_31_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 30 on c328-104.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B104122/BOLD/bad_Run06_26_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 28 on c338-314.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B104121/BOLD/Run03_25_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 50 on c328-104.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B106021/BOLD/Run06_20_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 52 on c308-214.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B106022/BOLD/Run06_20_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 62 on c319-103.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B109021/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 61 on c319-103.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B108922/BOLD/Run05_18_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 45 on c332-105.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B105921/BOLD/Run06_24_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 55 on c322-116.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B107721/BOLD/Run03_16_NB_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 54 on c308-111.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B106722/BOLD/Run06_24_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 58 on c322-203.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B108921/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 46 on c332-105.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B105922/BOLD/bad_Run05_20_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 53 on c308-111.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B106722/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 59 on c322-304.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B108921/BOLD/Run06_24_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 49 on c328-104.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B106021/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 56 on c322-116.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B107722/BOLD/Run03_16_NB_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 51 on c308-214.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B106022/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 57 on c322-203.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B107722/BOLD/Run06_20_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 60 on c322-304.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B108922/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 44 on c324-110.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B105921/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 47 on c338-314.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B105922/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 43 on c324-110.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B105921/BOLD/bad_Run06_22_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 48 on c338-314.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B105922/BOLD/Run05_22_NB_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 66 on c332-105.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B109321/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 70 on c328-104.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B112721/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 63 on c324-110.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B109021/BOLD/Run06_22_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 72 on c308-214.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B112722/BOLD/bad_Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 92 on c308-214.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/250221/BOLD/Run03_15_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 82 on c319-103.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B114521/BOLD/Run06_21_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 81 on c319-103.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B114521/BOLD/Run03_15_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 78 on c322-203.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B113722/BOLD/bad_Run03_25_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 65 on c332-105.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B109022/BOLD/Run06_20_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 74 on c308-111.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B112722/BOLD/Run06_22_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 73 on c308-111.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B112722/BOLD/Run03_16_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 77 on c322-203.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B113721/BOLD/Run06_24_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 75 on c322-116.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B113721/BOLD/bad_Run06_22_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 69 on c328-104.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B111921/BOLD/Run06_30_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 86 on c332-105.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/235121/BOLD/Run03_16_NB_1/bold.nii.gz 0.9)
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 98 on c322-203.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/252322/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 79 on c322-304.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B113722/BOLD/Run03_27_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 76 on c322-116.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B113721/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 71 on c308-214.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B112721/BOLD/Run06_22_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 95 on c322-116.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/250222/BOLD/Run06_21_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 64 on c324-110.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B109022/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 68 on c338-314.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B111921/BOLD/Run03_15_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 67 on c338-314.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B109321/BOLD/Run06_20_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 80 on c322-304.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B113722/BOLD/Run06_33_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 90 on c328-104.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/235122/BOLD/Run06_22_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 83 on c324-110.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B114522/BOLD/Run03_15_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 112 on c308-214.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/274522/BOLD/Run06_20_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 102 on c319-103.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/259722/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 101 on c319-103.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/259721/BOLD/Run06_20_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 85 on c332-105.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/235121/BOLD/bad_Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 94 on c308-111.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/250222/BOLD/Run03_15_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 93 on c308-111.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/250221/BOLD/Run06_23_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 97 on c322-203.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/252321/BOLD/Run06_20_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 105 on c332-105.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/268721/BOLD/Run06_20_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 89 on c328-104.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/235122/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 106 on c332-105.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/268722/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 118 on c322-203.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/278621/BOLD/bad_Run03_22_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 91 on c308-214.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/244922/BOLD/Run03_20_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 96 on c322-116.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/252321/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 115 on c322-116.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/277122/BOLD/Run03_20_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 99 on c322-304.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/252322/BOLD/Run06_20_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 84 on c324-110.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/B114522/BOLD/Run06_21_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 100 on c322-304.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/259721/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 88 on c338-314.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/235122/BOLD/bad_Run06_20_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 87 on c338-314.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/235121/BOLD/Run06_24_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 103 on c324-110.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/259722/BOLD/Run06_22_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 110 on c328-104.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/274521/BOLD/Run06_20_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 108 on c338-314.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/270321/BOLD/Run02_11_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 132 on c308-214.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/282322/BOLD/Run03_16_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 122 on c319-103.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/278622/BOLD/Run06_20_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 121 on c319-103.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/278622/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 117 on c322-203.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/278621/BOLD/bad_Run03_20_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 125 on c332-105.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/279722/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 114 on c308-111.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/277121/BOLD/Run03_16_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 109 on c328-104.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/274521/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 126 on c332-105.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/279722/BOLD/Run06_20_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 113 on c308-111.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/277121/BOLD/bad_Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 135 on c322-116.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/282622/BOLD/Run03_15_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 111 on c308-214.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/274522/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 116 on c322-116.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/277122/BOLD/Run06_26_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 119 on c322-304.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/278621/BOLD/Run04_26_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 104 on c324-110.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/268721/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 133 on c308-111.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/282621/BOLD/Run03_15_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 120 on c322-304.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/278621/BOLD/Run06_30_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 107 on c338-314.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/268722/BOLD/Run06_30_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 123 on c324-110.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/279721/BOLD/Run03_19_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 130 on c328-104.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/281722/BOLD/Run03_16_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 128 on c338-314.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/281721/BOLD/Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 134 on c308-111.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/282621/BOLD/Run06_21_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 129 on c328-104.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/281722/BOLD/bad_Run03_14_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 131 on c308-214.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/281722/BOLD/Run05_20_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 124 on c324-110.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/279721/BOLD/Run06_31_NB_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 127 on c338-314.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound_twins.sh /corral-repl/utexas/ldrc/TWINS/279921/BOLD/Run02_13_NB_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 2984756
+TACC: Done.

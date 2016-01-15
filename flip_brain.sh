@@ -1,0 +1,31 @@
+#/!/bin/sh
+
+#code for flipping messed up bold data.  Be sure to always load in fslview to check for R/L swap.  Compare to anatomical (loaded in another fslview window)
+
+#run using command followed by directory containing the bold files
+#ex
+# /corral-repl/utexas/ldrc/Scripts/flip_brain.sh /corral-repl/utexas/ldrc/ldrc_005/BOLD/run01_8_REST_1/
+
+#This will cause the code to exit if the mkdir command fails (or any command fails)
+set -e
+
+#first create a directory and copy all of the original data into it.
+echo 'flipping image'
+
+mkdir $1/OriginalFiles
+
+cp $1/bold* $1/OriginalFiles/
+rm $1/bold*
+cp $1/OriginalFiles/bold.nii.gz $1/bold_original.nii.gz
+fslorient -deleteorient  $1/bold_original.nii.gz
+fslswapdim $1/bold_original.nii.gz x y -z $1/bold.nii.gz
+fslorient -setqformcode 1 $1/bold.nii.gz
+fslorient -forceradiological  $1/bold.nii.gz
+
+#run mcflirt & bet
+echo 'Running mcflirt'
+
+mcflirt -in $1/bold -out $1/bold_mcf -plots -report
+
+#echo 'Running bet'
+bet $1/bold_mcf $1/bold_mcf_brain -F -f 0.3 -m

@@ -1,0 +1,13 @@
+fslroi /corral-repl/utexas/ldrc/LDFHO23901_F2015_V1/BOLD/SC_RUN1_32_Sl_iPAT_3x3x3_14/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO23901_F2015_V1/BOLD/SC_RUN1_32_Sl_iPAT_3x3x3_14/bold.nii.gz 5 212
+fslroi /corral-repl/utexas/ldrc/LDFHO24617_F2015_V1/BOLD/SC_RUN1_32_Sl_iPAT_3x3x3_8/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO24617_F2015_V1/BOLD/SC_RUN1_32_Sl_iPAT_3x3x3_8/bold.nii.gz 5 212
+fslroi /corral-repl/utexas/ldrc/LDFHO24617_F2015_V1/BOLD/SC_RUN2_32_Sl_iPAT_3x3x3_10/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO24617_F2015_V1/BOLD/SC_RUN2_32_Sl_iPAT_3x3x3_10/bold.nii.gz 5 212
+fslroi /corral-repl/utexas/ldrc/LDFHO24617_F2015_V1/BOLD/SC_RUN3_32_Sl_iPAT_3x3x3_19/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO24617_F2015_V1/BOLD/SC_RUN3_32_Sl_iPAT_3x3x3_19/bold.nii.gz 5 212
+fslroi /corral-repl/utexas/ldrc/LDFHO24768_F2015_V1/BOLD/SC_RUN1_32_Sl_iPAT_3x3x3_8/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO24768_F2015_V1/BOLD/SC_RUN1_32_Sl_iPAT_3x3x3_8/bold.nii.gz 5 212
+fslroi /corral-repl/utexas/ldrc/LDFHO24768_F2015_V1/BOLD/SC_RUN2_32_Sl_iPAT_3x3x3_10/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO24768_F2015_V1/BOLD/SC_RUN2_32_Sl_iPAT_3x3x3_10/bold.nii.gz 5 212
+fslroi /corral-repl/utexas/ldrc/LDFHO24768_F2015_V1/BOLD/SC_RUN3_32_Sl_iPAT_3x3x3_20/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO24768_F2015_V1/BOLD/SC_RUN3_32_Sl_iPAT_3x3x3_20/bold.nii.gz 5 212
+fslroi /corral-repl/utexas/ldrc/LDFHO24839_F2015_V1/BOLD/SC_RUN1_32_Sl_iPAT_3x3x3_5/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO24839_F2015_V1/BOLD/SC_RUN1_32_Sl_iPAT_3x3x3_5/bold.nii.gz 5 212
+fslroi /corral-repl/utexas/ldrc/LDFHO24839_F2015_V1/BOLD/SC_RUN2_32_Sl_iPAT_3x3x3_7/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO24839_F2015_V1/BOLD/SC_RUN2_32_Sl_iPAT_3x3x3_7/bold.nii.gz 5 212
+fslroi /corral-repl/utexas/ldrc/LDFHO24839_F2015_V1/BOLD/SC_RUN3_32_Sl_iPAT_3x3x3_16/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO24839_F2015_V1/BOLD/SC_RUN3_32_Sl_iPAT_3x3x3_16/bold.nii.gz 5 212
+fslroi /corral-repl/utexas/ldrc/LDFHO24861_F2015_V1/BOLD/SC_RUN1_32_Sl_iPAT_3x3x3_6/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO24861_F2015_V1/BOLD/SC_RUN1_32_Sl_iPAT_3x3x3_6/bold.nii.gz 5 212
+fslroi /corral-repl/utexas/ldrc/LDFHO24861_F2015_V1/BOLD/SC_RUN2_32_Sl_iPAT_3x3x3_8/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO24861_F2015_V1/BOLD/SC_RUN2_32_Sl_iPAT_3x3x3_8/bold.nii.gz 5 212
+fslroi /corral-repl/utexas/ldrc/LDFHO24861_F2015_V1/BOLD/SC_RUN3_32_Sl_iPAT_3x3x3_18/bold_orig.nii.gz /corral-repl/utexas/ldrc/LDFHO24861_F2015_V1/BOLD/SC_RUN3_32_Sl_iPAT_3x3x3_18/bold.nii.gz 5 212

@@ -1,0 +1,511 @@
+"","Sentence","Resp","n"
+"1","A basement won the family.","nonsense",39
+"2","A basement won the family.","sense",5
+"3","A basement won the family.",NA,3
+"4","A bird dropped the worm.","nonsense",3
+"5","A bird dropped the worm.","sense",49
+"6","A bird dropped the worm.",NA,1
+"7","A cat was saved by a king.","nonsense",11
+"8","A cat was saved by a king.","sense",32
+"9","A cat was saved by a king.",NA,4
+"10","A chair was tasted by a frame.","nonsense",47
+"11","A chair was tasted by a frame.",NA,2
+"12","A cup was cut by the pillow.","nonsense",43
+"13","A cup was cut by the pillow.","sense",3
+"14","A cup was cut by the pillow.",NA,3
+"15","A fence walked to the mother.","nonsense",41
+"16","A fence walked to the mother.","sense",10
+"17","A fence walked to the mother.",NA,2
+"18","A fly entered the house.","nonsense",8
+"19","A fly entered the house.","sense",40
+"20","A fly entered the house.",NA,1
+"21","A hen carried the dancer.","nonsense",60
+"22","A hen carried the dancer.","sense",4
+"23","A joke hugged the dragon.","nonsense",44
+"24","A joke hugged the dragon.","sense",2
+"25","A mouse chewed on the cheese.","nonsense",2
+"26","A mouse chewed on the cheese.","sense",52
+"27","A phone was used by a doctor.","nonsense",11
+"28","A phone was used by a doctor.","sense",41
+"29","A phone was used by a doctor.",NA,1
+"30","A rope was sold by the frog.","nonsense",51
+"31","A rope was sold by the frog.","sense",3
+"32","A rope was sold by the frog.",NA,1
+"33","A rug was rolled by the actor.","nonsense",13
+"34","A rug was rolled by the actor.","sense",32
+"35","A rug was rolled by the actor.",NA,2
+"36","A tiger scared the zebra.","nonsense",5
+"37","A tiger scared the zebra.","sense",52
+"38","A tiger scared the zebra.",NA,1
+"39","Bread was scratched by a tray.","nonsense",45
+"40","Bread was scratched by a tray.","sense",8
+"41","Bread was scratched by a tray.",NA,2
+"42","Fire was licked by a banana.","nonsense",61
+"43","Fire was licked by a banana.","sense",4
+"44","Pasta was waved by a fish.","nonsense",42
+"45","Pasta was waved by a fish.","sense",1
+"46","Pasta was waved by a fish.",NA,2
+"47","Pie was raised by the letter.","nonsense",51
+"48","Pie was raised by the letter.","sense",14
+"49","Pie was raised by the letter.",NA,1
+"50","Pizza was cooked by the man.","nonsense",2
+"51","Pizza was cooked by the man.","sense",48
+"52","Pizza was cooked by the man.",NA,2
+"53","Soup was served by a woman.","nonsense",5
+"54","Soup was served by a woman.","sense",44
+"55","The banker counted the money.","nonsense",5
+"56","The banker counted the money.","sense",47
+"57","The banker counted the money.",NA,1
+"58","The boy cleared off the table.","nonsense",3
+"59","The boy cleared off the table.","sense",47
+"60","The couch sang to the duck.","nonsense",41
+"61","The couch sang to the duck.","sense",5
+"62","The couch sang to the duck.",NA,1
+"63","The ear dressed a student.","nonsense",42
+"64","The ear dressed a student.","sense",3
+"65","The ear dressed a student.",NA,2
+"66","The girl was told by a fork.","nonsense",48
+"67","The girl was told by a fork.","sense",4
+"68","The girl was told by a fork.",NA,3
+"69","The iron borrowed a teacher.","nonsense",54
+"70","The iron borrowed a teacher.","sense",2
+"71","The iron borrowed a teacher.",NA,2
+"72","The lamp was bought by the sister.","nonsense",6
+"73","The lamp was bought by the sister.","sense",41
+"74","The lamp was bought by the sister.",NA,7
+"75","The queen planted a flower.","nonsense",2
+"76","The queen planted a flower.","sense",52
+"77","The queen planted a flower.",NA,1
+"78","The shirt was stained by mud.","nonsense",12
+"79","The shirt was stained by mud.","sense",32
+"80","The shirt was stained by mud.",NA,2
+"81","The show was seen by a child.","nonsense",5
+"82","The show was seen by a child.","sense",39
+"83","The show was seen by a child.",NA,3
+"84","The snake asked for the father.","nonsense",51
+"85","The snake asked for the father.","sense",3
+"86","The uncle put sugar in the tea.","nonsense",3
+"87","The uncle put sugar in the tea.","sense",41
+"88","The uncle put sugar in the tea.",NA,2
+"89","A boat raced in the library.","nonsense",34
+"90","A boat raced in the library.",NA,1
+"91","A chicken was asked by a bell.","nonsense",34
+"92","A chicken was asked by a bell.","sense",1
+"93","A chicken was asked by a bell.",NA,1
+"94","A clown let go of a balloon.","nonsense",1
+"95","A clown let go of a balloon.","sense",34
+"96","A clown let go of a balloon.",NA,2
+"97","A cousin wanted a pillow.","nonsense",9
+"98","A cousin wanted a pillow.","sense",27
+"99","A cousin wanted a pillow.",NA,2
+"100","A falcon grabbed the egg.","nonsense",11
+"101","A falcon grabbed the egg.","sense",23
+"102","A falcon grabbed the egg.",NA,1
+"103","A girl kicked the ball.","nonsense",4
+"104","A girl kicked the ball.","sense",34
+"105","A goat graded the mirror.","nonsense",34
+"106","A goat graded the mirror.","sense",6
+"107","A goat graded the mirror.",NA,1
+"108","A home was entered by the men.","nonsense",8
+"109","A home was entered by the men.","sense",29
+"110","A home was entered by the men.",NA,3
+"111","A horse was peeled by salt.","nonsense",33
+"112","A horse was peeled by salt.","sense",1
+"113","A king was chewed by a tree.","nonsense",33
+"114","A king was chewed by a tree.","sense",2
+"115","A raccoon scratched at the box.","nonsense",7
+"116","A raccoon scratched at the box.","sense",27
+"117","A raccoon scratched at the box.",NA,1
+"118","A rope was pulled by the ape.","nonsense",14
+"119","A rope was pulled by the ape.","sense",21
+"120","A song was sung by the cowboy.","nonsense",5
+"121","A song was sung by the cowboy.","sense",31
+"122","A song was sung by the cowboy.",NA,3
+"123","A table was planted by a kid.","nonsense",34
+"124","A table was planted by a kid.","sense",5
+"125","Pizza was used by a book.","nonsense",33
+"126","Pizza was used by a book.","sense",4
+"127","Pizza was used by a book.",NA,1
+"128","Seed was pecked by a hen.","nonsense",7
+"129","Seed was pecked by a hen.","sense",24
+"130","Seed was pecked by a hen.",NA,4
+"131","The actress watched a show.","nonsense",8
+"132","The actress watched a show.","sense",30
+"133","The actress watched a show.",NA,1
+"134","The baker stirred the spoon.","nonsense",18
+"135","The baker stirred the spoon.","sense",15
+"136","The baker stirred the spoon.",NA,3
+"137","The banana lost the worm.","nonsense",37
+"138","The banana lost the worm.","sense",2
+"139","The banana lost the worm.",NA,1
+"140","The barn barked at the driver.","nonsense",31
+"141","The barn barked at the driver.","sense",1
+"142","The barn barked at the driver.",NA,3
+"143","The boy was owned by a lamp.","nonsense",32
+"144","The boy was owned by a lamp.","sense",8
+"145","The car was chased by a dog.","nonsense",5
+"146","The car was chased by a dog.","sense",34
+"147","The door was eaten by a pot.","nonsense",33
+"148","The door was eaten by a pot.",NA,2
+"149","The flag roared at a flower.","nonsense",45
+"150","The flag roared at a flower.","sense",2
+"151","The flag roared at a flower.",NA,2
+"152","The key opened the carrot.","nonsense",41
+"153","The key opened the carrot.","sense",3
+"154","The mother carried a cake.","nonsense",4
+"155","The mother carried a cake.","sense",35
+"156","The mother carried a cake.",NA,1
+"157","The movie was played by dad.","nonsense",5
+"158","The movie was played by dad.","sense",29
+"159","The movie was played by dad.",NA,1
+"160","The plum was tasted by a bear.","nonsense",15
+"161","The plum was tasted by a bear.","sense",21
+"162","The plum was tasted by a bear.",NA,2
+"163","The sock listened to the pig.","nonsense",33
+"164","The sock listened to the pig.","sense",2
+"165","The soup was caught by a ring.","nonsense",34
+"166","The soup was caught by a ring.","sense",2
+"167","The soup was caught by a ring.",NA,1
+"168","The test was read by a teacher.","nonsense",2
+"169","The test was read by a teacher.","sense",33
+"170","The test was read by a teacher.",NA,1
+"171","The woman scared the paper.","nonsense",36
+"172","The woman scared the paper.","sense",2
+"173","A box was cut by the worker.","nonsense",8
+"174","A box was cut by the worker.","sense",45
+"175","A box was cut by the worker.",NA,2
+"176","A broom was sold by a farmer.","nonsense",15
+"177","A broom was sold by a farmer.","sense",35
+"178","A broom was sold by a farmer.",NA,2
+"179","A cake was baked by mom.","nonsense",1
+"180","A cake was baked by mom.","sense",45
+"181","A cake was baked by mom.",NA,1
+"182","A chicken shopped at a movie.","nonsense",95
+"183","A chicken shopped at a movie.","sense",4
+"184","A chicken shopped at a movie.",NA,3
+"185","A couch was saved by a plum.","nonsense",51
+"186","A couch was saved by a plum.","sense",2
+"187","A couch was saved by a plum.",NA,1
+"188","A cowgirl caught a snake.","nonsense",3
+"189","A cowgirl caught a snake.","sense",54
+"190","A cowgirl caught a snake.",NA,2
+"191","A flower was milked by a bear.","nonsense",67
+"192","A flower was milked by a bear.","sense",1
+"193","A flower was milked by a bear.",NA,3
+"194","A fork was found by the kid.","nonsense",26
+"195","A fork was found by the kid.","sense",36
+"196","A fork was found by the kid.",NA,3
+"197","A hand was built by the ant.","nonsense",65
+"198","A hand was built by the ant.","sense",3
+"199","A hand was built by the ant.",NA,1
+"200","A man was scored by wind.","nonsense",39
+"201","A man was scored by wind.","sense",4
+"202","A man was scored by wind.",NA,5
+"203","A piano planted a brother.","nonsense",42
+"204","A piano planted a brother.",NA,2
+"205","A pillow scratched the fish.","nonsense",46
+"206","A pillow scratched the fish.","sense",3
+"207","A present picked the raccoon.","nonsense",42
+"208","A present picked the raccoon.","sense",2
+"209","A present picked the raccoon.",NA,4
+"210","A teacher graded a paper.","nonsense",3
+"211","A teacher graded a paper.","sense",47
+"212","A turtle crawled to the water.","nonsense",8
+"213","A turtle crawled to the water.","sense",45
+"214","A turtle crawled to the water.",NA,2
+"215","Cheese was chewed by a rat.","nonsense",5
+"216","Cheese was chewed by a rat.","sense",52
+"217","Cheese was chewed by a rat.",NA,1
+"218","Seed was raised by the rug.","nonsense",42
+"219","Seed was raised by the rug.","sense",3
+"220","Seed was raised by the rug.",NA,2
+"221","The actor pulled on a rope.","nonsense",7
+"222","The actor pulled on a rope.","sense",50
+"223","The actor pulled on a rope.",NA,3
+"224","The apple watched a king.","nonsense",59
+"225","The apple watched a king.","sense",1
+"226","The apple watched a king.",NA,1
+"227","The ball was kicked by a girl.","nonsense",4
+"228","The ball was kicked by a girl.","sense",53
+"229","The ball was kicked by a girl.",NA,1
+"230","The bread heard a camel.","nonsense",46
+"231","The bread heard a camel.","sense",3
+"232","The bread heard a camel.",NA,1
+"233","The bucket told a horse.","nonsense",58
+"234","The bucket told a horse.","sense",2
+"235","The bucket told a horse.",NA,1
+"236","The bug was cooked by a key.","nonsense",50
+"237","The chalk wanted a child.","nonsense",42
+"238","The chalk wanted a child.","sense",3
+"239","The chalk wanted a child.",NA,5
+"240","The doctor used the phone.","nonsense",3
+"241","The doctor used the phone.","sense",49
+"242","The dog chased the car.","nonsense",17
+"243","The dog chased the car.","sense",52
+"244","The dog chased the car.",NA,2
+"245","The dragon was won by clay.","nonsense",46
+"246","The dragon was won by clay.","sense",5
+"247","The dragon was won by clay.",NA,9
+"248","The egg was laid by the duck.","nonsense",8
+"249","The egg was laid by the duck.","sense",36
+"250","The egg was laid by the duck.",NA,3
+"251","The monkey climbed a tree.","nonsense",3
+"252","The monkey climbed a tree.","sense",47
+"253","The monkey climbed a tree.",NA,1
+"254","The pig was hugged by a joke.","nonsense",53
+"255","The pig was hugged by a joke.","sense",3
+"256","The pig was hugged by a joke.",NA,2
+"257","The rabbit jumped in the grass.","nonsense",5
+"258","The rabbit jumped in the grass.","sense",49
+"259","The rabbit jumped in the grass.",NA,1
+"260","The sock was worn by a baby.","nonsense",22
+"261","The sock was worn by a baby.","sense",36
+"262","The sock was worn by a baby.",NA,1
+"263","A game owned the doctor.","nonsense",40
+"264","A game owned the doctor.","sense",9
+"265","A gift was opened by a boy.","nonsense",3
+"266","A gift was opened by a boy.","sense",44
+"267","A hand was licked by a puppy.","nonsense",6
+"268","A hand was licked by a puppy.","sense",46
+"269","A pig was scared by a fox.","nonsense",4
+"270","A pig was scared by a fox.","sense",45
+"271","A plate stained a kitten.","nonsense",45
+"272","A plate stained a kitten.","sense",4
+"273","A plate stained a kitten.",NA,4
+"274","A ring prepared for a potato.","nonsense",47
+"275","A ring prepared for a potato.","sense",5
+"276","A ring prepared for a potato.",NA,1
+"277","A shirt chopped at the tray.","nonsense",38
+"278","A shirt chopped at the tray.","sense",8
+"279","A shirt chopped at the tray.",NA,3
+"280","A song was picked by a cat.","nonsense",39
+"281","A song was picked by a cat.","sense",7
+"282","A song was picked by a cat.",NA,1
+"283","A test was cooked by a bat.","nonsense",43
+"284","A test was cooked by a bat.","sense",1
+"285","A wall was marked with paint.","nonsense",9
+"286","A wall was marked with paint.","sense",31
+"287","A wall was marked with paint.",NA,3
+"288","A woman bought a pizza.","sense",44
+"289","A worm was dropped by the bird.","nonsense",6
+"290","A worm was dropped by the bird.","sense",38
+"291","A worm was dropped by the bird.",NA,4
+"292","Dirt was borrowed by the chalk.","nonsense",40
+"293","Dirt was borrowed by the chalk.","sense",5
+"294","Mud was dressed by air.","nonsense",40
+"295","Mud was dressed by air.","sense",1
+"296","Mud was dressed by air.",NA,1
+"297","Tea was stirred by the aunt.","nonsense",17
+"298","Tea was stirred by the aunt.","sense",26
+"299","Tea was stirred by the aunt.",NA,2
+"300","The actress chased the sugar.","nonsense",43
+"301","The actress chased the sugar.","sense",2
+"302","The actress chased the sugar.",NA,2
+"303","The baby rolled in the crib.","nonsense",6
+"304","The baby rolled in the crib.","sense",36
+"305","The baby rolled in the crib.",NA,2
+"306","The broom grabbed the queen.","nonsense",47
+"307","The broom grabbed the queen.","sense",2
+"308","The cattle listened to the bell.","nonsense",16
+"309","The cattle listened to the bell.","sense",29
+"310","The cattle listened to the bell.",NA,1
+"311","The chicken ate some seed.","nonsense",6
+"312","The chicken ate some seed.","sense",36
+"313","The chicken ate some seed.",NA,2
+"314","The dog was raised by a spoon.","nonsense",48
+"315","The dog was raised by a spoon.","sense",1
+"316","The father played the movie.","nonsense",3
+"317","The father played the movie.","sense",44
+"318","The grass was moved by wind.","nonsense",9
+"319","The grass was moved by wind.","sense",38
+"320","The hill was addressed by soap.","nonsense",39
+"321","The hill was addressed by soap.","sense",4
+"322","The hill was addressed by soap.",NA,1
+"323","The lion roared at the meat.","nonsense",21
+"324","The lion roared at the meat.","sense",26
+"325","The mirror was read by a car.","nonsense",39
+"326","The mirror was read by a car.","sense",4
+"327","The phone was boiled by a rat.","nonsense",43
+"328","The phone was boiled by a rat.","sense",1
+"329","The phone was boiled by a rat.",NA,1
+"330","The pillow jumped at a bear.","nonsense",51
+"331","The pillow jumped at a bear.","sense",1
+"332","The sheep escaped from the wolf.","nonsense",7
+"333","The sheep escaped from the wolf.","sense",37
+"334","The sheep escaped from the wolf.",NA,1
+"335","The shot was given by a nurse.","nonsense",7
+"336","The shot was given by a nurse.","sense",35
+"337","The shot was given by a nurse.",NA,1
+"338","The table climbed on a brother.","nonsense",45
+"339","The table climbed on a brother.","sense",4
+"340","The table climbed on a brother.",NA,1
+"341","The worker built the barn.","nonsense",2
+"342","The worker built the barn.","sense",40
+"343","The worker built the barn.",NA,2
+"344","A ball was prepared by glass.","nonsense",34
+"345","A ball was prepared by glass.","sense",8
+"346","A ball was prepared by glass.",NA,1
+"347","A candle sold the question.","nonsense",41
+"348","A candle sold the question.","sense",5
+"349","A card was scared by a baby.","nonsense",39
+"350","A card was scared by a baby.","sense",1
+"351","A card was scared by a baby.",NA,1
+"352","A driver honked at the walker.","nonsense",9
+"353","A driver honked at the walker.","sense",47
+"354","A family baked some bread.","nonsense",5
+"355","A family baked some bread.","sense",41
+"356","A fence was jumped by a horse.","nonsense",10
+"357","A fence was jumped by a horse.","sense",32
+"358","A fence was jumped by a horse.",NA,2
+"359","A joke was told by the queen.","nonsense",7
+"360","A joke was told by the queen.","sense",34
+"361","A mom addressed the letter.","nonsense",7
+"362","A mom addressed the letter.","sense",32
+"363","A mom addressed the letter.",NA,2
+"364","A nurse helped a student.","nonsense",2
+"365","A nurse helped a student.","sense",41
+"366","A tree was planted in dirt.","nonsense",3
+"367","A tree was planted in dirt.","sense",38
+"368","A tree was planted in dirt.",NA,1
+"369","A wolf was found by a fan.","nonsense",37
+"370","A wolf was found by a fan.","sense",3
+"371","Clay was rolled by the artist.","nonsense",10
+"372","Clay was rolled by the artist.","sense",32
+"373","Clay was rolled by the artist.",NA,1
+"374","Iron was chased by the bee.","nonsense",46
+"375","Iron was chased by the bee.","sense",5
+"376","Meat was eaten by a lion.","nonsense",2
+"377","Meat was eaten by a lion.","sense",40
+"378","Pie was made by a cousin.","nonsense",7
+"379","Pie was made by a cousin.","sense",36
+"380","Sugar was moved by the sock.","nonsense",37
+"381","Sugar was moved by the sock.","sense",5
+"382","The aunt walked on the boat.","nonsense",7
+"383","The aunt walked on the boat.","sense",34
+"384","The bear tasted the apple.","nonsense",7
+"385","The bear tasted the apple.","sense",38
+"386","The book was read by a friend.","nonsense",2
+"387","The book was read by a friend.","sense",38
+"388","The book was read by a friend.",NA,1
+"389","The child peeled the banana.","nonsense",6
+"390","The child peeled the banana.","sense",49
+"391","The child peeled the banana.",NA,1
+"392","The fork called to a sister.","nonsense",38
+"393","The fork called to a sister.","sense",1
+"394","The fork called to a sister.",NA,3
+"395","The mat was raced by a fox.","nonsense",38
+"396","The mat was raced by a fox.","sense",3
+"397","The mat was raced by a fox.",NA,2
+"398","The money counted the singer.","nonsense",33
+"399","The money counted the singer.","sense",7
+"400","The money counted the singer.",NA,3
+"401","The mouse was graded by a flag.","nonsense",42
+"402","The mouse was graded by a flag.","sense",3
+"403","The mouse was graded by a flag.",NA,1
+"404","The puppy scored a dress.","nonsense",39
+"405","The puppy scored a dress.","sense",1
+"406","The puppy scored a dress.",NA,1
+"407","The rabbit bought the worker.","nonsense",39
+"408","The rabbit bought the worker.","sense",3
+"409","The rabbit bought the worker.",NA,1
+"410","The ring was owned by a dancer.","nonsense",9
+"411","The ring was owned by a dancer.","sense",34
+"412","The soup hired a cowboy.","nonsense",43
+"413","The soup hired a cowboy.","sense",2
+"414","The soup hired a cowboy.",NA,1
+"415","The spoon was waved by a cook.","nonsense",15
+"416","The spoon was waved by a cook.","sense",26
+"417","The spoon was waved by a cook.",NA,1
+"418","The store cooked on the grass.","nonsense",37
+"419","The store cooked on the grass.","sense",2
+"420","The store cooked on the grass.",NA,4
+"421","The woman was pulled by a nut.","nonsense",40
+"422","The woman was pulled by a nut.","sense",3
+"423","The woman was pulled by a nut.",NA,1
+"424","A barn was built by the uncle.","nonsense",4
+"425","A barn was built by the uncle.","sense",33
+"426","A barn was built by the uncle.",NA,2
+"427","A box was walked by a duck.","nonsense",35
+"428","A box was walked by a duck.","sense",1
+"429","A box was walked by a duck.",NA,2
+"430","A brother opened the present.","nonsense",1
+"431","A brother opened the present.","sense",38
+"432","A clown was bought by the hen.","nonsense",37
+"433","A clown was bought by the hen.","sense",2
+"434","A clown was bought by the hen.",NA,1
+"435","A father was spotted by the egg.","nonsense",32
+"436","A father was spotted by the egg.","sense",4
+"437","A father was spotted by the egg.",NA,4
+"438","A hill was climbed by the bug.","nonsense",17
+"439","A hill was climbed by the bug.","sense",17
+"440","A hill was climbed by the bug.",NA,4
+"441","A king wished for a horse.","nonsense",5
+"442","A king wished for a horse.","sense",34
+"443","A pizza dropped the cousin.","nonsense",35
+"444","A pizza dropped the cousin.","sense",4
+"445","A pizza dropped the cousin.",NA,1
+"446","A queen was lost by a pen.","nonsense",34
+"447","A queen was lost by a pen.","sense",1
+"448","A queen was lost by a pen.",NA,3
+"449","A rope listened to the salt.","nonsense",39
+"450","A rope listened to the salt.",NA,1
+"451","A sister hugged the dancer.","nonsense",3
+"452","A sister hugged the dancer.","sense",36
+"453","A sister hugged the dancer.",NA,1
+"454","A snake was caught by a girl.","nonsense",6
+"455","A snake was caught by a girl.","sense",31
+"456","A snake was caught by a girl.",NA,2
+"457","A worm was jumped by a dress.","nonsense",38
+"458","A worm was jumped by a dress.","sense",3
+"459","Bread was picked by a boy.","nonsense",10
+"460","Bread was picked by a boy.","sense",27
+"461","Bread was picked by a boy.",NA,3
+"462","Meat was watched by an ear.","nonsense",38
+"463","Meat was watched by an ear.",NA,1
+"464","Money was won by a team.","nonsense",12
+"465","Money was won by a team.","sense",26
+"466","Money was won by a team.",NA,1
+"467","The actor was kicked by cake.","nonsense",36
+"468","The actor was kicked by cake.","sense",2
+"469","The actor was kicked by cake.",NA,2
+"470","The bird was told by the boat.","nonsense",36
+"471","The bird was told by the boat.","sense",1
+"472","The bird was told by the boat.",NA,1
+"473","The clerk asked a question.","nonsense",11
+"474","The clerk asked a question.","sense",27
+"475","The cowboy cooked some pasta.","nonsense",5
+"476","The cowboy cooked some pasta.","sense",32
+"477","The cowboy cooked some pasta.",NA,1
+"478","The door was shut by wind.","nonsense",10
+"479","The door was shut by wind.","sense",28
+"480","The door was shut by wind.",NA,1
+"481","The farmer owned a broom.","nonsense",10
+"482","The farmer owned a broom.","sense",33
+"483","The friend borrowed a book.","nonsense",5
+"484","The friend borrowed a book.","sense",35
+"485","The honey was made by a bee.","nonsense",4
+"486","The honey was made by a bee.","sense",39
+"487","The house chewed on the phone.","nonsense",40
+"488","The house chewed on the phone.","sense",1
+"489","The lamp wrote to the nurse.","nonsense",36
+"490","The lamp wrote to the nurse.",NA,2
+"491","The mother shopped at the store.","sense",38
+"492","The seed raised a turtle.","nonsense",35
+"493","The seed raised a turtle.","sense",3
+"494","The soap tasted the monkey.","nonsense",36
+"495","The soap tasted the monkey.","sense",2
+"496","The soap tasted the monkey.",NA,1
+"497","The tiger played a letter.","nonsense",37
+"498","The tiger played a letter.",NA,1
+"499","The zebra milked the show.","nonsense",41
+"500","The zebra milked the show.","sense",1
+"501","Water was splashed by a bear.","nonsense",7
+"502","Water was splashed by a bear.","sense",31
+"503","Water was splashed by a bear.",NA,1
+"504","A card was marked with paint.",NA,1
+"505","The egg was lost by the duck.","nonsense",1
+"506","The egg was lost by the duck.","sense",1
+"507","A dragon grabbed the egg.","nonsense",1
+"508","A home was entered by the fly.","nonsense",1
+"509","A home was entered by the fly.",NA,1
+"510","A horse was hidden by salt.","nonsense",1

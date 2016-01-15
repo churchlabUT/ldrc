@@ -1,0 +1,85 @@
+TACC: Setting memory limits for job 1720361 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: launch_A_SST_onsets.txt
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N launch       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 2way 120
+#$ -q normal
+#$ -l h_rt=02:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE launch_A_SST_onsets.txt
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+/bin/.: Permission denied.
+setenv: Too many arguments.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 1720361
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+Warning: Permanently added 'c302-304.ls4.tacc.utexas.edu,206.76.192.183' (RSA) to the list of known hosts.
+Warning: Permanently added 'c316-113.ls4.tacc.utexas.edu,206.76.195.64' (RSA) to the list of known hosts.
+--------------------------------------------------
+TACC Launcher -> 20 processors allocated.
+TACC Launcher -> 26 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c316-113.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_0_013_second/behav/SST/SST_Run1/013_second_SST_2_2013-05-04-14_30_35_subdata.pkl /corral-repl/utexas/ldrc/ldrc_0_013_second/behav/SST/SST_Run1)
+TACC Launcher -> Iniating task 20 on c328-205.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_2_008_second/behav/SST/SST_Run2/008_second_SST_2_2013-05-05-13_54_37_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_008_second/behav/SST/SST_Run2)
+TACC Launcher -> Iniating task 15 on c308-104.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_1_028_second/behav/SST/SST_Run2/028_second_sst_2_2013-06-16-13_20_08_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_028_second/behav/SST/SST_Run2)
+TACC Launcher -> Iniating task 10 on c301-104.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_1_004_second/behav/SST/SST_Run2/004_second_SST_2_2013-05-05-12_12_14_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_004_second/behav/SST/SST_Run2)
+TACC Launcher -> Iniating task 3 on c302-304.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_0_026_second/behav/SST/SST_Run1/026_second_run3_SST1_2013-06-02-11_19_49_subdata.pkl /corral-repl/utexas/ldrc/ldrc_0_026_second/behav/SST/SST_Run1)
+TACC Launcher -> Iniating task 11 on c311-213.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_1_015_second/behav/SST/SST_Run2/015_second_SST_2_2013-05-04-12_37_47_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_015_second/behav/SST/SST_Run2)
+TACC Launcher -> Iniating task 2 on c316-113.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_0_013_second/behav/SST/SST_Run2/013_second_SST_11_2013-05-04-14_06_13_subdata.pkl /corral-repl/utexas/ldrc/ldrc_0_013_second/behav/SST/SST_Run2)
+TACC Launcher -> Iniating task 17 on c324-115.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_2_005_second/behav/SST/SST_Run1/005_second_SST_1_2013-05-19-14_47_18_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_005_second/behav/SST/SST_Run1)
+TACC Launcher -> Iniating task 6 on c320-210.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_0_055_second/behav/SST/SST_Run1/055_second_SST_1A_2013-08-15-18_21_24_subdata.pkl /corral-repl/utexas/ldrc/ldrc_0_055_second/behav/SST/SST_Run1)
+TACC Launcher -> Iniating task 16 on c308-104.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_1_036_second/behav/SST/SST_Run1/036_run03_SST1_2013-05-26-12_58_30_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_036_second/behav/SST/SST_Run1)
+TACC Launcher -> Iniating task 19 on c328-205.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_2_008_second/behav/SST/SST_Run1/008_second_SST_1_2013-05-05-13_32_02_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_008_second/behav/SST/SST_Run1)
+TACC Launcher -> Iniating task 8 on c306-210.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_1_001_second/behav/SST/SST_Run1/001_second_SST_1_2013-07-25-09_07_41_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_001_second/behav/SST/SST_Run1)
+TACC Launcher -> Iniating task 4 on c302-304.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_0_049_second/behav/SST/SST_Run1/049_SST_1_2013-07-23-13_27_39_subdata.pkl /corral-repl/utexas/ldrc/ldrc_0_049_second/behav/SST/SST_Run1)
+TACC Launcher -> Iniating task 9 on c301-104.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_1_004_second/behav/SST/SST_Run1/004_second_SST_1_2013-05-05-11_45_17_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_004_second/behav/SST/SST_Run1)
+TACC Launcher -> Iniating task 13 on c314-303.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_1_020_second/behav/SST/SST_Run2/020_second_SST_2_2013-05-04-10_54_13_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_020_second/behav/SST/SST_Run2)
+TACC Launcher -> Iniating task 12 on c311-213.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_1_020_second/behav/SST/SST_Run1/020_second_SST_1_2013-05-04-10_04_36_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_020_second/behav/SST/SST_Run1)
+TACC Launcher -> Iniating task 18 on c324-115.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_2_005_second/behav/SST/SST_Run2/005_second_SST_2_2013-05-19-15_10_33_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_005_second/behav/SST/SST_Run2)
+TACC Launcher -> Iniating task 5 on c320-210.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_0_049_second/behav/SST/SST_Run2/049_SST_2_2013-07-23-13_53_57_subdata.pkl /corral-repl/utexas/ldrc/ldrc_0_049_second/behav/SST/SST_Run2)
+TACC Launcher -> Iniating task 7 on c306-210.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_0_055_second/behav/SST/SST_Run2/055_second_SST_2_2013-08-15-18_44_06_subdata.pkl /corral-repl/utexas/ldrc/ldrc_0_055_second/behav/SST/SST_Run2)
+TACC Launcher -> Iniating task 14 on c314-303.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_1_028_second/behav/SST/SST_Run1/028_second_sst_1_2013-06-16-12_35_17_subdata.pkl /corral-repl/utexas/ldrc/ldrc_1_028_second/behav/SST/SST_Run1)
+TACC Launcher -> Iniating task 26 on c320-210.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_2_048_second/behav/SST/SST_Run2/048_SST_2_2013-07-24-10_41_07_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_048_second/behav/SST/SST_Run2)
+TACC Launcher -> Iniating task 25 on c320-210.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_2_048_second/behav/SST/SST_Run1/048_SST_1_2013-07-24-09_58_12_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_048_second/behav/SST/SST_Run1)
+TACC Launcher -> Iniating task 21 on c316-113.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_2_010_second/behav/SST/SST_Run1/010_second_run1_SST_1_2013-06-02-14_53_33_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_010_second/behav/SST/SST_Run1)
+TACC Launcher -> Iniating task 22 on c316-113.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_2_010_second/behav/SST/SST_Run2/010_second_run6_SST_2_2013-06-02-15_16_56_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_010_second/behav/SST/SST_Run2)
+TACC Launcher -> Iniating task 24 on c302-304.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_2_034_second/behav/SST/SST_Run1/034_second_SST_1_2013-08-14-12_39_49_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_034_second/behav/SST/SST_Run1)
+TACC Launcher -> Iniating task 23 on c302-304.ls4.tacc.utexas.edu (python /corral-repl/utexas/ldrc/SCRIPTS/mk_SST_onsets.py /corral-repl/utexas/ldrc/ldrc_2_031_second/behav/SST/SST_Run1/031_second_SST_1_2013-08-23-09_35_48_subdata.pkl /corral-repl/utexas/ldrc/ldrc_2_031_second/behav/SST/SST_Run1)
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 1720361
+TACC: Done.

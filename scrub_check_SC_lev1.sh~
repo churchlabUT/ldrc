@@ -1,0 +1,142 @@
+# Grabs each level 2 design.png for SC to check registration and puts into html file; 4 groups: Austin Controls, Austin First, Austin Second, Houston Second
+# Mary Abbe Roe April 2014 (adapted from Jeanette's fMRI class script)
+
+outputdir='/corral-repl/utexas/ldrc/SCRIPTS/lev2_QC/SC'
+#delete if there is an old version
+rm  $outputdir/des_check_c_results.html
+rm  $outputdir/des_check_1_results.html
+rm  $outputdir/des_check_2_results.html
+rm  $outputdir/des_check_3_results.html
+rm  $outputdir/des_check_H_results.html
+
+
+# Austin Controls
+for subnum in ldrc_c_018 ldrc_c_032 ldrc_c_037 ldrc_c_039 ldrc_c_040 ldrc_c_043 ldrc_c_044 ldrc_c_045 ldrc_c_046 ldrc_c_047 ldrc_c_054 ldrc_c_057 ldrc_c_058 ldrc_c_059 ldrc_c_061 ldrc_c_062 ldrc_c_068 ldrc_c_078 ldrc_c_079 ldrc_c_081 ldrc_c_082 ldrc_c_084 ldrc_c_085 ldrc_c_086 ldrc_c_101
+do
+
+for i in Run1.feat Run2.feat Run3.feat 
+
+do
+
+dirpth=/corral-repl/utexas/ldrc/$subnum/model/SC/${i}/
+
+echo '<p>============================================
+<p> Design Matrix  in '$dirpth'
+
+<p>Design Matrix <br><IMG BORDER=0 SRC='$dirpth'design.png WIDTH=50%>
+</BODY></HTML>' >> $outputdir/des_check_c_results.html
+
+
+done
+done
+
+
+
+
+# Austin Intervention First
+for subnum in ldrc_0_009 ldrc_0_013 ldrc_0_025 ldrc_1_001 ldrc_1_002 ldrc_1_004 ldrc_1_007 ldrc_1_015 ldrc_1_020 ldrc_1_028 ldrc_2_008 ldrc_2_010 ldrc_2_011 ldrc_2_027 ldrc_2_031
+do
+
+for i in Run1.feat Run2.feat Run3.feat 
+
+do
+
+dirpth=/corral-repl/utexas/ldrc/$subnum/model/SC/${i}/
+
+echo '<p>============================================
+<p> Design Matrix in '$dirpth'
+
+<p>Design Matrix<br><IMG BORDER=0 SRC='$dirpth'design.png WIDTH=50%>
+</BODY></HTML>' >> $outputdir/des_check_1_results.html
+
+
+done
+done
+
+
+
+
+# Austin Intervention Second
+for subnum in ldrc_0_013_second ldrc_0_026_second ldrc_0_049_second ldrc_0_055_second ldrc_1_001_second ldrc_1_004_second ldrc_1_015_second ldrc_1_020_second ldrc_1_028_second ldrc_1_036_second ldrc_2_005_second ldrc_2_008_second ldrc_2_010_second ldrc_2_031_second ldrc_2_034_second ldrc_2_048_second
+do
+
+for i in Run1.feat Run2.feat Run3.feat 
+
+do
+
+dirpth=/corral-repl/utexas/ldrc/$subnum/model/SC/${i}/
+
+echo '<p>============================================
+<p> Design Matrix in '$dirpth'
+
+<p>Design Matrix<br><IMG BORDER=0 SRC='$dirpth'design.png WIDTH=50%>
+</BODY></HTML>' >> $outputdir/des_check_2_results.html
+
+
+done
+done
+
+
+
+# Austin Intervention Third
+for subnum in ldrc_0_013_third ldrc_0_026_third ldrc_1_001_third ldrc_1_004_third ldrc_1_007_third ldrc_1_036_third ldrc_2_003_third ldrc_2_005_third ldrc_2_008_third ldrc_2_010_third ldrc_2_034_third
+do
+
+for i in Run1.feat Run2.feat Run3.feat 
+
+do
+
+dirpth=/corral-repl/utexas/ldrc/$subnum/model/SC/${i}/
+
+echo '<p>============================================
+<p> Design Matrix in '$dirpth'
+
+<p>Design Matrix<br><IMG BORDER=0 SRC='$dirpth'design.png WIDTH=50%>
+</BODY></HTML>' >> $outputdir/des_check_3_results.html
+
+
+done
+done
+
+
+
+# Houston Second
+for subnum in H_LDFHO1794_1_second H_LDFHO2569_2_second H_LDFHO1986_1_second H_LDFHO2436_2_second H_LDFHO2748_1_second H_LDIMG8960_c_second H_LDIMG8961_c_second H_LDIMG8963_c_second H_LDIMG8967_c_second H_LDIMG8972_c_second H_LDIMG8974_c_second
+do
+
+for i in Run1.feat Run2.feat Run3.feat 
+
+do
+
+dirpth=/corral-repl/utexas/ldrc/$subnum/model/SC/${i}/
+
+echo '<p>============================================
+<p> Design Matrix in '$dirpth'
+
+<p>Design Matrix<br><IMG BORDER=0 SRC='$dirpth'design.png WIDTH=50%>
+</BODY></HTML>' >> $outputdir/des_check_H_2_results.html
+
+
+done
+done
+
+
+# Houston Third
+for subnum in H_LDFHO1496_2_third H_LDFHO1589_2_third H_LDFHO1690_2_third H_LDFHO1697_1_third H_LDFHO2167_2_third H_LDFHO2416_1_third H_LDFHO2479_1_third H_LDFHO2569_2_third H_LDFHO2798_1_third H_LDIMG8960_c_third H_LDIMG8961_c_third H_LDIMG8963_c_third
+do
+
+for i in Run1.feat Run2.feat Run3.feat 
+
+do
+
+dirpth=/corral-repl/utexas/ldrc/$subnum/model/SC/${i}/
+
+echo '<p>============================================
+<p> Design Matrix in '$dirpth'
+
+<p>Design Matrix<br><IMG BORDER=0 SRC='$dirpth'design.png WIDTH=50%>
+</BODY></HTML>' >> $outputdir/des_check_H_3_results.html
+
+
+done
+done

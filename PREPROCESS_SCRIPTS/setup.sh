@@ -1,0 +1,1 @@
+/corral-repl/utexas/poldracklab/software_lonestar/setup-subject/setup_subject.py --studyname ldrc -s ldrc_001 --xnat_project church -b /corral-repl/utexas --getdata --dcm2nii --all -o

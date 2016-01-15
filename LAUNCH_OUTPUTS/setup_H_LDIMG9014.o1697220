@@ -1,0 +1,569 @@
+TACC: Setting memory limits for job 1697220 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: setup_H_LDIMG9014.sh
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N setup_H_LDIMG9014       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 12way 12
+#$ -q normal
+#$ -l h_rt=10:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE setup_H_LDIMG9014.sh
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+/bin/.: Permission denied.
+setenv: Too many arguments.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 1697220
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+Warning: Permanently added 'c325-114.ls4.tacc.utexas.edu,206.76.196.241' (RSA) to the list of known hosts.
+--------------------------------------------------
+TACC Launcher -> 12 processors allocated.
+TACC Launcher -> 1 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c325-114.ls4.tacc.utexas.edu (/corral-repl/utexas/poldracklab/software_lonestar/local/bin/setup_subject.py -o --dcm2nii --motcorr --qa --betfunc --dtiqa --fsrecon --keepdata -b /corral-repl/utexas/ --studyname ldrc -s H_LDIMG9014)
+subdir /corral-repl/utexas/ldrc/H_LDIMG9014 already exists
+overwriting...
+detected raw: (1) localizer localizer
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9014/raw /corral-repl/utexas/ldrc/H_LDIMG9014/raw/H_LDIMG9014/1
+detected anatomy: (2) t1_mprage_sag_p2_iso_1 t1_mprage_sag_p2_iso_1
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy /corral-repl/utexas/ldrc/H_LDIMG9014/raw/H_LDIMG9014/2
+detected anatomy: (3) t2_spc_sag_p2_iso t2_spc_sag_p2_iso
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy /corral-repl/utexas/ldrc/H_LDIMG9014/raw/H_LDIMG9014/3
+detected anatomy: (4) t1_mprage_sag_p2_iso_1 t1_mprage_sag_p2_iso_1
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy /corral-repl/utexas/ldrc/H_LDIMG9014/raw/H_LDIMG9014/4
+detected DTI: (5) DTI_ep2d_diff_mddw_64_2_iso DTI_ep2d_diff_mddw_64_2_iso
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9014/DTI /corral-repl/utexas/ldrc/H_LDIMG9014/raw/H_LDIMG9014/5
+t1mpragesagp2iso1s002a1001.nii.gz
+ot1mpragesagp2iso1s002a1001.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s002a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres001.nii.gz
+highresctr is at  2
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s002a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres002.nii.gz
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s002a1001.nii.gz': No such file or directory
+
+highresctr is at  3
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s002a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres003.nii.gz
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s002a1001.nii.gz': No such file or directory
+
+highresctr is at  4
+cot1mpragesagp2iso1s002a1001.nii.gz
+t2spcsagp2isos003a1001.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/t2spcsagp2isos003a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/other
+ot2spcsagp2isos003a1001.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot2spcsagp2isos003a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/other
+t1mpragesagp2iso1s004a1001.nii.gz
+ot1mpragesagp2iso1s004a1001.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s004a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres004.nii.gz
+highresctr is at  5
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s004a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres005.nii.gz
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s004a1001.nii.gz': No such file or directory
+
+highresctr is at  6
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s004a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres006.nii.gz
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/ot1mpragesagp2iso1s004a1001.nii.gz': No such file or directory
+
+highresctr is at  7
+cot1mpragesagp2iso1s004a1001.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_01.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_1.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_01.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_1.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_01.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_01.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_1.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_01.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_02.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_2.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_02.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_2.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_02.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_02.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_2.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_02.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_03.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_3.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_03.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_3.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_03.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_03.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_3.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_03.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_04.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_4.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_04.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_4.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_04.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_04.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_4.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_04.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_05.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_5.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_05.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_5.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_05.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_05.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_5.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_05.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_06.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_6.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_06.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_6.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_06.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_06.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_6.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_06.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_07.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_7.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_07.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_7.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_07.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_07.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_7.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_07.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_08.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_8.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_08.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_8.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_08.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_08.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_8.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_08.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_09.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_9.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_09.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_9.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_09.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_09.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_9.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_09.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_10.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_10.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_10.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_10.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_10.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_10.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_10.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_10.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_11.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_11.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_11.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_11.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_11.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_11.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_11.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_11.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_12.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_12.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_12.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_12.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_12.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_12.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_12.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_12.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_13.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_13.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_13.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_13.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_13.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_13.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_13.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_13.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_14.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_14.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_14.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_14.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_14.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_14.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_14.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_14.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_15.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_15.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_15.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_15.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_15.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_15.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_15.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_15.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_16.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_16.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_16.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_16.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_16.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_16.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_16.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_16.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_17.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_17.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_17.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_17.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_17.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_17.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_17.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_17.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_18.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_18.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_18.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_18.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_18.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_18.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_18.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_18.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_19.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_19.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_19.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_19.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_19.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_19.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_19.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_19.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_20.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_20.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_20.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_20.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_20.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_20.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_20.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_20.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_21.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_21.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_21.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_21.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_21.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_21.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_21.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_21.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_22.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_22.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_22.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_22.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_22.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_22.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_22.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_22.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_23.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_23.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_23.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_23.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_23.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_23.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_23.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_23.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_24.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_24.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_24.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_24.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_24.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_24.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_24.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_24.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_25.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_25.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_25.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_25.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_25.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_25.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_25.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_25.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_26.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_26.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_26.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_26.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_26.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_26.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_26.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_26.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_27.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_27.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_27.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_27.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_27.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_27.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_27.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_27.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_28.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_28.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_28.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_28.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_28.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_28.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_28.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_28.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_29.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_29.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_29.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_29.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_29.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_29.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_29.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_29.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_30.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_30.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_30.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_30.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_30.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_30.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_30.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_30.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_31.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_31.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_31.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_31.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_31.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_31.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_31.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_31.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_32.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_32.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_32.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_32.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_32.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_32.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_32.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_32.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_33.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_33.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_33.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_33.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_33.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_33.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_33.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_33.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_34.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_34.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_34.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_34.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_34.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_34.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_34.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_34.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_35.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_35.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_35.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_35.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_35.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_35.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_35.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_35.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_36.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_36.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_36.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_36.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_36.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_36.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_36.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_36.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_37.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_37.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_37.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_37.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_37.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_37.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_37.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_37.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_38.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_38.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_38.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_38.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_38.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_38.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_38.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_38.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_39.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_39.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_39.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_39.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_39.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_39.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_39.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_39.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_40.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_40.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_40.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_40.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_40.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_40.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_40.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_40.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_41.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_41.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_41.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_41.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_41.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_41.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_41.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_41.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_42.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_42.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_42.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_42.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_42.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_42.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_42.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_42.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_43.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_43.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_43.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_43.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_43.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_43.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_43.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_43.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_44.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_44.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_44.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_44.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_44.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_44.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_44.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_44.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_45.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_45.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_45.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_45.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_45.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_45.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_45.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_45.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_46.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_46.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_46.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_46.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_46.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_46.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_46.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_46.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_47.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_47.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_47.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_47.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_47.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_47.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_47.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_47.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_48.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_48.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_48.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_48.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_48.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_48.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_48.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_48.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_49.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_49.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_49.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_49.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_49.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_49.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_49.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_49.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_50.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_50.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_50.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_50.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_50.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_50.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_50.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_50.bval': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_51.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_51.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_51.bvec /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_51.bvec
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_51.bvec': No such file or directory
+
+mv /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_51.bval /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_51.bval
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTIep2ddiffmddw642isos005a001_51.bval': No such file or directory
+
+bolddirs:
+[]
+recon-all -i /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres001.nii.gz -subjid ldrc_H_LDIMG9014 -sd /corral-repl/utexas/poldracklab/data/subdir
+recon-all -autorecon1 -subjid ldrc_H_LDIMG9014 -sd /corral-repl/utexas/poldracklab/data/subdir
+mri_convert --out_orientation LAS /corral-repl/utexas/poldracklab/data/subdir/ldrc_H_LDIMG9014/mri/brainmask.mgz --reslice_like /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres001.nii.gz  /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres001_brain.nii
+gzip  /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres001_brain.nii
+logs: ERROR: gzip: No such file or directory
+
+fslmaths /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres001_brain.nii.gz -thr 1 -bin /corral-repl/utexas/ldrc/H_LDIMG9014/anatomy/highres001_brain_mask.nii.gz
+found DTI file: DTI_2.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_2.nii.gz
+found DTI file: DTI_3.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_3.nii.gz
+found DTI file: DTI_4.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_4.nii.gz
+found DTI file: DTI_5.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_5.nii.gz
+found DTI file: DTI_6.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_6.nii.gz
+found DTI file: DTI_7.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_7.nii.gz
+found DTI file: DTI_8.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_8.nii.gz
+found DTI file: DTI_9.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_9.nii.gz
+found DTI file: DTI_10.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_10.nii.gz
+found DTI file: DTI_11.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_11.nii.gz
+found DTI file: DTI_12.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_12.nii.gz
+found DTI file: DTI_13.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_13.nii.gz
+found DTI file: DTI_14.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_14.nii.gz
+found DTI file: DTI_15.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_15.nii.gz
+found DTI file: DTI_16.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_16.nii.gz
+found DTI file: DTI_17.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_17.nii.gz
+found DTI file: DTI_18.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_18.nii.gz
+found DTI file: DTI_19.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_19.nii.gz
+found DTI file: DTI_20.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_20.nii.gz
+found DTI file: DTI_21.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_21.nii.gz
+found DTI file: DTI_22.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_22.nii.gz
+found DTI file: DTI_23.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_23.nii.gz
+found DTI file: DTI_24.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_24.nii.gz
+found DTI file: DTI_25.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_25.nii.gz
+found DTI file: DTI_26.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_26.nii.gz
+found DTI file: DTI_27.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_27.nii.gz
+found DTI file: DTI_28.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_28.nii.gz
+found DTI file: DTI_29.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_29.nii.gz
+found DTI file: DTI_30.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_30.nii.gz
+found DTI file: DTI_31.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_31.nii.gz
+found DTI file: DTI_32.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_32.nii.gz
+found DTI file: DTI_33.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_33.nii.gz
+found DTI file: DTI_34.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_34.nii.gz
+found DTI file: DTI_35.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_35.nii.gz
+found DTI file: DTI_36.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_36.nii.gz
+found DTI file: DTI_37.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_37.nii.gz
+found DTI file: DTI_38.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_38.nii.gz
+found DTI file: DTI_39.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_39.nii.gz
+found DTI file: DTI_40.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_40.nii.gz
+found DTI file: DTI_41.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_41.nii.gz
+found DTI file: DTI_42.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_42.nii.gz
+found DTI file: DTI_43.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_43.nii.gz
+found DTI file: DTI_44.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_44.nii.gz
+found DTI file: DTI_45.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_45.nii.gz
+found DTI file: DTI_46.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_46.nii.gz
+found DTI file: DTI_47.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_47.nii.gz
+found DTI file: DTI_48.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_48.nii.gz
+found DTI file: DTI_49.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_49.nii.gz
+found DTI file: DTI_50.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_50.nii.gz
+found DTI file: DTI_51.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_51.nii.gz
+found DTI file: DTI_1.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9014/DTI/DTI_1.nii.gz
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 1697220
+TACC: Done.

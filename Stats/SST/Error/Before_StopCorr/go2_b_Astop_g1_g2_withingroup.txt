@@ -1,0 +1,39 @@
+[1] "S1"
+
+	Paired t-test
+
+data:  A_corr_b_med$rt_med[A_corr_b_med$go == "0" & A_corr_b_med$group2 ==  and A_corr_b_med$rt_med[A_corr_b_med$go == "1" & A_corr_b_med$group2 ==      "A_first"] and     "A_first"] 
+t = -3.1372, df = 30, p-value = 0.003805
+alternative hypothesis: true difference in means is not equal to 0 
+95 percent confidence interval:
+ -0.06230715 -0.01317175 
+sample estimates:
+mean of the differences 
+            -0.03773945 
+
+[1] "S2"
+
+	Paired t-test
+
+data:  A_corr_b_med$rt_med[A_corr_b_med$go == "0" & A_corr_b_med$group2 ==  and A_corr_b_med$rt_med[A_corr_b_med$go == "1" & A_corr_b_med$group2 ==      "A_second"] and     "A_second"] 
+t = -0.5018, df = 15, p-value = 0.6231
+alternative hypothesis: true difference in means is not equal to 0 
+95 percent confidence interval:
+ -0.05337734  0.03303459 
+sample estimates:
+mean of the differences 
+            -0.01017138 
+
+[1] "Controls"
+
+	Paired t-test
+
+data:  A_corr_b_med$rt_med[A_corr_b_med$go == "0" & A_corr_b_med$group2 ==  and A_corr_b_med$rt_med[A_corr_b_med$go == "1" & A_corr_b_med$group2 ==      "A_control"] and     "A_control"] 
+t = -0.7397, df = 19, p-value = 0.4685
+alternative hypothesis: true difference in means is not equal to 0 
+95 percent confidence interval:
+ -0.03966158  0.01894773 
+sample estimates:
+mean of the differences 
+            -0.01035692 
+

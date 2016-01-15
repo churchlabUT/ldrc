@@ -1,0 +1,62 @@
+#JEM & MAR April 2014
+#sets up the filenames for the subjects in main folder-both austin and houston
+
+#Austin and Houston data
+dir = '/corral-repl/utexas/ldrc/'
+filenames = c(Sys.glob(sprintf('%sldrc_?_[0-9][0-9][0-9]', dir)), Sys.glob(sprintf('%sldrc_*second', dir)), Sys.glob(sprintf('%sH_LD*_?_second', dir)))
+
+
+#removing the empty DTI_QA directories
+for (i in 1: length(filenames)){
+	
+	#lists the DTI directory within the sub directory
+	DTI.dir = list.dirs(filenames[i])[grepl("(?=.*DTI)", list.dirs(filenames[i]), perl = TRUE)][1]
+	
+        #find the dti.nii file
+        DTI.file = list.files(DTI.dir, full.names = T)[grep('brain.nii.gz', list.files(DTI.dir))]
+
+	#lists all the directories within the DTI directory
+	DTI.qa = list.dirs(DTI.dir, recursive = F)
+
+        #remove empty DTI_QA directories	
+        DTI.pdf = list.files(DTI.qa, full.names = T)
+          if (is.null(dim(DTI.pdf)[1])){
+            print(filenames[i])
+            file.remove(DTI.qa)
+          }
+}
+
+
+DTI.setup = file('/corral-repl/utexas/ldrc/New_SCRIPTS/launch_dtiqa.txt','w')
+
+#make launch txt file for deleted DTI_QA directories
+for (i in 1: length(filenames)){
+	
+	#lists the DTI directory within the sub directory
+	DTI.dir = list.dirs(filenames[i])[grepl("(?=.*DTI)", list.dirs(filenames[i]), perl = TRUE)][1]
+	
+        #find the dti.nii file
+        DTI.file = list.files(DTI.dir, full.names = T)[grep('DTI_1.nii.gz', list.files(DTI.dir))]
+
+	#lists all the directories within the DTI directory
+	DTI.qa = list.dirs(DTI.dir, recursive = F)
+
+        #puts files into launch txt file, if exist	
+        DTI.pdf = list.files(DTI.qa, full.names = T)
+          if (is.null(dim(DTI.pdf)[1])==TRUE & is.null(DTI.file)==FALSE){     
+            cat(sprintf('dtiqa.py %s', DTI.file), file = DTI.setup, append = T, sep = '\n')
+              
+          }
+
+print(filenames[i])
+
+}
+
+close(DTI.setup)
+
+
+rewrite = scan('/corral-repl/utexas/ldrc/New_SCRIPTS/launch_dtiqa.txt', what = 'character', sep = '\n', blank.lines.skip=T)
+DTI.setup = file('/corral-repl/utexas/ldrc/New_SCRIPTS/launch_dtiqa.txt','w')
+cat(rewrite, file = DTI.setup, sep = '\n')
+close(DTI.setup)
+

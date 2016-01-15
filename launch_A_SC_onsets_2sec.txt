@@ -1,0 +1,5 @@
+python /corral-repl/utexas/ldrc/SCRIPTS/mk_A_SC_onsets_2sec.py /corral-repl/utexas/ldrc/ldrc3_1_225/behav/SC/SC_Run1/ldrc3_225_sc1_2015-12-19-11_14_16_subdata.pkl /corral-repl/utexas/ldrc/ldrc3_1_225/behav/SC/SC_Run1
+python /corral-repl/utexas/ldrc/SCRIPTS/mk_A_SC_onsets_2sec.py /corral-repl/utexas/ldrc/ldrc3_1_228/behav/SC/SC_Run1/ldrc3_228_SC1_2015-12-20-14_51_22_subdata.pkl /corral-repl/utexas/ldrc/ldrc3_1_228/behav/SC/SC_Run1
+python /corral-repl/utexas/ldrc/SCRIPTS/mk_A_SC_onsets_2sec.py /corral-repl/utexas/ldrc/ldrc3_1_241/behav/SC/SC_Run1/ldrc3_241_SC1_2015-12-18-15_32_33_subdata.pkl /corral-repl/utexas/ldrc/ldrc3_1_241/behav/SC/SC_Run1
+python /corral-repl/utexas/ldrc/SCRIPTS/mk_A_SC_onsets_2sec.py /corral-repl/utexas/ldrc/ldrc3_1_241/behav/SC/SC_Run2/ldrc3_241_SC2_2015-12-18-15_52_08_subdata.pkl /corral-repl/utexas/ldrc/ldrc3_1_241/behav/SC/SC_Run2
+python /corral-repl/utexas/ldrc/SCRIPTS/mk_A_SC_onsets_2sec.py /corral-repl/utexas/ldrc/ldrc3_1_241/behav/SC/SC_Run3/ldrc3_241_SC3_2015-12-18-16_16_42_subdata.pkl /corral-repl/utexas/ldrc/ldrc3_1_241/behav/SC/SC_Run3

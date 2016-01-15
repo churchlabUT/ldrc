@@ -1,0 +1,39 @@
+[1] "S1"
+
+	Paired t-test
+
+data:  A_err_med$rt_med[A_err_med$go == "1" & A_err_med$group2 == "first"] and A_err_med$rt_med[A_err_med$go == "2" & A_err_med$group2 == "first"] 
+t = 3.0684, df = 15, p-value = 0.007806
+alternative hypothesis: true difference in means is not equal to 0 
+95 percent confidence interval:
+ 0.01625017 0.09018801 
+sample estimates:
+mean of the differences 
+             0.05321909 
+
+[1] "S2"
+
+	Paired t-test
+
+data:  A_err_med$rt_med[A_err_med$go == "1" & A_err_med$group2 == "second"] and A_err_med$rt_med[A_err_med$go == "2" & A_err_med$group2 == "second"] 
+t = 1.9186, df = 14, p-value = 0.07566
+alternative hypothesis: true difference in means is not equal to 0 
+95 percent confidence interval:
+ -0.006210465  0.111545265 
+sample estimates:
+mean of the differences 
+              0.0526674 
+
+[1] "Controls"
+
+	Paired t-test
+
+data:  A_err_med$rt_med[A_err_med$go == "1" & A_err_med$group2 == "control"] and A_err_med$rt_med[A_err_med$go == "2" & A_err_med$group2 == "control"] 
+t = 2.925, df = 19, p-value = 0.008687
+alternative hypothesis: true difference in means is not equal to 0 
+95 percent confidence interval:
+ 0.02143008 0.12925157 
+sample estimates:
+mean of the differences 
+             0.07534083 
+

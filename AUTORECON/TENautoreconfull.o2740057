@@ -1,0 +1,543 @@
+TACC: Setting memory limits for job 2740057 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: TEN_FSRECONALL.sh
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N TENautoreconfull       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 1way 120
+#$ -q normal
+#$ -l h_rt=24:00:00
+#$ -M church@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE TEN_FSRECONALL.sh
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+
+Due to MODULEPATH changes the following have been reloaded:
+  1) mvapich2/1.6
+
+
+Due to MODULEPATH changes the following have been reloaded:
+  1) mvapich2/1.6
+
+ WORKING DIR:   ./
+TACC: Starting up job 2740057
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+Warning: Permanently added 'c320-307.ls4.tacc.utexas.edu,206.76.196.26' (RSA) to the list of known hosts.
+Warning: Permanently added 'c333-311.ls4.tacc.utexas.edu,206.76.198.142' (RSA) to the list of known hosts.
+Warning: Permanently added 'c317-209.ls4.tacc.utexas.edu,206.76.195.124' (RSA) to the list of known hosts.
+Warning: Permanently added 'c302-316.ls4.tacc.utexas.edu,206.76.192.195' (RSA) to the list of known hosts.
+Warning: Permanently added 'c315-304.ls4.tacc.utexas.edu,206.76.195.39' (RSA) to the list of known hosts.
+Warning: Permanently added 'c321-216.ls4.tacc.utexas.edu,206.76.196.67' (RSA) to the list of known hosts.
+Warning: Permanently added 'c317-210.ls4.tacc.utexas.edu,206.76.195.125' (RSA) to the list of known hosts.
+Warning: Permanently added 'c304-107.ls4.tacc.utexas.edu,206.76.192.250' (RSA) to the list of known hosts.
+Warning: Permanently added 'c330-309.ls4.tacc.utexas.edu,206.76.197.252' (RSA) to the list of known hosts.
+--------------------------------------------------
+TACC Launcher -> 10 processors allocated.
+TACC Launcher -> 10 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c320-307.ls4.tacc.utexas.edu (recon-all -s ldrc_ldrc_0_009 -sd /corral-repl/utexas/ldrc/FREESURFER/ -all)
+Subject Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+Current Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+INFO: SUBJECTS_DIR is /corral-repl/utexas/ldrc/FREESURFER
+Actual FREESURFER_HOME /corral-repl/utexas/poldracklab/software_lonestar/freesurfer-5.3.0
+TACC Launcher -> Iniating task 7 on c330-309.ls4.tacc.utexas.edu (recon-all -s ldrc_ldrc_0_049_second -sd /corral-repl/utexas/ldrc/FREESURFER/ -all)
+TACC Launcher -> Iniating task 4 on c319-107.ls4.tacc.utexas.edu (recon-all -s ldrc_ldrc_0_025 -sd /corral-repl/utexas/ldrc/FREESURFER/ -all)
+-rw-rw---- 1 maryabbe G-803075 223527 Aug 10 15:16 /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_009/scripts/recon-all.log
+TACC Launcher -> Iniating task 8 on c317-209.ls4.tacc.utexas.edu (recon-all -s ldrc_ldrc_0_055_second -sd /corral-repl/utexas/ldrc/FREESURFER/ -all)
+TACC Launcher -> Iniating task 9 on c304-107.ls4.tacc.utexas.edu (recon-all -s ldrc_ldrc_1_001_second -sd /corral-repl/utexas/ldrc/FREESURFER/ -all)
+TACC Launcher -> Iniating task 2 on c302-316.ls4.tacc.utexas.edu (recon-all -s ldrc_ldrc_0_013 -sd /corral-repl/utexas/ldrc/FREESURFER/ -all)
+TACC Launcher -> Iniating task 5 on c333-311.ls4.tacc.utexas.edu (recon-all -s ldrc_ldrc_0_026 -sd /corral-repl/utexas/ldrc/FREESURFER/ -all)
+TACC Launcher -> Iniating task 3 on c321-216.ls4.tacc.utexas.edu (recon-all -s ldrc_ldrc_0_023 -sd /corral-repl/utexas/ldrc/FREESURFER/ -all)
+Linux c320-307.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+TACC Launcher -> Iniating task 10 on c315-304.ls4.tacc.utexas.edu (recon-all -s ldrc_ldrc_0_002 -sd /corral-repl/utexas/ldrc/FREESURFER/ -all)
+TACC Launcher -> Iniating task 6 on c317-210.ls4.tacc.utexas.edu (recon-all -s ldrc_ldrc_0_026_second -sd /corral-repl/utexas/ldrc/FREESURFER/ -all)
+Subject Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+Current Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+INFO: SUBJECTS_DIR is /corral-repl/utexas/ldrc/FREESURFER
+Actual FREESURFER_HOME /corral-repl/utexas/poldracklab/software_lonestar/freesurfer-5.3.0
+ERROR: cannot find /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_002
+Subject Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+Current Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+INFO: SUBJECTS_DIR is /corral-repl/utexas/ldrc/FREESURFER
+Actual FREESURFER_HOME /corral-repl/utexas/poldracklab/software_lonestar/freesurfer-5.3.0
+Subject Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+Current Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+INFO: SUBJECTS_DIR is /corral-repl/utexas/ldrc/FREESURFER
+Actual FREESURFER_HOME /corral-repl/utexas/poldracklab/software_lonestar/freesurfer-5.3.0
+Subject Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+Current Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+INFO: SUBJECTS_DIR is /corral-repl/utexas/ldrc/FREESURFER
+Actual FREESURFER_HOME /corral-repl/utexas/poldracklab/software_lonestar/freesurfer-5.3.0
+-rw-rw---- 1 maryabbe G-803075 83357 Aug 10 10:43 /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_049_second/scripts/recon-all.log
+Subject Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+Current Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+INFO: SUBJECTS_DIR is /corral-repl/utexas/ldrc/FREESURFER
+Actual FREESURFER_HOME /corral-repl/utexas/poldracklab/software_lonestar/freesurfer-5.3.0
+Linux c330-309.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+-rw-rw---- 1 maryabbe G-803075 83522 Aug 10 10:43 /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026/scripts/recon-all.log
+Subject Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+Current Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+INFO: SUBJECTS_DIR is /corral-repl/utexas/ldrc/FREESURFER
+Actual FREESURFER_HOME /corral-repl/utexas/poldracklab/software_lonestar/freesurfer-5.3.0
+-rw-rw---- 1 maryabbe G-803075 82741 Aug 10 10:43 /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_1_001_second/scripts/recon-all.log
+Linux c333-311.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+Subject Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+Current Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+INFO: SUBJECTS_DIR is /corral-repl/utexas/ldrc/FREESURFER
+Actual FREESURFER_HOME /corral-repl/utexas/poldracklab/software_lonestar/freesurfer-5.3.0
+Linux c304-107.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+-rw-rw---- 1 maryabbe G-803075 82652 Aug 10 10:43 /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_023/scripts/recon-all.log
+Linux c321-216.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+-rw-rw---- 1 maryabbe G-803075 83690 Aug 10 10:43 /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026_second/scripts/recon-all.log
+Subject Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+Current Stamp: freesurfer-Linux-centos4_x86_64-stable-pub-v5.3.0
+INFO: SUBJECTS_DIR is /corral-repl/utexas/ldrc/FREESURFER
+Actual FREESURFER_HOME /corral-repl/utexas/poldracklab/software_lonestar/freesurfer-5.3.0
+Linux c317-210.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+-rw-rw---- 1 maryabbe G-803075 84484 Aug 10 10:43 /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_013/scripts/recon-all.log
+Linux c302-316.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+-rw-rw---- 1 maryabbe G-803075 82874 Aug 10 10:43 /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_025/scripts/recon-all.log
+-rw-rw---- 1 maryabbe G-803075 84490 Aug 10 10:43 /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_055_second/scripts/recon-all.log
+Linux c317-209.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+Linux c319-107.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+INFO: current FREESURFER_HOME does not match that of previous processing.
+    Current: /corral-repl/utexas/poldracklab/software_lonestar/freesurfer
+    Previous: /corral-repl/utexas/ldrc/MODULES/freesurfer/freesurfer
+INFO: current FREESURFER_HOME does not match that of previous processing.
+    Current: /corral-repl/utexas/poldracklab/software_lonestar/freesurfer
+    Previous: /corral-repl/utexas/ldrc/MODULES/freesurfer/freesurfer
+INFO: current FREESURFER_HOME does not match that of previous processing.
+    Current: /corral-repl/utexas/poldracklab/software_lonestar/freesurfer
+    Previous: /corral-repl/utexas/ldrc/MODULES/freesurfer/freesurfer
+INFO: current FREESURFER_HOME does not match that of previous processing.
+    Current: /corral-repl/utexas/poldracklab/software_lonestar/freesurfer
+    Previous: /corral-repl/utexas/ldrc/MODULES/freesurfer/freesurfer
+INFO: current FREESURFER_HOME does not match that of previous processing.
+    Current: /corral-repl/utexas/poldracklab/software_lonestar/freesurfer
+    Previous: /corral-repl/utexas/ldrc/MODULES/freesurfer/freesurfer
+INFO: current FREESURFER_HOME does not match that of previous processing.
+    Current: /corral-repl/utexas/poldracklab/software_lonestar/freesurfer
+    Previous: /corral-repl/utexas/ldrc/MODULES/freesurfer/freesurfer
+INFO: current FREESURFER_HOME does not match that of previous processing.
+    Current: /corral-repl/utexas/poldracklab/software_lonestar/freesurfer
+    Previous: /corral-repl/utexas/ldrc/MODULES/freesurfer/freesurfer
+INFO: current FREESURFER_HOME does not match that of previous processing.
+    Current: /corral-repl/utexas/poldracklab/software_lonestar/freesurfer
+    Previous: /corral-repl/utexas/ldrc/MODULES/freesurfer/freesurfer
+
+ERROR: it appears that recon-all is already running
+for ldrc_ldrc_0_009 based on the presence of /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_009/scripts/IsRunning.lh+rh. It could
+also be that recon-all was running at one point but
+died in an unexpected way. If it is the case that there
+is a process running, you can kill it and start over or
+just let it run. If the process has died, you should type:
+
+rm /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_009/scripts/IsRunning.lh+rh
+
+and re-run. Or you can add -no-isrunning to the recon-all
+command-line. The contents of this file are:
+----------------------------------------------------------
+------------------------------
+SUBJECT ldrc_ldrc_0_009
+HEMI    lh rh
+DATE Mon Aug 10 10:49:00 CDT 2015
+USER jess
+HOST c337-203.ls4.tacc.utexas.edu
+PROCESSID 1220 
+PROCESSOR x86_64
+OS Linux
+Linux c337-203.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+$Id: recon-all,v 1.379.2.73 2013/05/12 23:15:37 nicks Exp $
+----------------------------------------------------------
+#--------------------------------------------
+#@# MotionCor Tue Aug 11 17:43:04 CDT 2015
+Found 1 runs
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_049_second/mri/orig/001.mgz
+Checking for (invalid) multi-frame inputs...
+#--------------------------------------------
+#@# MotionCor Tue Aug 11 17:43:04 CDT 2015
+Found 1 runs
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026/mri/orig/001.mgz
+Checking for (invalid) multi-frame inputs...
+#--------------------------------------------
+#--------------------------------------------
+#@# MotionCor Tue Aug 11 17:43:04 CDT 2015
+#@# MotionCor Tue Aug 11 17:43:04 CDT 2015
+Found 1 runs
+Found 1 runs
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_023/mri/orig/001.mgz
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026_second/mri/orig/001.mgz
+Checking for (invalid) multi-frame inputs...
+Checking for (invalid) multi-frame inputs...
+#--------------------------------------------
+#@# MotionCor Tue Aug 11 17:43:05 CDT 2015
+Found 1 runs
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_013/mri/orig/001.mgz
+Checking for (invalid) multi-frame inputs...
+#--------------------------------------------
+#@# MotionCor Tue Aug 11 17:43:05 CDT 2015
+Found 1 runs
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_1_001_second/mri/orig/001.mgz
+Checking for (invalid) multi-frame inputs...
+#--------------------------------------------
+#@# MotionCor Tue Aug 11 17:43:05 CDT 2015
+Found 1 runs
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_055_second/mri/orig/001.mgz
+Checking for (invalid) multi-frame inputs...
+#--------------------------------------------
+#@# MotionCor Tue Aug 11 17:43:05 CDT 2015
+Found 1 runs
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_025/mri/orig/001.mgz
+Checking for (invalid) multi-frame inputs...
+WARNING: only one run found. This is OK, but motion
+correction cannot be performed on one run, so I'll
+copy the run to rawavg and continue.
+WARNING: only one run found. This is OK, but motion
+correction cannot be performed on one run, so I'll
+copy the run to rawavg and continue.
+WARNING: only one run found. This is OK, but motion
+correction cannot be performed on one run, so I'll
+copy the run to rawavg and continue.
+WARNING: only one run found. This is OK, but motion
+correction cannot be performed on one run, so I'll
+copy the run to rawavg and continue.
+WARNING: only one run found. This is OK, but motion
+correction cannot be performed on one run, so I'll
+copy the run to rawavg and continue.
+WARNING: only one run found. This is OK, but motion
+correction cannot be performed on one run, so I'll
+copy the run to rawavg and continue.
+WARNING: only one run found. This is OK, but motion
+correction cannot be performed on one run, so I'll
+copy the run to rawavg and continue.
+WARNING: only one run found. This is OK, but motion
+correction cannot be performed on one run, so I'll
+copy the run to rawavg and continue.
+
+ cp /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026/mri/orig/001.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026/mri/rawavg.mgz 
+
+
+ cp /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_049_second/mri/orig/001.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_049_second/mri/rawavg.mgz 
+
+
+ cp /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_023/mri/orig/001.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_023/mri/rawavg.mgz 
+
+
+ cp /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026_second/mri/orig/001.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026_second/mri/rawavg.mgz 
+
+
+ cp /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_013/mri/orig/001.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_013/mri/rawavg.mgz 
+
+
+ cp /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_055_second/mri/orig/001.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_055_second/mri/rawavg.mgz 
+
+
+ cp /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_1_001_second/mri/orig/001.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_1_001_second/mri/rawavg.mgz 
+
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_049_second
+
+ mri_convert /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_049_second/mri/rawavg.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_049_second/mri/orig.mgz --conform 
+
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026
+
+ mri_convert /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026/mri/rawavg.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026/mri/orig.mgz --conform 
+
+mri_convert /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_049_second/mri/rawavg.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_049_second/mri/orig.mgz --conform 
+mri_convert /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026/mri/rawavg.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026/mri/orig.mgz --conform 
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_023
+
+ mri_convert /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_023/mri/rawavg.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_023/mri/orig.mgz --conform 
+
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026_second
+
+ mri_convert /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026_second/mri/rawavg.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026_second/mri/orig.mgz --conform 
+
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_013
+
+ mri_convert /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_013/mri/rawavg.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_013/mri/orig.mgz --conform 
+
+mri_convert /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_023/mri/rawavg.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_023/mri/orig.mgz --conform 
+
+ cp /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_025/mri/orig/001.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_025/mri/rawavg.mgz 
+
+mri_convert /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026_second/mri/rawavg.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026_second/mri/orig.mgz --conform 
+mri_convert /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_013/mri/rawavg.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_013/mri/orig.mgz --conform 
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_055_second
+
+ mri_convert /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_055_second/mri/rawavg.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_055_second/mri/orig.mgz --conform 
+
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_1_001_second
+
+ mri_convert /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_1_001_second/mri/rawavg.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_1_001_second/mri/orig.mgz --conform 
+
+mri_convert /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_055_second/mri/rawavg.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_055_second/mri/orig.mgz --conform 
+mri_convert /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_1_001_second/mri/rawavg.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_1_001_second/mri/orig.mgz --conform 
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_025
+
+ mri_convert /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_025/mri/rawavg.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_025/mri/orig.mgz --conform 
+
+mri_convert /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_025/mri/rawavg.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_025/mri/orig.mgz --conform 
+$Id: mri_convert.c,v 1.179.2.7 2012/09/05 21:55:16 mreuter Exp $
+reading from /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_049_second/mri/rawavg.mgz...
+TR=2530.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (0.999626, -0.0197127, -0.0189316)
+j_ras = (0.0140578, 0.96486, -0.262388)
+k_ras = (0.0234387, 0.262024, 0.964777)
+Original Data has (1, 1, 1) mm size and (176, 256, 256) voxels.
+Data is conformed to 1 mm size and 256 voxels for all directions
+changing data type from float to uchar (noscale = 0)...
+MRIchangeType: Building histogram 
+Reslicing using trilinear interpolation 
+writing to /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_049_second/mri/orig.mgz...
+$Id: mri_convert.c,v 1.179.2.7 2012/09/05 21:55:16 mreuter Exp $
+reading from /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026/mri/rawavg.mgz...
+TR=2530.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (0.999969, 0.00628128, 0.00481438)
+j_ras = (-0.00455902, 0.954451, -0.298334)
+k_ras = (-0.00646901, 0.298303, 0.954449)
+Original Data has (1, 1, 1) mm size and (176, 256, 256) voxels.
+Data is conformed to 1 mm size and 256 voxels for all directions
+changing data type from float to uchar (noscale = 0)...
+MRIchangeType: Building histogram 
+Reslicing using trilinear interpolation 
+writing to /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026/mri/orig.mgz...
+$Id: mri_convert.c,v 1.179.2.7 2012/09/05 21:55:16 mreuter Exp $
+reading from /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026_second/mri/rawavg.mgz...
+TR=2530.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (0.99371, 0.107574, 0.0311097)
+j_ras = (-0.0919141, 0.942216, -0.32215)
+k_ras = (-0.0639669, 0.317264, 0.946177)
+Original Data has (1, 1, 1) mm size and (176, 256, 256) voxels.
+Data is conformed to 1 mm size and 256 voxels for all directions
+changing data type from float to uchar (noscale = 0)...
+MRIchangeType: Building histogram 
+Reslicing using trilinear interpolation 
+writing to /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026_second/mri/orig.mgz...
+$Id: mri_convert.c,v 1.179.2.7 2012/09/05 21:55:16 mreuter Exp $
+reading from /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_055_second/mri/rawavg.mgz...
+TR=2530.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (0.999988, 0.00376636, -0.0031537)
+j_ras = (-0.00435661, 0.976579, -0.215114)
+k_ras = (0.00226964, 0.215125, 0.976584)
+Original Data has (1, 1, 1) mm size and (176, 256, 256) voxels.
+Data is conformed to 1 mm size and 256 voxels for all directions
+changing data type from float to uchar (noscale = 0)...
+MRIchangeType: Building histogram 
+Reslicing using trilinear interpolation 
+writing to /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_055_second/mri/orig.mgz...
+$Id: mri_convert.c,v 1.179.2.7 2012/09/05 21:55:16 mreuter Exp $
+reading from /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_013/mri/rawavg.mgz...
+TR=2530.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (0.998062, 0.0605912, -0.0141744)
+j_ras = (-0.0620872, 0.984904, -0.161584)
+k_ras = (0.00416987, 0.162151, 0.986757)
+Original Data has (1, 1, 1) mm size and (176, 256, 256) voxels.
+Data is conformed to 1 mm size and 256 voxels for all directions
+changing data type from float to uchar (noscale = 0)...
+MRIchangeType: Building histogram 
+Reslicing using trilinear interpolation 
+writing to /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_013/mri/orig.mgz...
+
+ mri_add_xform_to_header -c /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_049_second/mri/transforms/talairach.xfm /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_049_second/mri/orig.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_049_second/mri/orig.mgz 
+
+$Id: mri_convert.c,v 1.179.2.7 2012/09/05 21:55:16 mreuter Exp $
+reading from /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_023/mri/rawavg.mgz...
+TR=2530.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (1, 0, 0)
+j_ras = (0, 1, 0)
+k_ras = (0, 0, 1)
+Original Data has (1, 1, 1) mm size and (176, 256, 256) voxels.
+Data is conformed to 1 mm size and 256 voxels for all directions
+changing data type from float to uchar (noscale = 0)...
+MRIchangeType: Building histogram 
+Reslicing using trilinear interpolation 
+writing to /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_023/mri/orig.mgz...
+$Id: mri_convert.c,v 1.179.2.7 2012/09/05 21:55:16 mreuter Exp $
+reading from /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_1_001_second/mri/rawavg.mgz...
+TR=2530.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (0.997281, 0.0541998, -0.0499231)
+j_ras = (-0.0598252, 0.991077, -0.119112)
+k_ras = (0.0430218, 0.121775, 0.991625)
+Original Data has (1, 1, 1) mm size and (176, 256, 256) voxels.
+Data is conformed to 1 mm size and 256 voxels for all directions
+changing data type from float to uchar (noscale = 0)...
+MRIchangeType: Building histogram 
+Reslicing using trilinear interpolation 
+writing to /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_1_001_second/mri/orig.mgz...
+
+ mri_add_xform_to_header -c /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026/mri/transforms/talairach.xfm /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026/mri/orig.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026/mri/orig.mgz 
+
+
+ mri_add_xform_to_header -c /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_1_001_second/mri/transforms/talairach.xfm /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_1_001_second/mri/orig.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_1_001_second/mri/orig.mgz 
+
+
+ mri_add_xform_to_header -c /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_055_second/mri/transforms/talairach.xfm /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_055_second/mri/orig.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_055_second/mri/orig.mgz 
+
+
+ mri_add_xform_to_header -c /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026_second/mri/transforms/talairach.xfm /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026_second/mri/orig.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026_second/mri/orig.mgz 
+
+
+ mri_add_xform_to_header -c /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_013/mri/transforms/talairach.xfm /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_013/mri/orig.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_013/mri/orig.mgz 
+
+
+ mri_add_xform_to_header -c /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_023/mri/transforms/talairach.xfm /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_023/mri/orig.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_023/mri/orig.mgz 
+
+$Id: mri_convert.c,v 1.179.2.7 2012/09/05 21:55:16 mreuter Exp $
+reading from /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_025/mri/rawavg.mgz...
+TR=2530.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (0.998567, 0.0273901, -0.0459841)
+j_ras = (-0.0369928, 0.974092, -0.223104)
+k_ras = (0.0386819, 0.224486, 0.973709)
+Original Data has (1, 1, 1) mm size and (176, 256, 256) voxels.
+Data is conformed to 1 mm size and 256 voxels for all directions
+changing data type from float to uchar (noscale = 0)...
+MRIchangeType: Building histogram 
+Reslicing using trilinear interpolation 
+writing to /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_025/mri/orig.mgz...
+
+ mri_add_xform_to_header -c /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_025/mri/transforms/talairach.xfm /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_025/mri/orig.mgz /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_025/mri/orig.mgz 
+
+INFO: extension is mgz
+#--------------------------------------------
+#@# Talairach Tue Aug 11 17:43:20 CDT 2015
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_049_second/mri
+
+ mri_nu_correct.mni --n 1 --proto-iters 1000 --distance 50 --no-rescale --i orig.mgz --o orig_nu.mgz 
+
+INFO: extension is mgz
+#--------------------------------------------
+#@# Talairach Tue Aug 11 17:43:21 CDT 2015
+INFO: extension is mgz
+#--------------------------------------------
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026/mri
+#@# Talairach Tue Aug 11 17:43:21 CDT 2015
+
+ mri_nu_correct.mni --n 1 --proto-iters 1000 --distance 50 --no-rescale --i orig.mgz --o orig_nu.mgz 
+
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_055_second/mri
+
+ mri_nu_correct.mni --n 1 --proto-iters 1000 --distance 50 --no-rescale --i orig.mgz --o orig_nu.mgz 
+
+INFO: extension is mgz
+#--------------------------------------------
+#@# Talairach Tue Aug 11 17:43:21 CDT 2015
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026_second/mri
+
+ mri_nu_correct.mni --n 1 --proto-iters 1000 --distance 50 --no-rescale --i orig.mgz --o orig_nu.mgz 
+
+INFO: extension is mgz
+#--------------------------------------------
+#@# Talairach Tue Aug 11 17:43:21 CDT 2015
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_1_001_second/mri
+
+ mri_nu_correct.mni --n 1 --proto-iters 1000 --distance 50 --no-rescale --i orig.mgz --o orig_nu.mgz 
+
+INFO: extension is mgz
+#--------------------------------------------
+#@# Talairach Tue Aug 11 17:43:21 CDT 2015
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_013/mri
+
+ mri_nu_correct.mni --n 1 --proto-iters 1000 --distance 50 --no-rescale --i orig.mgz --o orig_nu.mgz 
+
+INFO: extension is mgz
+#--------------------------------------------
+#@# Talairach Tue Aug 11 17:43:21 CDT 2015
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_023/mri
+
+ mri_nu_correct.mni --n 1 --proto-iters 1000 --distance 50 --no-rescale --i orig.mgz --o orig_nu.mgz 
+
+INFO: extension is mgz
+#--------------------------------------------
+#@# Talairach Tue Aug 11 17:43:22 CDT 2015
+/corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_025/mri
+
+ mri_nu_correct.mni --n 1 --proto-iters 1000 --distance 50 --no-rescale --i orig.mgz --o orig_nu.mgz 
+
+Linux c330-309.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+
+recon-all -s ldrc_ldrc_0_049_second exited with ERRORS at Tue Aug 11 17:43:27 CDT 2015
+
+For more details, see the log file /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_049_second/scripts/recon-all.log
+To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
+
+Linux c333-311.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+
+recon-all -s ldrc_ldrc_0_026 exited with ERRORS at Tue Aug 11 17:43:27 CDT 2015
+
+For more details, see the log file /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026/scripts/recon-all.log
+To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
+
+Linux c317-209.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+
+recon-all -s ldrc_ldrc_0_055_second exited with ERRORS at Tue Aug 11 17:43:27 CDT 2015
+
+For more details, see the log file /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_055_second/scripts/recon-all.log
+To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
+
+Linux c321-216.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+
+recon-all -s ldrc_ldrc_0_023 exited with ERRORS at Tue Aug 11 17:43:28 CDT 2015
+
+For more details, see the log file /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_023/scripts/recon-all.log
+To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
+
+Linux c302-316.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+
+recon-all -s ldrc_ldrc_0_013 exited with ERRORS at Tue Aug 11 17:43:28 CDT 2015
+
+For more details, see the log file /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_013/scripts/recon-all.log
+To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
+
+Linux c317-210.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+
+recon-all -s ldrc_ldrc_0_026_second exited with ERRORS at Tue Aug 11 17:43:29 CDT 2015
+
+For more details, see the log file /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_026_second/scripts/recon-all.log
+To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
+
+Linux c319-107.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+
+recon-all -s ldrc_ldrc_0_025 exited with ERRORS at Tue Aug 11 17:43:29 CDT 2015
+
+For more details, see the log file /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_0_025/scripts/recon-all.log
+To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
+
+Linux c304-107.ls4.tacc.utexas.edu 2.6.18-194.32.1.el5_TACC #2 SMP Fri Mar 18 11:27:58 CDT 2011 x86_64 x86_64 x86_64 GNU/Linux
+
+recon-all -s ldrc_ldrc_1_001_second exited with ERRORS at Tue Aug 11 17:43:31 CDT 2015
+
+For more details, see the log file /corral-repl/utexas/ldrc/FREESURFER/ldrc_ldrc_1_001_second/scripts/recon-all.log
+To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
+
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 2740057
+TACC: Done.

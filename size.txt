@@ -1,0 +1,11 @@
+                                               size isdir
+/corral-repl/utexas/ldrc/ldrc_aus_002/bem     32768  TRUE
+/corral-repl/utexas/ldrc/ldrc_aus_002/label   32768  TRUE
+/corral-repl/utexas/ldrc/ldrc_aus_002/mri     32768  TRUE
+/corral-repl/utexas/ldrc/ldrc_aus_002/scripts 32768  TRUE
+/corral-repl/utexas/ldrc/ldrc_aus_002/src     32768  TRUE
+/corral-repl/utexas/ldrc/ldrc_aus_002/stats   32768  TRUE
+/corral-repl/utexas/ldrc/ldrc_aus_002/surf    32768  TRUE
+/corral-repl/utexas/ldrc/ldrc_aus_002/tmp     32768  TRUE
+/corral-repl/utexas/ldrc/ldrc_aus_002/touch   32768  TRUE
+/corral-repl/utexas/ldrc/ldrc_aus_002/trash   32768  TRUE

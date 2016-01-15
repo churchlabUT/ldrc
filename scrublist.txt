@@ -1,0 +1,6 @@
+/corral-repl/utexas/ldrc/ldrc_c_046/BOLD/run01_8_REST_1/scrub_files/    fd_confounds.txt
+/corral-repl/utexas/ldrc/ldrc_c_046/BOLD/run02_9_SC_1/scrub_files/  fd_confounds.txt
+/corral-repl/utexas/ldrc/ldrc_c_046/BOLD/run03_10_SST_1/scrub_files/    fd_confounds.txt
+/corral-repl/utexas/ldrc/ldrc_c_046/BOLD/run04_12_SC_2/scrub_files/ fd_confounds.txt
+/corral-repl/utexas/ldrc/ldrc_c_046/BOLD/run06_19_SST_2/scrub_files/    fd_confounds.txt
+/corral-repl/utexas/ldrc/ldrc_c_046/BOLD/run07_21_SC_3/scrub_files/ fd_confounds.txt

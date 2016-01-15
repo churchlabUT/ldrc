@@ -1,0 +1,12 @@
+cd ldrc_c_059/WU_preprocess
+preprocess preprocess.prm
+cd ../..
+cd ldrc_c_061/WU_preprocess
+preprocess preprocess.prm
+cd ../..
+cd ldrc_c_062/WU_preprocess
+preprocess preprocess.prm
+cd ../..
+cd ldrc_c_068/WU_preprocess
+preprocess preprocess.prm
+cd ../..

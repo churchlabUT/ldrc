@@ -1,0 +1,10 @@
+feat /corral-repl/utexas/ldrc/GROUP/S2/designs/SC_cope10.fsf
+feat /corral-repl/utexas/ldrc/GROUP/S2/designs/SC_cope5.fsf
+feat /corral-repl/utexas/ldrc/GROUP/S2/designs/SC_cope6.fsf
+feat /corral-repl/utexas/ldrc/GROUP/S2/designs/SST_cope1.fsf
+feat /corral-repl/utexas/ldrc/GROUP/S2/designs/SST_cope3.fsf
+feat /corral-repl/utexas/ldrc/GROUP/S2/designs/SST_cope4.fsf
+feat /corral-repl/utexas/ldrc/GROUP/S2/designs/SST_cope5.fsf
+feat /corral-repl/utexas/ldrc/GROUP/S2/designs/SST_cope7.fsf
+feat /corral-repl/utexas/ldrc/GROUP/S2/designs/SST_cope8.fsf
+feat /corral-repl/utexas/ldrc/GROUP/S2/designs/SST_cope9.fsf

@@ -1,0 +1,158 @@
+TACC: Setting memory limits for job 2695458 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: launch_A_SC_lev2_gfeats.txt
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N launch       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 2way 120
+#$ -q normal
+#$ -l h_rt=02:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE launch_A_SC_lev2_gfeats.txt
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+/bin/.: Permission denied.
+setenv: Too many arguments.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 2695458
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+Warning: Permanently added 'c307-303.ls4.tacc.utexas.edu,206.76.193.166' (RSA) to the list of known hosts.
+--------------------------------------------------
+TACC Launcher -> 20 processors allocated.
+TACC Launcher -> 20 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c315-304.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_1_004_second/model/SC/cope5.fsf)
+TACC Launcher -> Iniating task 2 on c315-304.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope1.fsf)
+TACC Launcher -> Iniating task 6 on c309-210.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope5.fsf)
+TACC Launcher -> Iniating task 3 on c309-101.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope2.fsf)
+TACC Launcher -> Iniating task 10 on c308-112.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope9.fsf)
+TACC Launcher -> Iniating task 8 on c322-301.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope7.fsf)
+TACC Launcher -> Iniating task 5 on c309-210.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope4.fsf)
+TACC Launcher -> Iniating task 4 on c309-101.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope3.fsf)
+TACC Launcher -> Iniating task 9 on c308-112.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope8.fsf)
+TACC Launcher -> Iniating task 7 on c322-301.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope6.fsf)
+TACC Launcher -> Iniating task 19 on c337-201.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_140/model/SC/cope6.fsf)
+TACC Launcher -> Iniating task 13 on c324-109.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_140/model/SC/cope1.fsf)
+TACC Launcher -> Iniating task 15 on c313-213.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_124/model/SC/cope2.fsf)
+TACC Launcher -> Iniating task 11 on c307-303.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope10.fsf)
+TACC Launcher -> Iniating task 18 on c307-306.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_1_141/model/SC/cope10.fsf)
+grep: /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope7.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/corral-repl/utexas/poldracklab/software_lonestar/fsl-5.0.2/bin/feat" line 116)
+grep: /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope6.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/corral-repl/utexas/poldracklab/software_lonestar/fsl-5.0.2/bin/feat" line 116)
+grep: /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope3.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/corral-repl/utexas/poldracklab/software_lonestar/fsl-5.0.2/bin/feat" line 116)
+grep: /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope8.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/corral-repl/utexas/poldracklab/software_lonestar/fsl-5.0.2/bin/feat" line 116)
+grep: /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope4.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/corral-repl/utexas/poldracklab/software_lonestar/fsl-5.0.2/bin/feat" line 116)
+grep: /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope1.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/corral-repl/utexas/poldracklab/software_lonestar/fsl-5.0.2/bin/feat" line 116)
+grep: /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope2.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/corral-repl/utexas/poldracklab/software_lonestar/fsl-5.0.2/bin/feat" line 116)
+grep: /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope9.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/corral-repl/utexas/poldracklab/software_lonestar/fsl-5.0.2/bin/feat" line 116)
+grep: /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope5.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/corral-repl/utexas/poldracklab/software_lonestar/fsl-5.0.2/bin/feat" line 116)
+TACC Launcher -> Iniating task 14 on c324-109.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_1_133/model/SC/cope1.fsf)
+TACC Launcher -> Iniating task 20 on c337-201.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_140/model/SC/cope10.fsf)
+TACC Launcher -> Iniating task 16 on c313-213.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_1_129/model/SC/cope4.fsf)
+TACC Launcher -> Iniating task 12 on c307-303.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_0_122/model/SC/cope1.fsf)
+TACC Launcher -> Iniating task 17 on c307-306.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc2_1_141/model/SC/cope5.fsf)
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc_1_004_second/model/SC/cope5_lev2.gfeat/report_log.html
+grep: /corral-repl/utexas/ldrc/ldrc2_0_145/model/SC/cope10.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/corral-repl/utexas/poldracklab/software_lonestar/fsl-5.0.2/bin/feat" line 116)
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc2_1_129/model/SC/cope4_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc2_1_141/model/SC/cope5_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc2_1_141/model/SC/cope10_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc2_1_133/model/SC/cope1_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc2_0_124/model/SC/cope2_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc2_0_122/model/SC/cope1_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc2_0_140/model/SC/cope1_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc2_0_140/model/SC/cope10_lev2.gfeat/report_log.html
+To view the FEAT progress and final report, point your web browser at /corral-repl/utexas/ldrc/ldrc2_0_140/model/SC/cope6_lev2.gfeat/report_log.html
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 2695458
+TACC: Done.

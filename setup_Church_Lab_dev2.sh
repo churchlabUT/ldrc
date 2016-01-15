@@ -1,0 +1,1 @@
+/corral-repl/utexas/poldracklab/software_lonestar/local/bin/setup_subject.py -o --dcm2nii --motcorr --qa --betfunc --dtiqa --fsrecon --fs-subdir /corral-repl/utexas/ldrc/FREESURFER/ --keepdata -b /corral-repl/utexas/ --studyname ldrc -s Church_Lab_dev2

@@ -1,0 +1,378 @@
+TACC: Setting memory limits for job 2035031 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: launch_SST_confound.txt
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N launch       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 2way 120
+#$ -q normal
+#$ -l h_rt=04:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE launch_SST_confound.txt
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+/bin/.: Permission denied.
+setenv: Too many arguments.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 2035031
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+Warning: Permanently added 'c322-211.ls4.tacc.utexas.edu,206.76.196.110' (RSA) to the list of known hosts.
+Warning: Permanently added 'c306-201.ls4.tacc.utexas.edu,206.76.193.100' (RSA) to the list of known hosts.
+Warning: Permanently added 'c330-304.ls4.tacc.utexas.edu,206.76.197.247' (RSA) to the list of known hosts.
+Warning: Permanently added 'c335-115.ls4.tacc.utexas.edu,206.76.198.210' (RSA) to the list of known hosts.
+Warning: Permanently added 'c324-216.ls4.tacc.utexas.edu,206.76.196.211' (RSA) to the list of known hosts.
+--------------------------------------------------
+TACC Launcher -> 20 processors allocated.
+TACC Launcher -> 40 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c317-108.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_018/BOLD/run03_10_SST_1/bold.nii.gz 0.9)
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_018/BOLD/run03_10_SST_1/scrub_files': File exists
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 7 on c324-216.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_039/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 3 on c301-106.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_032/BOLD/run03_10_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 15 on c330-304.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_054/BOLD/run07_21_SST_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 14 on c306-201.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_046/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 6 on c318-216.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_039/BOLD/run03_10_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 11 on c322-211.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_045/BOLD/run03_10_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 20 on c337-111.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_061/BOLD/run03_15_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 10 on c330-205.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_044/BOLD/run03_16_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 2 on c317-108.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_018/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 18 on c335-115.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_059/BOLD/run03_10_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 4 on c301-106.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_032/BOLD/run06_16_SST_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 8 on c324-216.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_043/BOLD/run03_10_SST_1/bold.nii.gz 0.9)
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_039/BOLD/run06_19_SST_2/scrub_files': File exists
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_043/BOLD/run03_10_SST_1/scrub_files': File exists
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 5 on c318-216.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_037/BOLD/run03_10_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 13 on c306-201.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_046/BOLD/run03_10_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 16 on c330-304.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_057/BOLD/run03_10_SST_1/bold.nii.gz 0.9)
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_054/BOLD/run07_21_SST_2/scrub_files': File exists
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_057/BOLD/run03_10_SST_1/scrub_files': File exists
+Creating separate motion parameter files ...
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_039/BOLD/run03_10_SST_1/scrub_files': File exists
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 19 on c337-111.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_059/BOLD/run06_18_SST_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 12 on c322-211.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_045/BOLD/run06_13_SST_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_037/BOLD/run03_10_SST_1/scrub_files': File exists
+TACC Launcher -> Iniating task 17 on c335-115.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_057/BOLD/run06_13_SST_2/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 9 on c330-205.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_043/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_018/BOLD/run06_19_SST_2/scrub_files': File exists
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_032/BOLD/run03_10_SST_1/scrub_files': File exists
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_045/BOLD/run03_10_SST_1/scrub_files': File exists
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_045/BOLD/run06_13_SST_2/scrub_files': File exists
+mkdir: mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_032/BOLD/run06_16_SST_2/scrub_files': File exists
+cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_044/BOLD/run03_16_SST_1/scrub_files': File exists
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_043/BOLD/run06_19_SST_2/scrub_files': File exists
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_046/BOLD/run03_10_SST_1/scrub_files': File existsCreating separate motion parameter files ...
+
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_059/BOLD/run06_18_SST_2/scrub_files'mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_061/BOLD/run03_15_SST_1/scrub_files': File exists
+: File exists
+Creating separate motion parameter files ...
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_046/BOLD/run06_19_SST_2/scrub_files': File exists
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_059/BOLD/run03_10_SST_1/scrub_files': File existsmkdir: 
+cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_057/BOLD/run06_13_SST_2/scrub_files': File exists
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 35 on c330-304.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_084/BOLD/run03_13_SST_1/bold.nii.gz 0.9)
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_084/BOLD/run03_13_SST_1/scrub_files': File exists
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 26 on c318-216.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_078/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_078/BOLD/run06_19_SST_2/scrub_files': File exists
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 24 on c301-106.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_068/BOLD/run03_13_SST_1/bold.nii.gz 0.9)
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_068/BOLD/run03_13_SST_1/scrub_files': File exists
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 28 on c324-216.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_079/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_079/BOLD/run06_19_SST_2/scrub_files': File exists
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 22 on c317-108.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_062/BOLD/run03_10_SST_1/bold.nii.gz 0.9)
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_062/BOLD/run03_10_SST_1/scrub_files': File exists
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 21 on c317-108.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_061/BOLD/run06_21_SST_2/bold.nii.gz 0.9)
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_061/BOLD/run06_21_SST_2/scrub_files': File exists
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 40 on c337-111.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_086/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 27 on c324-216.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_079/BOLD/run03_13_SST_1/bold.nii.gz 0.9)
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_079/BOLD/run03_13_SST_1/scrub_files': File exists
+TACC Launcher -> Iniating task 32 on c322-211.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_082/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_082/BOLD/run06_19_SST_2/scrub_files': File exists
+TACC Launcher -> Iniating task 23 on c301-106.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_062/BOLD/run06_15_SST_2/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_062/BOLD/run06_15_SST_2/scrub_files': File exists
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 31 on c322-211.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_082/BOLD/run03_13_SST_1/bold.nii.gz 0.9)
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_082/BOLD/run03_13_SST_1/scrub_files': File exists
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 25 on c318-216.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_078/BOLD/run03_13_SST_1/bold.nii.gz 0.9)
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_078/BOLD/run03_13_SST_1/scrub_files': File exists
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 34 on c306-201.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_083/BOLD/run05_29_SST_2/bold.nii.gz 0.9)
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_083/BOLD/run05_29_SST_2/scrub_files': File exists
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 29 on c330-205.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_081/BOLD/run03_13_SST_1/bold.nii.gz 0.9)
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 38 on c335-115.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_085/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_081/BOLD/run03_13_SST_1/scrub_files': File exists
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 33 on c306-201.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_083/BOLD/run03_25_SST_1/bold.nii.gz 0.9)
+TACC Launcher -> Iniating task 39 on c337-111.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_086/BOLD/run03_13_SST_1/bold.nii.gz 0.9)
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_083/BOLD/run03_25_SST_1/scrub_files': File exists
+Creating separate motion parameter files ...
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 30 on c330-205.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_081/BOLD/run06_26_SST_2/bold.nii.gz 0.9)
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_081/BOLD/run06_26_SST_2/scrub_files': File exists
+Creating separate motion parameter files ...
+TACC Launcher -> Iniating task 36 on c330-304.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_084/BOLD/run06_19_SST_2/bold.nii.gz 0.9)
+mkdir: cannot create directory `/corral-repl/utexas/ldrc/ldrc_c_084/BOLD/run06_19_SST_2/scrub_files': File exists
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC Launcher -> Iniating task 37 on c335-115.ls4.tacc.utexas.edu (/corral-repl/utexas/ldrc/SCRIPTS/mk_confound.sh /corral-repl/utexas/ldrc/ldrc_c_085/BOLD/run03_13_SST_1/bold.nii.gz 0.9)
+Creating separate motion parameter files ...
+Computing FD and scrubbing mask regressors 
+
+(this will take a few minutes) ... 
+
+
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 2035031
+TACC: Done.

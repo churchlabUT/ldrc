@@ -1,0 +1,53 @@
+
+#!/bin/sh
+
+#Before running this script, you must download the scanner images from Osirix and upload the zip file to TACC/STUDYNAME.
+
+PARTICID='ldrc3_213'
+STUDYNAME='ldrc'
+
+# Assuming we are in the SCRIPTS directory right now.
+
+# Set up folders.
+cd /corral-repl/utexas/${STUDYNAME}
+mkdir $PARTICID
+cd  $PARTICID
+mkdir anatomy
+mkdir behav
+mkdir BOLD
+mkdir fieldmap
+mkdir logs
+mkdir model
+mkdir raw
+cd raw
+mkdir $PARTICID
+cd  ../..
+
+# Move participant's zip file into folder particID/raw/particID, then unzip.
+mv $PARTICID*zip  ${PARTICID}/raw/${PARTICID}
+cd ${PARTICID}/raw/${PARTICID}
+unzip $PARTICID*
+mv $PARTICID* ..
+
+
+# NO LONGER DECOMPRESSING AS OF 10/24/15
+# Decompress the dicoms within the raw/particID folder. The decompressed images are saved in raw/Converted, which is created by the matlab script.
+#cd ../../../SCRIPTS
+#matlab -nodisplay -nosplash -r "decompressdcm('/corral-repl/utexas/${STUDYNAME}/${PARTICID}/raw/${PARTICID}');exit"
+
+# Delete raw dicoms, then rename the decompressed/converted files as XNAT did.
+#cd ../${PARTICID}/raw/${PARTICID}
+#rm 2*
+
+
+# Move back into scripts and rename the raw dicoms
+cd ../../../SCRIPTS
+matlab -nodisplay -nosplash -r "nameLikeXnat('/corral-repl/utexas/${STUDYNAME}/${PARTICID}/raw/${PARTICID}');exit"
+
+# Move the unnamed files to folder raw/unnamed_raw, then split named files by scan.
+cd ../${PARTICID}/raw
+mkdir unnamed_raw
+cd ${PARTICID}
+mv [0-9]* ../unnamed_raw
+cd ../../../SCRIPTS
+matlab -nodisplay -nosplash -r "splitSiemensScans_churchlab('/corral-repl/utexas/${STUDYNAME}/${PARTICID}/raw/${PARTICID}');exit"

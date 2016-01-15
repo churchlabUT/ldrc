@@ -1,0 +1,405 @@
+#title             : Readme file for conducting SST Feat analysis
+#description       : This readme file will guide you in conducting SST Feat analysis
+#author            : Leonel Olmedo
+#date              : 2013/03/08
+#notes             : To run most scripts you must be in /corral-repl/utexas/ldrc/SCRIPT directory
+		     To make executable type chmod +x *sh and chmod +x *py (incase scripts aren't running) 
+		     Once executable, simply type ./scriptname to run the script
+#==========================================================================
+
+
+
+#All scripts called in making the onset files are located in /corral-repl/utexas/ldrc/SCRIPTS. Emacs must be opened while in /SCRIPTS and tacc must be in /SCRIPTS to run each script.
+
+#All scripts have comments to explain what the script does. Simply load it into emacs to read comments or make changes.
+
+#Make sure runs that will not be used have an x_ placed before the behav and BOLD files or that they are moved to an omitted folder.If not, the script will include them in the launch files.
+
+
+
+###################################################################
+
+STEP 1 -  Level 1 Analysis: Creating feat directories for each run
+
+################################################################### 
+
+#MAKE SURE ONLY RUNS THAT PASSED QUALITY CONTROL (BEHAV & BOLD) ARE PRESENT, OTHERWISE THE LEVEL 1 ANALYSIS WILL HAVE TO BE REPEATED. 
+
+  ## Scripts used in Level 1:
+
+       1.mk_SST_lev1_fsf_scrub.sh (old: mk_SST_lev1_fsf.sh)
+
+
+  ** mk_SST_lev1_fsf_scrub.sh- Open this shell script in emacs to change the group, then run the script in tacc to create the launch txt files below for Austin and Houston. Uses the _scrub template version in SCRIPTS/Feat_Templates.
+
+			       These txt files will be used to make all the fsf designs for Feat with the proper contrast parameters. The feat directories will be saved in each subjects directory under /model/SST/Run*.feat where * is 1-2. 
+
+	** Open the launch files below in emacs, delete the files you don't need to run, and launch the txt files in terminal.
+
+            ** AUSTIN:
+
+		## in terminal type (on the largemem node): launch -s launch_A_SST_lev1.txt -j Analysis_Lonestar -r 24:00:00 -p 48 -e 1way -q largemem -m churchlab@austin.utexas.edu
+
+		## in terminal type (on the normal node): launch -s launch_A_SST_lev1.txt -j Analysis_Lonestar -r 04:00:00 -p 120 -e 2way -m churchlab@austin.utexas.edu
+
+            ** HOUSTON:
+
+		## in terminal type (on the largemem node): launch -s launch_H_SST_lev1.txt -j Analysis_Lonestar -r 24:00:00 -p 48 -e 1way -q largemem -m churchlab@austin.utexas.edu
+
+		## in terminal type (on the normal node): launch -s launch_H_SST_lev1_1.txt -j Analysis_Lonestar -r 04:00:00 -p 108 -e 2way -m churchlab@austin.utexas.edu
+			    
+
+  ** LEVEL 1 QC: 
+     
+     ** After the job is complete, check that the feat directories were made in each subjects directory under /model/SST/Run*.feat where * is 1-2.
+	
+     ** design
+
+	  ## SCRIPTS/des_check_SST_lev2.sh - run this script in terminal inside SCRIPTS to grab all the design.png files from each subs run.  Puts them into an html file to look at each group in SCRIPTS/Lev2_QC/SST
+
+	     ** Before running this script, make sure all subjects in each group are included.
+
+	     ** On the Processing_QC sheet, note copes that should be left out of group analysis because of empty EVs.
+		      
+     ** registration
+
+	  ## SCRIPTS/reg_check_SST_lev2.sh - run this script in terminal inside SCRIPTS to grab all the registration files from each subs run.  Puts them into an html file to look at each group in SCRIPTS/Lev2_QC/SST
+		      
+	     ** make a note of how well the registration worked for each subs run in the Processing_QC sheet
+
+     ** Inside the model directory, open the report.html file for each cope to look for any errors and to check that registration looked ok.
+
+     ** Look at filtered_func data for any "blank volumes"
+
+     ** Check mask.nii.gz, bg_image.nii.gz (average of brains across subjects - used for overlaying stats maps onto), zstat, and varcope are there for each cope.
+
+     ** run "check_collin_SST.R" to check for any collinearity issues in the data and confirm empty EVs
+
+	   ** V1 - go_corr
+	      V2 - go_corr derivative
+	      V3 - go_incorr
+	      V4
+	      V5 - stop_corr
+	      V6
+	      V7 - stop_fail
+	      V8
+	      V9 - rt_all
+	      V10
+	      V11 - junk
+	      V12
+	      V13 on - motion regressors
+
+
+###############################################################
+
+STEP 2  - Level 2 Analysis: Creating gfeats (group feats) for each subject
+
+################################################################
+
+
+#MAKE SURE ONLY RUNS THAT PASSED QUALITY CONTROL ARE PRESENT, OTHERWISE THE LEVEL 2 ANALYSIS WILL HAVE TO BE REPEATED. 
+
+1.mk_SST_lev2fsf.sh
+2.mk_lev2fsf.py
+3.mk_SST_lev2_gfeats.sh
+
+
+   ** mk_SST_lev2fsf.sh - Edit this script in emacs, then run it to create the two launch files listed below.  These text file will use the python script mk_lev2fsf.py to make the second level cope fsf files for both Austin and Houston. 
+
+      ## Then open the launch files below in emacs, delete the files you don't need to run, and run them in terminal if there are only 2-5 subjects. Launch them if there are >5 subjects. 
+
+	 After running the launch files, make sure there is a cope for each contrast. Cope stands for Contrast Of Parameter Estimate. 
+
+	       ** To make Austin SST fsf files in terminal type: launch -s launch_A_SST_lev2fsf.txt -j Analysis_Lonestar -r 01:00:00 -m churchlab@austin.utexas.edu
+
+	       ** To make Houston SST fsf files in terminal type: launch -s launch_H_SST_lev2fsf.txt -j Analysis_Lonestar -r 04:00:00 -m churchlab@austin.utexas.edu
+
+    
+  ** mk_SST_lev2_gfeats.sh - Edit this script in emacs, then run it to create the level 2 gfeats by running feat on the fsf files we created earlier. A gfeat is a group feat directory. 
+
+			     Each gfeat corresponds to a different cope and takes up one line in the launch files listed below. 
+
+     ## Then open the launch files below in emacs and combine the files with the SC gfeats before launching. Any gfeat processing scripts must be launched.
+
+	       ** To make Austin SST gfeats in terminal type: launch -s launch_A_SST_lev2_gfeats.txt -j Analysis_Lonestar -r 04:00:00 -p 120 -e 2way -m churchlab@austin.utexas.edu
+
+	       ** To make Houston SST gfeats in terminal type: launch -s launch_H_SST_lev2_gfeats.txt -j Analysis_Lonestar -r 04:00:00 -m churchlab@austin.utexas.edu
+			   
+     ## To launch individual copes for individual subjects, just open up the text file and use the lines for the subjects you want to run analysis on. Each cope corresponds to a different contrast, set in the first level, 
+
+	and will make a second level copeX_lev2.gfeat, where X correponds to a different contrast number.
+
+
+  ** LEVEL 2 QC: Check that the copes for all of the subjects are created before running level 3 analysis and those that should be left out of level 3 are correctly noted.
+	
+     ## run find_lev2_copes.sh found in SCRIPTS/lev2_QC/SST to create quick txt files of which subjects have which lev2 copes created; rerun lev2 as needed for individual subs copes
+
+
+###############################################################
+
+STEP 3  - Level 3 Analysis: Running group analysis
+
+################################################################
+
+## All scripts are located in /corral-repl/utexas/ldrc/SCRIPTS. 
+## Make sure all subjects have completed level 2 before running level 3 analysis.
+
+----
+## Section 1 - Generate feat directories
+
+   ## The contrasts as of 4/28/14 for Project 4 SST are below. Make sure you know which EVs were labeled 1, 0 or -1, as this will be important for level 3. Refer to these when making the feat directories/contrasts. 
+
+      If you forgot which cope corresponds to which contrast, you can look below or load the design.png from a level 1 feat directory and the contrasts will be listed in order on the left.
+
+	 #COPE1 = GO_COR (1) VS. BASELINE (0)
+ 
+	 #COPE2 = GO_INCOR (1) VS. BASELINE (0)
+
+	 #COPE3 = STOP_COR (1) VS. BASELINE (0)
+
+	 #COPE4 = STOP_FAIL (1) VS. BASELINE (0)
+
+	 #COPE5 = RT_ALL (1) VS. BASELINE (0)
+
+	 #COPE6 = GO_COR (1) VS. GO_INCOR (-1)
+
+	 #COPE7 = STOP_COR (1) VS. STOP_FAIL (-1)
+
+	 #COPE8 = GO_COR (1) VS. STOP_FAIL (-1)
+
+	 #COPE9 = STOP_COR (1) VS. GO_COR (-1)
+
+
+   ## The 3 scripts below are used to generate a list of feat directories to be used in level 3 analysis. Type the script name and a number, indicating the contrast (cope) you want to look at. 
+
+      For example, to create the txt file for SST cope1 Interventions in terminal you should type: python A_SST_interv_lev3.py 1
+
+        1. all_lev3.py  ** THIS DOES NOT EXIST RIGHT NOW **
+        2. A_SST_interv_lev3.py
+        3. A_SST_contr_lev3.py
+        4. H_SST_interv_lev3.py
+
+   ## INTERVENTION
+ 
+      ** A_SST_interv_lev3.py - run this script to generate the list of all intervention subjects that is saved to A_SST_interv_featdir_copeX.txt. The X corresponds to the cope you specified when you ran the script.
+
+   ## CONTROLS
+ 
+      ** A_SST_contr_lev3.py - run this script to generate the list of all control subjects that is saved to A_SST_contr_featdir_copeX.txt. The X corresponds to the cope you specified when you ran the script.
+
+
+
+   ## ALL (SC, SST, INT, Controls) - both intervention and controls for Austin and Houston SC and SST
+
+      ** all_lev3.py - run this script to generate the list of all LDRC subjects for both Austin and Houston and both SST and SC. The X corresponds to the cope you specified when you ran the script.
+     
+	 ## This creates the text file A_SC_all_featdir_copeX.txt to list the Austin subjects for SC
+
+	 ## This creates the text file A_SST_all_featdir_copeX.txt to list the Austin subjects for SST
+
+	 ## This creates the text file H_SC_all_featdir_copeX.txt to list the Houston subjects for SC
+
+	 ## This creates the text file H_SST_all_featdir_copeX.txt to list the Houston subjects for SST
+
+
+
+----
+##Section 2 - Create contrasts in Feat GUI (Review how to make models depending on the type of group comparisons looking at)
+
+    ## Type "Feat &" in terminal (in GROUP/) and then load  /corral-repl/utexas/ldrc/GROUP/designs/design_template.fsf. This will preload the specifications for the level 3 analysis. 
+
+	 ## Under the Data tab:
+
+	    1. Change the number of inputs to the number of subjects you are loading. Then click on "Select cope images", then click "Paste." 
+
+	    2. Open the txt file you created in Section 1 and copy and paste it into the Feat window. Click ok, and make sure all the inputs appear on the next page. 
+
+	       If you are running a paired t-test (comparing timepoints) the subjects need to be entered in order by S1T1, S1T2, S2T1, S2T2, etc.
+
+	       If you are comparing two groups, all of the subs in the first group are entered first, and then all the subs in the second group are entered.
+
+	       If any copes are missing you will get an error which specifies which subject is the issue. Check that subject, rerun level2 if need be; otherwise, click ok and you should be good to go. 
+
+	    3. In the Output directory, replace design_template.fsf with the name of the contrast you are looking at, such as "corr_v_baseline" with the path name /corral-repl/utexas/ldrc/GROUP/Controls/SC/corr_v_baseline
+
+	       **  MAKE SURE NOT TO OVERWRITE THE DESIGN_TEMPLATE.FSF FILE. **  If this does happen, there is a copy of the design_template in /corral-repl/utexas/ldrc/SCRIPTS/ called design_template_lev3.py
+
+		  For now we are keeping the Austin and Houston level 3 analysis separate. Ask Jessica which contrasts to look at and check the mk_ts.py under /corral-repl/utexas/ldrc/GROUP/ for the correct spelling of the contrasts.
+	    
+	 ## Under the Stats tab:
+
+            1. Click Full Model Setup. 
+
+	    2. Under the EVs tab:
+
+	       GROUP always has 1's - do NOT change this.
+
+		     Model 1: One group - Only 1 EV. EV1 contains all 1s if you are only running one group (Controls, First Interventions, Second Interventions). 
+
+		     Model 2: Two groups - 1. Only 1 EV: EV1 contains all 1s for group1 (ex: first interventions) and all -1s for group2 (controls). 
+
+					 **2. 2 EVs: EV1 contains all 1s for group1, 0s for group2, and EV2 contains all 0s for group1 and 1s for group2 (usually use)
+
+		     Model 3: Timepoints - Several EVs, depending on number of subjects and timepoints.  Set it up like a paired t-test (see Jeanette's lectures/textbook). EV1 contains alternating 1's and -1's, set up the rest accordingly.	   
+
+         ## Under the Contrasts & F-tests tab,
+
+	             Model 1: One group -  check that there are two contrasts and that C1 is greater than baseline (1) and C2 is less than baseline(-1). [ 1]
+																		         [-1]
+
+		              For example, C1 would indicate when go correct > baseline and C2 would be when go correct < baseline;  C1 would be when go correct > go incorrect and C2 would be when go correct < go incorrect.
+
+	             Model 2: Two groups - [1 -1]
+			                   [-1 1]
+
+                     ## Click View design to check the model before clicking Done, or click Done to finish the full model setup (you will still automatically view design when you click Done)	   
+
+         ## Double check EVERYTHING, just in case you missed something.
+
+	 ## Once you're sure about everything, save your new design in the design folder within the group you are running as SST_copeX.fsf where X is the cope number. 
+
+            For example, if you are working on Controls then the path you are saving the design to is /corral-repl/utexas/ldrc/GROUP/Controls/Designs/SST_cope1.fsf
+		    
+            Click ok once you are sure you're saving it to the right folder. Then check that it saved to that folder in Fetch; you can move everything that is not a .fsf file into the junk folder.
+
+         ## Repeat all of the steps in section 1 and 2 for each contrast before launching the SST designs in the last section below.
+
+----	    
+## Section 3 - Launching the designs
+
+      ## Launch the designs you made for each contrast:
+
+	 ## Open the launch_lev3.txt file in emacs (under SCRIPTS/) and change the feats for the subjects you plan on running (intervention)
+
+	      ** Launch the file in terminal: launch -s launch_lev3.txt -j Analysis_Lonestar -p 120 -e 2way -r 04:00:00 -m churchlab@austin.utexas.edu
+
+	 ## Open the launch_lev3_controls.txt file in emacs (under SCRIPTS/) and change the feats for the subjects you plan on running (controls)
+
+	      ** Launch the file in terminal: launch -s launch_lev3_controls.txt -j Analysis_Lonestar -p 120 -e 2way -r 04:00:00 -m churchlab@austin.utexas.edu
+
+      ** Check that the .gfeats for all of your contrasts are in the correct folder after launching, then check that the zstat1.nii.gz and zstat2.nii.gz are there - for example in SST/go_corr_v_baseline/cope1.feat/stats
+
+----
+## Section 4 - Copying and renaming the thresholded and unthresholded zstat.nii.gz files
+
+      ## This script renames each groups level 3 comparison stats in order to easily identify the data when loading it onto inflated brains in Caret
+
+      ## Open the script rename_zstat.R
+
+	      **  run the functions that copy and rename the thresholded and unthresholded files
+
+	      **  run each group (SC and SST) that you need to copy; make sure to change the subs variable if the number of subjects in the group has changed
+
+              ##  double check that all of the files copied into the GROUP/zstats folder in addition to the original comparison folders for each group; these are all copied into one location in order to easily
+                  
+                  fetch all of the zstat.nii.gz files in order to read into Caret. 
+
+----
+## Section 5 - Applying the zstat files to inflated brains in Caret
+
+   ## See the PDF on the server under Church_Lab/
+
+
+----
+NEXT STEP: ROI ANALYSIS
+
+## Open the mk_ts.sh script found in each groups ROI folder (ex: /corral-repl/utexas/ldrc/GROUP/S1_S2_5_23_13/rois) in emacs.
+
+   ## Make ROIs:
+   
+      ## Open the PREDICTIONS.xlsx file in Finder under Church_Lab/Church_Lab/PREDICTIONS.xlsx.  This file lists all of the MNI coordinates, their region descriptions, and their community definitions that we could look at.  
+
+	 It also includes every hypothesis we could possibly explore for SC, SST, and DTI/anatomy. Under SC, the areas highlighted in yellow are those that have been looked at by previous research groups (listed at the bottom of the SC tab).
+
+	 This list is old, however, so check with Jess/Mary Abbe first.
+
+      ## Choose an ROI that has not be made yet. You can check which ROIs have been made by looking in one of the ROI directories:  /corral-repl/utexas/ldrc/GROUP/S1_S2_5_23_13/rois
+
+      ## In the first section in mk_all_ts.sh, change the MNI coordinates to the one you plan on making. Then open fslview to find the voxel coordinates for those MNI coordinates and enter them into the mk_all_ts.sh script as well.
+
+      ** In tacc, in /corral-repl/utexas/ldrc/GROUP/S1_S2_5_23_13/rois, run the first section of mk_all_ts.sh to create the roi.  It will save it in /corral-repl/utexas/ldrc/GROUP/S1_S2_5_23_13/rois.
+
+	 ** Check if the roi's were made by seeing if they exist in the rois folder and opening them in fslview
+
+
+   ## Apply ROIs onto different SC or SST contrasts
+
+      ## In the mk_all_ts.sh script, add the ROI you just made to the SST_rois = (...) or SC_rois = (...) lists.
+
+      ** CHANGE THE SUBDIRS FOR THE GROUP YOU'RE RUNNING BEFORE RUNNING THE SCRIPT WITHIN ROI DIRECTORY IN TERMINAL!  
+
+      ** Run the SC or SST section of the script for applying ROIs onto different contrasts in tacc in /corral-repl/utexas/ldrc/GROUP/S1_S2_5_23_13/rois
+
+
+   ## Run ROI analyses R script (located in /SCRIPTS) for stats and stat figures
+
+      ## roi_analyses_5_2_14.R - open this script in emacs and run each part according to the script.
+
+
+   ** View ROIs spheres in CARET
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###################### OLD
+   ** Create figures for each ROI, contrast, task, etc.
+
+      ** In /corral-repl/utexas/ldrc/GROUP/S1_S2_5_23_13, open S1_S2_perm_test.R script in emacs and open R in terminal
+
+	 ** The first part of the script contains the function that grabs the rois and gfeats, obtains the original stats and reads in data, runs the permutation test, and computes the corrected p-values.
+
+	    The output contains p-values as well as reads in data sets if you need to make plots for significant things.
+
+	    ## Make sure to set nperms to the number of permutations you'd like to run.  Then run the first part of the script (the function and the nperms) in R in terminal.
+
+	 ## Change the tasks="SST" to SST or SC, depending on the task you are analyzing, and that the right contrasts for each task are included. Run the rest of the script.
+
+	    ** This creates dat_p_perm_X, where X is the contrast, to show you corrected and original p values for each contrast. 
+
+	    ** It also creates dat_c_contrast dataframe for the controls
+
+	    ** And it creates % signal change figures for AUSTIN INTERVENTION SUBJECTS and % signal change figures for AUSTIN INTERVENTION + CONTROL SUBJS
+
+
+	    
+
+	    
+
+   ** The old contrasts from 3/6/13 for Project 4 SST
+
+	 #COPE 1 = GO_CORRECT (1) VS BASELINE (0)			go_corr_v_baseline		  c1 = go correct greater than baseline		      c2 = go correct less than baseline
+
+	 #COPE 2 = GO_INCORRECT (1) VS BASELINE (0)
+
+	 #COPE 3 = STOP_FAIL_CORRECT (1) VS BASELINE (0)
+
+	 #COPE 4 = STOP_CORRECT (1) VS BASELINE (0)
+
+	 #COPE 5 =  STOP_CORRECT (1) VS GO_CORRECT (-1)			stop_correct_v_go_correct	  c1 = stop correct greater than go correct           c2 = stop correct less than go correct
+
+	 #COPE 6 = GO_CORRECT (1) VS GO_INCORRECT (-1)
+
+	 #COPE 7 = STOP_CORRECT (1) VS STOP_FAIL_CORRECT(-1)	
+
+	 #COPE 8 = GO_CORRECT (1) VS STOP_FAIL_CORRECT (-1)
+
+	 #COPE 9 = RT_GO_CORRECT (1) VS BASELINE (0)
+
+	 #COPE 10 = RT_STOP_FAIL_CORRECT (1) VS BASELINE (0)	
+
+

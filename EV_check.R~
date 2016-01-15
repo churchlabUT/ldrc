@@ -1,0 +1,69 @@
+# Author: Mary Abbe Roe, Oct. 2014
+# This script reads in behavioral rt_all.txt files for Austin_thirds, specifically, going into MRI analysis
+
+# LIBRARIES
+ 
+  library(ggplot2)
+  library(plyr)
+
+# FUNCTIONS   
+ 
+  # function for extracting end of string
+    substrRight = function(x, n){
+      substr(x, nchar(x)-n+1, nchar(x))
+    }
+
+# READ IN DATA
+
+  group = "ldrc_*third"
+  chars = 11
+
+  for (i in 1:length(group)){ 
+    subdirs = Sys.glob(sprintf("/corral-repl/utexas/ldrc/%s" ,group[i]))
+    rm("rt_all")
+    print(group[i])
+
+    # SUB
+    for (sub in subdirs){
+      behav_dirs = Sys.glob(sprintf("%s/behav/SC/SC_R*", sub))
+      subnum = substrRight(sub, chars[i])
+
+	# RUN
+        for (run in behav_dirs){
+          run_num = substrRight(run,1)
+          RTfile = Sys.glob(sprintf("%s/rt_all.txt", run))
+
+          if (length(RTfile)==0){
+            warning(sprintf("cannot find rt_all.txt file for %s", run))
+	    next
+          }
+
+          rt_loop = read.csv(RTfile, header=FALSE, sep="", na.strings="NaN")
+          rt_loop$subind = rep(subnum, dim(rt_loop)[1])
+          rt_loop$runnum = rep(run_num, dim(rt_loop)[1])
+
+          # CREATE DAT_ALL IF DOESN'T EXIST
+          if (exists("rt_all")==FALSE){
+            rt_all = rt_loop 
+          } 
+          else{ 
+            rt_all = rbind(rt_all, rt_loop)
+          }
+     
+       } # END RUN LOOP
+     }  # END SUB LOOP
+
+  } # END GROUP LOOP
+
+
+
+ names(rt_all)[1] = "onset"
+ names(rt_all)[2] = "pm"
+ names(rt_all)[3] = "meanCentRT"
+
+
+ sub.mean = ddply(rt_all, .(subind, runnum), summarise, mean = mean(V3, na.rm = TRUE))
+
+ sub.run.meancent.scat = ggplot(rt_all, aes(x = subind, y = meanCentRT, color = runnum)) + geom_point() + ggtile("Austin Thirds Mean Center RTs")
+
+ sub.run.onset.scat = ggplot(rt_all, aes(x = subind, y = onset, color = runnum)) + geom_point() + ggtile("Austin Thirds Onsets")

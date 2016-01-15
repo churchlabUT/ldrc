@@ -1,0 +1,128 @@
+#!/bin/sh
+
+#Before running this script, all steps of setup subject need to be complete. Assuming you are in ldrc/SCRIPTS on tacc..
+#The site is 'A' for Austin and 'H' for Houston
+
+PARTICID='B102322'
+#SITE='T'
+STUDYNAME='ldrc'
+
+#Go into the subject's BOLD directory
+cd ../$PARTICID/BOLD/
+
+#Rename each BOLD directory
+if [[ ${SITE} == 'A' & ]]
+then
+
+  DIRS=`ls -d *run*`
+
+  for dir in $DIRS
+  do
+    echo ${dir}
+    scannum=$(echo $dir | cut -d "_" -f 3)
+    task=$(echo $dir | cut -d "_" -f 1)
+    runnum1=$(echo $dir | cut -d "_" -f 2)
+    runnum=$(echo $runnum1 | grep -o '[0-9]')
+
+    if [[ ${scannum} == [1-9][0-9] ]] 
+    then
+      newdir=$scannum'_'$task'_'$runnum
+      echo $newdir
+    else
+      newdir='0'$scannum'_'$task'_'$runnum
+      echo $newdir
+    fi
+ 
+    mv ${dir} ${newdir} 
+
+  done
+
+  NEXTDIRS=`ls -d *_*_*`
+  COUNT=1
+  for nextdir in $NEXTDIRS; do
+    mv ${nextdir} 'run0'${COUNT}'_'${nextdir}
+    let COUNT++
+  done
+
+  cd ../../SCRIPTS/
+
+elif [[ ${SITE} == 'T' & ]]
+then
+
+  DIRS=`ls -d *_[0-9][0-9]`
+
+  for dir in $DIRS
+  do
+    echo ${dir}
+    scannum=$(echo $dir | cut -d "_" -f 3)
+    task=$(echo $dir | cut -d "_" -f 1)
+    runnum=$(echo $dir | cut -d "_" -f 2)
+
+    if [[ ${task} == 'CogFlex' ]]
+    then
+      task='CF'
+    elif [[ ${task} == 'Nback' ]]
+    then
+      task='NB'
+    else
+      :
+    fi
+
+    if [[ ${scannum} == [1-9][0-9] ]] 
+    then
+      newdir=$scannum'_'$task'_'$runnum
+      echo $newdir
+    else
+      newdir='0'$scannum'_'$task'_'$runnum
+      echo $newdir
+    fi
+ 
+    mv ${dir} ${newdir} 
+
+  done
+
+  NEXTDIRS=`ls -d *_*_*`
+  COUNT=1
+  for nextdir in $NEXTDIRS; do
+    mv ${nextdir} 'run0'${COUNT}'_'${nextdir}
+    let COUNT++
+  done
+
+  cd ../../SCRIPTS/
+
+else
+
+  DIRS=`ls -d *RUN*`
+
+  for dir in $DIRS
+  do
+    echo ${dir}
+    scannum=$(echo $dir | cut -d "_" -f 7)
+    task1=$(echo $dir | cut -d "_" -f 1)
+    task=$(echo $task1 | tr '[:lower:]' '[:upper:]')
+    runnum1=$(echo $dir | cut -d "_" -f 2)
+    runnum=$(echo $runnum1 | grep -o '[0-9]')
+
+    if [[ ${scannum} == [1-9][0-9] ]] 
+    then
+      newdir=$scannum'_'$task'_'$runnum
+      echo $newdir
+    else
+      newdir='0'$scannum'_'$task'_'$runnum
+      echo $newdir
+    fi
+
+    mv ${dir} ${newdir}
+
+  done
+
+  NEXTDIRS=`ls -d *_*_*`
+  COUNT=1
+  for nextdir in $NEXTDIRS; do
+    mv ${nextdir} 'run0'${COUNT}'_'${nextdir}
+    let COUNT++
+  done
+
+  cd ../../SCRIPTS/
+
+fi

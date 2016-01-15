@@ -1,0 +1,120 @@
+TACC: Setting memory limits for job 1331868 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: setup_ldrc_048.sh
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N setup_ldrc_048       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 12way 12
+#$ -q normal
+#$ -l h_rt=10:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE setup_ldrc_048.sh
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 1331868
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+Warning: Permanently added 'c316-305.ls4.tacc.utexas.edu,206.76.195.88' (RSA) to the list of known hosts.
+--------------------------------------------------
+TACC Launcher -> 12 processors allocated.
+TACC Launcher -> 1 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c316-305.ls4.tacc.utexas.edu (/corral-repl/utexas/poldracklab/software_lonestar/local/bin/setup_subject.py -o --dcm2nii --motcorr --qa --betfunc --dtiqa --fsrecon --keepdata -b /corral-repl/utexas/ --studyname ldrc -s ldrc_048)
+subdir /corral-repl/utexas/ldrc/ldrc_048 already exists
+overwriting...
+detected raw: (1) localizer _32 ch localizer _32 ch
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/ldrc_048/raw /corral-repl/utexas/ldrc/ldrc_048/raw/ldrc_048/1
+detected localizer: (2) AAHScout AAHScout
+detected localizer: (3) AAHScout AAHScout_MPR_sag
+detected localizer: (4) AAHScout AAHScout_MPR_cor
+detected localizer: (5) AAHScout AAHScout_MPR_tra
+detected anatomy: (6) t1_mprage_sag_p2_iso_1 t1_mprage_sag_p2_iso_1
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/ldrc_048/anatomy /corral-repl/utexas/ldrc/ldrc_048/raw/ldrc_048/6
+detected anatomy: (7) t2_spc_sag_p2_iso_1.0 t2_spc_sag_p2_iso_1.0
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/ldrc_048/anatomy /corral-repl/utexas/ldrc/ldrc_048/raw/ldrc_048/7
+detected BOLD: (8) REST_run1 REST_run1
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/ldrc_048/BOLD /corral-repl/utexas/ldrc/ldrc_048/raw/ldrc_048/8
+detected BOLD: (9) SentComp_run1 SentComp_run1
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/ldrc_048/BOLD /corral-repl/utexas/ldrc/ldrc_048/raw/ldrc_048/9
+detected BOLD: (10) SST_run1 SST_run1
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/ldrc_048/BOLD /corral-repl/utexas/ldrc/ldrc_048/raw/ldrc_048/10
+detected BOLD: (11) SentComp_run2 SentComp_run2
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/ldrc_048/BOLD /corral-repl/utexas/ldrc/ldrc_048/raw/ldrc_048/11
+detected raw: (12) localizer _32 ch localizer _32 ch
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/ldrc_048/raw /corral-repl/utexas/ldrc/ldrc_048/raw/ldrc_048/12
+detected localizer: (13) AAHScout AAHScout
+detected localizer: (14) AAHScout AAHScout_MPR_sag
+detected localizer: (15) AAHScout AAHScout_MPR_cor
+detected localizer: (16) AAHScout AAHScout_MPR_tra
+detected DTI: (17) MBEPI with FREE A-P_2Iso MBEPI with FREE A-P_2Iso
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/ldrc_048/DTI /corral-repl/utexas/ldrc/ldrc_048/raw/ldrc_048/17
+detected BOLD: (18) REST_run1 REST_run1
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/ldrc_048/BOLD /corral-repl/utexas/ldrc/ldrc_048/raw/ldrc_048/18
+detected BOLD: (19) SST_run2 SST_run2
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/ldrc_048/BOLD /corral-repl/utexas/ldrc/ldrc_048/raw/ldrc_048/19
+detected BOLD: (20) SentComp_run3 SentComp_run3
+dcm2nii -d n -i n -o /corral-repl/utexas/ldrc/ldrc_048/BOLD /corral-repl/utexas/ldrc/ldrc_048/raw/ldrc_048/20
+mv /corral-repl/utexas/ldrc/ldrc_048/BOLD/RESTrun1s008a001.nii.gz /corral-repl/utexas/ldrc/ldrc_048/BOLD/REST_run1_8/bold.nii.gz
+mv /corral-repl/utexas/ldrc/ldrc_048/BOLD/SentComprun1s009a001.nii.gz /corral-repl/utexas/ldrc/ldrc_048/BOLD/SentComp_run1_9/bold.nii.gz
+mv /corral-repl/utexas/ldrc/ldrc_048/BOLD/SSTrun1s010a001.nii.gz /corral-repl/utexas/ldrc/ldrc_048/BOLD/SST_run1_10/bold.nii.gz
+mv /corral-repl/utexas/ldrc/ldrc_048/BOLD/SentComprun2s011a001.nii.gz /corral-repl/utexas/ldrc/ldrc_048/BOLD/SentComp_run2_11/bold.nii.gz
+mv /corral-repl/utexas/ldrc/ldrc_048/BOLD/RESTrun1s018a001.nii.gz /corral-repl/utexas/ldrc/ldrc_048/BOLD/REST_run1_18/bold.nii.gz
+mv /corral-repl/utexas/ldrc/ldrc_048/BOLD/SSTrun2s019a001.nii.gz /corral-repl/utexas/ldrc/ldrc_048/BOLD/SST_run2_19/bold.nii.gz
+mv /corral-repl/utexas/ldrc/ldrc_048/BOLD/SentComprun3s020a001.nii.gz /corral-repl/utexas/ldrc/ldrc_048/BOLD/SentComp_run3_20/bold.nii.gz
+t1mpragesagp2iso1s006a1001.nii.gz
+cot1mpragesagp2iso1s006a1001A.nii.gz
+cot1mpragesagp2iso1s006a1001.nii.gz
+t1mpragesagp2iso1s006a1001A.nii.gz
+ot1mpragesagp2iso1s006a1001A.nii.gz
+mv /corral-repl/utexas/ldrc/ldrc_048/anatomy/ot1mpragesagp2iso1s006a1001A.nii.gz /corral-repl/utexas/ldrc/ldrc_048/anatomy/highres001.nii.gz
+highresctr is at  2
+mv /corral-repl/utexas/ldrc/ldrc_048/anatomy/ot1mpragesagp2iso1s006a1001A.nii.gz /corral-repl/utexas/ldrc/ldrc_048/anatomy/highres002.nii.gz
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/ldrc_048/anatomy/ot1mpragesagp2iso1s006a1001A.nii.gz': No such file or directory
+
+highresctr is at  3
+mv /corral-repl/utexas/ldrc/ldrc_048/anatomy/ot1mpragesagp2iso1s006a1001A.nii.gz /corral-repl/utexas/ldrc/ldrc_048/anatomy/highres003.nii.gz
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/ldrc_048/anatomy/ot1mpragesagp2iso1s006a1001A.nii.gz': No such file or directory
+
+highresctr is at  4
+highres001.nii.gz
+Traceback (most recent call last):
+  File "/corral-repl/utexas/poldracklab/software_lonestar/local/bin/setup_subject.py", line 559, in <module>
+    subdir_names, TR = convert_dicom_to_nifti(args, subdir)
+  File "/corral-repl/utexas/poldracklab/software_lonestar/local/bin/setup_subject.py", line 422, in convert_dicom_to_nifti
+    runnum=a.rsplit('a')[-2].rsplit('s')[-1].lstrip('0')
+IndexError: list index out of range
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 1331868
+TACC: Done.

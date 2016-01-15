@@ -1,0 +1,215 @@
+TACC: Setting memory limits for job 1717481 to unlimited KB
+TACC: Dumping job script:
+--------------------------------------------------------------------------------
+#!/bin/csh
+#
+# SGE control file automatically created by launch
+# Using parametric launcher with control file: setup_H_LDIMG9013.sh
+#$ -V                    #Inherit the submission environment
+#$ -cwd                  # Start job in submission directory
+#$ -j y                  # Combine stderr and stdout
+#$ -N setup_H_LDIMG9013       # Job Name
+#$ -A Analysis_Lonestar
+#$ -o $JOB_NAME.o$JOB_ID # Name of the output file (eg. myMPI.oJobID)
+#$ -pe 12way 12
+#$ -q normal
+#$ -l h_rt=10:00:00
+#$ -M churchlab@austin.utexas.edu
+#$ -m be
+#----------------
+# Job Submission
+#----------------
+umask 2
+
+module load launcher
+module swap gcc intel
+setenv EXECUTABLE     $TACC_LAUNCHER_DIR/init_launcher
+setenv CONTROL_FILE setup_H_LDIMG9013.sh
+setenv WORKDIR .
+cd $WORKDIR/
+echo " WORKING DIR:   $WORKDIR/"
+$TACC_LAUNCHER_DIR/paramrun $EXECUTABLE $CONTROL_FILE
+echo " "
+echo " Parameteric Job Complete"
+echo " "
+--------------------------------------------------------------------------------
+TACC: Done.
+
+Lmod Error: Swap failed: "gcc" is not loaded.
+
+ WORKING DIR:   ./
+TACC: Starting up job 1717481
+TACC: Setup complete. Running job script.
+TACC: starting parallel tasks...
+Warning: Permanently added 'c308-213.ls4.tacc.utexas.edu,206.76.193.208' (RSA) to the list of known hosts.
+
+Lmod Warning: Did not find: hdf5
+
+Try: "module spider hdf5"
+--------------------------------------------------
+TACC Launcher -> 12 processors allocated.
+TACC Launcher -> 1 total tasks to complete.
+--------------------------------------------------
+ 
+TACC Launcher -> Iniating task 1 on c308-213.ls4.tacc.utexas.edu (/corral-repl/utexas/poldracklab/software_lonestar/local/bin/setup_subject.py -o --dcm2nii --motcorr --qa --betfunc --dtiqa --fsrecon --fs-subdir /corral-repl/utexas/ldrc/FREESURFER/ --keepdata -b /corral-repl/utexas/ --studyname ldrc -s H_LDIMG9013)
+subdir /corral-repl/utexas/ldrc/H_LDIMG9013 already exists
+overwriting...
+detected raw: (1) localizer localizer
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9013/raw /corral-repl/utexas/ldrc/H_LDIMG9013/raw/H_LDIMG9013/1
+detected anatomy: (2) t1_mprage_sag_p2_iso_1 t1_mprage_sag_p2_iso_1
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy /corral-repl/utexas/ldrc/H_LDIMG9013/raw/H_LDIMG9013/2
+detected anatomy: (3) t2_spc_sag_p2_iso t2_spc_sag_p2_iso
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy /corral-repl/utexas/ldrc/H_LDIMG9013/raw/H_LDIMG9013/3
+detected BOLD: (4) SC_RUN1_32 Sl_iPAT_3x3x3 SC_RUN1_32 Sl_iPAT_3x3x3
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD /corral-repl/utexas/ldrc/H_LDIMG9013/raw/H_LDIMG9013/4
+detected BOLD: (5) SST_RUN1_32 Sl_iPAT_3x3x3 SST_RUN1_32 Sl_iPAT_3x3x3
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD /corral-repl/utexas/ldrc/H_LDIMG9013/raw/H_LDIMG9013/5
+detected BOLD: (6) SC_RUN2_32 Sl_iPAT_3x3x3 SC_RUN2_32 Sl_iPAT_3x3x3
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD /corral-repl/utexas/ldrc/H_LDIMG9013/raw/H_LDIMG9013/6
+detected raw: (7) localizer localizer
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9013/raw /corral-repl/utexas/ldrc/H_LDIMG9013/raw/H_LDIMG9013/7
+detected BOLD: (8) SST_RUN2_32 Sl_iPAT_3x3x3 SST_RUN2_32 Sl_iPAT_3x3x3
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD /corral-repl/utexas/ldrc/H_LDIMG9013/raw/H_LDIMG9013/8
+detected BOLD: (9) SC_RUN3_32 Sl_iPAT_3x3x3 SC_RUN3_32 Sl_iPAT_3x3x3
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD /corral-repl/utexas/ldrc/H_LDIMG9013/raw/H_LDIMG9013/9
+detected DTI: (10) DTI_ep2d_diff_mddw_64_2_iso DTI_ep2d_diff_mddw_64_2_iso
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9013/DTI /corral-repl/utexas/ldrc/H_LDIMG9013/raw/H_LDIMG9013/10
+skipping derived series  11
+detected derived: (11) DTI_ep2d_diff_mddw_64_2_iso DTI_ep2d_diff_mddw_64_2_iso_ADC
+skipping derived series  12
+detected derived: (12) DTI_ep2d_diff_mddw_64_2_iso DTI_ep2d_diff_mddw_64_2_iso_TRACEW
+skipping derived series  13
+detected derived: (13) DTI_ep2d_diff_mddw_64_2_iso DTI_ep2d_diff_mddw_64_2_iso_FA
+detected anatomy: (15) t1_mprage_sag_p2_iso_1 t1_mprage_sag_p2_iso_1
+dcm2nii -4 y -d n -i n -o /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy /corral-repl/utexas/ldrc/H_LDIMG9013/raw/H_LDIMG9013/15
+mv /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SCRUN132SliPAT3x3x3s004a001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SC_RUN1_32_Sl_iPAT_3x3x3_4/bold.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SSTRUN132SliPAT3x3x3s005a001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_5/bold.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SCRUN232SliPAT3x3x3s006a001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SC_RUN2_32_Sl_iPAT_3x3x3_6/bold.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SSTRUN232SliPAT3x3x3s008a001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_8/bold.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SCRUN332SliPAT3x3x3s009a001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SC_RUN3_32_Sl_iPAT_3x3x3_9/bold.nii.gz
+t1mpragesagp2iso1s002a1001.nii.gz
+ot1mpragesagp2iso1s002a1001.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/ot1mpragesagp2iso1s002a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/highres001.nii.gz
+highresctr is at  2
+mv /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/ot1mpragesagp2iso1s002a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/highres002.nii.gz
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/ot1mpragesagp2iso1s002a1001.nii.gz': No such file or directory
+
+highresctr is at  3
+mv /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/ot1mpragesagp2iso1s002a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/highres003.nii.gz
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/ot1mpragesagp2iso1s002a1001.nii.gz': No such file or directory
+
+highresctr is at  4
+cot1mpragesagp2iso1s002a1001.nii.gz
+t2spcsagp2isos003a1001.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/t2spcsagp2isos003a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/other
+ot2spcsagp2isos003a1001.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/ot2spcsagp2isos003a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/other
+t1mpragesagp2iso1s015a1001.nii.gz
+ot1mpragesagp2iso1s015a1001.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/ot1mpragesagp2iso1s015a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/highres004.nii.gz
+highresctr is at  5
+mv /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/ot1mpragesagp2iso1s015a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/highres005.nii.gz
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/ot1mpragesagp2iso1s015a1001.nii.gz': No such file or directory
+
+highresctr is at  6
+mv /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/ot1mpragesagp2iso1s015a1001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/highres006.nii.gz
+logs: ERROR: mv: cannot stat `/corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/ot1mpragesagp2iso1s015a1001.nii.gz': No such file or directory
+
+highresctr is at  7
+cot1mpragesagp2iso1s015a1001.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9013/DTI/DTIep2ddiffmddw642isos010a001.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9013/DTI/DTI_1.nii.gz
+mv /corral-repl/utexas/ldrc/H_LDIMG9013/DTI/DTIep2ddiffmddw642isos010a001.bvec /corral-repl/utexas/ldrc/H_LDIMG9013/DTI/DTI_1.bvec
+mv /corral-repl/utexas/ldrc/H_LDIMG9013/DTI/DTIep2ddiffmddw642isos010a001.bval /corral-repl/utexas/ldrc/H_LDIMG9013/DTI/DTI_1.bval
+bolddirs:
+['SST_RUN1_32_Sl_iPAT_3x3x3_5', 'SC_RUN2_32_Sl_iPAT_3x3x3_6', 'SST_RUN2_32_Sl_iPAT_3x3x3_8', 'SC_RUN3_32_Sl_iPAT_3x3x3_9', 'SC_RUN1_32_Sl_iPAT_3x3x3_4']
+motcorr
+{'qa': "'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])", 'motcorr': "'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])", 'betfunc': "'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))", 'melodic': "'melodic -i %s/bold_mcf.nii.gz --Oall --report'%__import__('os').path.join(subdir_names['BOLD'],b)"}
+'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])
+mcflirt -in /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_5/bold.nii.gz -plots -sinc_final
+logs: ERROR: refnum = 92
+Original_refvol = -1
+
+motcorr
+{'qa': "'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])", 'motcorr': "'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])", 'betfunc': "'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))", 'melodic': "'melodic -i %s/bold_mcf.nii.gz --Oall --report'%__import__('os').path.join(subdir_names['BOLD'],b)"}
+'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])
+mcflirt -in /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SC_RUN2_32_Sl_iPAT_3x3x3_6/bold.nii.gz -plots -sinc_final
+logs: ERROR: refnum = 95
+Original_refvol = -1
+
+motcorr
+{'qa': "'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])", 'motcorr': "'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])", 'betfunc': "'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))", 'melodic': "'melodic -i %s/bold_mcf.nii.gz --Oall --report'%__import__('os').path.join(subdir_names['BOLD'],b)"}
+'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])
+mcflirt -in /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_8/bold.nii.gz -plots -sinc_final
+logs: ERROR: refnum = 92
+Original_refvol = -1
+
+motcorr
+{'qa': "'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])", 'motcorr': "'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])", 'betfunc': "'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))", 'melodic': "'melodic -i %s/bold_mcf.nii.gz --Oall --report'%__import__('os').path.join(subdir_names['BOLD'],b)"}
+'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])
+mcflirt -in /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SC_RUN3_32_Sl_iPAT_3x3x3_9/bold.nii.gz -plots -sinc_final
+logs: ERROR: refnum = 108
+Original_refvol = -1
+
+motcorr
+{'qa': "'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])", 'motcorr': "'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])", 'betfunc': "'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))", 'melodic': "'melodic -i %s/bold_mcf.nii.gz --Oall --report'%__import__('os').path.join(subdir_names['BOLD'],b)"}
+'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])
+mcflirt -in /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SC_RUN1_32_Sl_iPAT_3x3x3_4/bold.nii.gz -plots -sinc_final
+logs: ERROR: refnum = 108
+Original_refvol = -1
+
+betfunc
+{'qa': "'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])", 'motcorr': "'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])", 'betfunc': "'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))", 'melodic': "'melodic -i %s/bold_mcf.nii.gz --Oall --report'%__import__('os').path.join(subdir_names['BOLD'],b)"}
+'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))
+bet /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_5/bold_mcf.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_5/bold_mcf_brain.nii.gz -F
+betfunc
+{'qa': "'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])", 'motcorr': "'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])", 'betfunc': "'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))", 'melodic': "'melodic -i %s/bold_mcf.nii.gz --Oall --report'%__import__('os').path.join(subdir_names['BOLD'],b)"}
+'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))
+bet /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SC_RUN2_32_Sl_iPAT_3x3x3_6/bold_mcf.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SC_RUN2_32_Sl_iPAT_3x3x3_6/bold_mcf_brain.nii.gz -F
+betfunc
+{'qa': "'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])", 'motcorr': "'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])", 'betfunc': "'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))", 'melodic': "'melodic -i %s/bold_mcf.nii.gz --Oall --report'%__import__('os').path.join(subdir_names['BOLD'],b)"}
+'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))
+bet /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_8/bold_mcf.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_8/bold_mcf_brain.nii.gz -F
+betfunc
+{'qa': "'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])", 'motcorr': "'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])", 'betfunc': "'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))", 'melodic': "'melodic -i %s/bold_mcf.nii.gz --Oall --report'%__import__('os').path.join(subdir_names['BOLD'],b)"}
+'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))
+bet /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SC_RUN3_32_Sl_iPAT_3x3x3_9/bold_mcf.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SC_RUN3_32_Sl_iPAT_3x3x3_9/bold_mcf_brain.nii.gz -F
+betfunc
+{'qa': "'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])", 'motcorr': "'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])", 'betfunc': "'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))", 'melodic': "'melodic -i %s/bold_mcf.nii.gz --Oall --report'%__import__('os').path.join(subdir_names['BOLD'],b)"}
+'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))
+bet /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SC_RUN1_32_Sl_iPAT_3x3x3_4/bold_mcf.nii.gz /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SC_RUN1_32_Sl_iPAT_3x3x3_4/bold_mcf_brain.nii.gz -F
+qa
+{'qa': "'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])", 'motcorr': "'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])", 'betfunc': "'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))", 'melodic': "'melodic -i %s/bold_mcf.nii.gz --Oall --report'%__import__('os').path.join(subdir_names['BOLD'],b)"}
+'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])
+fmriqa.py /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SST_RUN1_32_Sl_iPAT_3x3x3_5/bold_mcf.nii.gz 2.000000
+qa
+{'qa': "'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])", 'motcorr': "'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])", 'betfunc': "'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))", 'melodic': "'melodic -i %s/bold_mcf.nii.gz --Oall --report'%__import__('os').path.join(subdir_names['BOLD'],b)"}
+'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])
+fmriqa.py /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SC_RUN2_32_Sl_iPAT_3x3x3_6/bold_mcf.nii.gz 2.000000
+qa
+{'qa': "'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])", 'motcorr': "'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])", 'betfunc': "'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))", 'melodic': "'melodic -i %s/bold_mcf.nii.gz --Oall --report'%__import__('os').path.join(subdir_names['BOLD'],b)"}
+'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])
+fmriqa.py /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SST_RUN2_32_Sl_iPAT_3x3x3_8/bold_mcf.nii.gz 2.000000
+qa
+{'qa': "'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])", 'motcorr': "'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])", 'betfunc': "'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))", 'melodic': "'melodic -i %s/bold_mcf.nii.gz --Oall --report'%__import__('os').path.join(subdir_names['BOLD'],b)"}
+'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])
+fmriqa.py /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SC_RUN3_32_Sl_iPAT_3x3x3_9/bold_mcf.nii.gz 2.000000
+qa
+{'qa': "'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])", 'motcorr': "'mcflirt -in %s/bold.nii.gz %s'%(__import__('os').path.join(subdir_names['BOLD'],b),args['mcflirt_args'])", 'betfunc': "'bet %s/bold_mcf.nii.gz %s/bold_mcf_brain.nii.gz -F'%(__import__('os').path.join(subdir_names['BOLD'],b),__import__('os').path.join(subdir_names['BOLD'],b))", 'melodic': "'melodic -i %s/bold_mcf.nii.gz --Oall --report'%__import__('os').path.join(subdir_names['BOLD'],b)"}
+'fmriqa.py %s/bold_mcf.nii.gz %f'%(__import__('os').path.join(subdir_names['BOLD'],b),TR[b])
+fmriqa.py /corral-repl/utexas/ldrc/H_LDIMG9013/BOLD/SC_RUN1_32_Sl_iPAT_3x3x3_4/bold_mcf.nii.gz 2.000000
+subject dir %s already exists - overwriting
+brainmask /corral-repl/utexas/ldrc/FREESURFER/ldrc_H_LDIMG9013/mri/brainmask.mgz already exists - skipping autorecon1
+mri_convert --out_orientation LAS /corral-repl/utexas/ldrc/FREESURFER/ldrc_H_LDIMG9013/mri/brainmask.mgz --reslice_like /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/highres001.nii.gz  /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/highres001_brain.nii
+gzip  /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/highres001_brain.nii
+logs: ERROR: gzip: No such file or directory
+
+fslmaths /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/highres001_brain.nii.gz -thr 1 -bin /corral-repl/utexas/ldrc/H_LDIMG9013/anatomy/highres001_brain_mask.nii.gz
+found DTI file: DTI_1.nii.gz
+dtiqa.py /corral-repl/utexas/ldrc/H_LDIMG9013/DTI/DTI_1.nii.gz
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 1717481
+TACC: Done.
