@@ -1,0 +1,5 @@
+/corral-repl/utexas/ldrc/LDFHO24839_1_3/model/SST/cope3_lev2.gfeat/cope1.feat/stats/cope1.nii.gz 
+/corral-repl/utexas/ldrc/LDFHO24768_1_3/model/SST/cope3_lev2.gfeat/cope1.feat/stats/cope1.nii.gz 
+/corral-repl/utexas/ldrc/LDFHO24761_1_3/model/SST/cope3_lev2.gfeat/cope1.feat/stats/cope1.nii.gz 
+/corral-repl/utexas/ldrc/LDFHO24861_1_3/model/SST/cope3_lev2.gfeat/cope1.feat/stats/cope1.nii.gz 
+/corral-repl/utexas/ldrc/LDFHO23801_1_3/model/SST/cope3_lev2.gfeat/cope1.feat/stats/cope1.nii.gz 

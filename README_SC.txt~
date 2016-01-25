@@ -116,13 +116,13 @@ STEP 2  - Level 2 Analysis: Creating gfeats (group feats) for each subject
 ** Scripts used in Level 2:
 
 1. mk_SC_lev2fsf.sh
-2. mk_lev2fsf.py
+2. mk_lev2fsf.py OR mk_lev2fsf_run2.py
 3. mk_SC_lev2_gfeats.sh
 
 
   ** mk_SC_lev2fsf.sh - Edit this script in emacs, then run it to create the two launch files listed below.
 
-     ## Then run the launch files below in terminal if only running 2-5 subjects. Launch them if >5 subjects. These text files use the python script **mk_lev2fsf.py** to make the second level cope fsf files for both Austin and Houston. (12*# of jobs)
+     ## Then run the launch files below in terminal if only running 2-5 subjects. Launch them if >5 subjects. These text files use the python script **mk_lev2fsf.py** to make the second level cope fsf files for both Austin and Houston. (12*# of jobs) (use mk_lev2fsf_run2.py if there is no usable Run1, because it's hardcoded)
 
 	 ** To make Austin SC fsf files in terminal type: launch -s launch_A_SC_lev2fsf.txt -j Analysis_Lonestar -r 01:00:00 -m churchlab@austin.utexas.edu
 

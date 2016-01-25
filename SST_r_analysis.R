@@ -249,7 +249,7 @@ for (k in 1:sessions){
 
     # EACH RUN FOR EACH SUB (# lines are cutoffs)
  
-      go_run=ddply(dat_all, .(subind, runnum, group), summarise, N=length(subind), go_rt_med=median(RT[correct==1], na.rm=TRUE), go_rt_sd=sd(RT[correct==1], na.rm=TRUE), go_acc=length(correct[correct==1])/length(cond[cond==1|cond==0]), go_error=length(correct[correct==0])/length(cond[cond==1|cond==0]))
+      go_run=ddply(dat_all, .(subind, runnum, group), summarise, N=length(subind), go_rt_med=median(RT[correct==1], na.rm=TRUE), go_rt_sd=sd(RT[correct==1], na.rm=TRUE), go_acc=length(correct[correct==1])/length(cond[cond==1|cond==0]), go_error=length(correct[correct==0])/length(cond[cond==1|cond==0]), go_omit=length(correct[correct==5])/length(cond[cond==1|cond==0]))
       #go_run$go_rt_med[go_run$go_acc < .60 | go_run$go_error > .1] = NA
       #go_run$go_acc[go_run$go_acc < .60 | go_run$go_error > .1] = NA 
       assign(paste("go_run",k,sep="_"),go_run)

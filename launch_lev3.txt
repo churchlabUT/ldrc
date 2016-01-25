@@ -1,1 +1,2 @@
-feat /corral-repl/utexas/ldrc/GROUP/S1_v_S2_v_C/designs/SC_cope10.fsf
+feat /corral-repl/utexas/ldrc/GROUP/A_v_H/designs/SST_cope1.fsf
+feat /corral-repl/utexas/ldrc/GROUP/A_v_H/designs/SC_cope10.fsf

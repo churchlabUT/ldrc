@@ -12,7 +12,7 @@ basedir='/corral-repl/utexas/ldrc'
 #subnums=`ls -d ${basedir}/ldrc2_[0-9]_[0-9][0-9][0-9]`
 #subnums=`ls -d ${basedir}/ldrc2*_second`
 #subnums=`ls -d ${basedir}/ldrc3_[0-2]_[0-9][0-9][0-9]`
-subnums=`ls -d ${basedir}/ldrc3_c*`
+#subnums=`ls -d ${basedir}/ldrc3_c*`
 
 for sub in $subnums
 
@@ -30,6 +30,7 @@ done
 #subnums=`ls -d ${basedir}/H*_?_third/`
 #subnums=`ls -d ${basedir}/LDFHO*_second/`
 #subnums=`ls -d ${basedir}/LDFHO*_[0-9]`
+subnums=`ls -d ${basedir}/LDFHO2*_1_3`
 
 for sub in $subnums
 

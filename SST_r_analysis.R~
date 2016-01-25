@@ -37,7 +37,7 @@ rm(list=ls())
 # READING IN DATA AND CREATING DATA FRAMES FOR EACH GROUP
 
   group=c("ldrc_[0-9]_[0-9][0-9][0-9]", "ldrc_*second", "ldrc_*third", "ldrc2_[0-9]_[0-9][0-9][0-9]","ldrc2_*second*", "ldrc3_[0-9]_[0-9][0-9][0-9]", "PHILIPS/H_LD*_[0-9]", "H_LD*_[0-9]_second", "H_LD*_[0-9]_third", "LDFHO*_[0-2]", "LDFHO*_second", "LDFHO2[0-9][0-9][0-9][0-9]_1_3", "ldrc*_c_[0-9][0-9][0-9]", "PHILIPS/H_LD*[0-9][0-9][0-9][0-9]", "H_LD*_c_second", "H_LD*_c_third")
-  chars=c(10,17,16,11,18,11,13,20,19,12,19,12,11,11,20,19)
+  chars=c(10,17,16,11,18,11,13,20,19,12,19,14,11,11,20,19)
 
   # GROUP
   for (i in 1:length(group)){ 
@@ -402,8 +402,7 @@ for (k in 1:sessions){
         stop_error_run=data.frame(subind=stop_run$subind, runnum=stop_run$runnum, stop_error=stop_run$stop_error)
 
       # create DF with go_correct's in ascending order and stop_error
-        RT_asc_run=data.frame(subind=dat_all$subind[dat_all$correct==1], runnum=dat_all$runnum[dat_all$correct==1], TrialNum=dat_all$TrialNum[dat_all$correct==1], correct=dat_all$correct[dat_all$correct==1], 
-                              RT=dat_all$RT[dat_all$correct==1])
+        RT_asc_run=data.frame(subind=dat_all$subind[dat_all$correct==1], runnum=dat_all$runnum[dat_all$correct==1], TrialNum=dat_all$TrialNum[dat_all$correct==1], correct=dat_all$correct[dat_all$correct==1], RT=dat_all$RT[dat_all$correct==1])
         RT_asc_run=RT_asc_run[order(RT_asc_run[,1], RT_asc_run[,2], RT_asc_run[,5], decreasing=FALSE), ]
         RT_asc_stop_error_run=merge(RT_asc_run, stop_error_run)
 
