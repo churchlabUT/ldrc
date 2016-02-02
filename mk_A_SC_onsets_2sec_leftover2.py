@@ -151,7 +151,7 @@ sense_cond[N.logical_or(cond_array==1,cond_array==3)]=1
 
 fidl_out=filename.replace('.pkl','_output_Events.txt')
 f=open(fidl_out,'w')
-f.write('2\tActSens_Correct\tActSens_Incorrect\tActNon_Correct\tActNon_Incorrect\tPassSens_Correct\tPassSens_Incorrect\tPassNon_Correct\tPassNon_Incorrect\Instructions\n')
+f.write('2\tActSens_Correct\tActSens_Incorrect\tActNon_Correct\tActNon_Incorrect\tPassSens_Correct\tPassSens_Incorrect\tPassNon_Correct\tPassNon_Incorrect\tInstructions\n')
 f.write('%.2f\t%s\t%s\t%s\n'%(0,'8','2',''))
 
 for t in range(len(data['onsets'])):
@@ -238,18 +238,6 @@ junk_3col=fixEmpty(junk_3col)
 N.savetxt('%s/junk.txt'%(outdir), junk_3col)
 
 
-#create correct/incorrect (includes correct, and incorrect/mismatch)
-#rt_all_rt=rt_vec[[((correct==1) | (correct==0) | (correct==2))]]
-
-all_ons=onset_vec[[((correct==1) | (correct==0) | (correct==2))]]+2
-all_pm=N.zeros((all_ons.shape))+1
-all_dur=N.zeros((all_ons.shape))+duration
-all_3col=N.vstack([all_ons, all_dur, all_pm]).T
-all_3col=fixEmpty(all_3col)
-
-N.savetxt('%s/rt_all.txt'%outdir, rt_all_3col)
-
-
 #leftover RT regressor for time between response and end of 8sec trial
 rt_left_ons1=onset_vec[[((correct==1) | (correct==0) | (correct==2))]]+2
 rt_left_rt=rt_vec[[((correct==1) | (correct==0) | (correct==2))]]
@@ -265,10 +253,11 @@ N.savetxt('%s/rt_left.txt'%outdir, rt_left_3col)
 
 
 #correct for each sentence type
-rt_cor=rt_vec[[((correct==1))]]
+#rt_cor=rt_vec[[((correct==1))]]
 sent_name=('active_s', 'active_ns', 'passive_s', 'passive_ns')
 for sent_type in [1,2,3,4]:
     for cor_ind in [1]:
+        rt_cor=rt_vec[[N.logical_and(correct==cor_ind, cond_array==sent_type)]]
         loop_ons=onset_vec[[N.logical_and(correct==cor_ind, cond_array==sent_type)]]+2
         loop_dur=N.zeros((loop_ons.shape))+rt_cor
         loop_pm=N.zeros((loop_ons.shape))+1

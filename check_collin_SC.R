@@ -18,8 +18,11 @@
 
 
 # READ IN DATA
-  group = c("ldrc_[0-9]_[0-9][0-9][0-9]", "ldrc_*second", "ldrc_*third", "ldrc2_[0-9]_[0-9][0-9][0-9]", "ldrc2_*second", "ldrc3_[0-2]_[0-9][0-9][0-9]*", "ldrc_c_[0-9][0-9][0-9]", "ldrc3_c_[0-9][0-9][0-9]*", "H_LD*_[0-9]_second", "H_LD*_[0-9]_third","H_LD*_c_second","H_LD*_c_third","LDFHO*_[0-2]", "LDFHO*_second", "LDFHO2*_1_3")
-  chars = c(5,12,11,11,17,11,5,5,13,17,13,12,7,17,14)
+  #group = c("ldrc_[0-9]_[0-9][0-9][0-9]", "ldrc_*second", "ldrc_*third", "ldrc2_[0-9]_[0-9][0-9][0-9]", "ldrc2_*second", "ldrc3_[0-2]_[0-9][0-9][0-9]*", "ldrc_c_[0-9][0-9][0-9]", "ldrc3_c_[0-9][0-9][0-9]*", "H_LD*_[0-9]_second", "H_LD*_[0-9]_third","H_LD*_c_second","H_LD*_c_third","LDFHO*_[0-2]", "LDFHO*_second", "LDFHO2*_1_3")
+  #chars = c(5,12,11,11,17,11,5,5,13,17,13,12,7,17,14)
+
+  group = "ldrc*_c_[0-9][0-9][0-9]*"
+  chars = 5
 
   for (i in 1:length(group)){ 
     subdirs = Sys.glob(sprintf("/corral-repl/utexas/ldrc/%s" ,group[i]))

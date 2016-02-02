@@ -137,7 +137,7 @@ STEP 2  - Level 2 Analysis: Creating gfeats (group feats) for each subject
 
 	 ** To make Austin SC gfeats in terminal type: launch -s launch_A_SC_lev2_gfeats.txt -j Analysis_Lonestar -p 120 -e 2way -r 02:00:00 -m churchlab@austin.utexas.edu
 
-	 ** To make Houston SC gfeats in terminal type: launch -s launch_H_SC_lev2_gfeats_1.txt -j Analysis_Lonestar -p 120 -e 2way -r 04:00:00 -m churchlab@austin.utexas.edu
+	 ** To make Houston SC gfeats in terminal type: launch -s launch_H_SC_lev2_gfeats.txt -j Analysis_Lonestar -p 120 -e 2way -r 04:00:00 -m churchlab@austin.utexas.edu
 			   
      ## To launch individual copes for individual subjects, just open up the text file and use the lines for the subjects you want to run analysis on. Each cope corresponds to a different contrast, set in the first level, 
 

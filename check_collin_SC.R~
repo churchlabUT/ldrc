@@ -18,8 +18,8 @@
 
 
 # READ IN DATA
-  group = c("ldrc_[0-9]_[0-9][0-9][0-9]", "ldrc_*second", "ldrc_*third", "ldrc2_[0-9]_[0-9][0-9][0-9]", "ldrc2_*second", "ldrc3_[0-2]_[0-9][0-9][0-9]*", "ldrc_c_[0-9][0-9][0-9]", "ldrc3_c_[0-9][0-9][0-9]", "H_LD*_[0-9]_second", "H_LD*_[0-9]_third","H_LD*_c_second","H_LD*_c_third","LDFHO*_[0-2]", "LDFHO*_second", "LDFHO2*_1_3")
-  chars = c(5,12,11,11,17,11,5,6,13,17,13,12,7,17,16)
+  group = c("ldrc_[0-9]_[0-9][0-9][0-9]", "ldrc_*second", "ldrc_*third", "ldrc2_[0-9]_[0-9][0-9][0-9]", "ldrc2_*second", "ldrc3_[0-2]_[0-9][0-9][0-9]*", "ldrc_c_[0-9][0-9][0-9]", "ldrc3_c_[0-9][0-9][0-9]*", "H_LD*_[0-9]_second", "H_LD*_[0-9]_third","H_LD*_c_second","H_LD*_c_third","LDFHO*_[0-2]", "LDFHO*_second", "LDFHO2*_1_3")
+  chars = c(5,12,11,11,17,11,5,5,13,17,13,12,7,17,14)
 
   for (i in 1:length(group)){ 
     subdirs = Sys.glob(sprintf("/corral-repl/utexas/ldrc/%s" ,group[i]))
@@ -76,7 +76,7 @@
   setwd('/corral-repl/utexas/ldrc/SCRIPTS/lev2_QC/SC')
 
 # create one large df
-  all.subs = rbind(dat.all_1, dat.all_2, dat.all_3, dat.all_4, dat.all_5, dat.all_6, dat.all_7, dat.all_8, dat.all_9, dat.all_10, dat.all_11)#, dat.all_12, dat.all_13, dat.all_14)
+  all.subs = rbind(dat.all_1, dat.all_2, dat.all_3, dat.all_4, dat.all_5, dat.all_6, dat.all_7, dat.all_8, dat.all_9, dat.all_10, dat.all_11, dat.all_12, dat.all_13, dat.all_14, dat.all_15)
   write.csv(x=all.subs, file='all_desmat_8_15.csv')
   vif.subs = all.subs[(all.subs$value > 10 & is.na(all.subs$value)==FALSE),]
   write.csv(x=vif.subs, file='desmat>10_8_15.csv')

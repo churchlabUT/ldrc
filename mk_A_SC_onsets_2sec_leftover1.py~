@@ -238,28 +238,27 @@ junk_3col=fixEmpty(junk_3col)
 N.savetxt('%s/junk.txt'%(outdir), junk_3col)
 
 
-#create RT correct/incorrect (includes correct, and incorrect/mismatch, and uses 1 instead of mean RT in dur)
+#create correct/incorrect (includes correct, and incorrect/mismatch)
 
-rt_all_rt=rt_vec[[((correct==1) | (correct==0) | (correct==2))]]
+#rt_all_rt=rt_vec[[((correct==1) | (correct==0) | (correct==2))]]
 
-rt_all_ons=onset_vec[[((correct==1) | (correct==0) | (correct==2))]]+2
-rt_all_pm=rt_vec[[((correct==1) | (correct==0) | (correct==2))]]
-rt_all_dur=N.zeros((rt_all_ons.shape))+1
-if len(rt_all_pm)>1:
-       rt_all_pm=rt_all_pm-N.mean(rt_all_rt)
-rt_all_3col=N.vstack([rt_all_ons, rt_all_dur, rt_all_pm]).T
-rt_all_3col=fixEmpty(rt_all_3col)
+all_ons=onset_vec[[((correct==1) | (correct==0) | (correct==2))]]+2
+all_pm=N.zeros((all_ons.shape))+1
+all_dur=N.zeros((all_ons.shape))+duration
+all_3col=N.vstack([all_ons, all_dur, all_pm]).T
+all_3col=fixEmpty(all_3col)
 
 N.savetxt('%s/rt_all.txt'%outdir, rt_all_3col)
 
 
 
 #correct for each sentence type
+rt_cor=rt_vec[[((correct==1))]]
 sent_name=('active_s', 'active_ns', 'passive_s', 'passive_ns')
 for sent_type in [1,2,3,4]:
     for cor_ind in [1]:
         loop_ons=onset_vec[[N.logical_and(correct==cor_ind, cond_array==sent_type)]]+2
-        loop_dur=N.zeros((loop_ons.shape))+duration
+        loop_dur=N.zeros((loop_ons.shape))+rt_cor
         loop_pm=N.zeros((loop_ons.shape))+1
         loop_3col=N.vstack([loop_ons, loop_dur, loop_pm]).T
         loop_3col=fixEmpty(loop_3col)
@@ -272,8 +271,11 @@ for sent_type in [1,2,3,4]:
 
 
 #overall incorrect across sentence types (correct==0,correct==2)
+
+rt_incor=rt_vec[[((correct==0) | (correct==2))]]
+
 incor_ons=onset_vec[[((correct==0)|(correct==2))]]+2
-incor_dur=N.zeros((incor_ons.shape))+8
+incor_dur=N.zeros((incor_ons.shape))+rt_incor
 incor_pm=N.zeros((incor_ons.shape))+1
 incor_3col=N.vstack([incor_ons, incor_dur, incor_pm]).T
 incor_3col=fixEmpty(incor_3col)

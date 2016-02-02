@@ -239,7 +239,6 @@ N.savetxt('%s/junk.txt'%(outdir), junk_3col)
 
 
 #create correct/incorrect (includes correct, and incorrect/mismatch)
-
 #rt_all_rt=rt_vec[[((correct==1) | (correct==0) | (correct==2))]]
 
 all_ons=onset_vec[[((correct==1) | (correct==0) | (correct==2))]]+2
@@ -250,6 +249,19 @@ all_3col=fixEmpty(all_3col)
 
 N.savetxt('%s/rt_all.txt'%outdir, rt_all_3col)
 
+
+#leftover RT regressor for time between response and end of 8sec trial
+rt_left_ons1=onset_vec[[((correct==1) | (correct==0) | (correct==2))]]+2
+rt_left_rt=rt_vec[[((correct==1) | (correct==0) | (correct==2))]]
+
+rt_left_ons=rt_left_ons1+rt_left_rt
+rt_left_dur=duration-rt_left_rt
+rt_left_pm=N.zeros((rt_left_ons.shape))+1
+rt_left_3col=N.vstack([rt_left_ons, rt_left_dur, rt_left_pm]).T
+rt_left_3col=rt_left_3col[N.all(rt_left_3col > 0, axis=1)]
+rt_left_3col=fixEmpty(rt_left_3col)
+
+N.savetxt('%s/rt_left.txt'%outdir, rt_left_3col)
 
 
 #correct for each sentence type
@@ -272,10 +284,10 @@ for sent_type in [1,2,3,4]:
 
 #overall incorrect across sentence types (correct==0,correct==2)
 
-rt_incor=rt_vec[[((correct==0) | (correct==2))]]
+#rt_incor=rt_vec[[((correct==0) | (correct==2))]]
 
 incor_ons=onset_vec[[((correct==0)|(correct==2))]]+2
-incor_dur=N.zeros((incor_ons.shape))+rt_incor
+incor_dur=N.zeros((incor_ons.shape))+duration
 incor_pm=N.zeros((incor_ons.shape))+1
 incor_3col=N.vstack([incor_ons, incor_dur, incor_pm]).T
 incor_3col=fixEmpty(incor_3col)
