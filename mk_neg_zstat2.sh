@@ -4,8 +4,8 @@
 
 basedir='GROUP/zstats/thresh'
 cd ../$basedir/SC
-SC_zstats=`ls -d *_zstat2.nii.gz`
-
+SC_zstats=`ls -d h*_zstat2.nii.gz`
+echo ${SC_zstats} 
 
 for zstat in ${SC_zstats}
 do
@@ -19,7 +19,8 @@ done
 
 
 cd ../SST
-SST_zstats=`ls -d *_zstat2.nii.gz`
+SST_zstats=`ls -d h*_zstat2.nii.gz`
+echo ${SST_zstats} 
 
 for zstat in ${SST_zstats}
 do
@@ -29,5 +30,8 @@ do
   fslmaths ${zstat} -mul -1 ${zstat_temp}_neg.nii.gz
 
 done
+
+
+
 
 cd ../../../../SCRIPTS

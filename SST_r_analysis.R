@@ -112,7 +112,7 @@ rm(list=ls())
     dat_all_15$group = "H_control_second"
     dat_all_16$group = "H_control_third"
 
-    dat = rbind(dat_all_1,dat_all_2, dat_all_3, dat_all_4, dat_all_5, dat_all_6, dat_all_7, dat_all_8, dat_all_9, dat_all_10, dat_all_11, dat_all_12, dat_all_13, dat_all_14)
+    dat = rbind(dat_all_1,dat_all_2, dat_all_3, dat_all_4, dat_all_5, dat_all_6, dat_all_7, dat_all_8, dat_all_9, dat_all_10, dat_all_11, dat_all_12, dat_all_13, dat_all_14, dat_all_15, dat_all_16)
     write.csv(dat, file="/corral-repl/utexas/ldrc/SCRIPTS/sst_behav_data.csv")
 
 
@@ -464,8 +464,8 @@ for (k in 1:sessions){
 # DATAFRAMES FOR ALL SUBS GO AND STOP
 
   # COMBINE GO, STOP, AND GROUP DATA FRAMES
-  all_go_subs = rbind(go_sub_1, go_sub_2, go_sub_3, go_sub_4, go_sub_5, go_sub_6, go_sub_7, go_sub_8, go_sub_9, go_sub_10, go_sub_11,go_sub_12, go_sub_13, go_sub_14)
-  all_stop_subs = rbind(stop_sub_1, stop_sub_2, stop_sub_3, stop_sub_4, stop_sub_5, stop_sub_6, stop_sub_7, stop_sub_8, stop_sub_9, stop_sub_10, stop_sub_11, stop_sub_12, stop_sub_13, stop_sub_14)
+  all_go_subs = rbind(go_sub_1, go_sub_2, go_sub_3, go_sub_4, go_sub_5, go_sub_6, go_sub_7, go_sub_8, go_sub_9, go_sub_10, go_sub_11,go_sub_12, go_sub_13, go_sub_14, go_sub_15, go_sub_16)
+  all_stop_subs = rbind(stop_sub_1, stop_sub_2, stop_sub_3, stop_sub_4, stop_sub_5, stop_sub_6, stop_sub_7, stop_sub_8, stop_sub_9, stop_sub_10, stop_sub_11, stop_sub_12, stop_sub_13, stop_sub_14, stop_sub_15, stop_sub_16)
   all_subs = join(all_go_subs, all_stop_subs)
   
   # REMOVE REPEAT HOUSTON CONTROLS
@@ -498,15 +498,25 @@ for (k in 1:sessions){
   all_subs$rep[(duplicated(all_subs['subind'])) | (duplicated(all_subs['subind'], fromLast = TRUE))] = 'r'
 
 
-  write.csv(all_subs, file=sprintf("%s/data_frames/SST/all_subs_go_stop.csv", wd), na="NA", row.names=FALSE)
+  write.csv(all_subs, file=sprintf("%s/data_frames/SST/all_subs_go_stop_feb16.csv", wd), na="NA", row.names=FALSE)
 
-
+  write.csv(all_subs[all_subs$city=="austin",], file=sprintf("%s/figures/Project_4/SST/all_subs_austin_go_stop_feb16.csv", wd), na="NA", row.names=FALSE)
 
   # number of subs in each group and averages
   all_group = ddply(all_subs, .(group), summarise, N=length(group), go_rt_me=(mean(go_rt_mean, na.rm=TRUE)), go_rt_se=sd(go_rt_mean, na.rm=TRUE)/sqrt(N), go_acc_me=(mean(go_acc_mean, na.rm=TRUE)), go_acc_se=sd(go_acc_mean, na.rm=TRUE)/sqrt(N),SSRT_mean=(mean(SSRT_me, na.rm=TRUE)), SSRT_se=sd(SSRT_me, na.rm=TRUE)/sqrt(N), stop_acc_mean=(mean(stop_acc_me, na.rm=TRUE)), stop_acc_se=sd(stop_acc_me, na.rm=TRUE)/sqrt(N), ssd_mean = mean(ssd, na.rm=TRUE), ssd_se = sd(ssd, na.rm = TRUE)/sqrt(N))
 
   # group averages by ID
   all_ID = ddply(all_subs, .(ID, group), summarise, N=length(ID), go_rt_me=(mean(go_rt_mean, na.rm=TRUE)), go_rt_se=sd(go_rt_mean, na.rm=TRUE)/sqrt(N), go_acc_me=(mean(go_acc_mean, na.rm=TRUE)), go_acc_se=sd(go_acc_mean, na.rm=TRUE)/sqrt(N), SSRT_mean=(mean(SSRT_me, na.rm=TRUE)), SSRT_se=sd(SSRT_me, na.rm=TRUE)/sqrt(N), stop_acc_mean=(mean(stop_acc_me, na.rm=TRUE)), stop_acc_se=sd(stop_acc_me, na.rm=TRUE)/sqrt(N))
+
+
+  all_group_a = ddply(all_subs[all_subs$city=="austin",], .(group), summarise, N=length(group), go_rt_me=(mean(go_rt_mean, na.rm=TRUE)), go_rt_se=sd(go_rt_mean, na.rm=TRUE)/sqrt(N), go_acc_me=(mean(go_acc_mean, na.rm=TRUE)), go_acc_se=sd(go_acc_mean, na.rm=TRUE)/sqrt(N),SSRT_mean=(mean(SSRT_me, na.rm=TRUE)), SSRT_se=sd(SSRT_me, na.rm=TRUE)/sqrt(N), stop_acc_mean=(mean(stop_acc_me, na.rm=TRUE)), stop_acc_se=sd(stop_acc_me, na.rm=TRUE)/sqrt(N), ssd_mean = mean(ssd, na.rm=TRUE), ssd_se = sd(ssd, na.rm = TRUE)/sqrt(N))
+ write.csv(all_group_a, file=sprintf("%s/figures/Project_4/SST/all_austin_group_avgs_feb16.csv", wd), na="NA", row.names=FALSE)
+
+  all_a_repeats = all_subs[all_subs$rep == "r" & all_subs$city == "austin",]
+  write.csv(all_subs[all_subs$rep == "r" & all_subs$city == "austin",], file=sprintf("%s/figures/Project_4/SST/all_subs_austin_repeats_feb16.csv", wd), na="NA", row.names=FALSE)
+
+  all_repeats_a = ddply(all_subs[all_subs$rep == "r" & all_subs$city == "austin",], .(group), summarise, N=length(group), go_rt_me=(mean(go_rt_mean, na.rm=TRUE)), go_rt_se=sd(go_rt_mean, na.rm=TRUE)/sqrt(N), go_acc_me=(mean(go_acc_mean, na.rm=TRUE)), go_acc_se=sd(go_acc_mean, na.rm=TRUE)/sqrt(N),SSRT_mean=(mean(SSRT_me, na.rm=TRUE)), SSRT_se=sd(SSRT_me, na.rm=TRUE)/sqrt(N), stop_acc_mean=(mean(stop_acc_me, na.rm=TRUE)), stop_acc_se=sd(stop_acc_me, na.rm=TRUE)/sqrt(N), ssd_mean = mean(ssd, na.rm=TRUE), ssd_se = sd(ssd, na.rm = TRUE)/sqrt(N))
+ write.csv(all_repeats_a, file=sprintf("%s/figures/Project_4/SST/all_austin_repeats_avgs_feb16.csv", wd), na="NA", row.names=FALSE)
 
 
 
@@ -516,7 +526,7 @@ for (k in 1:sessions){
 
      # AUSTIN SUBS
 
-     sink("/corral-repl/utexas/ldrc/SCRIPTS/Stats/SST/go_stats_austin.txt")
+     sink("/corral-repl/utexas/ldrc/SCRIPTS/Stats/SST/go_stats_austin_feb16.txt")
 
      rt_s1vc_a = t.test(go_rt_mean ~ group2, data = all_subs[all_subs$group2 == "first" & all_subs$city == "austin" | all_subs$group2 == "control" & all_subs$city == "austin" ,])
      print("Mean Go RT - S1 vs. Controls")
@@ -545,7 +555,7 @@ for (k in 1:sessions){
      sink()
 
      # AUSTIN REPEAT SUBS
-     sink("/corral-repl/utexas/ldrc/SCRIPTS/Stats/SST/go_stats_austin_repeat.txt")
+     sink("/corral-repl/utexas/ldrc/SCRIPTS/Stats/SST/go_stats_austin_repeat_feb16.txt")
 
      print(all_subs[all_subs$rep == "r" & all_subs$city == "austin",])
 
@@ -561,7 +571,7 @@ for (k in 1:sessions){
 
 
      # AUSTIN UNIQUE SUBS
-     sink("/corral-repl/utexas/ldrc/SCRIPTS/Stats/SST/go_stats_austin_uniq.txt")
+     sink("/corral-repl/utexas/ldrc/SCRIPTS/Stats/SST/go_stats_austin_uniq_feb16.txt")
 
      print(all_subs[all_subs$group2!="control" &  all_subs$rep == "u" & all_subs$city == "austin",])
 
@@ -643,7 +653,7 @@ for (k in 1:sessions){
 
      # AUSTIN
 
-     sink("/corral-repl/utexas/ldrc/SCRIPTS/Stats/SST/stop_stats_austin.txt")
+     sink("/corral-repl/utexas/ldrc/SCRIPTS/Stats/SST/stop_stats_austin_feb16.txt")
 
      ssd_s1vc_a = t.test(ssd ~ group2, data = all_subs[all_subs$group2 == "first" & all_subs$city == "austin" | all_subs$group2 == "control" & all_subs$city == "austin",])
      print("Mean SSD - S1 vs. Controls")
@@ -673,7 +683,7 @@ for (k in 1:sessions){
 
 
      # AUSTIN REPEAT SUBS
-     sink("/corral-repl/utexas/ldrc/SCRIPTS/Stats/SST/stop_stats_austin_repeat.txt")
+     sink("/corral-repl/utexas/ldrc/SCRIPTS/Stats/SST/stop_stats_austin_repeat_feb16.txt")
 
      print(all_subs[all_subs$city=="austin" & all_subs$rep == "r",])
 
@@ -689,7 +699,7 @@ for (k in 1:sessions){
 
 
      # AUSTIN UNIQUE SUBS
-     sink("/corral-repl/utexas/ldrc/SCRIPTS/Stats/SST/stop_stats_austin_uniq.txt")
+     sink("/corral-repl/utexas/ldrc/SCRIPTS/Stats/SST/stop_stats_austin_uniq_feb16.txt")
 
      print(all_subs[all_subs$city=="austin" & all_subs$group2!="control" & all_subs$rep == "u",])
 
@@ -777,29 +787,29 @@ for (k in 1:sessions){
     # GO RT
 
         A_goRT_box = ggplot(data = all_subs[all_subs$city=="austin",],aes(x = group2,y = go_rt_mean)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#999999","#339900", "#3366FF")) + geom_point(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),], aes(colod=ID2, size=2, shape=ID2),size=4.5) + geom_line(data=all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),], aes(group = subind, color = ID2, linetype = ID2)) + xlab("Group") + ylab("Mean Response Time (s)") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) + scale_shape_manual(values=c(17,2,1)) + scale_colour_manual(values=c("black","black", "black"))
-        ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_goRT_box.pdf",wd),width=5,height=5)
+        ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_goRT_box_feb16.pdf",wd),width=5,height=5)
 
         #+ scale_color_discrete(name = "group2", breaks = c("A_control", "A_first", "A_second"), labels = c(sprintf("A_control (%d)", length(A_go_sub$groups[A_go_sub$groups == "A_control"])), sprintf("A_first (%d)",length(A_go_sub$group2[A_go_sub$group2 == "A_first"])), sprintf("A_second (%d)",length(A_go_sub$group2[A_go_sub$group2 == "A_second"]))))  + scale_shape_discrete(name = "group2", breaks = c("A_control", "A_first", "A_second"), labels = c(sprintf("A_control (%d)", length(A_go_sub$group2[A_go_sub$group2 == "A_control"])), sprintf("A_first (%d)",length(A_go_sub$group2[A_go_sub$group2 == "A_first"])), sprintf("A_second (%d)",length(A_go_sub$group2[A_go_sub$group2 == "A_second"])))) 
 	             
  
         A_goRT_box_noline = ggplot(data = all_subs[all_subs$city=="austin",],aes(x = group2,y = go_rt_mean)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#999999","#339900", "#3366FF")) + geom_point(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),], aes(colod=ID2, size=2, shape=ID2),size=4.5) + xlab("Group") + ylab("Mean Response Time (s)") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) + scale_shape_manual(values=c(17,2,1)) + scale_colour_manual(values=c("black","black", "black"))
-        ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_goRT_box_noline.pdf",wd),width=5,height=5)
+        ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_goRT_box_noline_feb16.pdf",wd),width=5,height=5)
 
 
         A_goRT_box_nolegend = ggplot(data = all_subs[all_subs$city=="austin",],aes(x = group2,y = go_rt_mean)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#999999","#339900", "#3366FF")) + geom_point(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),], aes(colod=ID2, size=2, shape=ID2),size=4.5) + geom_line(data=all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),], aes(group = subind, color = ID2, linetype = ID2)) + xlab("Group") + ylab("Mean Response Time (s)") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) + scale_shape_manual(values=c(17,2,1)) + scale_colour_manual(values=c("black","black", "black")) + guides(group = FALSE, color = FALSE, linetype=FALSE, size=FALSE, alpha=FALSE, shape=FALSE, fill=FALSE)
-        ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_goRT_box_no_legend.pdf",wd),width=5,height=5)
+        ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_goRT_box_no_legend_feb16.pdf",wd),width=5,height=5)
 
 
        # AUSTIN REPEATS
 
         A_goRT_box_repeat = ggplot(data = all_subs[all_subs$city=="austin" & all_subs$rep=="r",],aes(x = group2,y = go_rt_mean)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#CC6699", "#FFCCFF")) + geom_point(data= all_subs[all_subs$city=="austin" & all_subs$rep=="r",], aes(colod=ID2, size=2, shape=ID2),size=4.5) + geom_line(data=all_subs[all_subs$city=="austin" & all_subs$rep=="r",], aes(group = subind, color = ID2, linetype = ID2)) + xlab("Group") + ylab("Mean Response Time (s)") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) + scale_shape_manual(values=c(17,2,1)) + scale_colour_manual(values=c("black","black", "black"))
-        ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_goRT_box_repeat.pdf",wd),width=5,height=5)
+        ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_goRT_box_repeat_feb16.pdf",wd),width=5,height=5)
 
         A_goRT_box_repeat_noline = ggplot(data = all_subs[all_subs$city=="austin" & all_subs$rep=="r",],aes(x = group2,y = go_rt_mean)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#CC6699", "#FFCCFF")) + geom_point(data= all_subs[all_subs$city=="austin" & all_subs$rep=="r",], aes(colod=ID2, size=2, shape=ID2),size=4.5) + xlab("Group") + ylab("Mean Response Time (s)") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) + scale_shape_manual(values=c(17,2,1)) + scale_colour_manual(values=c("black","black", "black"))
-        ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_goRT_box_repeat_no_line.pdf",wd),width=5,height=5)
+        ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_goRT_box_repeat_no_line_feb16.pdf",wd),width=5,height=5)
 
         A_goRT_box_repeat_nolegend = ggplot(data = all_subs[all_subs$city=="austin" & all_subs$rep=="r",],aes(x = group2,y = go_rt_mean)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#CC6699", "#FFCCFF")) + geom_point(data= all_subs[all_subs$city=="austin" & all_subs$rep=="r",], aes(colod=ID2, size=2, shape=ID2),size=4.5) + geom_line(data=all_subs[all_subs$city=="austin" & all_subs$rep=="r",], aes(group = subind, color = ID2, linetype = ID2)) + xlab("Group") + ylab("Mean Response Time (s)") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) + scale_shape_manual(values=c(17,2,1)) + scale_colour_manual(values=c("black","black", "black")) + guides(group = FALSE, color = FALSE, linetype=FALSE, size=FALSE, alpha=FALSE, shape=FALSE, fill=FALSE)
-        ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_goRT_box_repeat_no_legend.pdf",wd),width=5,height=5)
+        ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_goRT_box_repeat_no_legend_feb16.pdf",wd),width=5,height=5)
 
 
 
@@ -807,30 +817,30 @@ for (k in 1:sessions){
     # GO ACC
 
         A_goACC_box = ggplot(data = all_subs[all_subs$city=="austin",],aes(x = group2,y = go_acc_mean)) + geom_boxplot(aes(fill=group2)) + scale_fill_manual(values=c("#999999","#339900", "#3366FF")) + geom_point(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),], aes(color=ID2, size=2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1))+ geom_line(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),],aes(group = subind, color = ID2, linetype = ID2))+ xlab("Group") + ylab("Mean Accuracy") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) 
-        ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_goACC_box.pdf",wd),width=5,height=5)
+        ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_goACC_box_feb16.pdf",wd),width=5,height=5)
 
       #+ guides(group = FALSE, fill = FALSE, shape=FALSE, color=FALSE, linetype=FALSE) + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) 
       #+ legend.title = element_text(size = rel(1.5)), legend.key.height = unit(2, "line"), legend.key.width = unit(2, "line"), legend.text = element_text(size=10))  
 	              
 
         A_goACC_box_noline = ggplot(data = all_subs[all_subs$city=="austin",],aes(x = group2,y = go_acc_mean)) + geom_boxplot(aes(fill=group2)) + scale_fill_manual(values=c("#999999","#339900", "#3366FF")) + geom_point(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),], aes(color=ID2, size=2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1))+ xlab("Group") + ylab("Mean Accuracy") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) 
-	              ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_goACC_box_noline.pdf",wd),width=5,height=5)
+	              ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_goACC_box_noline_feb16.pdf",wd),width=5,height=5)
 
 
         A_goACC_box_nolegend = ggplot(data = all_subs[all_subs$city=="austin",],aes(x = group2,y = go_acc_mean)) + geom_boxplot(aes(fill=group2)) + scale_fill_manual(values=c("#999999","#339900", "#3366FF")) + geom_point(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),], aes(color=ID2, size=2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1))+ geom_line(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),],aes(group = subind, color = ID2, linetype = ID2))+ xlab("Group") + ylab("Mean Accuracy") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) + guides(group = FALSE, fill = FALSE, shape=FALSE, color=FALSE, linetype=FALSE)
-        ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_goACC_box_no_legend.pdf",wd),width=5,height=5)
+        ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_goACC_box_no_legend_feb16.pdf",wd),width=5,height=5)
 
 
        # AUSTIN REPEATS
 
         A_goACC_box_repeat = ggplot(data = all_subs[all_subs$city=="austin" & all_subs$rep=="r",],aes(x = group2,y = go_acc_mean)) + geom_boxplot(aes(fill=group2)) + scale_fill_manual(values=c("#CC6699", "#FFCCFF")) + geom_point(data= all_subs[all_subs$city=="austin" & all_subs$rep=="r",], aes(color=ID2, size=2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1))+ geom_line(data= all_subs[all_subs$city=="austin" & all_subs$rep=="r",],aes(group = subind, color = ID2, linetype = ID2))+ xlab("Group") + ylab("Mean Accuracy") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) 
-        ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_goACC_box_repeat.pdf",wd),width=5,height=5)
+        ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_goACC_box_repeat_feb16.pdf",wd),width=5,height=5)
 
         A_goACC_box_repeat_noline = ggplot(data = all_subs[all_subs$city=="austin" & all_subs$rep=="r",],aes(x = group2,y = go_acc_mean)) + geom_boxplot(aes(fill=group2)) + scale_fill_manual(values=c("#CC6699", "#FFCCFF")) + geom_point(data= all_subs[all_subs$city=="austin" & all_subs$rep=="r",], aes(color=ID2, size=2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1))+ xlab("Group") + ylab("Mean Accuracy") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) 
-        ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_goACC_box_repeat_no_line.pdf",wd),width=5,height=5)
+        ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_goACC_box_repeat_no_line_feb16.pdf",wd),width=5,height=5)
 
         A_goACC_box_repeat_nolegend = ggplot(data = all_subs[all_subs$city=="austin" & all_subs$rep=="r",],aes(x = group2,y = go_acc_mean)) + geom_boxplot(aes(fill=group2)) + scale_fill_manual(values=c("#CC6699", "#FFCCFF")) + geom_point(data= all_subs[all_subs$city=="austin" & all_subs$rep=="r",], aes(color=ID2, size=2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1))+ geom_line(data= all_subs[all_subs$city=="austin" & all_subs$rep=="r",],aes(group = subind, color = ID2, linetype = ID2))+ xlab("Group") + ylab("Mean Accuracy") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) + guides(group = FALSE, fill = FALSE, shape=FALSE, color=FALSE, linetype=FALSE)
-        ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_goACC_box_repeat_no_legend.pdf",wd),width=5,height=5)
+        ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_goACC_box_repeat_no_legend_feb16.pdf",wd),width=5,height=5)
 
 
 
@@ -838,40 +848,40 @@ for (k in 1:sessions){
 
         A_SSRT_box = ggplot(data = all_subs[all_subs$city=="austin",],aes(x = group2,y = SSRT_me)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#999999","#339900", "#3366FF")) + geom_point(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),], aes(color=ID2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1))+ geom_line(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),],aes(group = subind, color = ID2, linetype = ID2)) + xlab("Group") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) + ylab("Mean SSRT (s)") 
 	# + guides(group = FALSE, fill = FALSE, color = FALSE, shape = FALSE, linetype=FALSE)
-	             ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_SSRT_box.pdf",wd),width=5,height=5)
+	             ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_SSRT_box_feb16.pdf",wd),width=5,height=5)
 
         A_SSRT_box_noline = ggplot(data = all_subs[all_subs$city=="austin",],aes(x = group2,y = SSRT_me)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#999999","#339900", "#3366FF")) + geom_point(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),], aes(color=ID2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1)) + xlab("Group") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) + ylab("Mean SSRT (s)") 
 	# + guides(group = FALSE, fill = FALSE, color = FALSE, shape = FALSE, linetype=FALSE)
-	             ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_SSRT_box_noline.pdf",wd),width=5,height=5)
+	             ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_SSRT_box_noline_feb16.pdf",wd),width=5,height=5)
 
 
         A_SSRT_box_nolegend = ggplot(data = all_subs[all_subs$city=="austin",],aes(x = group2,y = SSRT_me)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#999999","#339900", "#3366FF")) + geom_point(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),], aes(color=ID2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1))+ geom_line(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),],aes(group = subind, color = ID2, linetype = ID2)) + xlab("Group") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) + ylab("Mean SSRT (s)") + guides(group = FALSE, fill = FALSE, color = FALSE, shape = FALSE, linetype=FALSE)
-	             ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_SSRT_box_no_legend.pdf",wd),width=5,height=5)
+	             ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_SSRT_box_no_legend_feb16.pdf",wd),width=5,height=5)
 
 
         A_stopACC_box = ggplot(data = all_subs[all_subs$city=="austin",],aes(x = group2,y = stop_acc_me)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#999999","#339900", "#3366FF")) + geom_point(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),], aes(color=ID2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1)) + geom_line(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),],aes(group = subind, color = ID2, linetype = ID2)) + xlab("Group") + ylab("Mean Stop Accuracy") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15))
 	#+ guides(group = FALSE, fill = FALSE, color = FALSE, shape = FALSE, linetype=FALSE)
-	              ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_stopACC_box.pdf",wd),width=5,height=5)
+	              ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_stopACC_box_feb16.pdf",wd),width=5,height=5)
 
         A_stopACC_box_noline = ggplot(data = all_subs[all_subs$city=="austin",],aes(x = group2,y = stop_acc_me)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#999999","#339900", "#3366FF")) + geom_point(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),], aes(color=ID2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1)) + xlab("Group") + ylab("Mean Stop Accuracy") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15))
 	#+ guides(group = FALSE, fill = FALSE, color = FALSE, shape = FALSE, linetype=FALSE)
-	              ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_stopACC_box_noline.pdf",wd),width=5,height=5)
+	              ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_stopACC_box_noline_feb16.pdf",wd),width=5,height=5)
 
 
         A_stopACC_box_nolegend = ggplot(data = all_subs[all_subs$city=="austin",],aes(x = group2,y = stop_acc_me)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#999999","#339900", "#3366FF")) + geom_point(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),], aes(color=ID2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1)) + geom_line(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),],aes(group = subind, color = ID2, linetype = ID2)) + xlab("Group") + ylab("Mean Stop Accuracy") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) + guides(group = FALSE, fill = FALSE, color = FALSE, shape = FALSE, linetype=FALSE)
-	              ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_stopACC_box_no_legend.pdf",wd),width=5,height=5)
+	              ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_stopACC_box_no_legend_feb16.pdf",wd),width=5,height=5)
 
 
         A_SSD_box = ggplot(data = all_subs[all_subs$city=="austin",],aes(x = group2,y = ssd)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#999999","#339900", "#3366FF")) + geom_point(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),], aes(color=ID2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1)) + geom_line(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),],aes(group = subind, color = ID2, linetype = ID2)) + xlab("Group") + ylab("Mean SSD (s)") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) 
 #+ guides(group = FALSE, fill = FALSE, color = FALSE, shape = FALSE, linetype=FALSE)
-	              ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_SSD_box.pdf",wd),width=5,height=5)
+	              ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_SSD_box_feb16.pdf",wd),width=5,height=5)
 
         A_SSD_box_noline = ggplot(data = all_subs[all_subs$city=="austin",],aes(x = group2,y = ssd)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#999999","#339900", "#3366FF")) + geom_point(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),], aes(color=ID2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1)) + xlab("Group") + ylab("Mean SSD (s)") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) 
 #+ guides(group = FALSE, fill = FALSE, color = FALSE, shape = FALSE, linetype=FALSE)
-	              ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_SSD_box_noline.pdf",wd),width=5,height=5)
+	              ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_SSD_box_noline_feb16.pdf",wd),width=5,height=5)
 
         A_SSD_box_nolegend = ggplot(data = all_subs[all_subs$city=="austin",],aes(x = group2,y = ssd)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#999999","#339900", "#3366FF")) + geom_point(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),], aes(color=ID2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1)) + geom_line(data= all_subs[((all_subs$ID2 =="0" | all_subs$ID2=="1" | all_subs$ID2 == "c") & all_subs$city=="austin"),],aes(group = subind, color = ID2, linetype = ID2)) + xlab("Group") + ylab("Mean SSD (s)") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) + guides(group = FALSE, fill = FALSE, color = FALSE, shape = FALSE, linetype=FALSE)
-	              ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_SSD_box_no_legend.pdf",wd),width=5,height=5)
+	              ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_SSD_box_no_legend_feb16.pdf",wd),width=5,height=5)
 
 
 
@@ -880,27 +890,27 @@ for (k in 1:sessions){
 
         A_SSRT_box_repeat = ggplot(data = all_subs[all_subs$city=="austin" & all_subs$rep=="r",],aes(x = group2,y = SSRT_me)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#CC6699", "#FFCCFF")) + geom_point(data= all_subs[all_subs$city=="austin" & all_subs$rep=="r",], aes(color=ID2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1))+ geom_line(data=all_subs[all_subs$city=="austin" & all_subs$rep=="r",] ,aes(group = subind, color = ID2, linetype = ID2)) + xlab("Group") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) + ylab("Mean SSRT (s)") 
 	# + guides(group = FALSE, fill = FALSE, color = FALSE, shape = FALSE, linetype=FALSE)
-	             ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_SSRT_box_repeat.pdf",wd),width=5,height=5)
+	             ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_SSRT_box_repeat_feb16.pdf",wd),width=5,height=5)
 
 
         A_SSRT_box_repeat_noline = ggplot(data = all_subs[all_subs$city=="austin" & all_subs$rep=="r",],aes(x = group2,y = SSRT_me)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#CC6699", "#FFCCFF")) + geom_point(data= all_subs[all_subs$city=="austin" & all_subs$rep=="r",], aes(color=ID2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1)) + xlab("Group") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) + ylab("Mean SSRT (s)") 
 	# + guides(group = FALSE, fill = FALSE, color = FALSE, shape = FALSE, linetype=FALSE)
-	             ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_SSRT_box_repeat_no_line.pdf",wd),width=5,height=5)
+	             ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_SSRT_box_repeat_no_line_feb16.pdf",wd),width=5,height=5)
 
         A_SSRT_box_repeat_nolegend = ggplot(data = all_subs[all_subs$city=="austin" & all_subs$rep=="r",],aes(x = group2,y = SSRT_me)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#CC6699", "#FFCCFF")) + geom_point(data= all_subs[all_subs$city=="austin" & all_subs$rep=="r",], aes(color=ID2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1))+ geom_line(data=all_subs[all_subs$city=="austin" & all_subs$rep=="r",] ,aes(group = subind, color = ID2, linetype = ID2)) + xlab("Group") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15)) + ylab("Mean SSRT (s)") + guides(group = FALSE, fill = FALSE, color = FALSE, shape = FALSE, linetype=FALSE)
-	             ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_SSRT_box_repeat_no_legend.pdf",wd),width=5,height=5)
+	             ggsave(filename=sprintf("%s/figures/Project_4/SST/RT/A_SSRT_box_repeat_no_legend_feb16.pdf",wd),width=5,height=5)
 
 
         A_stopACC_box_repeat = ggplot(data = all_subs[all_subs$city=="austin" & all_subs$rep=="r",],aes(x = group2,y = stop_acc_me)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#CC6699", "#FFCCFF")) + geom_point(data=all_subs[all_subs$city=="austin" & all_subs$rep=="r",], aes(color=ID2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1)) + geom_line(data= all_subs[all_subs$city=="austin" & all_subs$rep=="r",],aes(group = subind, color = ID2, linetype = ID2)) + xlab("Group") + ylab("Mean Stop Accuracy") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15))
 	#+ guides(group = FALSE, fill = FALSE, color = FALSE, shape = FALSE, linetype=FALSE)
-	              ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_stopACC_box_repeat.pdf",wd),width=5,height=5)
+	              ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_stopACC_box_repeat_feb16.pdf",wd),width=5,height=5)
 
         A_stopACC_box_repeat_noline = ggplot(data = all_subs[all_subs$city=="austin" & all_subs$rep=="r",],aes(x = group2,y = stop_acc_me)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#CC6699", "#FFCCFF")) + geom_point(data=all_subs[all_subs$city=="austin" & all_subs$rep=="r",], aes(color=ID2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1)) + xlab("Group") + ylab("Mean Stop Accuracy") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15))
 	#+ guides(group = FALSE, fill = FALSE, color = FALSE, shape = FALSE, linetype=FALSE)
-	              ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_stopACC_box_repeat_no_line.pdf",wd),width=5,height=5)
+	              ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_stopACC_box_repeat_no_line_feb16.pdf",wd),width=5,height=5)
 
         A_stopACC_box_repeat_nolegend = ggplot(data = all_subs[all_subs$city=="austin" & all_subs$rep=="r",],aes(x = group2,y = stop_acc_me)) + geom_boxplot(aes(fill = group2)) + scale_fill_manual(values=c("#CC6699", "#FFCCFF")) + geom_point(data=all_subs[all_subs$city=="austin" & all_subs$rep=="r",], aes(color=ID2, shape=ID2),size=4.5) + scale_colour_manual(values=c("black","black","black")) + scale_shape_manual(values=c(17,2,1)) + geom_line(data= all_subs[all_subs$city=="austin" & all_subs$rep=="r",],aes(group = subind, color = ID2, linetype = ID2)) + xlab("Group") + ylab("Mean Stop Accuracy") + theme_classic() + theme(axis.title.y = element_text(size = rel(2.0), vjust=0.4), axis.title.x = element_text(size = rel(2.0)), axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.text.y = element_text(size = 15))+ guides(group = FALSE, fill = FALSE, color = FALSE, shape = FALSE, linetype=FALSE)
-	              ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_stopACC_box_repeat_no_legend.pdf",wd),width=5,height=5)
+	              ggsave(filename=sprintf("%s/figures/Project_4/SST/ACC/A_stopACC_box_repeat_no_legend_feb16.pdf",wd),width=5,height=5)
 
 
   # AUSTIN AND HOUSTON COMBINED

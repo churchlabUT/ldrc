@@ -52,6 +52,52 @@ return(output)
 }
 
 
+# Function that runs everything for repeated measures comparison t-tests
+
+runTestsRM = function(rootdir){
+  gfeats = Sys.glob(sprintf("%s/*.gfeat", rootdir))
+  num.gfeats = length(gfeats)
+
+  output = data.frame()
+  output.perc = data.frame()
+
+  for (curfeat in 1:num.gfeats){
+    desmat = read.table(sprintf("%s/design.mat", gfeats[curfeat]), skip = 5)
+    
+    rois = Sys.glob(sprintf("%s/rois/*", gfeats[curfeat]))
+    nsubs = dim(desmat)[1]
+    nrois = length(rois)
+    all.roi.dat = matrix(0, nrow=nsubs, ncol = nrois)
+
+    for (i in 1:nrois){
+      all.roi.dat[,i] = as.matrix(read.table(rois[i]))
+      t.test.loop = t.test(all.roi.dat[desmat[,1]==1,i], all.roi.dat[desmat[,1]==-1,i], paired=T)
+      diff.loop = (all.roi.dat[desmat[,1]==1,i]) - (all.roi.dat[desmat[,1]==-1,i])
+      means.diff = mean((all.roi.dat[desmat[,1]==1,i]) - (all.roi.dat[desmat[,1]==-1,i]))
+      sd.loop.diff = sd(diff.loop)
+      se.loop.diff = sd(diff.loop)/sqrt(length(diff.loop))
+      curout = cbind(basename(rois[i]), means.diff, sd.loop.diff, se.loop.diff, t.test.loop$statistic, t.test.loop$p.value)
+      output = rbind(curout, output)
+
+      #roi.file = basename(rois[i])
+      #roi = sapply(roi.file, function (s) strsplit(s, '.txt')[[1]][1])
+      #perc = data.frame(T1.mean=(all.roi.dat[desmat[,1]==1,i]),T2.mean=(all.roi.dat[desmat[,1]==-1,i]), diff.loop, roi)
+      #output.perc = rbind(perc, output.perc)
+    }
+  }
+
+names(output)= c("Analysis", "meanDiff", "SD", "SE", "Tstat", "Pval")
+output$meanDiff = as.numeric(as.character(output$meanDiff))
+output$SD = as.numeric(as.character(output$SD))
+output$SE = as.numeric(as.character(output$SE))
+output$Tstat = as.numeric(as.character(output$Tstat))
+output$Pval = as.numeric(as.character(output$Pval))
+
+return(output)
+}
+
+
+
 # Function that runs everything for single group (t-test vs. 0)
 
 runTests2 = function(rootdir){
@@ -734,18 +780,20 @@ out.sig = out[out$Pval<0.05,]
 # S1 vs. S2 (Austin RM)
 
 rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_S2_a_rm/SC"
-out = runTests(rootdir)
+out = runTestsRM(rootdir)
 out.sig = out[out$Pval<0.05,]
   setwd(rootdir)
-  write.csv(out, file = "SC_s1_v_s2_a_rm_roiStats.csv", row.names=TRUE, col.names=TRUE)
-  write.csv(out.sig, file = "SC_s1_v_s2_a_rm_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out, file = "SC_s1_v_s2_rm_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_s1_v_s2_rm_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(output.perc, file = "SC_s1_v_s2_rm_perc_roiStats.csv", row.names=TRUE, col.names=TRUE)
 
 rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_S2_a_rm/SST"
-out = runTests(rootdir)
+out = runTestsRM(rootdir)
 out.sig = out[out$Pval<0.05,]
   setwd(rootdir)
-  write.csv(out, file = "SST_s1_v_s2_a_rm_roiStats.csv", row.names=TRUE, col.names=TRUE)
-  write.csv(out.sig, file = "SST_s1_v_s2_a_rm_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out, file = "SST_s1_v_s2_rm_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_s1_v_s2_rm_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(output.perc, file = "SST_s1_v_s2_rm_perc_roiStats.csv", row.names=TRUE, col.names=TRUE)
 
 
 

@@ -29,7 +29,7 @@
     rm("dat.all")
     
     for (sub in subdirs){
-      model.dirs = Sys.glob(sprintf("%s/model/SC/Run?.feat", sub))
+      model.dirs = Sys.glob(sprintf("%s/model/SC/Run?_t2.feat", sub))
       subnum = substrRight(sub, chars[i])
 
         for (run in model.dirs){

@@ -7,11 +7,11 @@ copenum=sys.argv[1]
 
 #sub_dirs=glob.glob("/corral-repl/utexas/ldrc/H*")
 #sub_dirs=glob.glob("/corral-repl/utexas/ldrc/H*_?_*second")
-#sub_dirs=glob.glob("/corral-repl/utexas/ldrc/H*_?_*third")
+sub_dirs=glob.glob("/corral-repl/utexas/ldrc/H*_?_*third")
 #sub_dirs=glob.glob("/corral-repl/utexas/ldrc/LDFHO*_[0-9]")
 #sub_dirs=glob.glob("/corral-repl/utexas/ldrc/LDFHO*_second")
 #sub_dirs=glob.glob("/corral-repl/utexas/ldrc/LDFHO*")
-sub_dirs=glob.glob("/corral-repl/utexas/ldrc/LDFHO2*_1_3")
+#sub_dirs=glob.glob("/corral-repl/utexas/ldrc/LDFHO2*_1_3")
 
 os.system("rm /corral-repl/utexas/ldrc/SCRIPTS/H_SST_interv_featdir_cope%s.txt"%(copenum))
 

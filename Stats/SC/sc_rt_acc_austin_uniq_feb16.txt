@@ -1,0 +1,112 @@
+   subind     group N  rt_mean      rt_sd  acc_mean     acc_sd group2   city ID
+1   0_009   A_first 2 4.346381 0.32317285 0.8593750 0.02209709  first austin  0
+3   0_018   A_first 3 4.371039 0.30375550 0.8541667 0.07864411  first austin  0
+4   0_025   A_first 1 3.124225         NA 0.6250000         NA  first austin  0
+5   0_057   A_first 2 3.977040 0.48735573 0.8906250 0.02209709  first austin  0
+7   1_002   A_first 2 4.505475 0.32895708 0.8281250 0.02209709  first austin  1
+9   1_007   A_first 2 5.098616 0.13176715 0.8750000 0.08838835  first austin  1
+15  2_011   A_first 2 4.502168 0.46724013 0.7031250 0.06629126  first austin  2
+16  2_027   A_first 3 3.804541 0.27689442 0.8333333 0.07864411  first austin  2
+19  0_026  A_second 1 4.947635         NA 0.6562500         NA second austin  0
+20  0_040  A_second 1 3.524077         NA 0.9062500         NA second austin  0
+21  0_049  A_second 3 4.003926 0.38975065 0.8750000 0.05412659 second austin  0
+27  1_036  A_second 2 5.033099 0.40453405 0.7031250 0.02209709 second austin  1
+28  2_005  A_second 3 5.033282 0.72435837 0.8645833 0.06505206 second austin  2
+32  2_034  A_second 2 5.353720 0.74945922 0.7187500 0.04419417 second austin  2
+33  2_048  A_second 2 5.182546 0.32520896 0.9062500 0.08838835 second austin  2
+46  0_104  A2_first 3 4.026405 0.18100906 0.9166667 0.06505206  first austin  0
+54  0_151  A2_first 3 4.788208 0.18177572 0.8437500 0.08267973  first austin  0
+55  0_172  A2_first 3 4.547953 0.23076868 0.9479167 0.04773516  first austin  0
+58  1_139  A2_first 1 6.193746         NA 0.8437500         NA  first austin  1
+60  1_147  A2_first 2 5.737365 0.12397462 0.7500000 0.08838835  first austin  1
+61  1_152  A2_first 1 4.340937         NA 0.9062500         NA  first austin  1
+62  1_157  A2_first 3 2.998954 0.20021987 0.9270833 0.01804220  first austin  1
+71  1_115 A2_second 1 3.697356         NA 1.0000000         NA second austin  1
+74  1_134 A2_second 2 4.260396 0.63430653 0.7500000 0.04419417 second austin  1
+77  0_202  A3_first 1 4.124642         NA 0.8125000         NA  first austin  0
+78  0_216  A3_first 3 4.261790 0.27248832 0.8333333 0.06505206  first austin  0
+79  0_217  A3_first 3 4.071186 0.11568211 0.8645833 0.04773516  first austin  0
+80  0_219  A3_first 2 4.541566 0.05048602 0.8437500 0.04419417  first austin  0
+81  0_222  A3_first 3 4.810123 0.20406511 0.8125000 0.05412659  first austin  0
+82  0_234  A3_first 3 3.374566 0.21097476 0.9479167 0.01804220  first austin  0
+83  0_235  A3_first 3 3.460307 0.43587786 0.9270833 0.04773516  first austin  0
+84  0_236  A3_first 3 4.476195 0.51120095 0.8437500 0.06250000  first austin  0
+85  0_237  A3_first 1 5.084026         NA 0.8437500         NA  first austin  0
+86  0_248  A3_first 3 4.935146 0.27477250 0.8958333 0.01804220  first austin  0
+87  1_213  A3_first 2 4.627855 0.27221393 0.7343750 0.15467961  first austin  1
+88  1_214  A3_first 3 2.900575 0.08368566 0.8645833 0.04773516  first austin  1
+89  1_224  A3_first 3 3.523900 0.27788744 0.9479167 0.06505206  first austin  1
+90  1_227  A3_first 3 4.021116 1.10581162 0.8437500 0.06250000  first austin  1
+91  1_229  A3_first 3 4.300426 0.40793831 0.8020833 0.07216878  first austin  1
+92  1_241  A3_first 3 6.343684 0.44852186 0.7395833 0.07864411  first austin  1
+93  1_242  A3_first 3 4.804059 1.10833120 0.7708333 0.04773516  first austin  1
+94  1_246  A3_first 1 4.584603         NA 0.7812500         NA  first austin  1
+   ID2 rep
+1    0   u
+3    0   u
+4    0   u
+5    0   u
+7    1   u
+9    1   u
+15   1   u
+16   1   u
+19   0   u
+20   0   u
+21   0   u
+27   1   u
+28   1   u
+32   1   u
+33   1   u
+46   0   u
+54   0   u
+55   0   u
+58   1   u
+60   1   u
+61   1   u
+62   1   u
+71   1   u
+74   1   u
+77   0   u
+78   0   u
+79   0   u
+80   0   u
+81   0   u
+82   0   u
+83   0   u
+84   0   u
+85   0   u
+86   0   u
+87   1   u
+88   1   u
+89   1   u
+90   1   u
+91   1   u
+92   1   u
+93   1   u
+94   1   u
+[1] "Mean RT - S1 vs. S2 Unique"
+
+	Welch Two Sample t-test
+
+data:  rt_mean by group2
+t = -0.65967, df = 14.332, p-value = 0.5199
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.7532423  0.3982934
+sample estimates:
+ mean in group first mean in group second 
+            4.382085             4.559560 
+
+[1] "Mean Accuracy - S1 vs. S2 Unique"
+
+	Welch Two Sample t-test
+
+data:  acc_mean by group2
+t = 0.48486, df = 9.8353, p-value = 0.6384
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.07132781  0.11089009
+sample estimates:
+ mean in group first mean in group second 
+           0.8398043            0.8200231 
+

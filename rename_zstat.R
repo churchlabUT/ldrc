@@ -114,9 +114,9 @@
 
 
 
-##########
+########## AUSTIN ##########
 
-# Controls Austin
+# Controls
   # SC
     rootdir = "/corral-repl/utexas/ldrc/GROUP/Controls/SC"
     group = "Controls"
@@ -134,26 +134,6 @@
 
     runThresh(rootdir, group, task)
     runUnthresh(rootdir, group, task)
-
-# Controls Austin & Houston
-  # SC
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/Controls_ah/SC"
-    group = "Controls_ah"
-    task = "SC"
-    subs = "n21_n6"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
- 
-  # SST
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/Controls_ah/SST"
-    group = "Controls_ah"
-    task = "SST"
-    subs = "n20_n6"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
-
 
 # S1 cohort1
   # SC
@@ -215,26 +195,6 @@
     runUnthresh(rootdir, group, task)
 
 
-# S1 cohort2 Houston
-  # SC
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_h/SC"
-    group = "S1_h"
-    task = "SC"
-    subs = "n7"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
-
-  # SST
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_h/SST"
-    group = "S1_h"
-    task = "SST"
-    subs = "n10"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
-
-
 # S1 cohort1, cohort2
   # SC
     rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_c1_c2/SC"
@@ -273,10 +233,6 @@
 
     runThresh(rootdir, group, task)
     runUnthresh(rootdir, group, task)
-
-
-
-
 
 
 # S1 low cohort1, cohort2
@@ -320,35 +276,12 @@
     runUnthresh(rootdir, group, task)
 
 
-
-
-
 # S1 cohort1 vs. S1 cohort2
   # SST
     rootdir = "/corral-repl/utexas/ldrc/GROUP/S1c1_v_S1c2/SST"
     group = "S1c1_v_S1c2"
     task = "SST"
     subs = "n16_n18"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
-
-
-# S1 cohort1, cohort2 Austin and Houston
-  # SC
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_ah/SC"
-    group = "S1_ah"
-    task = "SC"
-    subs = "n17n18_n7"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
-
-  # SST
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_ah/SST"
-    group = "S1_ah"
-    task = "SST"
-    subs = "n16n18_n10"
 
     runThresh(rootdir, group, task)
     runUnthresh(rootdir, group, task)
@@ -373,25 +306,6 @@
     runThresh(rootdir, group, task)
     runUnthresh(rootdir, group, task)
  
-# S2 Austin and Houston
-  # SC
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/S2_ah/SC"
-    group = "S2_ah"
-    task = "SC"
-    subs = "n16n13_n4n8"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
-
-  # SST
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/S2_ah/SST"
-    group = "S2_ah"
-    task = "SST"
-    subs = "n15n12_n4n6"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
- 
 
 # S3 Austin
   # SC
@@ -412,26 +326,6 @@
     runThresh(rootdir, group, task)
     runUnthresh(rootdir, group, task)
  
-# S3 Austin + Houston
-  # SC
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/S3_ah/SC"
-    group = "S3_ah"
-    task = "SC"
-    subs = "n12n9"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
-
-  # SST
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/S3_ah/SST"
-    group = "S3_ah"
-    task = "SST"
-    subs = "n11n7"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
- 
-
 
 # C,S1,S2
   # SC
@@ -492,47 +386,6 @@
     runUnthresh(rootdir, group, task)
  
 
-
-
-# C,S1,S2 Austin and Houston cohort 1,2 ALL
-  # SC
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/all_ah/SC"
-    group = "all_ah"
-    task = "SC"
-    subs = "n85_n25"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
-
-  # SST
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/all_ah/SST"
-    group = "all_ah"
-    task = "SST"
-    subs = "n81_n26"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
-
-# Houston cohort 1,2 ALL
-  # SC
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/H_all/SC"
-    group = "H_all"
-    task = "SC"
-    subs = "n25"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
-
-  # SST
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/H_all/SST"
-    group = "H_all"
-    task = "SST"
-    subs = "n26"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
-
-
 # S1 vs. C
   # SC
     rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_C_a/SC"
@@ -592,26 +445,6 @@
     runUnthresh(rootdir, group, task)
 
 
-# S1 vs. C Austin + Houston
-  # SC
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_C_ah/SC"
-    group = "S1_v_C_ah"
-    task = "SC"
-    subs = "n17n18n7_n21n6"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
-
-  # SST
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_C_ah/SST"
-    group = "S1_v_C_ah"
-    task = "SST"
-    subs = "n16n18n10_n20n6"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
-
-
 # S2 vs. C
   # SC
     rootdir = "/corral-repl/utexas/ldrc/GROUP/S2_C_a/SC"
@@ -630,26 +463,6 @@
 
     runThresh(rootdir, group, task)
     runUnthresh(rootdir, group, task)
- 
-# S2 vs. C Austin + Houston
-  # SC
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/S2_v_C_ah/SC"
-    group = "S2_v_C_ah"
-    task = "SC"
-    subs = "n16n13n4n8_n21n6"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
-
-  # SST
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/S2_v_C_ah/SST"
-    group = "S2_v_C_ah"
-    task = "SST"
-    subs = "n15n12n4n6_n20n6"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
- 
 
 
 # S3 vs. C
@@ -711,28 +524,6 @@
     runUnthresh(rootdir, group, task)
 
 
-
-
-# S1 vs. S2 Austin + Houston
-  # SC
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_S2_ah/SC"
-    group = "S1_v_S2_ah"
-    task = "SC"
-    subs = "n17n18n7_n16n13n4n8"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
-
-  # SST
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_S2_ah/SST"
-    group = "S1_v_S2_ah"
-    task = "SST"
-    subs = "n16n18n10_n15n12n4n6"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
-
-
 # S1 vs. S3
   # SC
     rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_S3/SC"
@@ -753,7 +544,7 @@
     runUnthresh(rootdir, group, task)
  
 
-# S2 vs. S3
+# S2 vs.S3
   # SC
     rootdir = "/corral-repl/utexas/ldrc/GROUP/S2_S3/SC"
     group = "S2_S3"
@@ -773,29 +564,15 @@
     runUnthresh(rootdir, group, task)
  
 
-# P1 vs. P2
+
+########## HOUSTON ##########
+
+
+
+# Controls
   # SC
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/P1_P2_4_28_14/SC"
-    group = "P1_P2"
-    task = "SC"
-    subs = "n9"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
-
-  # SST
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/P1_P2_4_28_14/SST"
-    group = "P1_P2"
-    task = "SST"
-    subs = "n8"
-
-    runThresh(rootdir, group, task)
-    runUnthresh(rootdir, group, task)
-
-
-# P1 vs. P3
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/P1_P3_7_14_14/SC"
-    group = "P1_P3"
+    rootdir = "/corral-repl/utexas/ldrc/GROUP/H_Controls/SC"
+    group = "h_Controls"
     task = "SC"
     subs = "n6"
 
@@ -803,8 +580,8 @@
     runUnthresh(rootdir, group, task)
 
   # SST
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/P1_P3_7_14_14/SST"
-    group = "P1_P3"
+    rootdir = "/corral-repl/utexas/ldrc/GROUP/H_Controls/SST"
+    group = "h_Controls"
     task = "SST"
     subs = "n5"
 
@@ -812,9 +589,49 @@
     runUnthresh(rootdir, group, task)
 
 
-# P2 vs. P3
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/P2_P3_7_14_14/SC"
-    group = "P2_P3"
+# S1
+  # SC
+    rootdir = "/corral-repl/utexas/ldrc/GROUP/H_S1/SC"
+    group = "h_S1"
+    task = "SC"
+    subs = "n10"
+
+    runThresh(rootdir, group, task)
+    runUnthresh(rootdir, group, task)
+
+  # SST
+    rootdir = "/corral-repl/utexas/ldrc/GROUP/H_S1/SST"
+    group = "h_S1"
+    task = "SST"
+    subs = "n15"
+
+    runThresh(rootdir, group, task)
+    runUnthresh(rootdir, group, task)
+
+
+# S2
+  # SC
+    rootdir = "/corral-repl/utexas/ldrc/GROUP/H_S2/SC"
+    group = "h_S2"
+    task = "SC"
+    subs = "n13"
+
+    runThresh(rootdir, group, task)
+    runUnthresh(rootdir, group, task)
+
+  # SST
+    rootdir = "/corral-repl/utexas/ldrc/GROUP/H_S2/SST"
+    group = "h_S2"
+    task = "SST"
+    subs = "n11"
+
+    runThresh(rootdir, group, task)
+    runUnthresh(rootdir, group, task)
+
+# S3
+  # SC
+    rootdir = "/corral-repl/utexas/ldrc/GROUP/H_S3/SC"
+    group = "h_S3"
     task = "SC"
     subs = "n9"
 
@@ -822,10 +639,90 @@
     runUnthresh(rootdir, group, task)
 
   # SST
-    rootdir = "/corral-repl/utexas/ldrc/GROUP/P2_P3_7_14_14/SST"
-    group = "P2_P3"
+    rootdir = "/corral-repl/utexas/ldrc/GROUP/H_S3/SST"
+    group = "h_S3"
     task = "SST"
-    subs = "n9"
+    subs = "n7"
+
+    runThresh(rootdir, group, task)
+    runUnthresh(rootdir, group, task)
+
+
+# ALL
+  # SC
+    rootdir = "/corral-repl/utexas/ldrc/GROUP/H_all/SC"
+    group = "h_S1S2C"
+    task = "SC"
+    subs = "n29"
+
+    runThresh(rootdir, group, task)
+    runUnthresh(rootdir, group, task)
+
+  # SST
+    rootdir = "/corral-repl/utexas/ldrc/GROUP/H_all/SST"
+    group = "h_S1S2C"
+    task = "SST"
+    subs = "n31"
+
+    runThresh(rootdir, group, task)
+    runUnthresh(rootdir, group, task)
+
+
+# S1 v C
+  # SC
+    rootdir = "/corral-repl/utexas/ldrc/GROUP/H_S1_v_C/SC"
+    group = "h_S1_v_C"
+    task = "SC"
+    subs = "n10n6"
+
+    runThresh(rootdir, group, task)
+    runUnthresh(rootdir, group, task)
+
+  # SST
+    rootdir = "/corral-repl/utexas/ldrc/GROUP/H_S1_v_C/SST"
+    group = "h_S1_v_C"
+    task = "SST"
+    subs = "n15n5"
+
+    runThresh(rootdir, group, task)
+    runUnthresh(rootdir, group, task)
+
+
+# S2 v C
+  # SC
+    rootdir = "/corral-repl/utexas/ldrc/GROUP/H_S2_v_C/SC"
+    group = "h_S2_v_C"
+    task = "SC"
+    subs = "n13n6"
+
+    runThresh(rootdir, group, task)
+    runUnthresh(rootdir, group, task)
+
+  # SST
+    rootdir = "/corral-repl/utexas/ldrc/GROUP/H_S2_v_C/SST"
+    group = "h_S2_v_C"
+    task = "SST"
+    subs = "n11n5"
+
+    runThresh(rootdir, group, task)
+    runUnthresh(rootdir, group, task)
+
+
+# S1 v S2
+  # SC
+    rootdir = "/corral-repl/utexas/ldrc/GROUP/H_S1_v_S2/SC"
+    group = "h_S1_v_S2"
+    task = "SC"
+    subs = "n10_n13"
+
+    runThresh(rootdir, group, task)
+    runUnthresh(rootdir, group, task)
+
+  # SST
+    rootdir = "/corral-repl/utexas/ldrc/GROUP/H_S1_v_S2/SST"
+    group = "h_S1_v_S2"
+    task = "SST"
+    subs = "n15_n11"
 
     runThresh(rootdir, group, task)
     runUnthresh(rootdir, group, task)

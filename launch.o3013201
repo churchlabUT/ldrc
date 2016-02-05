@@ -50,3 +50,14 @@ TACC Launcher -> 6 total tasks to complete.
  
 TACC Launcher -> Iniating task 1 on c300-112.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc3_c_181/model/SC/designs/run2_t1.fsf)
 TACC Launcher -> Iniating task 2 on c300-111.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc3_c_181/model/SC/designs/run3_t1.fsf)
+TACC Launcher -> Iniating task 3 on c300-112.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc3_c_181/model/SC/designs/run1_t1.fsf)
+TACC Launcher -> Iniating task 5 on c300-112.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_103/model/SC/designs/run3_t1.fsf)
+TACC Launcher -> Iniating task 4 on c300-111.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_103/model/SC/designs/run2_t1.fsf)
+TACC Launcher -> Iniating task 6 on c300-111.ls4.tacc.utexas.edu (feat /corral-repl/utexas/ldrc/ldrc_c_103/model/SC/designs/run1_t1.fsf)
+TACC: Shutting down parallel environment.
+TACC: Shutdown complete. Exiting.
+ 
+ Parameteric Job Complete
+ 
+TACC: Cleaning up after job: 3013201
+TACC: Done.

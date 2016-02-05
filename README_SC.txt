@@ -322,7 +322,7 @@ STEP 3  - Level 3 Analysis: Running group analysis
                   
         fetch all of the zstat.nii.gz files in order to read into Caret.
 
-     ## To turn the zstat thresh images into -1 rather than 1 (so that you can display both zstats on the same brain), using the following fsl command line; ONLY DO THIS TO ZSTAT2 OF THRESHOLDED IMAGES
+     ## To turn the zstat thresh images into -1 rather than 1 (so that you can display both zstats on the same brain), using the following fsl command line; ONLY DO THIS TO ZSTAT2 OF THRESHOLDED IMAGES; there is now a script that does this for you called mk_neg_zstat2.sh
 
 	** fslmaths input -mul -1 output
 

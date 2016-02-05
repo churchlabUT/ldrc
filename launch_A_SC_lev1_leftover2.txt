@@ -1,0 +1,6 @@
+feat /corral-repl/utexas/ldrc/ldrc3_c_181/model/SC/designs/run2_t2.fsf
+feat /corral-repl/utexas/ldrc/ldrc3_c_181/model/SC/designs/run3_t2.fsf
+feat /corral-repl/utexas/ldrc/ldrc3_c_181/model/SC/designs/run1_t2.fsf
+feat /corral-repl/utexas/ldrc/ldrc_c_103/model/SC/designs/run2_t2.fsf
+feat /corral-repl/utexas/ldrc/ldrc_c_103/model/SC/designs/run3_t2.fsf
+feat /corral-repl/utexas/ldrc/ldrc_c_103/model/SC/designs/run1_t2.fsf

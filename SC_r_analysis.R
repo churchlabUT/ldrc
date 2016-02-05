@@ -130,7 +130,7 @@
     dat_all_16=dat_all_16[dat_all_16$rep==FALSE,]
    
 
-    dat = rbind(dat_all_1,dat_all_2, dat_all_3, dat_all_4, dat_all_5, dat_all_6, dat_all_7, dat_all_8, dat_all_9, dat_all_10, dat_all_11, dat_all_12, dat_all_13, dat_all_14)
+    dat = rbind(dat_all_1,dat_all_2, dat_all_3, dat_all_4, dat_all_5, dat_all_6, dat_all_7, dat_all_8, dat_all_9, dat_all_10, dat_all_11, dat_all_12, dat_all_13, dat_all_14, dat_all_15, dat_all_16)
     write.csv(dat, file="/corral-repl/utexas/ldrc/SCRIPTS/sc_behav_data_clean.csv")
 
 
@@ -410,10 +410,15 @@ for (k in 1:sessions){
       all_sub_mean$ID2[all_sub_mean$ID == "2"] = "1"
 
       all_sub_mean=all_sub_mean[all_sub_mean$group2!="third" & all_sub_mean$group!="H_first" & all_sub_mean$group!="H_control_first" & all_sub_mean$group!="H_control_third",]
-
       all_sub_mean$rep = 'u'
       all_sub_mean$rep[(duplicated(all_sub_mean['subind'])) | (duplicated(all_sub_mean['subind'], fromLast = TRUE))] = 'r'
 
+      #all_sub_mean2=all_sub_mean[all_sub_mean$group2!="third" & all_sub_mean$group!="H_first" & all_sub_mean$group!="H_control_first" & all_sub_mean$group!="H_control_third",]
+      #all_sub_mean2$rep = 'u'
+      #all_sub_mean2$rep[(duplicated(all_sub_mean2['subind'])) | (duplicated(all_sub_mean2['subind'], fromLast = TRUE))] = 'r'
+
+      #all_sub_mean$rep = 'u'
+      #all_sub_mean$rep[all_sub_mean$subind == all_sub_mean2$subind] = all_sub_mean2$rep
 
 
        write.csv(all_sub_mean, file=sprintf("%s/data_frames/SC/all_subs_mean.csv", wd), na="NA", row.names=FALSE)
@@ -648,7 +653,7 @@ for (k in 1:sessions){
 # T-TEST stats	
      # AUSTIN
 
-     sink("/corral-repl/utexas/ldrc/SCRIPTS/Stats/SC/rt_acc_austin.txt")
+     sink("/corral-repl/utexas/ldrc/SCRIPTS/Stats/SC/rt_acc_austin_feb16.txt")
 
      rt_s1vc_a = t.test(rt_mean ~ group2, data = all_sub_mean[all_sub_mean$city=="austin" & all_sub_mean$group2 == "first" | all_sub_mean$city=="austin" & all_sub_mean$group2 == "control",])
      print("Mean RT - S1 vs. Controls")
@@ -713,7 +718,7 @@ for (k in 1:sessions){
 
      # REPEAT and UNIQUE subs AUSTIN
 
-     sink("/corral-repl/utexas/ldrc/SCRIPTS/Stats/SC/sc_rt_acc_austin_repeats.txt")
+     sink("/corral-repl/utexas/ldrc/SCRIPTS/Stats/SC/sc_rt_acc_austin_repeats_feb16.txt")
 
      print(all_sub_mean[all_sub_mean$city=="austin" & all_sub_mean$rep=="r",])
 
@@ -727,7 +732,7 @@ for (k in 1:sessions){
   
      sink()
 
-     sink("/corral-repl/utexas/ldrc/SCRIPTS/Stats/SC/sc_rt_acc_austin_uniq.txt")
+     sink("/corral-repl/utexas/ldrc/SCRIPTS/Stats/SC/sc_rt_acc_austin_uniq_feb16.txt")
 
      print(all_sub_mean[all_sub_mean$city=="austin" & all_sub_mean$rep=="u" & all_sub_mean$group2!="control",])
 

@@ -200,14 +200,14 @@ gg_color_hue = function(n) {
 ###########
 # S1
 
-rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_c1_c2/SC"
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_all/SC"
 out = runTests2(rootdir)
 out.sig = out[out$Pval<0.05,]
   setwd(rootdir)
   write.csv(out, file = "SC_s1_roiStats.csv", row.names=TRUE, col.names=TRUE)
   write.csv(out.sig, file = "SC_s1_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
 
-rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_c1_c2/SST"
+rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_all/SST"
 out = runTests2(rootdir)
 out.sig = out[out$Pval<0.05,]
   setwd(rootdir)
@@ -247,25 +247,6 @@ out.sig = out[out$Pval<0.05,]
 
 
 ###########
-# S1 (Austin + Houston)
-
-rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_ah/SC"
-out = runTests2(rootdir)
-out.sig = out[out$Pval<0.05,]
-  setwd(rootdir)
-  write.csv(out, file = "SC_s1_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-  write.csv(out.sig, file = "SC_s1_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-
-rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_ah/SST"
-out = runTests2(rootdir)
-out.sig = out[out$Pval<0.05,]
-  setwd(rootdir)
-  write.csv(out, file = "SST_s1_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-  write.csv(out.sig, file = "SST_s1_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-
-
-
-###########
 # S2
 
 rootdir = "/corral-repl/utexas/ldrc/GROUP/S2/SC"
@@ -282,22 +263,6 @@ out.sig = out[out$Pval<0.05,]
   write.csv(out, file = "SST_s2_roiStats.csv", row.names=TRUE, col.names=TRUE)
   write.csv(out.sig, file = "SST_s2_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
 
-###########
-# S2 (Austin + Houston)
-
-rootdir = "/corral-repl/utexas/ldrc/GROUP/S2_ah/SC"
-out = runTests2(rootdir)
-out.sig = out[out$Pval<0.05,]
-  setwd(rootdir)
-  write.csv(out, file = "SC_s2_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-  write.csv(out.sig, file = "SC_s2_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-
-rootdir = "/corral-repl/utexas/ldrc/GROUP/S2_ah/SST"
-out = runTests2(rootdir)
-out.sig = out[out$Pval<0.05,]
-  setwd(rootdir)
-  write.csv(out, file = "SST_s2_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-  write.csv(out.sig, file = "SST_s2_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
 
 ###########
 # S3
@@ -306,33 +271,17 @@ rootdir = "/corral-repl/utexas/ldrc/GROUP/S3/SC"
 out = runTests2(rootdir)
 out.sig = out[out$Pval<0.05,]
   setwd(rootdir)
-  write.csv(out, file = "SC_s3_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-  write.csv(out.sig, file = "SC_s3_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out, file = "SC_s3_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_s3_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
 
 rootdir = "/corral-repl/utexas/ldrc/GROUP/S3/SST"
 out = runTests2(rootdir)
 out.sig = out[out$Pval<0.05,]
   setwd(rootdir)
-  write.csv(out, file = "SST_s3_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-  write.csv(out.sig, file = "SST_s3_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out, file = "SST_s3_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_s3_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
 
 
-###########
-# S3 (Austin + Houston)
-
-rootdir = "/corral-repl/utexas/ldrc/GROUP/S3_ah/SC"
-out = runTests2(rootdir)
-out.sig = out[out$Pval<0.05,]
-  setwd(rootdir)
-  write.csv(out, file = "SC_s3_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-  write.csv(out.sig, file = "SC_s3_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-
-rootdir = "/corral-repl/utexas/ldrc/GROUP/S3_ah/SST"
-out = runTests2(rootdir)
-out.sig = out[out$Pval<0.05,]
-  setwd(rootdir)
-  write.csv(out, file = "SST_s3_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-  write.csv(out.sig, file = "SST_s3_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
 
 ###########
 # Controls
@@ -371,23 +320,6 @@ out.sig = out[out$Pval<0.05,]
 
     c.sst.stopcc = c.sst[grep('stop_corr_v_go_corr', c.sst$Analysis),]
     c.sst.stopcc$contrast = "stop_corr_v_go_corr"
-
-###########
-# Controls (Austin + Houston)
-
-rootdir = "/corral-repl/utexas/ldrc/GROUP/Controls_ah/SC"
-out = runTests2(rootdir)
-out.sig = out[out$Pval<0.05,]
-  setwd(rootdir)
-  write.csv(out, file = "SC_c_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-  write.csv(out.sig, file = "SC_c_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-
-rootdir = "/corral-repl/utexas/ldrc/GROUP/Controls_ah/SST"
-out = runTests2(rootdir)
-out.sig = out[out$Pval<0.05,]
-  setwd(rootdir)
-  write.csv(out, file = "SST_c_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-  write.csv(out.sig, file = "SST_c_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
 
 
 ###########
@@ -534,26 +466,6 @@ out.sig = out[out$Pval<0.05,]
                 panel.grid.minor = element_blank(), axis.line = element_line(color = 'black'))
 
 
-###########
-# S1 vs. Controls (Austin + Houston)
-
-# SC
-  rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_C_ah/SC"
-  out = runTests(rootdir)
-  out.sig = out[out$Pval<0.05,]
-    setwd(rootdir)
-    write.csv(out, file = "SC_s1_v_c_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-    write.csv(out.sig, file = "SC_s1_v_c_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-
-# SST
-  rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_C_ah/SST"
-  out = runTests(rootdir)
-  out.sig = out[out$Pval<0.05,]
-    setwd(rootdir)
-    write.csv(out, file = "SST_s1_v_c_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-    write.csv(out.sig, file = "SST_s1_v_c_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-
-
 
 ###########
 # S2 vs. Controls
@@ -593,26 +505,6 @@ out.sig = out[out$Pval<0.05,]
   setwd(rootdir)
   write.csv(out, file = "SST_s2_v_c_roiStats.csv", row.names=TRUE, col.names=TRUE)
   write.csv(out.sig, file = "SST_s2_v_c_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
-
-
-###########
-# S2 vs. Controls (Austin + Houston)
-
-#SC
-rootdir = "/corral-repl/utexas/ldrc/GROUP/S2_v_C_ah/SC"
-out = runTests(rootdir)
-out.sig = out[out$Pval<0.05,]
-  setwd(rootdir)
-  write.csv(out, file = "SC_s2_v_c_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-  write.csv(out.sig, file = "SC_s2_v_c_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-
-#SST
-rootdir = "/corral-repl/utexas/ldrc/GROUP/S2_v_C_ah/SST"
-out = runTests(rootdir)
-out.sig = out[out$Pval<0.05,]
-  setwd(rootdir)
-  write.csv(out, file = "SST_s2_v_c_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-  write.csv(out.sig, file = "SST_s2_v_c_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
 
 
 
@@ -796,50 +688,6 @@ out.sig = out[out$Pval<0.05,]
   write.csv(output.perc, file = "SST_s1_v_s2_rm_perc_roiStats.csv", row.names=TRUE, col.names=TRUE)
 
 
-
-
-
-
-
-###########
-# S1 vs. S2 (Austin + Houston)
-
-rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_S2_ah/SC"
-out = runTests(rootdir)
-out.sig = out[out$Pval<0.05,]
-  setwd(rootdir)
-  write.csv(out, file = "SC_s1_v_s2_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-  write.csv(out.sig, file = "SC_s1_v_s2_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-
-rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_S2_ah/SST"
-out = runTests(rootdir)
-out.sig = out[out$Pval<0.05,]
-  setwd(rootdir)
-  write.csv(out, file = "SST_s1_v_s2_ah_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-  write.csv(out.sig, file = "SST_s1_v_s2_ah_sig_roiStats_8_15.csv", row.names=TRUE, col.names=TRUE)
-
-
-
-
-
-
-
-###########
-# P1 vs. P2
-
-rootdir = "/corral-repl/utexas/ldrc/GROUP/P1_P2_4_28_14/SC"
-out = runTests(rootdir)
-out[out$Pval<0.05,]
-
-rootdir = "/corral-repl/utexas/ldrc/GROUP/P1_P2_4_28_14/SST"
-out = runTests(rootdir)
-out.sig = out[out$Pval<0.05,]
-  setwd(rootdir)
-  write.csv(out, file = "SST_p1_p2_roiStats.csv", row.names=TRUE, col.names=TRUE)
-  write.csv(out.sig, file = "SST_p1_p2_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
-
-
-
 ###########
 # C,S1,S2
 
@@ -859,16 +707,93 @@ out.sig = out[out$Pval<0.05,]
 
 
 ###########
-# C vs. S1 vs. S2
+# Houston All
 
-rootdir = "/corral-repl/utexas/ldrc/GROUP/S1_v_S2_v_C/SC"
-out = runTests(rootdir)
+rootdir = "/corral-repl/utexas/ldrc/GROUP/H_all/SC"
+out = runTests2(rootdir)
 out.sig = out[out$Pval<0.05,]
   setwd(rootdir)
-  write.csv(out, file = "SC_s1_v_s2_v_c_roiStats.csv", row.names=TRUE, col.names=TRUE)
-  write.csv(out.sig, file = "SC_s1_v_s2_v_c_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out, file = "SC_h_all_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_h_all_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/H_all/SST"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_h_all_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_h_all_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
 
 
+###########
+# Houston Controls
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/H_Controls/SC"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_h_C_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_h_C_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/H_Controls/SST"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_h_C_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_h_C_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+
+###########
+# Houston S1
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/H_S1/SC"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_h_S1_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_h_S1_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/H_S1/SST"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_h_S1_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_h_S1_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+
+###########
+# Houston S2
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/H_S2/SC"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_h_S2_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_h_S2_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/H_S2/SST"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_h_S2_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_h_S2_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+
+###########
+# Houston S3
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/H_S3/SC"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SC_h_S3_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SC_h_S3_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
+
+rootdir = "/corral-repl/utexas/ldrc/GROUP/H_S3/SST"
+out = runTests2(rootdir)
+out.sig = out[out$Pval<0.05,]
+  setwd(rootdir)
+  write.csv(out, file = "SST_h_S3_roiStats.csv", row.names=TRUE, col.names=TRUE)
+  write.csv(out.sig, file = "SST_h_S3_sig_roiStats.csv", row.names=TRUE, col.names=TRUE)
 
 
 
